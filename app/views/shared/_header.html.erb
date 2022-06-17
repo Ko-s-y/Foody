@@ -15,18 +15,25 @@
       </div>
     </div>
     <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="buttons">
-          <a class="button is-primary">新規ユーザ登録</a>
-          <a class="button is-white">ログイン</a>
+      <!-- ログインしていない場合-->
+      <% if (!user_signed_in?) %>
+        <div class="navbar-item">
+          <div class="buttons">
+            <%= link_to  "ログイン", new_user_session_path, class: "button is-primary" %>
+            <%= link_to  "登録する", new_user_registration_path, class: "button is-white" %>
+          </div>
         </div>
-      </div>
-      <div class="navbar-item has-dropdown is-hoverable" style="margin-right: 100px;">
-        <div class="navbar-dropdown">
-          <hr class="navbar-divider">
-          <a href="" class="navbar-item">ログアウト</a>
+      <!-- ログインしていない場合-->
+      <% else %>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-item"><%= current_user.email %></a>
+          <div class="navbar-dropdown">
+            <a href="" class="navbar-item">profile</a>
+            <hr class="navbar-divider">
+            <%= link_to  "logout", destroy_user_session_path, method: :delete, class: "navbar-item" %>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </nav>
