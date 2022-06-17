@@ -26,14 +26,17 @@
           </div>
         <!-- ログインしていない場合-->
         <% else %>
-          <div class="navbar-item has-dropdown is-hoverable navbar-items">
-            <div class="navbar-item is-hidden-mobile is-hidden-tablet-only"><%= current_user.name %></div>
+          <div class="navbar-item has-dropdown is-hoverable navbar-name">
+            <div class="navbar-item is-hidden-mobile is-hidden-tablet-only navbar-menu">
+              <p class="nav-name"><%= current_user.name %></p>
+            </div>
             <div class="navbar-dropdown">
-              <a href="/" class="navbar-item">my profile</a>
-              <a href="/" class="navbar-item">my picks</a>
-              <a href="/" class="navbar-item">my remember</a>
+              <a href="/" class="navbar-item nav-element">profile</a>
+              <a href="/" class="navbar-item nav-element">posted</a>
+              <a href="/" class="navbar-item nav-element">remember</a>
+              <%= link_to "setting", edit_user_registration_path, class: "navbar-item nav-element" %>
               <hr class="navbar-divider">
-              <%= link_to  "logout", destroy_user_session_path, method: :delete, class: "navbar-item" %>
+              <%= link_to  "logout", destroy_user_session_path, method: :delete, class: "navbar-item nav-element" %>
             </div>
           </div>
         <% end %>

@@ -21,6 +21,16 @@
   box-sizing: border-box;
 }
 
+body {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
 // ここ削除でバーガーメニュー開くと自動でmargin-bottom:auto
 .navbar {
   height: 62px;
@@ -34,9 +44,15 @@
   height: 62px;
 }
 
-.navbar-items {
-  margin-right: 110px;
+.navbar-name {
+  display: block;
+  width: 100%;
+  margin-right: 50px;
   font-size: 25px;
+}
+
+.navbar-menu {
+  text-align: center;
 }
 
 .notice {
@@ -51,4 +67,12 @@
   color: white;
   text-align: center;
   font-weight: bold;
+}
+
+footer {
+  height: 150px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding-top: 60px;
 }
