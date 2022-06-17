@@ -1,42 +1,44 @@
-<nav class="navbar is-light" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="/">
-      <h1>FOODY!</h1>
-    </a>
-    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
-      <div class="navbar-item">
+  <header>
+  <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <h1>FOODY!</h1>
+      </a>
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <div class="navbar-item">
+        </div>
+      </div>
+      <div class="navbar-end">
+        <!-- ログインしていない場合-->
+        <% if (!user_signed_in?) %>
+          <div class="navbar-item">
+            <div class="buttons">
+              <%= link_to  "ログイン", new_user_session_path, class: "button is-primary" %>
+              <%= link_to  "登録する", new_user_registration_path, class: "button is-white" %>
+            </div>
+          </div>
+        <!-- ログインしていない場合-->
+        <% else %>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-item"><%= current_user.email %></a>
+            <div class="navbar-dropdown">
+              <a href="" class="navbar-item">profile</a>
+              <hr class="navbar-divider">
+              <%= link_to  "logout", destroy_user_session_path, method: :delete, class: "navbar-item" %>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
-    <div class="navbar-end">
-      <!-- ログインしていない場合-->
-      <% if (!user_signed_in?) %>
-        <div class="navbar-item">
-          <div class="buttons">
-            <%= link_to  "ログイン", new_user_session_path, class: "button is-primary" %>
-            <%= link_to  "登録する", new_user_registration_path, class: "button is-white" %>
-          </div>
-        </div>
-      <!-- ログインしていない場合-->
-      <% else %>
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-item"><%= current_user.email %></a>
-          <div class="navbar-dropdown">
-            <a href="" class="navbar-item">profile</a>
-            <hr class="navbar-divider">
-            <%= link_to  "logout", destroy_user_session_path, method: :delete, class: "navbar-item" %>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
-</nav>
+  </nav>
+</header>
 
 <script>
   $(document).ready(function() {
