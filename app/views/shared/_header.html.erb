@@ -1,0 +1,43 @@
+<nav class="navbar is-light" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <h1>FOODY!</h1>
+    </a>
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <div class="navbar-item">
+      </div>
+    </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary">新規ユーザ登録</a>
+          <a class="button is-white">ログイン</a>
+        </div>
+      </div>
+      <div class="navbar-item has-dropdown is-hoverable" style="margin-right: 100px;">
+        <div class="navbar-dropdown">
+          <hr class="navbar-divider">
+          <a href="" class="navbar-item">ログアウト</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  $(document).ready(function() {
+  // navbar burgerアイコンでクリックイベントを確認する
+  $(".navbar-burger").click(function() {
+    // 「navbar-burger」と「navbar-menu」の両方で「is-active」クラスを切り替える
+    $(".navbar-burger").toggleClass("is-active");
+    $(".navbar-menu").toggleClass("is-active");
+  });
+  });
+</script>
