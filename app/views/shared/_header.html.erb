@@ -1,4 +1,4 @@
-  <header>
+<header>
   <nav class="navbar is-light" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" href="/">
@@ -27,9 +27,11 @@
         <!-- ログインしていない場合-->
         <% else %>
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-item"><%= current_user.email %></a>
+            <div class="navbar-item"><%= current_user.name %></div>
             <div class="navbar-dropdown">
-              <a href="" class="navbar-item">profile</a>
+              <a href="/" class="navbar-item">my profile</a>
+              <a href="/" class="navbar-item">my picks</a>
+              <a href="/" class="navbar-item">my remember</a>
               <hr class="navbar-divider">
               <%= link_to  "logout", destroy_user_session_path, method: :delete, class: "navbar-item" %>
             </div>

@@ -16,3 +16,12 @@
 
 @import 'bulma';
 @import 'bulma-extensions';
+
+* {
+  box-sizing: border-box;
+}
+
+header {
+  background-color: antiquewhite;
+}
+
