@@ -21,7 +21,34 @@
   box-sizing: border-box;
 }
 
-header {
-  background-color: antiquewhite;
+// ここ削除でバーガーメニュー開くと自動でmargin-bottom:auto
+.navbar {
+  height: 62px;
 }
 
+.site-title {
+  font-size: 30px;
+}
+
+.burger-menu {
+  height: 62px;
+}
+
+.navbar-items {
+  margin-right: 110px;
+  font-size: 25px;
+}
+
+.notice {
+  background-color: aquamarine;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+}
+
+.alert {
+  background-color: coral;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}

@@ -1,10 +1,10 @@
 <header>
   <nav class="navbar is-light" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" href="/">
+      <a class="navbar-item site-title" href="/">
         <h1>FOODY!</h1>
       </a>
-      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <a role="button" class="navbar-burger burger burger-menu" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -26,8 +26,8 @@
           </div>
         <!-- ログインしていない場合-->
         <% else %>
-          <div class="navbar-item has-dropdown is-hoverable">
-            <div class="navbar-item"><%= current_user.name %></div>
+          <div class="navbar-item has-dropdown is-hoverable navbar-items">
+            <div class="navbar-item is-hidden-mobile is-hidden-tablet-only"><%= current_user.name %></div>
             <div class="navbar-dropdown">
               <a href="/" class="navbar-item">my profile</a>
               <a href="/" class="navbar-item">my picks</a>
