@@ -50,6 +50,4 @@ test:
 #
 production:
   <<: *default
-  database: foody_production
-  username: foody
-  password: <%= ENV['FOODY_DATABASE_PASSWORD'] %>
+  url: <%= ENV['JAWSDB_URL']&.sub('mysql://', 'mysql2://') %>
