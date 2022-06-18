@@ -1,2 +1,29 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<section class="hero is-dark is-fullheight">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-6-table is-6-desktop is-8-widescreen">
+          <div class="box">
+            <div class="field has-text-centered">
+              <strong>アカウント情報</strong>
+            </div>
+            <div class="box">
+              <div class="field">
+                <span>アカウント名</span>
+                <span><%= current_user.name %></span>
+              </div>
+              <div class="field">
+                <span>ID</span>
+                <span><%= current_user.id %></span>
+              </div>
+              <div class="field">
+                <span>メールアドレス</span>
+                <span><%= current_user.email %></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

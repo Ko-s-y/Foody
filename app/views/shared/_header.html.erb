@@ -31,7 +31,7 @@
               <p class="nav-name"><%= current_user.name %></p>
             </div>
             <div class="navbar-dropdown">
-              <a href="/" class="navbar-item nav-element">profile</a>
+              <%= link_to "profile", users_show_path, class: "navbar-item nav-element" %>
               <a href="/" class="navbar-item nav-element">posted</a>
               <a href="/" class="navbar-item nav-element">remember</a>
               <%= link_to "setting", edit_user_registration_path, class: "navbar-item nav-element" %>
