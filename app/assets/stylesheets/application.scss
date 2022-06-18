@@ -1,0 +1,78 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import 'bulma';
+@import 'bulma-extensions';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+// ここ削除でバーガーメニュー開くと自動でmargin-bottom:auto
+.navbar {
+  height: 62px;
+}
+
+.site-title {
+  font-size: 30px;
+}
+
+.burger-menu {
+  height: 62px;
+}
+
+.navbar-name {
+  display: block;
+  width: 100%;
+  margin-right: 50px;
+  font-size: 25px;
+}
+
+.navbar-menu {
+  text-align: center;
+}
+
+.notice {
+  background-color: aquamarine;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+}
+
+.alert {
+  background-color: coral;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+footer {
+  height: 150px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding-top: 60px;
+}

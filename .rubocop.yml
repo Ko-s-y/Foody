@@ -1,0 +1,17 @@
+inherit_from:
+  - .rubocop_airbnb.yml
+
+Rails:
+  Enabled: true
+
+LineLength:
+  Max: 130
+
+AllCops:
+  TargetRubyVersion: 2.7.5
+  Exclude:
+    - 'bin/*'
+    - 'config/environments/*'
+    - 'config/initializers/*'
+    - 'db/**/*'
+    - 'spec/spec_helper.rb'
