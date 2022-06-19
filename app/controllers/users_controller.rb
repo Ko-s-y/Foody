@@ -18,5 +18,4 @@ class UsersController < ApplicationController
   def current_user_params
     params.require(:user).permit(:avatar, :introduction)
   end
-
 end
