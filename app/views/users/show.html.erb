@@ -19,14 +19,25 @@
                 <%= form_for :user, url: users_show_url(current_user), action: :update, method: :post do |f| %>
                   <div class="file">
                     <label class="button is-primary is-outlined is-fullwidth">
-                      <%= f.file_field :avatar, class: "file-input", onchange: "this.form.submit();" %>
-                      <i class="fas fa-upload"></i>&nbsp;&nbsp;&nbsp; アイコン画像の変更
+                      <%= f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png', class: "file-input", onchange: "this.form.submit();" %>
+                      <i class="fas fa-upload"></i>&nbsp;&nbsp;&nbsp;アイコン画像の変更
                     </label>
                   </div>
                 <% end %>
               </div>
               <div class="field">
-                <span class="user-element"><%= current_user.name %></span>
+                <span class="user-element">アカウント名: <%= current_user.name %></span>
+              </div>
+              <div class="field">
+                <% if current_user.introduction.blank? %>
+                  <p class="user-intro">主な調理ジャンル</p>
+                <% else %>
+                  <p class="user-intro">主な調理ジャンル: <%= current_user.introduction %></p>
+                <% end %>
+                <%= form_for :user, url: users_show_url(current_user), action: :update, method: :post do |f| %>
+                  <p><%= f.text_area :introduction, class: "intro-form user-form-element", placeholder: "例)フレンチ, イタリアン, 和食, ピッツァ職人等" %></p>
+                  <p><%= f.submit "調理ジャンルの更新", class: "intro-btn" %></p>
+                <% end %>
               </div>
               <div class="field">
                 <%= link_to "setting", edit_user_registration_path, class: "link-btn" %>
