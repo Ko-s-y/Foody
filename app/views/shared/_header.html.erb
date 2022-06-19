@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+  <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item site-title" href="/">
         <h1>Foody!</h1>
@@ -18,10 +18,10 @@
       <div class="navbar-end">
         <!-- ログインしていない場合-->
         <% if (!user_signed_in?) %>
-          <div class="navbar-item">
+          <div class="navbar-item attend">
             <div class="buttons">
-              <%= link_to  "ログイン", new_user_session_path, class: "button is-primary" %>
-              <%= link_to  "登録する", new_user_registration_path, class: "button is-white" %>
+              <%= link_to "ログイン", new_user_session_path, class: "button is-primary" %>
+              <%= link_to "登録する", new_user_registration_path, class: "button is-white" %>
             </div>
           </div>
         <!-- ログインしている場合-->

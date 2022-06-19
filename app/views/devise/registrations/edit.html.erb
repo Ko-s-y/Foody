@@ -14,14 +14,11 @@
                   <%= f.label :アカウント名, class: "label" %>
                   <div class="control has-icons-left">
                     <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "input is-info", placeholder: "(必須)" %>
-                      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-                        <div>確認しています: <%= resource.unconfirmed_email %></div>
-                      <% end %>
                     <span class="icon is-small is-left">
                       <i class="fas fa-user"></i>
                     </span>
                   </div>
-                  <p class="help is-danger">*6〜12字以内</p>
+                  <p class="help is-danger">*半角英数字6〜12字以内 例)SampleName23</p>
                 </div>
                 <div class="field">
                   <%= f.label :メールアドレス, class: "label" %>
@@ -30,6 +27,9 @@
                     <span class="icon is-small is-left">
                       <i class="fas fa-envelope"></i>
                     </span>
+                    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                      <div>確認しています: <%= resource.unconfirmed_email %></div>
+                    <% end %>
                     <p class="help is-danger">*@を含めて下さい</p>
                   </div>
                 </div>
