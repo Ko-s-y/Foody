@@ -1,3 +1,68 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.first-section {
+  height: 500px;
+  background-image: url("porchetta.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.first-message {
+  font-size: 25px;
+  color: white;
+}
+
+.second-section {
+  height: 500px;
+  background-image: url("risotto_granchio.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.second-message {
+  font-size: 25px;
+  color: white;
+}
+
+.third-section {
+  height: 500px;
+  background-image: url("gnocchi.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.third-message {
+  font-size: 25px;
+  color: white;
+}
+
+.fourth-section {
+  height: 500px;
+  background-image: url("duomo_amuse.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.fourth-message {
+  font-size: 25px;
+  color: white;
+}
+
+.fifth-section {
+  height: 90px;
+  background-color: whitesmoke;
+  padding-top: 25px;
+}
+
+.about-btn {
+  text-align: center;
+  display: block;
+  width: 50%;
+  font-size: 25px;
+  margin: 0 auto;
+  color: black;
+  border: 1px solid black;
+  border-radius: 20px;
+}
