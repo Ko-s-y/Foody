@@ -34,10 +34,18 @@ main {
 // ここ削除でバーガーメニュー開くと自動でmargin-bottom:auto
 .navbar {
   height: 62px;
+  background-color: whitesmoke;
+}
+
+a.navbar-item:hover {
+  color: #4a4a4a;
 }
 
 .site-title {
   font-size: 30px;
+  width: 180px;
+  text-align: center;
+  display: block;
 }
 
 .burger-menu {
@@ -47,8 +55,8 @@ main {
 .navbar-name {
   display: block;
   width: 100%;
-  margin-right: 50px;
   font-size: 25px;
+  margin-top: 4px;
 }
 
 .navbar-menu {
@@ -76,3 +84,28 @@ footer {
   text-align: center;
   padding-top: 60px;
 }
+
+.back-btn {
+  display: block;
+  text-align: center;
+  margin: 10px auto;
+  width: 20%;
+  border: 1px solid rgb(164, 163, 163);
+  border-radius: 5px;
+}
+
+.link-btn {
+  font-size: 18px;
+}
+
+.shared-link-btn {
+  font-size: 15px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+.forget-pass-btn {
+  font-size: 15px;
+}
+

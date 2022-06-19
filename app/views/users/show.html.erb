@@ -1,0 +1,53 @@
+<section class="hero is-dark is-fullheight">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-6-table is-10-desktop is-8-widescreen">
+          <div class="box">
+            <div class="field has-text-centered">
+              <strong>アカウント情報</strong>
+            </div>
+            <div class="box">
+              <div class="field">
+                <div class="user-icon-field">
+                  <% if current_user.image? %>
+                    <%= image_tag current_user.image.url %>
+                  <% else %>
+                    <%= image_tag avatar_url(current_user), class: "user-image", alt: "ユーザーアイコン" %>
+                  <% end %>
+                </div>
+                <%= form_for :user, url: users_show_url(current_user), action: :update, method: :post do |f| %>
+                  <div class="file">
+                    <label class="button is-primary is-outlined is-fullwidth">
+                      <%= f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png', class: "file-input", onchange: "this.form.submit();" %>
+                      <i class="fas fa-upload"></i>&nbsp;&nbsp;&nbsp;アイコン画像の変更
+                    </label>
+                  </div>
+                <% end %>
+              </div>
+              <div class="field">
+                <span class="user-element">アカウント名: <%= current_user.name %></span>
+              </div>
+              <div class="field">
+                <% if current_user.introduction.blank? %>
+                  <p class="user-intro">調理ジャンル</p>
+                <% else %>
+                  <p class="user-intro">調理ジャンル: <%= current_user.introduction %></p>
+                <% end %>
+
+                <%= form_for :user, url: users_show_url(current_user), action: :update, method: :post do |f| %>
+                  <p><%= f.text_area :introduction, class: "intro-form user-form-element", placeholder: "例)フレンチ, イタリアン, 和食, ピッツァ職人等" %></p>
+                  <p><%= f.submit "調理ジャンルの更新", class: "intro-btn" %></p>
+                <% end %>
+
+              </div>
+              <div class="field">
+                <%= link_to "setting", edit_user_registration_path, class: "link-btn" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
