@@ -67,3 +67,6 @@ gem 'bulma-extensions-rails', '~> 1.0.30'
 
 # devise
 gem 'devise'
+
+# heroku画像をamazonS3へ
+gem "aws-sdk"
