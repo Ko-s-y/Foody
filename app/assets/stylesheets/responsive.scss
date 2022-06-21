@@ -1,5 +1,4 @@
 @media (max-width: 1023px) {
-
 // header
   .navbar-name {
     margin-bottom: 20px;
@@ -23,7 +22,7 @@
   }
 
 // slide-handler
-  .only-pc {
+  .only-pc-handler {
     display: none;
   }
 
@@ -32,8 +31,8 @@
   }
 
   .touch-handler-btn {
-    height: 60px;
-    width: 30px;
+    height: 90px;
+    width: 40px;
     cursor: pointer;
     background-color: rgb(37, 35, 35);
     opacity: 0.5;
@@ -52,11 +51,9 @@
     z-index: 1;
     right: 0%;
   }
-
 }
 
 @media (max-width: 768px) {
-
 // header
 
 // home
@@ -77,12 +74,16 @@
   }
 
 // slide-handler
+  .touch-handler-btn {
+    height: 60px;
+    width: 30px;
+  }
+
   .touch-slide-left {
     top: 20%;
   }
 
-  .touch-slide-right {
+    .touch-slide-right {
     top: 20%;
   }
-
 }

@@ -94,7 +94,7 @@
 }
 
 .slide-handler {
-  width: 80%;
+  width: 50%;
   display: flex;
   justify-content: space-between;
 }
@@ -104,6 +104,10 @@
   cursor: pointer;
   background-color: black;
   color: whitesmoke;
+}
+
+.only-pc-handler {
+  display: block;
 }
 
 .tab-sp-handler {
