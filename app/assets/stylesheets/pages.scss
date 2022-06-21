@@ -29,8 +29,10 @@
 
 .slide-area {
   width: 100%;
-  height: 1000px;
+  height: 1050px;
   position: relative;
+  max-width: 1500px;
+  margin: 0 auto;
 }
 
 .slide-list {
