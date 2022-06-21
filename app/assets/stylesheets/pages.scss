@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.back-image {
+  height: 1130px; // slide-areaの高さ
+  width: 100%;
+  opacity: 0.2;
+  position: absolute;
+  top: 62px; // header高さ
+}
+
 .intro-message {
   font-size: 40px;
   font-weight: 900;
@@ -9,7 +17,7 @@
   position: relative;
   top: 13%;
   opacity: 0.9;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.4em;
 }
 
 .about-foody {
@@ -29,9 +37,9 @@
 
 .slide-area {
   width: 100%;
-  height: 1050px;
+  height: 1130px;
   position: relative;
-  max-width: 1500px;
+  max-width: 1550px;
   margin: 0 auto;
 }
 
