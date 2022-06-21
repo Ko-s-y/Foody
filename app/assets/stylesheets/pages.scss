@@ -83,3 +83,25 @@
   border: 1px solid black;
   border-radius: 20px;
 }
+
+.handler-area {
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: black;
+}
+
+.slide-handler {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.handler-btn {
+  font-size: 30px;
+  cursor: pointer;
+  background-color: black;
+  color: whitesmoke;
+}
