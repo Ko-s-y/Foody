@@ -39,17 +39,17 @@
   }
 
   .touch-slide-left {
-    left: 0%;
+    left: 0;
     position: absolute;
-    top: 35%;
+    top: 37%;
     z-index: 1;
   }
 
   .touch-slide-right {
     position: absolute;
-    top: 35%;
+    top: 37%;
     z-index: 1;
-    right: 0%;
+    right: 0;
   }
 }
 
@@ -80,10 +80,10 @@
   }
 
   .touch-slide-left {
-    top: 20%;
+    top: 30%;
   }
 
-    .touch-slide-right {
-    top: 20%;
+  .touch-slide-right {
+    top: 30%;
   }
 }

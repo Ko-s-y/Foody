@@ -8,10 +8,13 @@ $(function () {
 
   // スライドの切り替わりをchangeSlideとして定義
   function changeSlide() {
-    $('.slide-list').fadeOut(1000); // 現在のスライドをフェードアウト
-    $('.slide-list').eq(slideCurrent).fadeIn(1500); // 次のスライドを表示
+    $('.slide-list').fadeOut(1000); // 現在のスライドフェードアウト
+    $('.slide-list').eq(slideCurrent).fadeIn(1500); // 次のスライドをフェードイン
+    // targetクラス切り替え処理
+    let pagiNation = slideCurrent + 1;
+    $('.target-square').removeClass('current-img');
+    $(".target-square:nth-of-type(" + pagiNation + ")").addClass('current-img');
   };
-  let Timer;
 
   // 一定時間毎に処理実行するstartTimerを定義
   function startTimer() {

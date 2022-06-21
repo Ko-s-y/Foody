@@ -86,7 +86,7 @@
 
 .handler-area {
   margin: 0 auto;
-  padding: 16px;
+  padding: 15px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -112,4 +112,32 @@
 
 .tab-sp-handler {
   display: none;
+}
+
+.pagination-area {
+  width: 150px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.target-square {
+  width: 20px;
+  height: 20px;
+  border-radius: 5%;
+  background-color: gray;
+  position: relative;
+  margin-top: 10px;
+}
+
+.target-square.current-img::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
 }
