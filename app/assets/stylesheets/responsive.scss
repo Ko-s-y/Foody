@@ -1,5 +1,6 @@
 @media (max-width: 1023px) {
 
+// header
   .navbar-name {
     margin-bottom: 20px;
   }
@@ -8,8 +9,40 @@
     margin-bottom: 15px;
   }
 
+  .navbar-item {
+    font-size: 20px;
+  }
+
+// home
+  .intro-message {
+    letter-spacing: 0.12em;
+  }
+
+  .slide-area {
+    height: 800px;
+  }
+
 }
 
 @media (max-width: 768px) {
+
+// header
+
+// home
+  .intro-message {
+    letter-spacing: 0.08em;
+  }
+
+  .slide-area {
+    height: 500px;
+  }
+
+  .intro-message {
+    font-size: 30px;
+  }
+
+  .about-foody {
+    font-size: 15px;
+  }
 
 }

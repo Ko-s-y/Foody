@@ -2,78 +2,73 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.first-section {
-  height: 500px;
+.intro-message {
+  font-size: 40px;
+  font-weight: 900;
+  color: white;
+  position: relative;
+  top: 13%;
+  opacity: 0.9;
+  letter-spacing: 0.2em;
+}
+
+.about-foody {
+  padding: 1em;
+  text-align: right;
+  position: absolute;
+  z-index: 2;
+  font-size: 20px;
+  color: whitesmoke;
+  text-shadow: 5px 6px 4px rgba(0, 0, 0, 0.8);
+  right: 2%;
+}
+
+.about-foody:hover {
+  color: whitesmoke;
+}
+
+.slide-area {
+  width: 100%;
+  height: 1000px;
+  position: relative;
+}
+
+.slide-list {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.slide-list:nth-child(1) {
   background-image: url("porchetta.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  text-align: center;
 }
 
-.first-message {
-  font-size: 30px;
-  font-weight: 900;
-  color: white;
-  position: relative;
-  top: 60px;
-  opacity: 0.8;
+.slide-list:nth-child(2) {
+  background-image: url("duomo_amu.jpeg");
 }
 
-.second-section {
-  height: 500px;
-  background-image: url("risotto_granchio.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  text-align: center;
-}
-
-.second-message {
-  font-size: 30px;
-  font-weight: 900;
-  color: white;
-  position: relative;
-  top: 60px;
-  opacity: 0.8;
-}
-
-.third-section {
-  height: 500px;
-  background-image: url("gnocchi.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  text-align: center;
-}
-
-.third-message {
-  font-size: 30px;
-  font-weight: 900;
-  color: white;
-  position: relative;
-  top: 60px;
-  opacity: 0.8;
-}
-
-.fourth-section {
-  height: 500px;
+.slide-list:nth-child(3) {
   background-image: url("duomo_amuse.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  text-align: center;
 }
 
-.fourth-message {
-  font-size: 30px;
-  font-weight: 900;
-  color: white;
-  position: relative;
-  top: 60px;
-  opacity: 0.8;
+.slide-list:nth-child(4) {
+  background-image: url("risotto_granchio.jpeg");
 }
 
-.fifth-section {
-  height: 90px;
+.slide-list:nth-child(5) {
+  background-image: url("duomo.jpeg");
+}
+
+.about-link {
+  height: 120px;
   background-color: whitesmoke;
-  padding-top: 25px;
+  padding-top: 40px;
 }
 
 .about-btn {

@@ -1,17 +1,18 @@
-<div class="main-wrapper">
-  <div class="first-section">
-    <h1 class="first-message">グランシェフから</h1>
-  </div>
-  <div class="second-section">
-    <h1 class="second-message">新人コックまで</h1>
-  </div>
-  <div class="third-section">
-    <h1 class="third-message">「食」に携わる</h1>
-  </div>
-  <div class="fourth-section">
-    <h1 class="fourth-message">全ての方へ</h1>
-  </div>
-  <div class="fifth-section">
+<div class="first-view">
+  <%= link_to "Foody!とは", pages_about_path, class: "about-foody" %>
+  <ul class="slide-area">
+    <li class="slide-list"><h1 class="intro-message">グランシェフから</h1></li>
+    <li class="slide-list"><h1 class="intro-message">新人コックまで</h1></li>
+    <li class="slide-list"><h1 class="intro-message">「食」に携わる</h1></li>
+    <li class="slide-list"><h1 class="intro-message">全ての「プロ」へ</h1></li>
+    <li class="slide-list"><h1 class="intro-message">新たな発見を</h1></li>
+  </ul>
+</div>
+
+<div class="second-view">
+  <div class="about-link">
     <%= link_to "about Foody!", pages_about_path, class: "about-btn" %>
   </div>
 </div>
+
+<%= javascript_pack_tag 'home/application' %>
