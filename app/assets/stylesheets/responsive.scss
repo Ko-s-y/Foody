@@ -22,6 +22,37 @@
     height: 900px;
   }
 
+// slide-handler
+  .only-pc {
+    display: none;
+  }
+
+  .tab-sp-handler {
+    display: block;
+  }
+
+  .touch-handler-btn {
+    height: 60px;
+    width: 30px;
+    cursor: pointer;
+    background-color: rgb(37, 35, 35);
+    opacity: 0.5;
+  }
+
+  .touch-slide-left {
+    left: 0%;
+    position: absolute;
+    top: 35%;
+    z-index: 1;
+  }
+
+  .touch-slide-right {
+    position: absolute;
+    top: 35%;
+    z-index: 1;
+    right: 0%;
+  }
+
 }
 
 @media (max-width: 768px) {
@@ -43,6 +74,15 @@
 
   .about-foody {
     font-size: 15px;
+  }
+
+// slide-handler
+  .touch-slide-left {
+    top: 20%;
+  }
+
+  .touch-slide-right {
+    top: 20%;
   }
 
 }

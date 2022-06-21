@@ -1,5 +1,19 @@
 <div class="first-view">
   <%= link_to "Foody!とは", pages_about_path, class: "about-foody" %>
+
+  <div class="tab-sp-handler">
+    <div class="touch-slide-handler">
+      <div class="touch-slide-left">
+        <button class="touch-handler-btn js-slide-back" type="button"><i class="fas fa-angle-left"></i></button>
+      </div>
+      <div class="touch-slide-right">
+        <button class="touch-handler-btn js-slide-next" type="button"><i class="fas fa-angle-right"></i></button>
+      </div>
+    </div>
+  </div>
+
+
+
   <ul class="slide-area">
     <li class="slide-list"><h1 class="intro-message">グランシェフから</h1></li>
     <li class="slide-list"><h1 class="intro-message">新人コックまで</h1></li>
@@ -9,14 +23,15 @@
   </ul>
 </div>
 
-
-<div class="handler-area">
-  <div class="slide-handler">
-    <div class="slide-left">
-      <button class="handler-btn js-slide-back" type="button"><i class="fas fa-angle-left"></i></button>
-    </div>
-    <div class="slide-right">
-      <button class="handler-btn js-slide-next" type="button"><i class="fas fa-angle-right"></i></button>
+<div class="only-pc">
+  <div class="handler-area">
+    <div class="slide-handler">
+      <div class="slide-left">
+        <button class="handler-btn js-slide-back" type="button"><i class="fas fa-angle-left"></i></button>
+      </div>
+      <div class="slide-right">
+        <button class="handler-btn js-slide-next" type="button"><i class="fas fa-angle-right"></i></button>
+      </div>
     </div>
   </div>
 </div>
