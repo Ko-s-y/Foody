@@ -164,25 +164,38 @@
 
 // aboutページ
 .about-view {
+  position: relative;
   height: 1130px;
 }
 
 .about-image {
   width: 100%;
   height: 1130px;
-  opacity: 0.3;
-}
-
-.message-container {
-  text-align: center;
-  height: 400px;
+  opacity: 0.4;
 }
 
 .my-message {
   font-size: 30px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin:0;
+  padding:0;
 }
 
-.contact-form {
+.my-message h1 {
+  font-size: 40px;
+  text-align: center;
+}
+
+.my-message p {
+  margin: 10px;
+}
+
+.contact-area {
   height: 300px;
   background-color: whitesmoke;
 }
