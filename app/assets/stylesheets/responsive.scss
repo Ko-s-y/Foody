@@ -5,6 +5,7 @@
 }
 
 @media (max-width: 1023px) {
+///////////////////////////////////
 // header
   .navbar-name {
     margin-bottom: 20px;
@@ -18,6 +19,7 @@
     font-size: 20px;
   }
 
+///////////////////////////////////
 // homeページ
   .intro-message {
     letter-spacing: 0.12em;
@@ -93,19 +95,28 @@
     height: 900px;
   }
 
-  .message-container {
+  // .message-container {
+  //   text-align: center;
+  // }
+
+  .my-message h1 {
+    font-weight: 400;
+    font-size: 35px;
     text-align: center;
-    height: 400px;
   }
 
-  .my-message {
-    font-size: 30px;
+  .my-message p {
+    font-weight: 300;
+    font-size: 25px;
   }
 }
 
 @media (max-width: 768px) {
+
+///////////////////////////////////
 // header
 
+///////////////////////////////////
 // home
   .intro-message {
     letter-spacing: 0.08em;
@@ -140,7 +151,8 @@
   .pagination-area {
     top: 500px;
   }
-/////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////
   // aboutページ
   .about-view {
     height: 600px;
@@ -150,12 +162,13 @@
     height: 600px;
   }
 
-  .message-container {
-    text-align: center;
-    height: 400px;
+  .my-message h1 {
+    font-weight: 800;
+    font-size: 18px;
   }
 
-  .my-message {
-    font-size: 30px;
+  .my-message p {
+    font-weight: 700;
+    font-size: 14px;
   }
 }

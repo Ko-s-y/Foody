@@ -177,22 +177,31 @@
 .my-message {
   font-size: 30px;
   position: absolute;
-  top: 30%;
+  top: 50%;
   left: 50%;
   -ms-transform: translate(-50%,-50%);
   -webkit-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
   margin:0;
   padding:0;
+  color: rgb(65, 63, 63);
 }
 
 .my-message h1 {
-  font-size: 40px;
+  font-weight: 300;
+  font-size: 50px;
   text-align: center;
 }
 
 .my-message p {
-  margin: 10px;
+  font-weight: 200;
+  font-size: 35px;
+  margin: 20px;
+}
+
+.how-to-view {
+  background-color: black;
+  color: white;
 }
 
 .contact-area {
