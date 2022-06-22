@@ -1,3 +1,6 @@
+<% content_for :title do %>
+  Sign up - User
+<% end %>
 <section class="hero is-dark is-fullheight">
   <div class="hero-body">
     <div class="container">
@@ -19,6 +22,16 @@
                     </span>
                   </div>
                   <p class="help is-danger">*半角英数字6〜12字以内 例)SampleName23</p>
+                </div>
+                <div class="field">
+                  <%= f.label :調理ジャンル, class: "label" %>
+                  <div class="control has-icons-left">
+                    <%= f.text_field :introduction, autocomplete: "introduction", class: "input is-info", placeholder: "(必須)" %>
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-utensils"></i>
+                    </span>
+                  </div>
+                  <p class="help is-danger">*10字以内 例)フレンチ,イタリアン,和食,中華等</p>
                 </div>
                 <div class="field">
                   <%= f.label :メールアドレス, class: "label" %>
