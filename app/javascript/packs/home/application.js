@@ -60,5 +60,16 @@ $(function () {
     };
   });
 
+// 連続でhomeへのリンクを押すとタイマーが多重動作してslide-imageの表示が狂うため
+  $(document).ready(function() {
+    if (window.name != "reloaded") {
+      alert('リロードします')
+      location.reload();
+      window.name = "reloaded";
+    } else {
+      window.name = "";
+    }
+  });
+
   startTimer();
 });
