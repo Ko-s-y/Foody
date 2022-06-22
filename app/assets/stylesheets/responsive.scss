@@ -95,10 +95,6 @@
     height: 900px;
   }
 
-  // .message-container {
-  //   text-align: center;
-  // }
-
   .my-message h1 {
     font-weight: 400;
     font-size: 35px;
@@ -108,6 +104,11 @@
   .my-message p {
     font-weight: 300;
     font-size: 25px;
+  }
+
+  .how-to-message {
+    font-size: 20px;
+    letter-spacing: 0.12em;
   }
 }
 
@@ -170,5 +171,10 @@
   .my-message p {
     font-weight: 700;
     font-size: 14px;
+  }
+
+  .how-to-message {
+    font-size: 13px;
+    letter-spacing: 0.08em;
   }
 }
