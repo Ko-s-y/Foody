@@ -43,20 +43,20 @@
     width: 40px;
     cursor: pointer;
     background-color: rgb(37, 35, 35);
-    opacity: 0.5;
+    opacity: 0.2;
     border-radius: 5px;
   }
 
   .touch-slide-left {
     left: 0;
     position: absolute;
-    top: 37%;
+    top: 480px;
     z-index: 1;
   }
 
   .touch-slide-right {
     position: absolute;
-    top: 37%;
+    top: 480px;
     z-index: 1;
     right: 0;
   }
@@ -115,7 +115,16 @@
 @media (max-width: 768px) {
 
 ///////////////////////////////////
-// header
+// footer
+  footer {
+    height: 80px !important;
+    padding-top: 26px !important;
+  }
+
+  .copy-right {
+    font-size: 18px !important;
+    font-weight: 400 !important;
+  }
 
 ///////////////////////////////////
 // home
@@ -142,11 +151,11 @@
   }
 
   .touch-slide-left {
-    top: 300px;
+    top: 280px;
   }
 
   .touch-slide-right {
-    top: 300px;
+    top: 280px;
   }
 
   .pagination-area {
