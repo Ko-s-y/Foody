@@ -18,7 +18,7 @@
     font-size: 20px;
   }
 
-// home
+// homeページ
   .intro-message {
     letter-spacing: 0.12em;
   }
@@ -82,6 +82,25 @@
     background-color: rgb(37, 35, 35);
     opacity: 0.5;
   }
+
+///////////////////////////////////
+  // aboutページ
+  .about-view {
+    height: 900px;
+  }
+
+  .about-image {
+    height: 900px;
+  }
+
+  .message-container {
+    text-align: center;
+    height: 400px;
+  }
+
+  .my-message {
+    font-size: 30px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -111,14 +130,32 @@
   }
 
   .touch-slide-left {
-    top: 30%;
+    top: 300px;
   }
 
   .touch-slide-right {
-    top: 30%;
+    top: 300px;
   }
 
   .pagination-area {
     top: 500px;
+  }
+/////////////////////////////////////////////////////////////////////////
+  // aboutページ
+  .about-view {
+    height: 600px;
+  }
+
+  .about-image {
+    height: 600px;
+  }
+
+  .message-container {
+    text-align: center;
+    height: 400px;
+  }
+
+  .my-message {
+    font-size: 30px;
   }
 }
