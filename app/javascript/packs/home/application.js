@@ -8,8 +8,8 @@ $(function () {
 
   // スライドの切り替わりをchangeSlideとして定義
   function changeSlide() {
-    $('.slide-list').fadeOut(1000); // 現在のスライドフェードアウト
-    $('.slide-list').eq(slideCurrent).fadeIn(1500); // 次のスライドをフェードイン
+    $('.slide-list').fadeOut(1000); // 現在のスライドをフェードアウト
+    $('.slide-list').eq(slideCurrent).fadeIn(3000); // 次のスライドをフェードイン
     // current-imgクラス切り替え処理
     let pagiNation = slideCurrent + 1;
     $('.target-square').removeClass('current-img');
@@ -26,7 +26,7 @@ $(function () {
         slideCurrent++;
         changeSlide(); // そうでなければスライド番号を増やして次のスライドに切り替え
       };
-    }, 3000); // 実行スパン, 3秒
+    }, 4000); // 実行スパン, 4秒
   }
 
   // startTimer関数を止めるstopTimerを定義
@@ -63,7 +63,6 @@ $(function () {
 // 連続でhomeへのリンクを押すとタイマーが多重動作してslide-imageの表示が狂うため
   $(document).ready(function() {
     if (window.name != "reloaded") {
-      alert('リロードします')
       location.reload();
       window.name = "reloaded";
     } else {
