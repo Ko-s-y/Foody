@@ -1,3 +1,6 @@
+<% content_for :title do %>
+  Profile - User
+<% end %>
 <section class="hero is-dark is-fullheight">
   <div class="hero-body">
     <div class="container">
@@ -29,20 +32,13 @@
                 <span class="user-element">アカウント名: <%= current_user.name %></span>
               </div>
               <div class="field">
-                <% if current_user.introduction.blank? %>
-                  <p class="user-intro">調理ジャンル</p>
-                <% else %>
-                  <p class="user-intro">調理ジャンル: <%= current_user.introduction %></p>
-                <% end %>
-
-                <%= form_for :user, url: users_show_url(current_user), action: :update, method: :post do |f| %>
-                  <p><%= f.text_area :introduction, class: "intro-form user-form-element", placeholder: "例)フレンチ, イタリアン, 和食, ピッツァ職人等" %></p>
-                  <p><%= f.submit "調理ジャンルの更新", class: "intro-btn" %></p>
-                <% end %>
-
+                <span class="user-element">調理ジャンル: <%= current_user.introduction %></span>
               </div>
               <div class="field">
-                <%= link_to "setting", edit_user_registration_path, class: "link-btn" %>
+                <%= link_to edit_user_registration_path do %>
+                  <i class="far fa-sun"></i>
+                  <span class="link-btn">setting</span>
+                <% end %>
               </div>
             </div>
           </div>

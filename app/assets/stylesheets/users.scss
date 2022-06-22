@@ -20,10 +20,11 @@
 .intro-form {
   resize: none;
   width: 60%;
-  height: 50px;
+  height: 55px;
   font-size: 15px;
   border-color: rgb(53, 58, 58);
   padding: 3px;
+  border-radius: 5px;
 }
 
 .user-form-element {
@@ -37,6 +38,15 @@
 }
 
 .intro-btn {
+  cursor: pointer;
   display: block;
-  margin: 0 auto;
+  margin: 10px auto;
+  background-color: #3273dc;
+  color: white;
+  border-radius: 10px;
+  border: none;
+}
+
+.intro-btn:hover {
+  background-color: #1b63d8;
 }
