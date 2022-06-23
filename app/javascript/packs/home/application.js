@@ -9,7 +9,7 @@ $(function () {
   // スライドの切り替わりをchangeSlideとして定義
   function changeSlide() {
     $('.slide-list').fadeOut(1000); // 現在のスライドをフェードアウト
-    $('.slide-list').eq(slideCurrent).fadeIn(3000); // 次のスライドをフェードイン
+    $('.slide-list').eq(slideCurrent).fadeIn(2000); // 次のスライドをフェードイン
     // current-imgクラス切り替え処理
     let pagiNation = slideCurrent + 1;
     $('.target-square').removeClass('current-img');
@@ -29,7 +29,7 @@ $(function () {
         changeSlide(); // そうでなければスライド番号を増やして次のスライドに切り替え
         console.log("change slide next")
       };
-    }, 4000); // 実行スパン, 4秒
+    }, 3000); // 実行スパン, 3秒
   }
 
   // startTimer関数を止めるstopTimerを定義

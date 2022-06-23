@@ -1,6 +1,6 @@
 <header>
   <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
+    <div data-turbolinks="false" class="navbar-brand">
       <a class="navbar-item site-title" href="/">
         <h1>Foody!</h1>
       </a>
@@ -31,12 +31,12 @@
               <p class="nav-name"><%= current_user.name %></p>
             </div>
             <div class="navbar-dropdown">
-              <%= link_to "home", pages_home_path, class: "navbar-item nav-element" %>
+              <%= link_to "home", pages_home_path, class: "navbar-item nav-element", data: {"turbolinks" => false} %>
               <%= link_to "profile", users_show_path, class: "navbar-item nav-element" %>
               <a href="/" class="navbar-item nav-element">posted</a>
               <a href="/" class="navbar-item nav-element">remember</a>
               <hr class="navbar-divider">
-              <%= link_to  "logout", destroy_user_session_path, method: :delete, class: "navbar-item nav-element" %>
+              <%= link_to "logout", destroy_user_session_path, method: :delete, class: "navbar-item nav-element" %>
             </div>
           </div>
         <% end %>
