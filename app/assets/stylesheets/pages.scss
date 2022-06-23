@@ -1,3 +1,216 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+// homeページ
+.back-image {
+  height: 1130px; // slide-areaの高さ
+  width: 100%;
+  opacity: 0.2;
+  position: absolute;
+  top: 62px; // header高さ
+}
+
+.intro-message {
+  font-size: 40px;
+  font-weight: 900;
+  color: white;
+  position: relative;
+  top: 13%;
+  opacity: 0.9;
+  letter-spacing: 0.4em;
+}
+
+.about-foody {
+  padding: 1em;
+  text-align: right;
+  position: absolute;
+  z-index: 2;
+  font-size: 20px;
+  color: whitesmoke;
+  text-shadow: 5px 6px 4px rgba(0, 0, 0, 0.8);
+  right: 2%;
+}
+
+.about-foody:hover {
+  color: whitesmoke;
+}
+
+.slide-area {
+  width: 100%;
+  height: 1130px;
+  position: relative;
+  max-width: 1550px;
+  margin: 0 auto;
+}
+
+.slide-list {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.slide-list:nth-child(1) {
+  background-image: url("porchetta.jpeg");
+}
+
+.slide-list:nth-child(2) {
+  background-image: url("duomo_amu.jpeg");
+}
+
+.slide-list:nth-child(3) {
+  background-image: url("duomo_amuse.jpeg");
+}
+
+.slide-list:nth-child(4) {
+  background-image: url("risotto_granchio.jpeg");
+}
+
+.slide-list:nth-child(5) {
+  background-image: url("duomo.jpeg");
+}
+
+.about-link {
+  height: 120px;
+  background-color: whitesmoke;
+  padding-top: 40px;
+}
+
+.about-btn {
+  text-align: center;
+  display: block;
+  width: 50%;
+  font-size: 25px;
+  margin: 0 auto;
+  color: black;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.about-btn:hover {
+  background-color: rgb(215, 211, 211);
+}
+
+.handler-area {
+  margin: 0 auto;
+  padding: 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(224, 222, 222);
+}
+
+.slide-handler {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.handler-btn {
+  font-size: 30px;
+  cursor: pointer;
+  background-color: rgb(215, 211, 211);
+  color: gray;
+  border: none;
+  border-radius: 10px;
+  width: 25px;
+}
+
+.handler-btn:hover {
+  background-color: rgb(184, 180, 180);
+}
+
+.only-pc-handler {
+  display: block;
+}
+
+.tab-sp-handler {
+  display: none;
+}
+
+.pagination-area {
+  width: 150px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.target-square {
+  width: 20px;
+  height: 20px;
+  border-radius: 5%;
+  background-color: whitesmoke;
+  position: relative;
+  margin-top: 10px;
+}
+
+.target-square.current-img::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(184, 180, 180);
+}
+
+// aboutページ
+.about-view {
+  position: relative;
+  height: 1130px;
+}
+
+.about-image {
+  width: 100%;
+  height: 1130px;
+  opacity: 0.4;
+}
+
+.my-message {
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin:0;
+  padding:0;
+  color: rgb(65, 63, 63);
+}
+
+.my-message h1 {
+  font-weight: 300;
+  font-size: 50px;
+  text-align: center;
+}
+
+.my-message p {
+  font-weight: 200;
+  font-size: 35px;
+  margin: 20px;
+}
+
+.how-to-view {
+  background-color: rgb(215, 211, 211);
+  color: black;
+  text-align: center;
+}
+
+.how-to-message {
+  font-size: 30px;
+  letter-spacing: 0.2em;
+}
+
+.contact-area {
+  height: 300px;
+  background-color: whitesmoke;
+}

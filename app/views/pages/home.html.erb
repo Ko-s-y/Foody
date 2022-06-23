@@ -1,2 +1,56 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<% content_for :title do %>
+  Home - Foody!
+<% end %>
+<div class="first-view">
+  <%= image_tag "beviamo.jpg", class: "back-image" %>
+  <%= link_to "Foody!とは", pages_about_path, class: "about-foody" %>
+  <div class="tab-sp-handler">
+    <div class="touch-slide-handler">
+      <div class="touch-slide-left">
+        <button class="touch-handler-btn js-slide-back" type="button"><i class="fas fa-angle-left"></i></button>
+      </div>
+      <div class="pagination-area">
+        <span class="target-square current-img"></span>
+        <span class="target-square"></span>
+        <span class="target-square"></span>
+        <span class="target-square"></span>
+        <span class="target-square"></span>
+      </div>
+      <div class="touch-slide-right">
+        <button class="touch-handler-btn js-slide-next" type="button"><i class="fas fa-angle-right"></i></button>
+      </div>
+    </div>
+  </div>
+  <ul class="slide-area">
+    <li class="slide-list"><h1 class="intro-message">グランシェフから</h1></li>
+    <li class="slide-list"><h1 class="intro-message">見習いコックまで</h1></li>
+    <li class="slide-list"><h1 class="intro-message">「食」に携わる</h1></li>
+    <li class="slide-list"><h1 class="intro-message">全ての「プロ」へ</h1></li>
+    <li class="slide-list"><h1 class="intro-message">新たな発見を</h1></li>
+  </ul>
+</div>
+<div class="only-pc-handler">
+  <div class="handler-area">
+    <div class="slide-handler">
+      <div class="slide-left">
+        <button class="handler-btn js-slide-back" type="button"><i class="fas fa-angle-left"></i></button>
+      </div>
+      <div class="pagination-area">
+        <span class="target-square current-img"></span>
+        <span class="target-square"></span>
+        <span class="target-square"></span>
+        <span class="target-square"></span>
+        <span class="target-square"></span>
+      </div>
+      <div class="slide-right">
+        <button class="handler-btn js-slide-next" type="button"><i class="fas fa-angle-right"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="second-view">
+  <div class="about-link">
+    <%= link_to "about Foody!", pages_about_path, class: "about-btn" %>
+  </div>
+</div>
+<%= javascript_pack_tag 'home/application' %>

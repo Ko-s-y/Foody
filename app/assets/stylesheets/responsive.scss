@@ -1,5 +1,12 @@
-@media (max-width: 1023px) {
+@media (max-width: 1500px) { // slide-areaのimageのmax-width
+  .back-image {
+    display: none
+  }
+}
 
+@media (max-width: 1023px) {
+///////////////////////////////////
+// header
   .navbar-name {
     margin-bottom: 20px;
   }
@@ -8,8 +15,175 @@
     margin-bottom: 15px;
   }
 
+  .navbar-item {
+    font-size: 20px;
+  }
+
+///////////////////////////////////
+// homeページ
+  .intro-message {
+    letter-spacing: 0.12em;
+  }
+
+  .slide-area {
+    height: 900px;
+  }
+
+// slide-handler
+  .only-pc-handler {
+    display: none;
+  }
+
+  .tab-sp-handler {
+    display: block;
+  }
+
+  .touch-handler-btn {
+    height: 90px;
+    width: 40px;
+    cursor: pointer;
+    background-color: rgb(37, 35, 35);
+    opacity: 0.2;
+    border-radius: 5px;
+  }
+
+  .touch-slide-left {
+    left: 0;
+    position: absolute;
+    top: 480px;
+    z-index: 1;
+  }
+
+  .touch-slide-right {
+    position: absolute;
+    top: 480px;
+    z-index: 1;
+    right: 0;
+  }
+
+  .pagination-area {
+    background-color: none;
+    height: 30px;
+    width: 100%;
+    position: absolute;
+    padding-left: 35px;
+    top: 900px;
+    right: 20px;
+    z-index: 1;
+    opacity: 0.3;
+  }
+
+  .target-square {
+    width: 15px;
+    height: 15px;
+  }
+
+  .target-square.current-img::before {
+    width: 8px;
+    height: 8px;
+    background-color: rgb(37, 35, 35);
+    opacity: 0.5;
+  }
+
+///////////////////////////////////
+  // aboutページ
+  .about-view {
+    height: 900px;
+  }
+
+  .about-image {
+    height: 900px;
+  }
+
+  .my-message h1 {
+    font-weight: 400;
+    font-size: 35px;
+    text-align: center;
+  }
+
+  .my-message p {
+    font-weight: 300;
+    font-size: 25px;
+  }
+
+  .how-to-message {
+    font-size: 20px;
+    letter-spacing: 0.12em;
+  }
 }
 
 @media (max-width: 768px) {
 
+///////////////////////////////////
+// footer
+  footer {
+    height: 80px !important;
+    padding-top: 26px !important;
+  }
+
+  .copy-right {
+    font-size: 18px !important;
+    font-weight: 400 !important;
+  }
+
+///////////////////////////////////
+// home
+  .intro-message {
+    letter-spacing: 0.08em;
+  }
+
+  .slide-area {
+    height: 500px;
+  }
+
+  .intro-message {
+    font-size: 30px;
+  }
+
+  .about-foody {
+    font-size: 15px;
+  }
+
+// slide-handler
+  .touch-handler-btn {
+    height: 60px;
+    width: 30px;
+  }
+
+  .touch-slide-left {
+    top: 280px;
+  }
+
+  .touch-slide-right {
+    top: 280px;
+  }
+
+  .pagination-area {
+    top: 500px;
+  }
+
+///////////////////////////////////
+  // aboutページ
+  .about-view {
+    height: 600px;
+  }
+
+  .about-image {
+    height: 600px;
+  }
+
+  .my-message h1 {
+    font-weight: 800;
+    font-size: 18px;
+  }
+
+  .my-message p {
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  .how-to-message {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+  }
 }
