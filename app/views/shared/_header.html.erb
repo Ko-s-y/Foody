@@ -16,7 +16,7 @@
         </div>
       </div>
       <div class="navbar-end">
-        <!-- ログインしていない場合-->
+        <!-- ログインしていない場合 -->
         <% if (!user_signed_in?) %>
           <div class="navbar-item attend">
             <div class="buttons">
@@ -24,7 +24,7 @@
               <%= link_to "登録する", new_user_registration_path, class: "button is-white" %>
             </div>
           </div>
-        <!-- ログインしている場合-->
+        <!-- ログインしている場合 -->
         <% else %>
           <div class="navbar-item has-dropdown is-hoverable navbar-name">
             <div class="navbar-item is-hidden-mobile is-hidden-tablet-only navbar-menu">
@@ -46,10 +46,11 @@
 </header>
 
 <script>
-  $(document).ready(function() {
-  $(".navbar-burger").click(function() {
-    $(".navbar-burger").toggleClass("is-active");
-    $(".navbar-menu").toggleClass("is-active");
-  });
+// バーガーメニュー　turbolinksの影響のためここに記述
+  $(function() {
+    $(".navbar-burger").on("click", function() {
+      $(".navbar-burger").toggleClass("is-active");
+      $(".navbar-menu").toggleClass("is-active");
+    });
   });
 </script>

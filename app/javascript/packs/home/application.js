@@ -1,3 +1,4 @@
+// homeページのimageスライド機能
 $(function () {
 
   let slideCurrent = 0; // スライド現在値, 1枚目のスライド番号
@@ -18,25 +19,20 @@ $(function () {
 
   // 一定時間毎に処理実行するstartTimerを定義
   function startTimer() {
-    console.log("startTimer start")
     Timer = setInterval(function () {
       if (slideCurrent === lastCurrent) { // 現在のスライドが最終スライドの場合
         slideCurrent = 0;
         changeSlide(); // スライド初期値の値を代入して関数実行（初めのスライドに戻す）
-        console.log("change slide first")
       } else {
         slideCurrent++;
         changeSlide(); // そうでなければスライド番号を増やして次のスライドに切り替え
-        console.log("change slide next")
       };
     }, 3000); // 実行スパン, 3秒
   }
 
   // startTimer関数を止めるstopTimerを定義
   function stopTimer() {
-    console.log("before clearInterval")
     clearInterval(Timer); // setIntervalで設定したタイマーの取り消し
-    console.log("after clearInterval")
   }
 
   // slide-leftボタン押下時
@@ -64,16 +60,6 @@ $(function () {
       changeSlide(); // 次ののスライドに切り替えてchangeSlide()
     };
   });
-
-// // 連続でhomeへのリンクを押すとタイマーが多重動作してslide-imageの表示が狂うため
-//   $(document).ready(function() {
-//     if (window.name != "reloaded") {
-//       location.reload();
-//       window.name = "reloaded";
-//     } else {
-//       window.name = "";
-//     }
-//   });
 
   startTimer();
 });
