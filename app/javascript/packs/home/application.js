@@ -18,20 +18,25 @@ $(function () {
 
   // 一定時間毎に処理実行するstartTimerを定義
   function startTimer() {
+    console.log("startTimer start")
     Timer = setInterval(function () {
       if (slideCurrent === lastCurrent) { // 現在のスライドが最終スライドの場合
         slideCurrent = 0;
         changeSlide(); // スライド初期値の値を代入して関数実行（初めのスライドに戻す）
+        console.log("change slide first")
       } else {
         slideCurrent++;
         changeSlide(); // そうでなければスライド番号を増やして次のスライドに切り替え
+        console.log("change slide next")
       };
     }, 4000); // 実行スパン, 4秒
   }
 
   // startTimer関数を止めるstopTimerを定義
   function stopTimer() {
+    console.log("before clearInterval")
     clearInterval(Timer); // setIntervalで設定したタイマーの取り消し
+    console.log("after clearInterval")
   }
 
   // slide-leftボタン押下時
