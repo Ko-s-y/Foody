@@ -1,3 +1,4 @@
+// homeページのimageスライド機能
 $(function () {
 
   let slideCurrent = 0; // スライド現在値, 1枚目のスライド番号
@@ -8,9 +9,9 @@ $(function () {
 
   // スライドの切り替わりをchangeSlideとして定義
   function changeSlide() {
-    $('.slide-list').fadeOut(1000); // 現在のスライドフェードアウト
-    $('.slide-list').eq(slideCurrent).fadeIn(1500); // 次のスライドをフェードイン
-    // targetクラス切り替え処理
+    $('.slide-list').fadeOut(1000); // 現在のスライドをフェードアウト
+    $('.slide-list').eq(slideCurrent).fadeIn(2000); // 次のスライドをフェードイン
+    // current-imgクラス切り替え処理
     let pagiNation = slideCurrent + 1;
     $('.target-square').removeClass('current-img');
     $(".target-square:nth-of-type(" + pagiNation + ")").addClass('current-img');
@@ -33,7 +34,6 @@ $(function () {
   function stopTimer() {
     clearInterval(Timer); // setIntervalで設定したタイマーの取り消し
   }
-  startTimer();
 
   // slide-leftボタン押下時
   $('.js-slide-back').on('click', function () {
@@ -60,4 +60,6 @@ $(function () {
       changeSlide(); // 次ののスライドに切り替えてchangeSlide()
     };
   });
+
+  startTimer();
 });

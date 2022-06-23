@@ -1,6 +1,6 @@
 <header>
   <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
+    <div data-turbolinks="false" class="navbar-brand">
       <a class="navbar-item site-title" href="/">
         <h1>Foody!</h1>
       </a>
@@ -16,7 +16,7 @@
         </div>
       </div>
       <div class="navbar-end">
-        <!-- ログインしていない場合-->
+        <!-- ログインしていない場合 -->
         <% if (!user_signed_in?) %>
           <div class="navbar-item attend">
             <div class="buttons">
@@ -24,19 +24,19 @@
               <%= link_to "登録する", new_user_registration_path, class: "button is-white" %>
             </div>
           </div>
-        <!-- ログインしている場合-->
+        <!-- ログインしている場合 -->
         <% else %>
           <div class="navbar-item has-dropdown is-hoverable navbar-name">
             <div class="navbar-item is-hidden-mobile is-hidden-tablet-only navbar-menu">
               <p class="nav-name"><%= current_user.name %></p>
             </div>
             <div class="navbar-dropdown">
-              <%= link_to "home", pages_home_path, class: "navbar-item nav-element" %>
+              <%= link_to "home", pages_home_path, class: "navbar-item nav-element", data: {"turbolinks" => false} %>
               <%= link_to "profile", users_show_path, class: "navbar-item nav-element" %>
               <a href="/" class="navbar-item nav-element">posted</a>
               <a href="/" class="navbar-item nav-element">remember</a>
               <hr class="navbar-divider">
-              <%= link_to  "logout", destroy_user_session_path, method: :delete, class: "navbar-item nav-element" %>
+              <%= link_to "logout", destroy_user_session_path, method: :delete, class: "navbar-item nav-element" %>
             </div>
           </div>
         <% end %>
@@ -46,10 +46,11 @@
 </header>
 
 <script>
-  $(document).ready(function() {
-  $(".navbar-burger").click(function() {
-    $(".navbar-burger").toggleClass("is-active");
-    $(".navbar-menu").toggleClass("is-active");
-  });
+// バーガーメニュー　turbolinksの影響のためここに記述
+  $(function() {
+    $(".navbar-burger").on("click", function() {
+      $(".navbar-burger").toggleClass("is-active");
+      $(".navbar-menu").toggleClass("is-active");
+    });
   });
 </script>
