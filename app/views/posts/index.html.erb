@@ -50,13 +50,22 @@
   <table class="post-table">
     <tbody class="post-space">
       <% @posts.each do |post| %>
-        <tr class="post-elements">
-          <td><%= link_to(image_tag(avatar_url(post.user), class: "post-user-image set-up", alt: "ユーザーアイコン"), users_show_path(post.user.id)) %></td>
-          <td><%= link_to post.user.name, users_show_path(post.user.id) %></td>
-          <td><%= link_to post.title, post_path(post.id) %></td>
-          <td><%= link_to post.post_content, post_path(post.id) %></td>
-          <td><%= link_to(image_tag(post_image_url(post), class: "post-image", alt: "投稿画像"), post_path(post.id)) %></td>
-        </tr>
+        <% if post.avatar.blank? %>
+          <tr class="post-elements">
+            <td><%= link_to image_tag(avatar_url(post.user), class: "post-user-image set-up", alt: "ユーザーアイコン"), users_show_path(post.user.id) %></td>
+            <td><%= link_to post.user.name, users_show_path(post.user.id) %></td>
+            <td><%= link_to post.title, post_path(post.id) %></td>
+            <td><%= link_to post.post_content, post_path(post.id) %></td>
+          </tr>
+        <% else %>
+          <tr class="post-elements">
+            <td><%= link_to image_tag(avatar_url(post.user), class: "post-user-image set-up", alt: "ユーザーアイコン"), users_show_path(post.user.id) %></td>
+            <td><%= link_to post.user.name, users_show_path(post.user.id) %></td>
+            <td><%= link_to post.title, post_path(post.id) %></td>
+            <td><%= link_to post.post_content, post_path(post.id) %></td>
+            <td><%= link_to image_tag(post_image_url(post), class: "post-image", alt: "投稿画像"), post_path(post.id) %></td>
+          </tr>
+        <% end %>
       <% end %>
     </tbody>
   </table>
