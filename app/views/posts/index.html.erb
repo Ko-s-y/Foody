@@ -1,0 +1,27 @@
+<h2>投稿する</h2>
+<table class="post-table">
+  <%= form_with model: @post do |f| %>
+    <tr>
+      <th><%= f.label :title ,"タイトル", class: "" %></th>
+      <td><%= f.text_field :title, class: "", placeholder: "○○について" %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :post_content ,"内容", class: "" %></th>
+      <td><%= f.text_area :post_content, class: "", placeholder: "内容" %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :avatar ,"画像", class: "" %></th>
+      <td><%= f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png' %></td>
+    </tr>
+    <div><%= f.submit "投稿する", class: "" %></div>
+  <% end %>
+</table>
+
+<h2>全投稿一覧</h2>
+<table class="post-index-table">
+  <% @posts.each do |post| %>
+    <%= image_tag avatar_url(post) %>
+    <%= post.title %>
+    <%= post.post_content %>
+  <% end %>
+</table>

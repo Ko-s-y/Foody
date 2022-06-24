@@ -1,7 +1,7 @@
 <% content_for :title do %>
   Profile - User
 <% end %>
-<section class="hero is-dark is-fullheight">
+<section class="hero is-dark is-halfheight">
   <div class="hero-body">
     <div class="container">
       <div class="columns is-centered">
@@ -47,3 +47,12 @@
     </div>
   </div>
 </section>
+
+<h2>あなたの投稿一覧</h2>
+<table class="post-index-table">
+  <% @posts.each do |post| %>
+    <%= image_tag avatar_url(post) %>
+    <%= post.title %>
+    <%= post.post_content %>
+  <% end %>
+</table>
