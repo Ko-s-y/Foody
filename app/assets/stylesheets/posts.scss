@@ -1,3 +1,35 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.post-container {
+  width: 100%;
+  height: auto;
+}
+
+.post-table {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.post-space {
+  height: 180px;
+  }
+
+.post-elements {
+  border-top: 1px solid rgb(196, 194, 194);
+  border-bottom: 1px solid rgb(196, 194, 194);
+  margin: auto;
+}
+
+.post-user-image {
+  border-radius: 100%;
+  width:  100px;
+  height: 100px;
+  margin-bottom: 15px;
+}
+
+.post-image {
+  width:  250px;
+  height: 200px;
+}

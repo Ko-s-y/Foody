@@ -44,14 +44,22 @@
     </div>
   </div>
 </section>
+<h2 class="page-title">タイムライン</h2>
 
-<h2>全投稿一覧</h2>
-<table class="post-index-table">
-  <% @posts.each do |post| %>
-    <%= post.user.name %>
-    <%= image_tag avatar_url(post.user) %>
-    <%= image_tag post_image_url(post) %>
-    <%= link_to post.title, post_path(post.id) %>
-    <%= post.post_content %>
-  <% end %>
-</table>
+<div class="post-container">
+  <table class="post-table">
+    <tbody class="post-space">
+      <% @posts.each do |post| %>
+        <tr class="post-elements">
+
+          <td><%= image_tag avatar_url(post.user), class: "post-user-image", alt: "ユーザーアイコン" %></td>
+          <td><%= post.user.name %></td>
+          <td><%= link_to post.title, post_path(post.id) %></td>
+          <td><%= post.post_content %></td>
+          <td><%= image_tag post_image_url(post), class: "post-image", alt: "投稿画像" %></td>
+
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
