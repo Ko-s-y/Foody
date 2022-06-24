@@ -20,8 +20,10 @@
 <h2>全投稿一覧</h2>
 <table class="post-index-table">
   <% @posts.each do |post| %>
+    <%= post.user.name %>
     <%= image_tag avatar_url(post) %>
-    <%= post.title %>
+    <%= image_tag avatar_url(post.user) %>
+    <%= link_to post.title, post_path(post.id) %>
     <%= post.post_content %>
   <% end %>
 </table>

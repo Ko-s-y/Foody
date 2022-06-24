@@ -1,2 +1,24 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<h1 class="page-title">投稿詳細ページ</h1>
+<div class="">
+  <div class="">投稿情報詳細</div>
+    <table class="">
+      <tr class="">
+        <th>投稿ID</th>
+        <td><%= @post.id %></td>
+      </tr>
+      <tr class="">
+        <th>タイトル</th>
+        <td><%= @post.title %></td>
+      </tr>
+      <tr class="">
+        <th>投稿内容</th>
+        <td><%= @post.post_content %></td>
+      </tr>
+      <tr class="">
+        <th>画像</th>
+        <td><%= image_tag avatar_url(@post), class: "" %></td>
+      </tr>
+    </table>
+    <div><%= link_to "戻る", :back, class: "" %></div>
+  </div>
+</div>
