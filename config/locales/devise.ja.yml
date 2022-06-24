@@ -84,5 +84,5 @@ ja:
       not_found: 'は見つかりませんでした'
       not_locked: 'ロックされていません'
       not_saved:
-        one: 'エラーにより、この%{resource}情報を更新できません：'
-        other: '%{count}つのエラーにより、この%{resource}情報を更新できません：'
+        one: 'エラーにより、この%{resource}情報を登録できません：'
+        other: '%{count}つのエラーにより、この%{resource}情報を登録できません：'
