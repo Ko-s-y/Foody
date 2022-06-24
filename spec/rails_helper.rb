@@ -61,7 +61,7 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
-  config.include Devise::Test::IntegrationHelpers, type: :request #sign_inヘルパーを提供
+  config.include Devise::Test::IntegrationHelpers, type: :request # sign_inヘルパーを提供
   config.include Devise::Test::IntegrationHelpers, type: :feature
   config.include FactoryBot::Syntax::Methods
 end
