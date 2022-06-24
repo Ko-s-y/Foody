@@ -14,17 +14,17 @@
               <div class="field">
                 <span class="user-element">投稿アカウント名: <%= link_to @post.user.name, users_show_path(@post.user.id) %></span>
               </div>
-              <% unless @post.avatar.blank? %>
-                <div class="field">
-                  <span class="user-element"><%= image_tag post_image_url(@post), class: "post-show-image" %></span>
-                </div>
-              <% end %>
               <div class="field">
                 <span class="user-element">タイトル: <%= @post.title %></span>
               </div>
               <div class="field">
                 <span class="user-element">内容: <%= @post.post_content %></span>
               </div>
+              <% unless @post.avatar.blank? %>
+                <div class="field">
+                  <span class="user-element"><%= image_tag post_image_url(@post), class: "post-show-image" %></span>
+                </div>
+              <% end %>
               <div class="field">
                 <span class="user-element">投稿日時: <%= @post.created_at %></span>
               </div>
