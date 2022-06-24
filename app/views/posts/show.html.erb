@@ -1,25 +1,41 @@
-<h1 class="page-title">投稿詳細ページ</h1>
-<div class="">
-  <div class="">投稿情報詳細</div>
-    <table class="">
-      <tr class="">
-        <th>投稿ID</th>
-        <td><%= @post.id %></td>
-      </tr>
-      <tr class="">
-        <th>タイトル</th>
-        <td><%= @post.title %></td>
-      </tr>
-      <tr class="">
-        <th>投稿内容</th>
-        <td><%= @post.post_content %></td>
-      </tr>
-      <tr class="">
-        <th>画像</th>
-        <td><%= image_tag post_image_url(@post), class: "" %></td>
-      </tr>
-    </table>
-    <div><%= link_to "戻る", :back, class: "" %></div>
-    <%= link_to "削除", @post, method: :delete, data: {confirm: "本当に削除しますか？"} %>
+<% content_for :title do %>
+  Show - Post
+<% end %>
+<section class="is-halfheight">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-6-table is-10-desktop is-8-widescreen">
+          <div class="box">
+            <div class="field has-text-centered">
+              <strong>投稿詳細</strong>
+            </div>
+            <div class="box">
+              <div class="field">
+                <span class="user-element">投稿アカウント名: <%= link_to @post.user.name, users_show_path(@post.user.id) %></span>
+              </div>
+              <div class="field">
+                <span class="user-element"><%= image_tag post_image_url(@post), class: "post-show-image" %></span>
+              </div>
+              <div class="field">
+                <span class="user-element">タイトル: <%= @post.title %></span>
+              </div>
+              <div class="field">
+                <span class="user-element">内容: <%= @post.post_content %></span>
+              </div>
+              <div class="field">
+                <span class="user-element">投稿日時: <%= @post.created_at %></span>
+              </div>
+              <div class="field">
+                <span class="user-element"><%= link_to "戻る", :back, class: "" %></span>
+              </div>
+              <div class="field">
+                <span class="user-element"><%= link_to "削除", @post, method: :delete, data: {confirm: "本当に削除しますか？"} %></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</section>

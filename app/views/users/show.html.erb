@@ -48,11 +48,17 @@
   </div>
 </section>
 
-<h2 class="page-title">あなたの投稿一覧</h2>
-<table class="post-index-table">
-  <% @posts.each do |post| %>
-    <%= image_tag avatar_url(post) %>
-    <%= post.title %>
-    <%= post.post_content %>
-  <% end %>
-</table>
+<h2 class="page-title">投稿一覧</h2>
+<div class="post-container">
+  <table class="post-table">
+    <tbody class="post-space">
+      <% @posts.each do |post| %>
+        <tr class="post-elements">
+          <td><%= link_to post.title, post_path(post.id) %></td>
+          <td><%= post.post_content %></td>
+          <td><%= image_tag post_image_url(post), class: "post-image", alt: "投稿画像" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
