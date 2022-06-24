@@ -16,9 +16,10 @@
       </tr>
       <tr class="">
         <th>画像</th>
-        <td><%= image_tag avatar_url(@post), class: "" %></td>
+        <td><%= image_tag post_image_url(@post), class: "" %></td>
       </tr>
     </table>
     <div><%= link_to "戻る", :back, class: "" %></div>
+    <%= link_to "削除", @post, method: :delete, data: {confirm: "本当に削除しますか？"} %>
   </div>
 </div>

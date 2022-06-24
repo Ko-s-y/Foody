@@ -1,28 +1,56 @@
-<h2>投稿する</h2>
-<table class="post-table">
-  <%= form_with model: @post do |f| %>
-    <tr>
-      <th><%= f.label :title ,"タイトル", class: "" %></th>
-      <td><%= f.text_field :title, class: "", placeholder: "○○について" %></td>
-    </tr>
-    <tr>
-      <th><%= f.label :post_content ,"内容", class: "" %></th>
-      <td><%= f.text_area :post_content, class: "", placeholder: "内容" %></td>
-    </tr>
-    <tr>
-      <th><%= f.label :avatar ,"画像", class: "" %></th>
-      <td><%= f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png' %></td>
-    </tr>
-    <div><%= f.submit "投稿する", class: "" %></div>
-  <% end %>
-</table>
+<% content_for :title do %>
+  All - Posts
+<% end %>
+<section class="is-halfheight">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-6-table is-10-desktop is-8-widescreen">
+            <div class="box">
+              <%= form_with model: @post do |f| %>
+                <div class="field">
+                  <%= f.label :title ,"タイトル", class: "label" %>
+                  <div class="control has-icons-left">
+                    <%= f.text_field :title, class: "", placeholder: "○○について", class: "input is-info" %>
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-pen"></i>
+                    </span>
+                  </div>
+                  <p class="help is-danger">*20字以内</p>
+                </div>
+                <div class="field">
+                  <%= f.label :post_content ,"内容", class: "label" %>
+                  <div class="control has-icons-left">
+                    <%= f.text_area :post_content, class: "input is-info", placeholder: "内容" %>
+                    <span class="icon is-small is-left">
+                      <i class="far fa-sticky-note"></i>
+                    </span>
+                  </div>
+                  <p class="help is-danger">*100字以内</p>
+                </div>
+                <div class="field">
+                  <%= f.label :avatar ,"画像", class: "label" %>
+                  <div class="control">
+                    <%= f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png' %>
+                  </div>
+                </div>
+                <div class="field">
+                  <%= f.submit "新規投稿する", class: "button is-link is-fullwidth m-t-10 m-b-10" %>
+                </div>
+              <% end %>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <h2>全投稿一覧</h2>
 <table class="post-index-table">
   <% @posts.each do |post| %>
     <%= post.user.name %>
-    <%= image_tag avatar_url(post) %>
     <%= image_tag avatar_url(post.user) %>
+    <%= image_tag post_image_url(post) %>
     <%= link_to post.title, post_path(post.id) %>
     <%= post.post_content %>
   <% end %>

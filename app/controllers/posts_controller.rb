@@ -20,6 +20,14 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
+  def destroy
+    # post = current_user.posts.find_by(params[:id]) #本番こっち！
+    post = Post.find_by(params[:id]) #　ここは必ず変更すること
+    post.destroy
+    flash[:notice] = "投稿を削除しました"
+    redirect_to posts_path
+  end
+
   private
 
   def post_params
