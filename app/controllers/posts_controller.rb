@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @user = User.find_by(params[:id])
     @posts = Post.all
     @post = current_user.posts.new   #投稿一覧画面で新規投稿を行うので、formのパラメータ用にPostオブジェクトを取得
   end
@@ -21,14 +22,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    post = current_user.posts.find_by(params[:id]) #本番こっち！
-    if post.destroy
-      flash[:notice] = "投稿を削除しました"
-      redirect_to posts_path
-    else
-      flash.now[:alert] = "他ユーザーの投稿は削除できません"
-      render post_show_path
-    end
+    post = current_user.posts.find(params[:id])
+    post.destroy
+    flash[:notice] = "投稿を削除しました"
+    redirect_to posts_path
   end
 
   private

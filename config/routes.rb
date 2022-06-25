@@ -3,8 +3,8 @@ Rails.application.routes.draw do
 
   get 'users/:id/show', to: 'users#show'
 
-  devise_for :users
   resources :posts
+  devise_for :users
 
   get 'users/show', to: 'users#show'
   post 'users/show.:id', to: 'users#update'
