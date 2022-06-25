@@ -9,33 +9,31 @@
             <div class="box">
               <%= form_with model: @post do |f| %>
                 <div class="field">
-                  <%= f.label :title ,"タイトル", class: "label" %>
                   <div class="control has-icons-left">
                     <%= f.text_field :title, class: "", placeholder: "○○について", class: "input is-info" %>
                     <span class="icon is-small is-left">
                       <i class="fas fa-pen"></i>
                     </span>
                   </div>
-                  <p class="help is-danger">*20字以内</p>
+                  <p class="help is-danger">*必須,20字以内</p>
                 </div>
                 <div class="field">
-                  <%= f.label :post_content ,"内容", class: "label" %>
                   <div class="control has-icons-left">
                     <%= f.text_area :post_content, class: "input is-info", placeholder: "内容" %>
                     <span class="icon is-small is-left">
                       <i class="far fa-sticky-note"></i>
                     </span>
                   </div>
-                  <p class="help is-danger">*100字以内</p>
+                  <p class="help is-danger">*必須,100字以内</p>
                 </div>
                 <div class="field">
-                  <%= f.label :avatar ,"画像", class: "label" %>
+                  <%= f.label :avatar ,"写真を選ぶ(任意)", class: "image_input_btn" %>
                   <div class="control">
-                    <%= f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png' %>
+                    <%= f.file_field :avatar, class: "image_form", accept: 'image/jpeg,image/gif,image/png' %>
                   </div>
                 </div>
                 <div class="field">
-                  <%= f.submit "新規投稿する", class: "button is-link is-fullwidth m-t-10 m-b-10" %>
+                  <%= f.submit "投稿する", class: "button is-link is-fullwidth m-b-10" %>
                 </div>
               <% end %>
             </div>
