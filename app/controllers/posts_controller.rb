@@ -2,7 +2,6 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @user = User.find_by(params[:id])
     @posts = Post.all
     @post = current_user.posts.new   #投稿一覧画面で新規投稿を行うので、formのパラメータ用にPostオブジェクトを取得
   end

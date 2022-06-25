@@ -2,43 +2,43 @@
   Timeline - Foody!
 <% end %>
 <section class="post-form">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column is-6-table is-10-desktop is-8-widescreen">
-            <div class="box">
-              <%= form_with model: @post do |f| %>
-                <div class="field">
-                  <div class="control has-icons-left">
-                    <%= f.text_field :title, class: "", placeholder: "○○について", class: "input is-info" %>
-                    <span class="icon is-small is-left">
-                      <i class="fas fa-pen"></i>
-                    </span>
-                  </div>
-                  <p class="help is-danger">*必須,20字以内</p>
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-6-table is-10-desktop is-8-widescreen">
+          <div class="box">
+            <%= form_with model: @post do |f| %>
+              <div class="field">
+                <div class="control has-icons-left">
+                  <%= f.text_field :title, class: "", placeholder: "○○について", class: "input is-info" %>
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-pen"></i>
+                  </span>
                 </div>
-                <div class="field">
-                  <div class="control has-icons-left">
-                    <%= f.text_area :post_content, class: "input is-info", placeholder: "内容" %>
-                    <span class="icon is-small is-left">
-                      <i class="far fa-sticky-note"></i>
-                    </span>
-                  </div>
-                  <p class="help is-danger">*必須,100字以内</p>
+                <p class="help is-danger">*必須,20字以内</p>
+              </div>
+              <div class="field">
+                <div class="control has-icons-left">
+                  <%= f.text_area :post_content, class: "input is-info", placeholder: "内容" %>
+                  <span class="icon is-small is-left">
+                    <i class="far fa-sticky-note"></i>
+                  </span>
                 </div>
-                <div class="field">
-                  <%= f.label :avatar ,"写真を選ぶ(任意)", class: "image-input-btn" %>
-                  <div class="control">
-                    <%= f.file_field :avatar, class: "image-form", accept: 'image/jpeg,image/gif,image/png' %>
-                  </div>
+                <p class="help is-danger">*必須,100字以内</p>
+              </div>
+              <div class="field">
+                <%= f.label :avatar ,"写真を選ぶ(任意)", class: "image-input-btn" %>
+                <div class="control">
+                  <%= f.file_field :avatar, class: "image-form", accept: 'image/jpeg,image/gif,image/png' %>
                 </div>
-                <div class="field">
-                  <%= f.submit "投稿する", class: "button is-link is-fullwidth m-b-10" %>
-                </div>
-              <% end %>
-            </div>
-        </div>
+              </div>
+              <div class="field">
+                <%= f.submit "投稿する", class: "button is-link is-fullwidth m-b-10" %>
+              </div>
+            <% end %>
+          </div>
       </div>
     </div>
+  </div>
 </section>
 
 <section class="time-line">
