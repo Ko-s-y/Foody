@@ -1,8 +1,7 @@
 <% content_for :title do %>
   All - Posts
 <% end %>
-<section class="is-halfheight">
-  <div class="hero-body">
+<section class="post-form">
     <div class="container">
       <div class="columns is-centered">
         <div class="column is-6-table is-10-desktop is-8-widescreen">
@@ -27,9 +26,9 @@
                   <p class="help is-danger">*必須,100字以内</p>
                 </div>
                 <div class="field">
-                  <%= f.label :avatar ,"写真を選ぶ(任意)", class: "image_input_btn" %>
+                  <%= f.label :avatar ,"写真を選ぶ(任意)", class: "image-input-btn" %>
                   <div class="control">
-                    <%= f.file_field :avatar, class: "image_form", accept: 'image/jpeg,image/gif,image/png' %>
+                    <%= f.file_field :avatar, class: "image-form", accept: 'image/jpeg,image/gif,image/png' %>
                   </div>
                 </div>
                 <div class="field">
@@ -40,31 +39,31 @@
         </div>
       </div>
     </div>
-  </div>
 </section>
 
-<h2 class="page-title">タイムライン</h2>
-<div class="post-container">
-  <table class="post-table">
-    <tbody class="post-space">
+<section class="time-line">
+  <h2 class="page-title">タイムライン</h2>
+  <div class="posts-container">
+    <div class="posts-contents">
       <% @posts.each do |post| %>
-        <% if post.avatar.blank? %>
-          <tr class="post-elements">
-            <td class="post-element"><%= link_to image_tag(avatar_url(post.user), class: "post-user-image", alt: "ユーザーアイコン"), users_show_path(post.user.id) %></td>
-            <td class="post-element"><%= link_to post.user.name, users_show_path(post.user.id) %></td>
-            <td class="post-element"><%= link_to post.title, post_path(post.id) %></td>
-            <td class="post-element"><%= link_to post.post_content, post_path(post.id) %></td>
-          </tr>
-        <% else %>
-          <tr class="post-elements">
-            <td class="post-element"><%= link_to image_tag(avatar_url(post.user), class: "post-user-image", alt: "ユーザーアイコン"), users_show_path(post.user.id) %></td>
-            <td class="post-element"><%= link_to post.user.name, users_show_path(post.user.id) %></td>
-            <td class="post-element"><%= link_to post.title, post_path(post.id) %></td>
-            <td class="post-element"><%= link_to post.post_content, post_path(post.id) %></td>
-            <td class="post-element"><%= link_to image_tag(post_image_url(post), class: "post-image", alt: "投稿画像"), post_path(post.id) %></td>
-          </tr>
-        <% end %>
+        <div class="post-area">
+          <figure>
+            <%= link_to image_tag(avatar_url(post.user), class: "posted-user-icon", alt: "ユーザーアイコン"), users_show_path(post.user.id) %>
+          </figure>
+          <div class="post-area-text">
+            <div class="posted-user-name"><%= link_to post.user.name, users_show_path(post.user.id) %></div>
+            <div class="posted-date"><%= post.created_at %></div>
+            <div class="post-text">
+              <%= link_to post.post_content, post_path(post.id) %>
+              <% unless post.avatar.blank? %>
+                <div class="post-pict">
+                  <%= link_to image_tag(post_image_url(post), class: "post-image", alt: "投稿画像"), post_path(post.id) %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
       <% end %>
-    </tbody>
-  </table>
-</div>
+    </div>
+  </div>
+</section>
