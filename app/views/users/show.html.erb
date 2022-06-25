@@ -1,5 +1,5 @@
 <% content_for :title do %>
-  Profile - User
+  Profile - Foody!
 <% end %>
 <section class="hero is-dark is-halfheight">
   <div class="hero-body">
@@ -58,9 +58,10 @@
             <%= link_to image_tag(avatar_url(post.user), class: "posted-user-icon", alt: "ユーザーアイコン"), users_show_path(post.user.id) %>
           </figure>
           <div class="post-area-text">
-            <div class="posted-user-name"><%= link_to post.user.name, users_show_path(post.user.id) %></div>
+            <div class="posted-user-name"><%= link_to post.user.name, users_show_path(post.user.id) %>(<%= post.user.introduction %>)</div>
             <div class="posted-date"><%= post.created_at %></div>
             <div class="post-text">
+              <%= link_to post.title, post_path(post.id) %>
               <%= link_to post.post_content, post_path(post.id) %>
               <% unless post.avatar.blank? %>
                 <div class="post-pict">

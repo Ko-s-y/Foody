@@ -1,5 +1,5 @@
 <% content_for :title do %>
-  Show - Post
+  Post - Foody!
 <% end %>
 <section class="is-halfheight">
   <div class="hero-body">
@@ -31,9 +31,11 @@
               <div class="field">
                 <span class="user-element"><%= link_to "戻る", :back, class: "" %></span>
               </div>
-              <div class="field">
-                <span class="user-element"><%= link_to "削除", @post, method: :delete, data: {confirm: "本当に削除しますか？"} %></span>
-              </div>
+              <% if @post.user_id == current_user.id %>
+                <div class="field">
+                  <span class="user-element"><%= link_to "削除", @post, method: :delete, data: {confirm: "本当に削除しますか？"} %></span>
+                </div>
+              <% end %>
             </div>
           </div>
         </div>

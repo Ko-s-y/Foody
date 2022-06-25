@@ -1,5 +1,5 @@
 <% content_for :title do %>
-  All - Posts
+  Timeline - Foody!
 <% end %>
 <section class="post-form">
     <div class="container">
@@ -48,12 +48,13 @@
       <% @posts.each do |post| %>
         <div class="post-area">
           <figure>
-            <%= link_to image_tag(avatar_url(post.user), class: "posted-user-icon", alt: "ユーザーアイコン"), users_show_path(post.user.id) %>
+            <%= link_to image_tag(avatar_url(post.user), class: "posted-user-icon", alt: "ユーザーアイコン"), users_show_path(post.user_id) %>
           </figure>
           <div class="post-area-text">
-            <div class="posted-user-name"><%= link_to post.user.name, users_show_path(post.user.id) %></div>
+            <div class="posted-user-name"><%= link_to post.user.name, "users/#{post.user_id}/show" %>(<%= post.user.introduction %>)</div>
             <div class="posted-date"><%= post.created_at %></div>
             <div class="post-text">
+              <%= link_to post.title, post_path(post.id) %>
               <%= link_to post.post_content, post_path(post.id) %>
               <% unless post.avatar.blank? %>
                 <div class="post-pict">
