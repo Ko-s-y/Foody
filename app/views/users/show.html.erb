@@ -48,19 +48,29 @@
   </div>
 </section>
 
-<h2 class="page-title">投稿一覧</h2>
-<div class="post-container">
-  <table class="post-table">
-    <tbody class="post-space">
+<section class="time-line">
+  <h2 class="page-title">あなたの投稿一覧</h2>
+  <div class="posts-container">
+    <div class="posts-contents">
       <% @posts.each do |post| %>
-        <tr class="my-post-elements">
-          <td class="post-element"><%= link_to post.title, post_path(post.id) %></td>
-          <td class="post-element"><%= link_to post.post_content, post_path(post.id) %></td>
-          <% unless post.avatar.blank? %>
-            <td><%= image_tag post_image_url(post), class: "post-image", alt: "投稿画像" %></td>
-          <% end %>
-        </tr>
+        <div class="post-area">
+          <figure>
+            <%= link_to image_tag(avatar_url(post.user), class: "posted-user-icon", alt: "ユーザーアイコン"), users_show_path(post.user.id) %>
+          </figure>
+          <div class="post-area-text">
+            <div class="posted-user-name"><%= link_to post.user.name, users_show_path(post.user.id) %></div>
+            <div class="posted-date"><%= post.created_at %></div>
+            <div class="post-text">
+              <%= link_to post.post_content, post_path(post.id) %>
+              <% unless post.avatar.blank? %>
+                <div class="post-pict">
+                  <%= link_to image_tag(post_image_url(post), class: "post-image", alt: "投稿画像"), post_path(post.id) %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
       <% end %>
-    </tbody>
-  </table>
-</div>
+    </div>
+  </div>
+</section>
