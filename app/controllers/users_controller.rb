@@ -5,6 +5,11 @@ class UsersController < ApplicationController
     @posts = current_user.posts.all
   end
 
+  def other_profile
+    @user = User.find(params[:id])
+    @posts = @user.posts.all
+  end
+
   def update
     if current_user.update(current_user_params)
       flash[:notice] = "アカウント情報を更新しました。"

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :posts
   devise_for :users
 
+  get 'users/other_profile/:id', to: 'users#other_profile'
+  get 'posts/users/other_profile/:id', to: 'users#other_profile'
   get 'users/show', to: 'users#show'
   post 'users/show.:id', to: 'users#update'
 

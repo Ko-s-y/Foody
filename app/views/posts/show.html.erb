@@ -11,17 +11,35 @@
               <strong>投稿詳細</strong>
             </div>
             <div class="box">
-              <% if @post.user.image? %>
-                <%= image_tag @post.user.image.url %>
-              <% else %>
-                <%= image_tag avatar_url(@post.user), class: "user-image", alt: "ユーザーアイコン" %>
-              <% end %>
-              <div class="field">
-                <span class="user-element">投稿アカウントID: <%= @post.user_id %></span>
-              </div>
-              <div class="field">
-                <span class="user-element">投稿アカウント名: <%= link_to @post.user.name, users_show_path(@post.user_id) %></span>
-              </div>
+              <% if current_user.id == @post.user_id %>
+                <%= link_to users_show_path do %>
+                  <% if @post.user.image? %>
+                    <%= image_tag @post.user.image.url %>
+                  <% else %>
+                    <%= image_tag avatar_url(@post.user), class: "user-image", alt: "ユーザーアイコン" %>
+                  <% end %>
+                  <div class="field">
+                    <span class="user-element">投稿アカウントID: <%= @post.user_id %></span>
+                  </div>
+                  <div class="field">
+                    <span class="user-element">投稿アカウント名: <%= @post.user.name %></span>
+                  </div>
+                <% end %>
+                <% else %>
+                  <%= link_to "users/other_profile/#{@post.user_id}" do %>
+                    <% if @post.user.image? %>
+                      <%= image_tag @post.user.image.url %>
+                    <% else %>
+                      <%= image_tag avatar_url(@post.user), class: "user-image", alt: "ユーザーアイコン" %>
+                    <% end %>
+                    <div class="field">
+                      <span class="user-element">投稿アカウントID: <%= @post.user_id %></span>
+                    </div>
+                    <div class="field">
+                      <span class="user-element">投稿アカウント名: <%= @post.user.name %></span>
+                    </div>
+                  <% end %>
+                <% end %>
               <div class="field">
                 <span class="user-element">タイトル: <%= @post.title %></span>
               </div>
