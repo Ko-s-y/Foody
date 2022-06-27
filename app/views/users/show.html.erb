@@ -60,7 +60,7 @@
           <%= link_to post_path(post.id) do %>
             <div class="post-area-text">
               <div class="posted-user-name"><%= post.user.name %>(<%= post.user.introduction %>)</div>
-              <div class="posted-date"><%= post.created_at %></div>
+              <div class="posted-date"><%= post_time(post.created_at) %></div>
               <div class="post-text">
                 <%= post.title %>
                 <%= post.post_content %>
