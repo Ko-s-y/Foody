@@ -51,13 +51,13 @@
             <% if current_user.id == post.user_id %>
               <%= link_to image_tag(avatar_url(post.user), class: "posted-user-icon", alt: "ユーザーアイコン"), users_show_path %>
             <% else %>
-              <%= link_to image_tag(avatar_url(post.user), class: "posted-user-icon", alt: "ユーザーアイコン"), "users/other_profile/#{post.user_id}" %>
+              <%= link_to image_tag(avatar_url(post.user), class: "posted-user-icon", alt: "ユーザーアイコン"), "users/profile/#{post.user_id}" %>
             <% end %>
           </figure>
           <%= link_to post_path(post.id) do %>
             <div class="post-area-text">
               <div class="posted-user-name"><%= post.user.name %>(<%= post.user.introduction %>)</div>
-              <div class="posted-date"><%= post.created_at %></div>
+              <div class="posted-date"><%= post.created_at.strftime('%Y/%m/%d %H:%M') %></div>
               <div class="post-text">
                 <%= post.title %>
                 <%= post.post_content %>

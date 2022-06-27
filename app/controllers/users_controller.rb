@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     @posts = current_user.posts.all
   end
 
-  def other_profile
+  def profile
     @user = User.find(params[:id])
     @posts = @user.posts.all
   end

@@ -22,11 +22,11 @@
                     <span class="user-element">投稿アカウントID: <%= @post.user_id %></span>
                   </div>
                   <div class="field">
-                    <span class="user-element">投稿アカウント名: <%= @post.user.name %></span>
+                    <span class="user-element">投稿アカウント名: <%= @post.user.name %>(<%= @post.user.introduction %>)</span>
                   </div>
                 <% end %>
                 <% else %>
-                  <%= link_to "users/other_profile/#{@post.user_id}" do %>
+                  <%= link_to controller: 'users', action: 'profile', id: @post.user_id do %>
                     <% if @post.user.image? %>
                       <%= image_tag @post.user.image.url %>
                     <% else %>
@@ -36,7 +36,7 @@
                       <span class="user-element">投稿アカウントID: <%= @post.user_id %></span>
                     </div>
                     <div class="field">
-                      <span class="user-element">投稿アカウント名: <%= @post.user.name %></span>
+                      <span class="user-element">投稿アカウント名: <%= @post.user.name %>(<%= @post.user.introduction %>)</span>
                     </div>
                   <% end %>
                 <% end %>
