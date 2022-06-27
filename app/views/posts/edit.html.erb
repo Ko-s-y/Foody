@@ -1,0 +1,19 @@
+<h3>投稿編集</h3>
+
+<%= form_with model: @post do |f| %>
+  <table class="">
+    <tr>
+      <th><%= f.label :title ,"タイトル" %></th>
+      <td><%= f.text_field :title, class: "" %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :post_content ,"内容" %></th>
+      <td><%= f.text_field :post_content, class: "" %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :avatar ,"画像" %></th>
+      <td><%= f.file_field :avatar %></td>
+    </tr>
+    <%= f.submit "編集を完了する", class: "" %>
+  </table>
+<% end %>

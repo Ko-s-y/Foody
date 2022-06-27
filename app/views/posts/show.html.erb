@@ -20,7 +20,7 @@
             <%= @post.title %>
             <%= @post.post_content %>
             <% if @post.user_id == current_user.id %>
-              <%= link_to "編集", @post, method: :delete, data: {confirm: "本当に削除しますか？"} %>
+              <%= link_to "編集", edit_post_path %>
               <%= link_to "削除", @post, method: :delete, data: {confirm: "本当に削除しますか？"} %>
             <% end %>
             <% unless @post.avatar.blank? %>
