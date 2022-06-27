@@ -1,71 +1,40 @@
 <% content_for :title do %>
   Post - Foody!
 <% end %>
-<section class="is-halfheight">
-  <div class="hero-body">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column is-6-table is-10-desktop is-8-widescreen">
-          <div class="box">
-            <div class="field has-text-centered">
-              <strong>投稿詳細</strong>
-            </div>
-            <div class="box">
-              <% if current_user.id == @post.user_id %>
-                <%= link_to users_show_path do %>
-                  <% if @post.user.image? %>
-                    <%= image_tag @post.user.image.url %>
-                  <% else %>
-                    <%= image_tag avatar_url(@post.user), class: "user-image", alt: "ユーザーアイコン" %>
-                  <% end %>
-                  <div class="field">
-                    <span class="user-element">投稿アカウントID: <%= @post.user_id %></span>
-                  </div>
-                  <div class="field">
-                    <span class="user-element">投稿アカウント名: <%= @post.user.name %>(<%= @post.user.introduction %>)</span>
-                  </div>
-                <% end %>
-                <% else %>
-                  <%= link_to controller: 'users', action: 'profile', id: @post.user_id do %>
-                    <% if @post.user.image? %>
-                      <%= image_tag @post.user.image.url %>
-                    <% else %>
-                      <%= image_tag avatar_url(@post.user), class: "user-image", alt: "ユーザーアイコン" %>
-                    <% end %>
-                    <div class="field">
-                      <span class="user-element">投稿アカウントID: <%= @post.user_id %></span>
-                    </div>
-                    <div class="field">
-                      <span class="user-element">投稿アカウント名: <%= @post.user.name %>(<%= @post.user.introduction %>)</span>
-                    </div>
-                  <% end %>
-                <% end %>
-              <div class="field">
-                <span class="user-element">タイトル: <%= @post.title %></span>
+<section class="time-line">
+  <h2 class="page-title">投稿詳細</h2>
+  <div class="posts-container">
+    <div class="posts-contents">
+      <div class="post-area">
+        <figure>
+          <% if current_user.id == @post.user_id %>
+            <%= link_to image_tag(avatar_url(@post.user), class: "posted-user-icon", alt: "ユーザーアイコン"), users_show_path %>
+          <% else %>
+            <%= link_to image_tag(avatar_url(@post.user), class: "posted-user-icon", alt: "ユーザーアイコン"), "users/profile/#{@post.user_id}" %>
+          <% end %>
+        </figure>
+        <div class="post-area-text">
+          <div class="posted-user-name"><%= @post.user.name %>(<%= @post.user.introduction %>)</div>
+          <div class="posted-date"><%= @post.created_at.strftime('%Y/%m/%d %H:%M') %></div>
+          <div class="post-text">
+            <%= @post.title %>
+            <%= @post.post_content %>
+            <% if @post.user_id == current_user.id %>
+              <%= link_to "編集", @post, method: :delete, data: {confirm: "本当に削除しますか？"} %>
+              <%= link_to "削除", @post, method: :delete, data: {confirm: "本当に削除しますか？"} %>
+            <% end %>
+            <% unless @post.avatar.blank? %>
+              <div class="post-pict">
+                <%= image_tag(post_image_url(@post), class: "post-image", alt: "投稿画像") %>
               </div>
-              <div class="field">
-                <span class="user-element">内容: <%= @post.post_content %></span>
-              </div>
-              <% unless @post.avatar.blank? %>
-                <div class="field">
-                  <span class="user-element"><%= image_tag post_image_url(@post), class: "post-show-image" %></span>
-                </div>
-              <% end %>
-              <div class="field">
-                <span class="user-element">投稿日時: <%= @post.created_at.strftime('%Y/%m/%d %H:%M') %></span>
-              </div>
-              <div class="field">
-                <span class="user-element"><%= link_to "戻る", :back, class: "" %></span>
-              </div>
-              <% if @post.user_id == current_user.id %>
-                <div class="field">
-                  <span class="user-element"><%= link_to "削除", @post, method: :delete, data: {confirm: "本当に削除しますか？"} %></span>
-                </div>
-              <% end %>
-            </div>
+            <% end %>
           </div>
         </div>
       </div>
     </div>
   </div>
+</section>
+
+<section class="comment-tree">
+  <h2 class="page-title">コメント一覧</h2>
 </section>

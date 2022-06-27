@@ -110,6 +110,12 @@
     font-size: 20px;
     letter-spacing: 0.12em;
   }
+
+///////////////////////////////////
+// postページ
+  .post-pict img {
+    height: 600px !important;
+  }
 }
 
 @media (max-width: 768px) {
@@ -185,5 +191,11 @@
   .how-to-message {
     font-size: 13px;
     letter-spacing: 0.08em;
+  }
+
+///////////////////////////////////
+// postページ
+  .post-pict img {
+    height: 200px !important;
   }
 }
