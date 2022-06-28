@@ -1,8 +1,27 @@
 ja:
   activerecord:
+    models:
+      user: 'アカウント'
+      post: '投稿'
     attributes:
       user:
         name: 'アカウント名'
+        introduction: '調理ジャンル'
+      post:
+        title: 'タイトル'
+        post_content: '内容'
+    errors:
+      models:
+        post:
+          attributes:
+            title:
+              blank: 'が入力されていません。'
+              too_long: 'は%{count}文字以下に設定して下さい。'
+              invalid: 'は有効でありません。'
+            post_content:
+              blank: 'が入力されていません。'
+              too_long: 'は%{count}文字以下に設定して下さい。'
+              invalid: 'は有効でありません。'
   datetime:
     distance_in_words:
       half_a_minute: "30秒"

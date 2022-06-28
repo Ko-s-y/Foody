@@ -11,6 +11,7 @@
               <strong>投稿情報編集</strong>
             </div>
             <div class="box">
+              <%= render "shared/error", object: @post %>
               <%= form_with model: @post do |f| %>
                 <div class="field">
                   <%= f.label :title ,"タイトル", class: "label" %>
@@ -20,7 +21,7 @@
                       <i class="fas fa-pen"></i>
                     </span>
                   </div>
-                  <p class="help is-danger">10字以内</p>
+                  <p class="help is-danger">20字以内</p>
                 </div>
                 <div class="field">
                   <%= f.label :post_content, "内容", class: "label" %>
@@ -37,7 +38,7 @@
                   <div>
                     <%= f.file_field :avatar %>
                   </div>
-                  <p class="help is-danger">変更しない場合はそのままで大丈夫です</p>
+                  <p class="help is-danger">変更しない場合は選択しないでください。</p>
                 </div>
                 <div class="field">
                   <%= f.submit "投稿を更新する", class: "button is-link is-fullwidth m-t-10 m-b-10" %>
