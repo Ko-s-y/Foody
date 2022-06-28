@@ -1,5 +1,5 @@
 // homeページのimageスライド機能
-$(function () {
+$(function() {
 
   let slideCurrent = 0; // スライド現在値, 1枚目のスライド番号
   let lastCurrent = $('.slide-list').length - 1; // スライドの合計数＝最後のスライド番号
@@ -19,7 +19,7 @@ $(function () {
 
   // 一定時間毎に処理実行するstartTimerを定義
   function startTimer() {
-    Timer = setInterval(function () {
+    Timer = setInterval(function() {
       if (slideCurrent === lastCurrent) { // 現在のスライドが最終スライドの場合
         slideCurrent = 0;
         changeSlide(); // スライド初期値の値を代入して関数実行（初めのスライドに戻す）
@@ -36,7 +36,7 @@ $(function () {
   }
 
   // slide-leftボタン押下時
-  $('.js-slide-back').on('click', function () {
+  $('.js-slide-back').on('click', function() {
     stopTimer();
     startTimer(); // ページ送り後の時間間隔ズレ防止
     if (slideCurrent === 0) { // 現在のスライドが最初のスライドの場合
@@ -49,7 +49,7 @@ $(function () {
   });
 
   // slide-rightボタン押下時
-  $('.js-slide-next').on('click', function () {
+  $('.js-slide-next').on('click', function() {
     stopTimer();
     startTimer(); // ページ送り後の時間間隔ズレ防止
     if (slideCurrent === lastCurrent) { // 現在のスライドが最後のスライドの場合

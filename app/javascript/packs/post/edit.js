@@ -1,7 +1,7 @@
 // 選択した画像ファイル名表示とプレビュー機能の関数
-$(function () {
+$(function() {
   // 画像が選択された時に発火
-  $(document).on('change', '.image-form', function () {
+  $(document).on('change', '.image-form', function() {
 
     // 選択した画像ファイル名表示機能
     let fileName = $(this).prop('files')[0];
@@ -11,7 +11,7 @@ $(function () {
     let file = this.files[0];  // .file_filedからデータを取得して変数fileに代入
     let reader = new FileReader();  // FileReaderオブジェクトを作成
     reader.readAsDataURL(file);  // DataURIScheme文字列を取得
-    reader.onload = function () {  // 読み込みが完了したら処理が実行
+    reader.onload = function() {  // 読み込みが完了したら処理が実行
       let image = this.result;  // 読み込んだファイルの内容を取得して変数imageに
       if ($('.current-post-image').length == 0) {  // 投稿に画像がなければ
         $('.not-have-post-image').css({  // not-have-post-imageのスペース確保
