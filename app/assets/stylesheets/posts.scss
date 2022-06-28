@@ -75,9 +75,35 @@
       position: relative;
       margin-left: 60px;
       padding-right: 10px;
+      color: black;
 
       .posted-user-name {
-        font-weight: bold;
+        font-weight: 800;
+      }
+
+      .post-title {
+        font-weight: 600;
+      }
+
+      .post-content {
+        display: block;
+        font-weight: 400;
+      }
+
+      .post-edit-link {
+        position: absolute;
+        top: 20px;
+        right: 60px;
+        text-align:right;
+        color: #8a9aa4;
+      }
+
+      .post-delete-link {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        text-align:right;
+        color: #8a9aa4;
       }
 
       .posted-date {

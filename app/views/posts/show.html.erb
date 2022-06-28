@@ -1,5 +1,5 @@
 <% content_for :title do %>
-  Post - Foody!
+  Show Post - Foody!
 <% end %>
 <section class="time-line">
   <h2 class="page-title">投稿詳細</h2>
@@ -16,13 +16,13 @@
         <div class="post-area-text">
           <div class="posted-user-name"><%= @post.user.name %>(<%= @post.user.introduction %>)</div>
           <div class="posted-date"><%= @post.created_at.strftime('%Y/%m/%d %H:%M') %></div>
-          <div class="post-text">
-            <%= @post.title %>
-            <%= @post.post_content %>
             <% if @post.user_id == current_user.id %>
-              <%= link_to "編集", edit_post_path %>
-              <%= link_to "削除", @post, method: :delete, data: {confirm: "本当に削除しますか？"} %>
+              <%= link_to "編集", edit_post_path, class: "post-edit-link" %>
+              <%= link_to "削除", @post, method: :delete, data: {confirm: "本当に削除しますか？"}, class: "post-delete-link" %>
             <% end %>
+          <div class="post-text">
+            <span class="post-title"><%= @post.title %></span>
+            <span class="post-content"><%= @post.post_content %></span>
             <% unless @post.avatar.blank? %>
               <div class="post-pict">
                 <%= image_tag(post_image_url(@post), class: "post-image", alt: "投稿画像") %>
