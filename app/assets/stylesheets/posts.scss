@@ -131,17 +131,11 @@
   }
 }
 
-label {
-  padding: 10px 40px;
-  color: #ffffff;
-  background-color: #384878;
-  cursor: pointer;
-}
-
-input[type="file"] {
-  display: none;
-}
-
-p {
-  margin: 10px 0 0 0;
+.post-back-btn {
+  display: block;
+  text-align: center;
+  margin: 25px auto 10px;
+  width: 20%;
+  border: 1px solid rgb(164, 163, 163);
+  border-radius: 5px;
 }

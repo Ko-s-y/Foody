@@ -26,11 +26,11 @@
                 <p class="help is-danger">*必須,100字以内</p>
               </div>
               <div class="field">
-                <%= f.label :avatar ,"画像を選択", class: "image-input-btn" %>
+                <%= f.label :avatar ,"画像ファイルを選択", class: "image-input-btn" %>
                 <div class="control">
                   <%= f.file_field :avatar, class: "image-form", accept: 'image/jpeg,image/gif,image/png' %>
                 </div>
-                <p class="help is-info state">*画像選択は任意です</p>
+                <p class="help is-info state">*画像ファイルの選択は任意です</p>
               </div>
               <div class="field">
                 <%= f.submit "投稿する", class: "button is-link is-fullwidth m-b-10" %>
