@@ -3,6 +3,6 @@ class Post < ApplicationRecord
 
   has_one_attached :avatar
 
-  validates :title, presence: true
-  validates :post_content, presence: true
+  validates :title, presence: true, length: { maximum: 20 }
+  validates :post_content, presence: true, length: { maximum: 100 }
 end
