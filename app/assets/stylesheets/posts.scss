@@ -130,3 +130,18 @@
     }
   }
 }
+
+label {
+  padding: 10px 40px;
+  color: #ffffff;
+  background-color: #384878;
+  cursor: pointer;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+p {
+  margin: 10px 0 0 0;
+}
