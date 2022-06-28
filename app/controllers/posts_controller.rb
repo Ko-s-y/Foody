@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all.order(id: :desc)
-    @post = current_user.posts.new   #投稿一覧画面で新規投稿を行うので、formのパラメータ用にPostオブジェクトを取得
+    @post = current_user.posts.new  # 投稿一覧画面で新規投稿を行うので、formのパラメータ用にPostオブジェクトを取得
   end
 
   def show
