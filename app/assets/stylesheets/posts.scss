@@ -139,3 +139,14 @@
   border: 1px solid rgb(164, 163, 163);
   border-radius: 5px;
 }
+
+.current-post-image {
+  border-radius: 20px;
+  -webkit-border-radius: 20px;  /* Safari,Chrome用 */
+  -moz-border-radius: 20px;  /* Firefox用 */
+  display: block;
+  margin: 0 auto;
+  width: 95%;
+  height: 800px;
+  object-fit: cover;
+}

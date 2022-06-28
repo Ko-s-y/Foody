@@ -34,6 +34,9 @@
                   </div>
                 </div>
                 <div class="field">
+                  <% unless @post.avatar.blank? %>
+                      <%= image_tag(post_image_url(@post), class: "current-post-image", alt: "投稿画像") %>
+                  <% end %>
                   <%= f.label :avatar ,"画像ファイルの変更", class: "image-input-btn" %>
                   <div class="control">
                     <%= f.file_field :avatar, class: "image-form", accept: 'image/jpeg,image/gif,image/png' %>
