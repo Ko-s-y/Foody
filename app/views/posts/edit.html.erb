@@ -36,6 +36,8 @@
                 <div class="field">
                   <% unless @post.avatar.blank? %>
                     <%= image_tag(post_image_url(@post), class: "current-post-image", alt: "投稿画像") %>
+                  <% else %>
+                    <img class="not-have-post-image">
                   <% end %>
                   <%= f.label :avatar ,"画像ファイルの変更", class: "image-input-btn" %>
                   <div class="control">
@@ -57,8 +59,41 @@
 </section>
 
 <script>
-$('.image-form').on('change', function () {
-    let file = $(this).prop('files')[0];
-    $('.state').text(file.name);
-});
+  $(document).on('turbolinks:load', function () {
+    // 選択した画像ファイル名表示関数
+    $('.image-form').on('change', function () {
+        let file = $(this).prop('files')[0];
+        $('.state').text(file.name);
+    });
+
+    // 選択した画像ファイルのプレビュー関数
+    $(function () {
+      // 画像が選択された時に発火
+      $(document).on('change', '.image-form', function () {
+        // .file_filedからデータを取得して変数fileに代入
+        let file = this.files[0];
+        // FileReaderオブジェクトを作成
+        let reader = new FileReader();
+        // DataURIScheme文字列を取得
+        reader.readAsDataURL(file);
+        // 読み込みが完了したら処理が実行
+        reader.onload = function () {
+          // 読み込んだファイルの内容を取得して変数imageに
+          let image = this.result;
+          // 投稿に画像がなければ
+          if ($('.current-post-image').length == 0) {
+            // not-have-post-imageのスペース確保
+            $('.not-have-post-image').css({
+              'display': 'block' // defaultがnone
+            });
+            // 画像表示
+            $('.not-have-post-image').attr({ src: image });
+            } else {
+            // 投稿の画像がプレビューされていれば(持っていれば)画像データのみを入れ替え
+            $('.current-post-image').attr({ src: image });
+          }
+        }
+      });
+    });
+  });
 </script>

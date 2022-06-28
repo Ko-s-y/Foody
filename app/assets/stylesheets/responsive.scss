@@ -120,6 +120,10 @@
   .current-post-image {
     height: 600px;
   }
+
+  .not-have-post-image {
+    height: 600px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -204,6 +208,10 @@
   }
 
   .current-post-image {
+    height: 200px;
+  }
+
+  .not-have-post-image {
     height: 200px;
   }
 }

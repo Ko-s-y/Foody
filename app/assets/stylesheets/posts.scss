@@ -150,3 +150,14 @@
   height: 800px;
   object-fit: cover;
 }
+
+.not-have-post-image {
+  display: none;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;  /* Safari,Chrome用 */
+  -moz-border-radius: 20px;  /* Firefox用 */
+  margin: 0 auto;
+  width: 95%;
+  height: 800px;
+  object-fit: cover;
+}
