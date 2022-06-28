@@ -75,10 +75,4 @@
     </div>
   </div>
 </section>
-
-<script>
-$('.image-form').on('change', function () {
-    let file = $(this).prop('files')[0];
-    $('.state').text(file.name);
-});
-</script>
+<%= javascript_pack_tag 'post/index' %>
