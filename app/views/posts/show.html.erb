@@ -71,30 +71,48 @@
 
 <section class="comment-tree">
   <h2 class="page-title">コメント一覧</h2>
-  <div class="posts-container">
-    <div class="posts-contents">
+  <div class="comment_container">
+    <div class="comment_contents">
       <% @comments.each do |comment| %>
-        <div class="post-area">
-          <figure>
-            <% if current_user.id == comment.user_id %>
-              <%= link_to image_tag(avatar_url(comment.user), class: "posted-user-icon", alt: "ユーザーアイコン"), users_show_path %>
-            <% else %>
-              <%= link_to image_tag(avatar_url(comment.user), class: "posted-user-icon", alt: "ユーザーアイコン"), controller: "users", action: "profile", id: comment.user_id %>
-            <% end %>
-          </figure>
-          <div class="post-area-text">
-            <div class="posted-user-name"><%= comment.user.name %>(<%= comment.user.introduction %>)</div>
-            <div class="posted-date"><%= post_time(comment.created_at) %></div>
-            <div class="post-text">
-              <span class="post-content"><%= comment.comment_content %></span>
+        <% if @post.user_id == comment.user_id %>
+          <!-- 投稿主のコメント -->
+          <div class="post-owner-comment">
+            <div class="owner-text"><%= comment.comment_content %></div>
+            <div class="comment-image">
               <% unless comment.avatar.blank? %>
                 <div class="post-pict">
                   <%= image_tag(post_image_url(comment), class: "post-image", alt: "コメント画像") %>
                 </div>
               <% end %>
             </div>
+            <span class="comment-date"><%= comment.created_at.strftime('%m/%d %H:%M') %></span>
           </div>
-        </div>
+
+        <% else %>
+          <!-- その他ユーザーのコメント -->
+          <div class="other-user-comment">
+            <figure>
+              <% if current_user.id == comment.user_id %>
+                <%= link_to image_tag(avatar_url(comment.user), class: "other-user-icon", alt: "ユーザーアイコン"), users_show_path %>
+              <% else %>
+                <%= link_to image_tag(avatar_url(comment.user), class: "other-user-icon", alt: "ユーザーアイコン"), controller: "users", action: "profile", id: comment.user_id %>
+              <% end %>
+            </figure>
+            <div class="other-user-text">
+              <div class="other-name"><%= comment.user.name %></div>
+              <div class="other-text"><%= comment.comment_content %></div>
+              <div class="comment-image">
+                <% unless comment.avatar.blank? %>
+                  <div class="post-pict">
+                    <%= image_tag(post_image_url(comment), class: "post-image", alt: "コメント画像") %>
+                  </div>
+                <% end %>
+              </div>
+              <span class="comment-date"><%= comment.created_at.strftime('%m/%d %H:%M') %></span>
+            </div>
+          </div>
+
+        <% end %>
       <% end %>
     </div>
   </div>
