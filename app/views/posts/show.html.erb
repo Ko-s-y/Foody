@@ -36,7 +36,7 @@
 </section>
 
 <section class="comment-form">
-  <h2 class="page-title">コメントする</h2>
+  <h2 class="page-title">この投稿にコメントする</h2>
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-6-table is-10-desktop is-8-widescreen">
@@ -71,9 +71,33 @@
 
 <section class="comment-tree">
   <h2 class="page-title">コメント一覧</h2>
-  <% @comments.each do |comment| %>
-    <%= comment.comment_content %>
-  <% end %>
+  <div class="posts-container">
+    <div class="posts-contents">
+      <% @comments.each do |comment| %>
+        <div class="post-area">
+          <figure>
+            <% if current_user.id == @post.user_id %>
+              <%= link_to image_tag(avatar_url(comment.user), class: "posted-user-icon", alt: "ユーザーアイコン"), users_show_path %>
+            <% else %>
+              <%= link_to image_tag(avatar_url(comment.user), class: "posted-user-icon", alt: "ユーザーアイコン"), "users/profile/#{post.user_id}" %>
+            <% end %>
+          </figure>
+          <div class="post-area-text">
+            <div class="posted-user-name"><%= comment.user.name %>(<%= comment.user.introduction %>)</div>
+            <div class="posted-date"><%= post_time(comment.created_at) %></div>
+            <div class="post-text">
+              <span class="post-content"><%= comment.comment_content %></span>
+              <% unless comment.avatar.blank? %>
+                <div class="post-pict">
+                  <%= image_tag(post_image_url(comment), class: "post-image", alt: "コメント画像") %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </section>
 
 <%= javascript_pack_tag 'post/show' %>
