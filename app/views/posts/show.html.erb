@@ -75,7 +75,7 @@
     <div class="comment_contents">
       <% @comments.each do |comment| %>
         <% if @post.user_id == comment.user_id %>
-          <!-- 投稿主のコメント -->
+          <!-- 投稿主のコメント(右側) -->
           <div class="post-owner-comment">
             <div class="owner-text"><%= comment.comment_content %></div>
             <div class="comment-image">
@@ -86,12 +86,14 @@
               <% end %>
             </div>
             <% if current_user.id == comment.user.id %>
-              <%= link_to 'コメントを削除する', post_comment_path(@post, comment), method: :delete, data: {confirm: "本当に削除しますか？"} %>
+              <%= link_to post_comment_path(@post, comment), method: :delete, data: {confirm: "本当に削除しますか？"} do %>
+                <i class="fas fa-trash-alt right-trash"></i>
+              <% end %>
             <% end %>
             <span class="comment-date"><%= comment.created_at.strftime('%m/%d %H:%M') %></span>
           </div>
         <% else %>
-          <!-- その他ユーザーのコメント -->
+          <!-- その他ユーザーのコメント(左側) -->
           <div class="other-user-comment">
             <figure>
               <% if current_user.id == comment.user_id %>
@@ -111,7 +113,9 @@
                 <% end %>
               </div>
               <% if current_user.id == comment.user.id %>
-                <%= link_to 'コメントを削除する', post_comment_path(@post, comment), method: :delete, data: {confirm: "本当に削除しますか？"} %>
+                <%= link_to post_comment_path(@post, comment), method: :delete, data: {confirm: "本当に削除しますか？"} do %>
+                  <i class="fas fa-trash-alt left-trash"></i>
+                <% end %>
               <% end %>
               <span class="comment-date"><%= comment.created_at.strftime('%m/%d %H:%M') %></span>
             </div>
