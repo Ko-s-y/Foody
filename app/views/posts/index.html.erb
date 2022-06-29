@@ -1,0 +1,78 @@
+<% content_for :title do %>
+  Timeline - Foody!
+<% end %>
+<section class="post-form">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-6-table is-10-desktop is-8-widescreen">
+          <div class="box">
+            <%= form_with model: @post do |f| %>
+              <div class="field">
+                <div class="control has-icons-left">
+                  <%= f.text_field :title, class: "", placeholder: "○○について", class: "input is-info" %>
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-pen"></i>
+                  </span>
+                </div>
+                <p class="help is-danger">*必須,20字以内</p>
+              </div>
+              <div class="field">
+                <div class="control has-icons-left">
+                  <%= f.text_area :post_content, class: "input is-info", placeholder: "内容" %>
+                  <span class="icon is-small is-left">
+                    <i class="far fa-sticky-note"></i>
+                  </span>
+                </div>
+                <p class="help is-danger">*必須,100字以内</p>
+              </div>
+              <div class="field">
+                <%= f.label :avatar ,"画像ファイルを選択", class: "image-input-btn" %>
+                <div class="control">
+                  <%= f.file_field :avatar, class: "image-form", accept: 'image/jpeg,image/gif,image/png' %>
+                </div>
+                <p class="help is-info state">*画像ファイルの選択は任意です</p>
+              </div>
+              <div class="field">
+                <%= f.submit "投稿する", class: "button is-link is-fullwidth m-b-10" %>
+              </div>
+            <% end %>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="time-line">
+  <h2 class="page-title">タイムライン</h2>
+  <div class="posts-container">
+    <div class="posts-contents">
+      <% @posts.each do |post| %>
+        <div class="post-area">
+          <figure>
+            <% if current_user.id == post.user_id %>
+              <%= link_to image_tag(avatar_url(post.user), class: "posted-user-icon", alt: "ユーザーアイコン"), users_show_path %>
+            <% else %>
+              <%= link_to image_tag(avatar_url(post.user), class: "posted-user-icon", alt: "ユーザーアイコン"), "users/profile/#{post.user_id}" %>
+            <% end %>
+          </figure>
+          <%= link_to post_path(post.id) do %>
+            <div class="post-area-text">
+              <div class="posted-user-name"><%= post.user.name %>(<%= post.user.introduction %>)</div>
+              <div class="posted-date"><%= post_time(post.created_at) %></div>
+              <div class="post-text">
+                <span class="post-title"><%= post.title %></span>
+                <span class="post-content"><%= post.post_content %></span>
+                <% unless post.avatar.blank? %>
+                  <div class="post-pict">
+                    <%= image_tag(post_image_url(post), class: "post-image", alt: "投稿画像") %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+<%= javascript_pack_tag 'post/index' %>
