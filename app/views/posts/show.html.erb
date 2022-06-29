@@ -80,8 +80,8 @@
             <div class="owner-text"><%= comment.comment_content %></div>
             <div class="comment-image">
               <% unless comment.avatar.blank? %>
-                <div class="post-pict">
-                  <%= image_tag(post_image_url(comment), class: "post-image", alt: "コメント画像") %>
+                <div class="comment-pict">
+                  <%= image_tag(post_image_url(comment), alt: "コメント画像") %>
                 </div>
               <% end %>
             </div>
@@ -107,8 +107,8 @@
               <div class="other-text"><%= comment.comment_content %></div>
               <div class="comment-image">
                 <% unless comment.avatar.blank? %>
-                  <div class="post-pict">
-                    <%= image_tag(post_image_url(comment), class: "post-image", alt: "コメント画像") %>
+                  <div class="comment-pict">
+                    <%= image_tag(post_image_url(comment), alt: "コメント画像") %>
                   </div>
                 <% end %>
               </div>

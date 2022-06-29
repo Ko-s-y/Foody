@@ -122,8 +122,10 @@
           -webkit-border-radius: 20px;  /* Safari,Chrome用 */
           -moz-border-radius: 20px;  /* Firefox用 */
           margin: 5px 0;
-          width: 95%;
-          height: 800px;
+          width: 100%;
+          height: auto;
+          max-width: 1200px;
+          max-height: 800px;
           object-fit: cover;
         }
       }

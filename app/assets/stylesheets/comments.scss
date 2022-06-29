@@ -11,8 +11,9 @@
   margin: 20px auto;
 
   .comment-image img {
-    margin-top: 15px;
-    height: 800px;
+    margin-top: 5px;
+    max-width: 100%;
+    height: auto;
     border-radius: 20px;
     -webkit-border-radius: 20px;  /* Safari,Chrome用 */
     -moz-border-radius: 20px;  /* Firefox用 */
