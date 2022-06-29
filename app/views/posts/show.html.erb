@@ -85,9 +85,11 @@
                 </div>
               <% end %>
             </div>
+            <% if current_user.id == comment.user.id %>
+              <%= link_to 'コメントを削除する', post_comment_path(@post, comment), method: :delete, data: {confirm: "本当に削除しますか？"} %>
+            <% end %>
             <span class="comment-date"><%= comment.created_at.strftime('%m/%d %H:%M') %></span>
           </div>
-
         <% else %>
           <!-- その他ユーザーのコメント -->
           <div class="other-user-comment">
@@ -108,10 +110,12 @@
                   </div>
                 <% end %>
               </div>
+              <% if current_user.id == comment.user.id %>
+                <%= link_to 'コメントを削除する', post_comment_path(@post, comment), method: :delete, data: {confirm: "本当に削除しますか？"} %>
+              <% end %>
               <span class="comment-date"><%= comment.created_at.strftime('%m/%d %H:%M') %></span>
             </div>
           </div>
-
         <% end %>
       <% end %>
     </div>
