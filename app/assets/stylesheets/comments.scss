@@ -27,7 +27,7 @@
     .post-owner-comment {
       position: relative;
       display: block;
-      margin: 10px 0;
+      margin: 15px 0;
       max-width: 85%;
       float: right;
       margin-right: 10px;
@@ -37,7 +37,6 @@
         padding: 10px;
         border-radius: 20px;
         background-color: rgb(215, 211, 211);
-        margin-left: 80px;
 
         // 吹き出し
         &::after {
@@ -54,26 +53,23 @@
         }
       }
 
-      // 画像投稿した際のコメント日時の補正
-      .comment-image {
-        position: relative;
-        margin-left: 80px;
-      }
-
       .comment-date {
         content: '';
         position: absolute;
         display: block;
         width: 100px;
         text-align: right;
-        left: -30px;
-        bottom: 2px;
+        right: 3px;
+        bottom: -25px;
         color: #8a9aa4;
         font-size: 90%;
       }
 
       .right-trash {
-        margin-left: 80px;
+        position: absolute;
+        right: 100px;
+        bottom: -22px;
+        color: #8a9aa4;
       }
     }
 
@@ -81,11 +77,11 @@
     .other-user-comment {
       position: relative;
       display: block;
-      max-width: 85%;
-      margin: 10px 0;
+      max-width: 80%;
+      margin: 15px 0;
       float: left;
-      margin-right: 10px;
       clear: both;
+      margin-right: 10px;
 
       figure {
         width: 50px;
@@ -139,14 +135,17 @@
         display: block;
         width: 100px;
         text-align: right;
-        right: -90px;
-        bottom: 2px;
+        left: 55px;
+        bottom: -25px;
         color: #8a9aa4;
         font-size: 90%;
       }
 
-      .comment-image {
-        position: relative;
+      .left-trash {
+        position: absolute;
+        left: 170px;
+        bottom: -22px;
+        color: #8a9aa4;
       }
     }
   }
