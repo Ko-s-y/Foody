@@ -1,0 +1,163 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.post-form {
+  margin: 15px;
+}
+
+.image-input-btn {
+  display: block;
+  background-color: whitesmoke;
+  width: 100%;
+  height: 35px;
+  margin: 10px auto;
+  border-radius: 5px;
+  padding-top: 6px;
+  color: rgb(46, 44, 44);
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+.image-input-btn:hover {
+  background-color: rgb(215, 211, 211);
+}
+
+.image-form {
+  display: none;
+}
+
+.posts-container {
+  padding: 0;
+  background: white;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 20px auto;
+  font-size: 80%;
+  border: solid 1px rgb(215, 211, 211);
+  width: 95%;
+}
+
+.posts-contents {
+  overflow: hidden;
+  position: relative;
+  line-height: 135%;
+
+  .post-area {
+    width: 100%;
+    display: block;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-bottom: solid 1px rgb(215, 211, 211);
+    overflow: hidden;
+
+    // 最後の投稿の下線消し
+    &:last-child {
+      border-bottom: solid 0px;
+    }
+
+    figure {
+      width: 50px;
+      padding: 0;
+      margin: 0;
+      float: left;
+
+      .posted-user-icon {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    .post-area-text {
+      margin: 0;
+      position: relative;
+      margin-left: 60px;
+      padding-right: 10px;
+      color: black;
+
+      .posted-user-name {
+        font-weight: 800;
+      }
+
+      .post-title {
+        font-weight: 600;
+      }
+
+      .post-content {
+        display: block;
+        font-weight: 400;
+      }
+
+      .post-edit-link {
+        position: absolute;
+        top: 23px;
+        right: 60px;
+        text-align:right;
+        color: #8a9aa4;
+      }
+
+      .post-delete-link {
+        position: absolute;
+        top: 23px;
+        right: 20px;
+        text-align:right;
+        color: #8a9aa4;
+      }
+
+      .posted-date {
+        position: absolute;
+        top:0;
+        right: 20px;
+        text-align:right;
+        color: #8a9aa4;
+      }
+
+      .post-text {
+        margin: 5px 0;
+
+        .post-pict img {
+          border-radius: 20px;
+          -webkit-border-radius: 20px;  /* Safari,Chrome用 */
+          -moz-border-radius: 20px;  /* Firefox用 */
+          margin: 5px 0;
+          width: 95%;
+          height: 800px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+
+.post-back-btn {
+  display: block;
+  text-align: center;
+  margin: 25px auto 10px;
+  width: 20%;
+  border: 1px solid rgb(164, 163, 163);
+  border-radius: 5px;
+}
+
+.current-post-image {
+  border-radius: 20px;
+  -webkit-border-radius: 20px;  /* Safari,Chrome用 */
+  -moz-border-radius: 20px;  /* Firefox用 */
+  display: block;
+  margin: 0 auto;
+  width: 95%;
+  height: 800px;
+  object-fit: cover;
+}
+
+.not-have-post-image {
+  display: none;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;  /* Safari,Chrome用 */
+  -moz-border-radius: 20px;  /* Firefox用 */
+  margin: 0 auto;
+  width: 95%;
+  height: 800px;
+  object-fit: cover;
+}

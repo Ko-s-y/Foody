@@ -31,10 +31,10 @@
               <p class="nav-name"><%= current_user.name %></p>
             </div>
             <div class="navbar-dropdown">
-              <%= link_to "home", pages_home_path, class: "navbar-item nav-element", data: {"turbolinks" => false} %>
+              <%= link_to "all post", posts_path, class: "navbar-item nav-element" %>
+              <%= link_to "remember", posts_path, class: "navbar-item nav-element" %>
               <%= link_to "profile", users_show_path, class: "navbar-item nav-element" %>
-              <a href="/" class="navbar-item nav-element">posted</a>
-              <a href="/" class="navbar-item nav-element">remember</a>
+              <%= link_to "home", pages_home_path, class: "navbar-item nav-element", data: {"turbolinks" => false} %>
               <hr class="navbar-divider">
               <%= link_to "logout", destroy_user_session_path, method: :delete, class: "navbar-item nav-element" %>
             </div>
@@ -44,13 +44,3 @@
     </div>
   </nav>
 </header>
-
-<script>
-// バーガーメニュー　turbolinksの影響のためここに記述
-  $(function() {
-    $(".navbar-burger").on("click", function() {
-      $(".navbar-burger").toggleClass("is-active");
-      $(".navbar-menu").toggleClass("is-active");
-    });
-  });
-</script>

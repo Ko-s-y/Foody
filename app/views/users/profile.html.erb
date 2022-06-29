@@ -13,32 +13,21 @@
             <div class="box">
               <div class="field">
                 <div class="user-icon-field">
-                  <% if current_user.image? %>
-                    <%= image_tag current_user.image.url %>
+                  <% if @user.image? %>
+                    <%= image_tag @user.image.url %>
                   <% else %>
-                    <%= image_tag avatar_url(current_user), class: "user-image", alt: "ユーザーアイコン" %>
+                    <%= image_tag avatar_url(@user), class: "user-image", alt: "ユーザーアイコン" %>
                   <% end %>
                 </div>
-                <%= form_for :user, url: users_show_url(current_user), action: :update, method: :post do |f| %>
-                  <div class="file">
-                    <label class="button is-primary is-outlined is-fullwidth">
-                      <%= f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png', class: "file-input", onchange: "this.form.submit();" %>
-                      <i class="fas fa-upload"></i>&nbsp;&nbsp;&nbsp;アイコン画像の変更
-                    </label>
-                  </div>
-                <% end %>
               </div>
               <div class="field">
-                <span class="user-element">アカウント名: <%= current_user.name %></span>
+                <span class="user-element">ID: <%= @user.id %></span>
               </div>
               <div class="field">
-                <span class="user-element">調理ジャンル: <%= current_user.introduction %></span>
+                <span class="user-element">アカウント名: <%= @user.name %></span>
               </div>
               <div class="field">
-                <%= link_to edit_user_registration_path do %>
-                  <i class="far fa-sun"></i>
-                  <span class="link-btn">setting</span>
-                <% end %>
+                <span class="user-element">調理ジャンル: <%= @user.introduction %></span>
               </div>
             </div>
           </div>
@@ -49,13 +38,13 @@
 </section>
 
 <section class="time-line">
-  <h2 class="page-title">あなたの投稿一覧</h2>
+  <h2 class="page-title"><%= @user.name %>さんの投稿一覧</h2>
   <div class="posts-container">
     <div class="posts-contents">
       <% @posts.each do |post| %>
         <div class="post-area">
           <figure>
-            <%= link_to image_tag(avatar_url(post.user), class: "posted-user-icon", alt: "ユーザーアイコン"), users_show_path %>
+            <%= link_to image_tag(avatar_url(post.user), class: "posted-user-icon", alt: "ユーザーアイコン"), controller: "users", action: "profile", id: @user.id %>
           </figure>
           <%= link_to post_path(post.id) do %>
             <div class="post-area-text">

@@ -2,6 +2,12 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def show
+    @posts = current_user.posts.all.order(id: :desc)
+  end
+
+  def profile
+    @user = User.find(params[:id])
+    @posts = @user.posts.all.order(id: :desc)
   end
 
   def update
