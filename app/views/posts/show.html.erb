@@ -36,7 +36,7 @@
 </section>
 
 <section class="comment-form">
-  <h2 class="page-title">この投稿にコメントする</h2>
+  <h2 class="page-title">コメントする</h2>
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-6-table is-10-desktop is-8-widescreen">
@@ -76,10 +76,10 @@
       <% @comments.each do |comment| %>
         <div class="post-area">
           <figure>
-            <% if current_user.id == @post.user_id %>
+            <% if current_user.id == comment.user_id %>
               <%= link_to image_tag(avatar_url(comment.user), class: "posted-user-icon", alt: "ユーザーアイコン"), users_show_path %>
             <% else %>
-              <%= link_to image_tag(avatar_url(comment.user), class: "posted-user-icon", alt: "ユーザーアイコン"), "users/profile/#{post.user_id}" %>
+              <%= link_to image_tag(avatar_url(comment.user), class: "posted-user-icon", alt: "ユーザーアイコン"), controller: "users", action: "profile", id: comment.user_id %>
             <% end %>
           </figure>
           <div class="post-area-text">
