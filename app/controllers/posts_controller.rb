@@ -17,7 +17,7 @@ class PostsController < ApplicationController
     if @post.save
       flash[:notice] = "新規投稿しました。"
     else
-      flash[:alert] = "投稿に失敗しました"
+      flash[:alert] = @post.errors.full_messages[0]
     end
     redirect_to posts_path
   end
@@ -29,18 +29,22 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      flash[:notice] = "投稿の情報を更新しました"
+      flash[:notice] = "投稿の情報を更新しました。"
       redirect_to posts_path
     else
-      flash.now[:alert] = "更新に失敗しました"
+      flash.now[:alert] = "更新に失敗しました。"
       render "edit"
     end
   end
 
   def destroy
     post = current_user.posts.find(params[:id])
-    post.destroy
-    flash[:notice] = "投稿を削除しました"
+    if post.user_id == current_user.id
+      post.destroy
+      flash[:notice] = "投稿を削除しました。"
+    else
+      flash[:alert] = "不正な処理の為エラーが発生しました。"
+    end
     redirect_to posts_path
   end
 
