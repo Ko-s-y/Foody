@@ -35,6 +35,23 @@
   </div>
 </section>
 
+<section class="comment-form">
+  <h2 class="page-title">コメントする</h2>
+
+  <%= form_with(model:[@post, @comment], method: :post) do |f| %>
+    <%= f.text_area :comment_content %>
+    <%= f.hidden_field :post_id, value: @post.id %>
+    <%= f.file_field :avatar, class: "", accept: 'image/jpeg,image/gif,image/png' %>
+    <%= f.submit 'コメントする' %>
+  <% end %>
+
+</section>
+
 <section class="comment-tree">
   <h2 class="page-title">コメント一覧</h2>
+
+  <% @comments.each do |comment| %>
+    <%= comment.comment_content %>
+  <% end %>
+
 </section>

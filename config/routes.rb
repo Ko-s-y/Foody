@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
 
-  resources :posts
+  resources :posts do
+    resources :comments, only: [:create]
+  end
+
   devise_for :users
 
   get 'users/profile/:id', to: 'users#profile' # 他ユーザーの詳細画面
