@@ -1,8 +1,6 @@
-<% content_for :title do %>
-  Show Post - Foody!
-<% end %>
+<% provide(:title, "Show Post") %>
 <section class="show-post">
-  <h2 class="page-title">投稿詳細</h2>
+  <h2 class="section-title">投稿詳細</h2>
   <div class="posts-container">
     <div class="posts-contents">
       <div class="post-area">
@@ -35,42 +33,8 @@
   </div>
 </section>
 
-<section class="comment-form">
-  <h2 class="page-title">コメントする</h2>
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-6-table is-10-desktop is-8-widescreen">
-        <div class="box">
-          <%= form_with(model:[@post, @comment], method: :post) do |f| %>
-            <div class="field">
-              <div class="control has-icons-left">
-                <%= f.text_area :comment_content, placeholder: "コメント内容", class: "input is-info" %>
-                <span class="icon is-small is-left">
-                  <i class="fas fa-pen"></i>
-                </span>
-              </div>
-              <p class="help is-danger">*必須,100字以内</p>
-            </div>
-            <div class="field">
-              <%= f.label :avatar ,"画像ファイルを選択", class: "image-input-btn" %>
-              <div class="control">
-                <%= f.file_field :avatar, class: "image-form", accept: 'image/jpeg,image/gif,image/png' %>
-              </div>
-              <p class="help is-info state">*画像ファイルの選択は任意です</p>
-            </div>
-            <div class="field">
-              <%= f.hidden_field :post_id, value: @post.id %>
-              <%= f.submit "コメントする", class: "button is-link is-fullwidth m-b-10" %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="comment-tree">
-  <h2 class="page-title">コメント一覧</h2>
+  <h2 class="section-title">コメント一覧</h2>
   <div class="comment_container">
     <div class="comment_contents">
       <% @comments.each do |comment| %>
@@ -126,4 +90,37 @@
   </div>
 </section>
 
+<section class="comment-form">
+  <h2 class="section-title">コメントフォーム</h2>
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-6-table is-10-desktop is-8-widescreen">
+        <div class="box">
+          <%= form_with(model:[@post, @comment], method: :post) do |f| %>
+            <div class="field">
+              <div class="control has-icons-left">
+                <%= f.text_area :comment_content, placeholder: "コメント内容", class: "input is-info" %>
+                <span class="icon is-small is-left">
+                  <i class="fas fa-pen"></i>
+                </span>
+              </div>
+              <p class="help is-danger">*必須,200字以内</p>
+            </div>
+            <div class="field">
+              <%= f.label :avatar ,"画像ファイルを選択", class: "image-input-btn" %>
+              <div class="control">
+                <%= f.file_field :avatar, class: "image-form", accept: 'image/jpeg,image/gif,image/png' %>
+              </div>
+              <p class="help is-info state">*画像ファイルの選択は任意です</p>
+            </div>
+            <div class="field">
+              <%= f.hidden_field :post_id, value: @post.id %>
+              <%= f.submit "コメントする", class: "button is-link is-fullwidth m-b-10" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <%= javascript_pack_tag 'post/show' %>

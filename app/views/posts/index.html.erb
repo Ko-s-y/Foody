@@ -1,6 +1,4 @@
-<% content_for :title do %>
-  Timeline - Foody!
-<% end %>
+<% provide(:title, "Timeline") %>
 <section class="post-form">
   <div class="container">
     <div class="columns is-centered">
@@ -23,7 +21,7 @@
                     <i class="far fa-sticky-note"></i>
                   </span>
                 </div>
-                <p class="help is-danger">*必須,100字以内</p>
+                <p class="help is-danger">*必須,200字以内</p>
               </div>
               <div class="field">
                 <%= f.label :avatar ,"画像ファイルを選択", class: "image-input-btn" %>
@@ -43,7 +41,7 @@
 </section>
 
 <section class="time-line">
-  <h2 class="page-title">タイムライン</h2>
+  <h2 class="section-title">タイムライン</h2>
   <div class="posts-container">
     <div class="posts-contents">
       <% @posts.each do |post| %>

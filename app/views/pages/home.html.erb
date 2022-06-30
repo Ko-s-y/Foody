@@ -1,6 +1,4 @@
-<% content_for :title do %>
-  Home - Foody!
-<% end %>
+<% provide(:title, "Home") %>
 <div class="first-view">
   <%= image_tag "beviamo.jpg", class: "back-image" %>
   <%= link_to "Foody!とは", pages_about_path, class: "about-foody" %>

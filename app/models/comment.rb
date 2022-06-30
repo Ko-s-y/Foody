@@ -4,5 +4,5 @@ class Comment < ApplicationRecord
 
   has_one_attached :avatar
 
-  validates :comment_content, presence: true, length: { maximum: 100 }
+  validates :comment_content, presence: true, length: { maximum: 200 }
 end

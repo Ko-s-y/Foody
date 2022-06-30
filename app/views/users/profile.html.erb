@@ -1,6 +1,4 @@
-<% content_for :title do %>
-  Profile - Foody!
-<% end %>
+<% provide(:title, "Profile") %>
 <section class="hero is-dark is-halfheight">
   <div class="hero-body">
     <div class="container">
@@ -38,7 +36,7 @@
 </section>
 
 <section class="time-line">
-  <h2 class="page-title"><%= @user.name %>さんの投稿一覧</h2>
+  <h2 class="section-title"><%= @user.name %>さんの投稿一覧</h2>
   <div class="posts-container">
     <div class="posts-contents">
       <% @posts.each do |post| %>

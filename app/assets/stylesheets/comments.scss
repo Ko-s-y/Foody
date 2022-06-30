@@ -2,11 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.comment-form {
+  margin: 15px;
+}
+
 .comment_container {
   padding:0;
   background-color: white;
   overflow: hidden;
-  max-width: 1200px;
+  max-width: 1500px;
   width: 95%;
   margin: 20px auto;
 
