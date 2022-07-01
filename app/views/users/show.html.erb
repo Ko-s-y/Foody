@@ -12,7 +12,7 @@
               <div class="field">
                 <div class="user-icon-field">
                   <% if current_user.image? %>
-                    <%= image_tag current_user.image.url %>
+                    <%= image_tag current_user.image.url, alt: "ユーザーアイコン" %>
                   <% else %>
                     <%= image_tag avatar_url(current_user), class: "user-image", alt: "ユーザーアイコン" %>
                   <% end %>
@@ -47,21 +47,17 @@
 </section>
 
 <section class="time-line">
-  <h2 class="section-title">あなたの投稿一覧</h2>
+  <h2 class="section-title">投稿一覧</h2>
   <div class="posts-container">
     <div class="posts-contents">
       <% @posts.each do |post| %>
         <div class="post-area">
-          <figure>
-            <%= link_to image_tag(avatar_url(post.user), class: "posted-user-icon", alt: "ユーザーアイコン"), users_show_path %>
-          </figure>
           <%= link_to post_path(post.id) do %>
             <div class="post-area-text">
-              <div class="posted-user-name"><%= post.user.name %>(<%= post.user.introduction %>)</div>
               <div class="posted-date"><%= post_time(post.created_at) %></div>
               <div class="post-text">
-                <%= post.title %>
-                <%= post.post_content %>
+                <span class="post-title"><%= post.title %></span>
+                <span class="post-content"><%= post.post_content %></span>
                 <% unless post.avatar.blank? %>
                   <div class="post-pict">
                     <%= image_tag(post_image_url(post), class: "post-image", alt: "投稿画像") %>

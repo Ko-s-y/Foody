@@ -99,7 +99,7 @@
               <% if current_user.id == comment.user_id %>
                 <%= link_to image_tag(avatar_url(comment.user), class: "other-user-icon", alt: "ユーザーアイコン"), users_show_path %>
               <% else %>
-                <%= link_to image_tag(avatar_url(comment.user), class: "other-user-icon", alt: "ユーザーアイコン"), controller: "users", action: "profile", id: comment.user_id %>
+                <%= link_to image_tag(avatar_url(comment.user), class: "other-user-icon", alt: "ユーザーアイコン"), users_profile_path(name: comment.user.name) %>
               <% end %>
             </figure>
             <div class="other-user-text">
