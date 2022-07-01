@@ -38,10 +38,15 @@
       margin-right: 10px;
       clear: both;
 
+      .owner-pic {
+        float: right;
+      }
+
       .owner-text {
         padding: 10px;
         border-radius: 20px;
         background-color: rgb(215, 211, 211);
+        float: right;
 
         // 吹き出し
         &::after {
@@ -103,6 +108,10 @@
         }
       }
 
+      .other-user-pic {
+        float: left;
+      }
+
       .other-user-text {
         margin-left: 70px;
 
@@ -118,6 +127,7 @@
         padding: 10px;
         border-radius: 20px;
         background-color: whitesmoke;
+        float: left;
 
         // 吹き出し
         &::after {

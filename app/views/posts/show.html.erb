@@ -45,7 +45,7 @@
             <div class="comment-image">
               <% unless comment.avatar.blank? %>
                 <div class="comment-pict">
-                  <%= image_tag(post_image_url(comment), alt: "コメント画像") %>
+                  <%= image_tag(post_image_url(comment), alt: "コメント画像", class: "owner-pic") %>
                 </div>
               <% end %>
             </div>
@@ -72,7 +72,7 @@
               <div class="comment-image">
                 <% unless comment.avatar.blank? %>
                   <div class="comment-pict">
-                    <%= image_tag(post_image_url(comment), alt: "コメント画像") %>
+                    <%= image_tag(post_image_url(comment), alt: "コメント画像", class: "other-user-pic") %>
                   </div>
                 <% end %>
               </div>
