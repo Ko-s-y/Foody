@@ -17,7 +17,7 @@
                     <%= image_tag avatar_url(current_user), class: "user-image", alt: "ユーザーアイコン" %>
                   <% end %>
                 </div>
-                <%= form_for :user, url: users_show_url(current_user), action: :update, method: :post do |f| %>
+                <%= form_with scope: :user, url: users_show_url(current_user), action: :update, method: :post do |f| %>
                   <div class="file">
                     <label class="button is-primary is-outlined is-fullwidth">
                       <%= f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png', class: "file-input", onchange: "this.form.submit();" %>
