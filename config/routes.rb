@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'users/show' # 自分の詳細画面
   post 'users/show', to: 'users#update' # 自分のアイコン変更
 
-  get 'pages/home'
-  get 'pages/about'
+  get 'home', to: 'pages#home'
+  get 'about', to: 'pages#about'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
