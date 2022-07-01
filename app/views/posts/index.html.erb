@@ -1,4 +1,5 @@
 <% provide(:title, "Timeline") %>
+<a class="post-form-appear">タイムラインに投稿する</a>
 <section class="post-form">
   <div class="container">
     <div class="columns is-centered">
@@ -33,6 +34,7 @@
               <div class="field">
                 <%= f.submit "投稿する", class: "button is-link is-fullwidth m-b-10" %>
               </div>
+              <a class="post-form-disappear button is-danger is-fullwidth">投稿をやめる</a>
             <% end %>
           </div>
       </div>

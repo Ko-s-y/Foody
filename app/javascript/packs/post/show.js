@@ -16,9 +16,6 @@ $(function() {
     $('.form-appear').css({
       'display': 'none'
     });
-    $('.post-show-page').css({
-      'background-color': 'black'
-    });
   });
 });
 
@@ -30,9 +27,6 @@ $(function() {
     });
     $('.form-appear').css({
       'display': 'block'
-    });
-    $('.post-show-page').css({
-      'background-color': 'white'
     });
   });
 });
