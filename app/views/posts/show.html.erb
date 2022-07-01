@@ -32,13 +32,11 @@
     </div>
   </div>
 </section>
-
 <a class="form-appear">この投稿にコメントする</a>
-
 <section class="comment-form" id="comment-form">
   <div class="container">
     <div class="columns is-centered">
-      <div class="column is-6-table is-10-desktop is-8-widescreen">
+      <div class="column is-10-desktop is-10-widescreen">
         <div class="box">
           <%= form_with(model:[@post, @comment], method: :post) do |f| %>
             <div class="field">
@@ -68,7 +66,6 @@
     </div>
   </div>
 </section>
-
 <section class="comment-tree">
   <h2 class="section-title">コメント一覧</h2>
   <div class="comment_container">

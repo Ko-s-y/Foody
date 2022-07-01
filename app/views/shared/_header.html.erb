@@ -31,8 +31,8 @@
               <p class="nav-name"><%= current_user.name %></p>
             </div>
             <div class="navbar-dropdown">
-              <%= link_to "timeline", posts_path, class: "navbar-item nav-element" %>
               <%= link_to "my page", users_show_path, class: "navbar-item nav-element" %>
+              <%= link_to "timeline", posts_path, class: "navbar-item nav-element" %>
               <%= link_to "remember", posts_path, class: "navbar-item nav-element" %>
               <%= link_to "about", about_path, class: "navbar-item nav-element" %>
               <%= link_to "home", home_path, class: "navbar-item nav-element", data: {"turbolinks" => false} %>
