@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def profile
-    @user = User.find(params[:id])
+    @user = User.find_by(name: params[:name])
     @posts = @user.posts.all.order(id: :desc)
   end
 

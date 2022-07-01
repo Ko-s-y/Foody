@@ -8,7 +8,7 @@
           <% if current_user.id == @post.user_id %>
             <%= link_to image_tag(avatar_url(@post.user), class: "posted-user-icon", alt: "ユーザーアイコン"), users_show_path %>
           <% else %>
-            <%= link_to image_tag(avatar_url(@post.user), class: "posted-user-icon", alt: "ユーザーアイコン"), controller: "users", action: "profile", id: @post.user_id %>
+            <%= link_to image_tag(avatar_url(@post.user), class: "posted-user-icon", alt: "ユーザーアイコン"), users_profile_path(name: @post.user.name) %>
           <% end %>
         </figure>
         <div class="post-area-text">

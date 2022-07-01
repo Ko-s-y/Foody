@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   devise_scope :users do
     get 'users/show'  # 自分の詳細画面
-    get 'users/profile/:id', to: 'users#profile'  # 他ユーザーの詳細画面
+    get 'users/:name', to: 'users#profile', as: 'users/profile'  # 他ユーザーの詳細画面
     post 'users/show', to: 'users#update'  # アイコン変更
   end
 
