@@ -2,8 +2,33 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.form-appear {
+  margin: 0 auto;
+  width: 80%;
+  display: block;
+  background-color: #209cee;
+  color: white;
+  text-align: center;
+  border-radius: 20px;
+  height: 40px;
+  font-size: 20px;
+  padding-top: 6px;
+  max-width: 800px;
+}
+
+.form-appear:hover {
+  color: white;
+}
+
 .comment-form {
-  margin: 15px;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  top: 0;
+  background:rgba(245,245,245,0.8);
+  height: 400px;
+  padding-top: 65px;
 }
 
 .comment_container {
