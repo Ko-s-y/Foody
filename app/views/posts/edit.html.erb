@@ -9,8 +9,8 @@
               <strong>投稿情報編集</strong>
             </div>
             <div class="box">
-              <%= render "shared/error", object: @post %>
               <%= form_with model: @post do |f| %>
+                <%= render "shared/error", object: @post %>
                 <div class="field">
                   <%= f.label :title ,"タイトル", class: "label" %>
                   <div class="control has-icons-left">
