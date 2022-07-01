@@ -7,9 +7,11 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  get 'users/profile/:id', to: 'users#profile' # 他ユーザーの詳細画面
-  get 'users/show' # 自分の詳細画面
-  post 'users/show', to: 'users#update' # 自分のアイコン変更
+  devise_scope :users do
+    get 'users/show'  # 自分の詳細画面
+    get 'users/profile/:id', to: 'users#profile'  # 他ユーザーの詳細画面
+    post 'users/show', to: 'users#update'  # アイコン変更
+  end
 
   get 'home', to: 'pages#home'
   get 'about', to: 'pages#about'

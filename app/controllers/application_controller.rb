@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
     posts_path # ログインした後の遷移先
   end
 
+  def after_sign_out_path_for(resource)
+    home_path
+  end
+
   protected
 
   def configure_permitted_parameters
