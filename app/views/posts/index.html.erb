@@ -7,7 +7,7 @@
             <%= form_with model: @post do |f| %>
               <div class="field">
                 <div class="control has-icons-left">
-                  <%= f.text_field :title, placeholder: "○○について", class: "input is-info" %>
+                  <%= f.text_field :title, placeholder: "○○について", class: "input is-info", required: true %>
                   <span class="icon is-small is-left">
                     <i class="fas fa-pen"></i>
                   </span>
@@ -16,7 +16,7 @@
               </div>
               <div class="field">
                 <div class="control has-icons-left">
-                  <%= f.text_area :post_content, class: "input is-info", placeholder: "投稿内容" %>
+                  <%= f.text_area :post_content, class: "input is-info", placeholder: "投稿内容", required: true %>
                   <span class="icon is-small is-left">
                     <i class="far fa-sticky-note"></i>
                   </span>

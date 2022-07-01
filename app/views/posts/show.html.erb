@@ -99,7 +99,7 @@
           <%= form_with(model:[@post, @comment], method: :post) do |f| %>
             <div class="field">
               <div class="control has-icons-left">
-                <%= f.text_area :comment_content, placeholder: "コメント内容", class: "input is-info" %>
+                <%= f.text_area :comment_content, placeholder: "コメント内容", class: "input is-info", required: true %>
                 <span class="icon is-small is-left">
                   <i class="fas fa-pen"></i>
                 </span>

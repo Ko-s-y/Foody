@@ -6,7 +6,6 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
     <%= render  "shared/header" %>
@@ -15,5 +14,6 @@
     <main><%= yield %></main>
     <%= render  "shared/footer" %>
     <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>
