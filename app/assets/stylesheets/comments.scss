@@ -1,0 +1,192 @@
+// Place all the styles related to the comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.form-appear {
+  margin: 30px auto;
+  width: 80%;
+  display: block;
+  background-color: #209cee;
+  color: white;
+  text-align: center;
+  border-radius: 20px;
+  height: 40px;
+  font-size: 20px;
+  padding-top: 6px;
+  max-width: 800px;
+}
+
+.form-appear:hover {
+  color: white;
+}
+
+.comment-form {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  top: 0;
+  background:rgba(15, 15, 15, 0.6);
+  height: 420px;
+  padding: 71px 10px 0;
+}
+
+.comment_container {
+  padding:0;
+  background-color: white;
+  overflow: hidden;
+  max-width: 1500px;
+  width: 95%;
+  margin: 20px auto;
+
+  .comment-image img {
+    margin-top: 5px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;  /* Safari,Chrome用 */
+    -moz-border-radius: 20px;  /* Firefox用 */
+  }
+
+  .comment_contents {
+    padding: 10px;
+    line-height: 135%;
+    overflow: hidden;
+
+    // 投稿主のコメントcss
+    .post-owner-comment {
+      position: relative;
+      display: block;
+      margin: 15px 0;
+      max-width: 85%;
+      float: right;
+      margin-right: 10px;
+      clear: both;
+
+      .owner-pic {
+        float: right;
+      }
+
+      .owner-text {
+        padding: 10px;
+        border-radius: 20px;
+        background-color: rgb(215, 211, 211);
+        float: right;
+
+        // 吹き出し
+        &::after {
+          content: '';
+          position: absolute;
+          display: block;
+          width: 0;
+          height: 0;
+          right: -10px;
+          top: 10px;
+          border-left: 20px solid rgb(215, 211, 211);
+          border-top: 10px solid transparent;
+          border-bottom: 10px solid transparent;
+        }
+      }
+
+      .comment-date {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 100px;
+        text-align: right;
+        right: 3px;
+        bottom: -25px;
+        color: #8a9aa4;
+        font-size: 90%;
+      }
+
+      .right-trash {
+        position: absolute;
+        right: 100px;
+        bottom: -22px;
+        color: #8a9aa4;
+      }
+    }
+
+    // その他ユーザーのコメントcss
+    .other-user-comment {
+      position: relative;
+      display: block;
+      max-width: 80%;
+      margin: 15px 0;
+      float: left;
+      clear: both;
+      margin-right: 10px;
+
+      figure {
+        width: 50px;
+        position: absolute;
+        top: 15px;
+        left: 0;
+        padding: 0;
+        margin: 0;
+
+        .other-user-icon {
+          border-radius: 50%;
+          width: 50px;
+          height: 50px;
+        }
+      }
+
+      .other-user-pic {
+        float: left;
+      }
+
+      .other-user-text {
+        margin-left: 70px;
+
+        .other-name {
+          font-size: 80%;
+          color: black;
+        }
+      }
+
+      .other-text {
+        margin: 0;
+        position: relative;
+        padding: 10px;
+        border-radius: 20px;
+        background-color: whitesmoke;
+        float: left;
+
+        // 吹き出し
+        &::after {
+          content: '';
+          position: absolute;
+          display: block;
+          width: 0;
+          height: 0;
+          left: -10px;
+          top: 10px;
+          border-right: 20px solid whitesmoke;
+          border-top: 10px solid transparent;
+          border-bottom: 10px solid transparent;
+        }
+      }
+
+      .comment-date {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 100px;
+        text-align: right;
+        left: 55px;
+        bottom: -25px;
+        color: #8a9aa4;
+        font-size: 90%;
+      }
+
+      .left-trash {
+        position: absolute;
+        left: 170px;
+        bottom: -22px;
+        color: #8a9aa4;
+      }
+    }
+  }
+}

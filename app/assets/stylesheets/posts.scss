@@ -2,8 +2,33 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.post-form-appear {
+  margin: 30px auto 0;
+  width: 80%;
+  display: block;
+  background-color: #209cee;
+  color: white;
+  text-align: center;
+  border-radius: 20px;
+  height: 40px;
+  font-size: 20px;
+  padding-top: 6px;
+  max-width: 800px;
+}
+
+.post-form-appear:hover {
+  color: white;
+}
+
 .post-form {
-  margin: 15px;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  top: 0;
+  background:rgba(15, 15, 15, 0.6);
+  height: 490px;
+  padding: 71px 10px 0;
 }
 
 .image-input-btn {
@@ -32,11 +57,11 @@
   padding: 0;
   background: white;
   overflow: hidden;
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 20px auto;
   font-size: 80%;
   border: solid 1px rgb(215, 211, 211);
-  width: 95%;
+  width: 100%;
 }
 
 .posts-contents {
@@ -92,16 +117,16 @@
 
       .post-edit-link {
         position: absolute;
-        top: 23px;
-        right: 60px;
+        top: 22px;
+        right: 40px;
         text-align:right;
         color: #8a9aa4;
       }
 
       .post-delete-link {
         position: absolute;
-        top: 23px;
-        right: 20px;
+        top: 22px;
+        right: 5px;
         text-align:right;
         color: #8a9aa4;
       }
@@ -109,7 +134,7 @@
       .posted-date {
         position: absolute;
         top:0;
-        right: 20px;
+        right: 5px;
         text-align:right;
         color: #8a9aa4;
       }
@@ -122,8 +147,10 @@
           -webkit-border-radius: 20px;  /* Safari,Chrome用 */
           -moz-border-radius: 20px;  /* Firefox用 */
           margin: 5px 0;
-          width: 95%;
-          height: 800px;
+          width: 100%;
+          height: auto;
+          max-width: 1200px;
+          max-height: 800px;
           object-fit: cover;
         }
       }
@@ -160,4 +187,32 @@
   width: 95%;
   height: 800px;
   object-fit: cover;
+}
+
+textarea {
+  resize: none;
+}
+
+.comment-count {
+  font-size: 25px;
+  position: absolute;
+  left: 10%;
+  margin: 20px 0;
+  display: block;
+}
+
+.like-count {
+  font-size: 25px;
+  left: 44%;
+  display: block;
+  margin: 20px 0;
+  position: absolute;
+}
+
+.remember-count {
+  font-size: 25px;
+  display: block;
+  left: 80%;
+  margin: 20px 0;
+  position: relative;
 }

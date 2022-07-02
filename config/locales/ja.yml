@@ -9,7 +9,9 @@ ja:
         introduction: '調理ジャンル'
       post:
         title: 'タイトル'
-        post_content: '内容'
+        post_content: '投稿内容'
+      comment:
+        comment_content: 'コメント内容'
     errors:
       models:
         post:
@@ -22,6 +24,13 @@ ja:
               blank: 'が入力されていません。'
               too_long: 'は%{count}文字以下に設定して下さい。'
               invalid: 'は有効でありません。'
+        comment:
+          attributes:
+            comment_content:
+              blank: 'が入力されていません。'
+              too_long: 'は%{count}文字以下に設定して下さい。'
+              invalid: 'は有効でありません。'
+
   datetime:
     distance_in_words:
       half_a_minute: "30秒"

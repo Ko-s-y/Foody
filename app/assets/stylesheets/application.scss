@@ -36,7 +36,7 @@ main {
 
 // ここ削除でバーガーメニュー開くと自動でmargin-bottom:auto
 .navbar {
-  height: 62px;
+  height: 70px;
   background-color: whitesmoke;
 }
 
@@ -45,20 +45,20 @@ a.navbar-item:hover {
 }
 
 .site-title {
-  font-size: 30px;
+  font-size: 35px;
   width: 180px;
   text-align: center;
   display: block;
 }
 
 .burger-menu {
-  height: 62px;
+  height: 70px;
 }
 
 .navbar-name {
   display: block;
   width: 100%;
-  font-size: 25px;
+  font-size: 30px;
   margin-top: 4px;
 }
 
@@ -117,7 +117,7 @@ footer {
   font-size: 15px;
 }
 
-.page-title {
+.section-title {
   font-size: 20px;
   border-bottom: 1px solid black;
   margin: 15px 20px;

@@ -1,36 +1,35 @@
-<% content_for :title do %>
-  Edit Post - Foody!
-<% end %>
+<% provide(:title, "Edit Post") %>
+<!-- 投稿編集フォーム -->
 <section class="hero is-dark is-fullheight">
   <div class="hero-body">
     <div class="container">
       <div class="columns is-centered">
-        <div class="column is-6-table is-10-desktop is-8-widescreen">
+        <div class="column is-10-desktop is-10-widescreen">
           <div class="box">
             <div class="field has-text-centered">
               <strong>投稿情報編集</strong>
             </div>
             <div class="box">
-              <%= render "shared/error", object: @post %>
               <%= form_with model: @post do |f| %>
+                <%= render "shared/error", object: @post %>
                 <div class="field">
                   <%= f.label :title ,"タイトル", class: "label" %>
                   <div class="control has-icons-left">
-                    <%= f.text_field :title, autofocus: true, autocomplete: "title", class: "input is-info" %>
+                    <%= f.text_field :title, autofocus: true, autocomplete: "title", class: "input is-info", required: true %>
                     <span class="icon is-small is-left">
                       <i class="fas fa-pen"></i>
                     </span>
                   </div>
-                  <p class="help is-danger">20字以内</p>
+                  <p class="help is-danger">*必須,20字以内</p>
                 </div>
                 <div class="field">
                   <%= f.label :post_content, "内容", class: "label" %>
                   <div class="control has-icons-left">
-                    <%= f.text_field :post_content, autocomplete: "post_content", class: "input is-info" %>
+                    <%= f.text_area :post_content, autocomplete: "post_content", class: "input is-info", required: true %>
                     <span class="icon is-small is-left">
                       <i class="far fa-sticky-note"></i>
                     </span>
-                    <p class="help is-danger">100字以内</p>
+                    <p class="help is-danger">*必須,200字以内</p>
                   </div>
                 </div>
                 <div class="field">
