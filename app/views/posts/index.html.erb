@@ -66,6 +66,9 @@
                     <%= image_tag(post_image_url(post), class: "post-image", alt: "投稿画像") %>
                   </div>
                 <% end %>
+                <span class="comment-count"><i class="fa fa-comments"></i><%= post.comments.count %></span>
+                <span class="like-count"><i class="fa fa-heart"></i></i><%= post.comments.count %></span>
+                <span class="remember-count"><i class="fa fa-book"></i></i><%= post.comments.count %></span>
               </div>
             </div>
           <% end %>

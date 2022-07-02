@@ -192,3 +192,27 @@
 textarea {
   resize: none;
 }
+
+.comment-count {
+  font-size: 25px;
+  position: absolute;
+  left: 10%;
+  margin: 20px 0;
+  display: block;
+}
+
+.like-count {
+  font-size: 25px;
+  left: 44%;
+  display: block;
+  margin: 20px 0;
+  position: absolute;
+}
+
+.remember-count {
+  font-size: 25px;
+  position: relative;
+  left: 80%;
+  margin: 20px 0;
+  display: block;
+}
