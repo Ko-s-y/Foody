@@ -6,15 +6,15 @@ class UsersController < ApplicationController
   end
 
   def profile
-    @user = User.find(params[:id])
+    @user = User.find_by(name: params[:name])
     @posts = @user.posts.all.order(id: :desc)
   end
 
   def update
     if current_user.update(current_user_params)
-      flash[:notice] = "アカウント情報を更新しました。"
+      flash[:notice] = "アイコン画像を更新しました。"
     else
-      flash[:alert] = "アカウント情報の更新に失敗しました。"
+      flash[:alert] = "アイコン画像の更新に失敗しました。"
     end
     redirect_to users_show_path
   end

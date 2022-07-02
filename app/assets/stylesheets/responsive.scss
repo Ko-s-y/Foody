@@ -7,6 +7,10 @@
 @media (max-width: 1023px) {
 ///////////////////////////////////
 // header
+  .site-title {
+    width: 125px !important;
+  }
+
   .navbar-name {
     margin-bottom: 20px;
   }
@@ -204,7 +208,7 @@
 ///////////////////////////////////
 // postページ
   .post-pict img {
-    height: 200px !important;
+    height: 250px !important;
   }
 
   .current-post-image {

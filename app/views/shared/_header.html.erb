@@ -1,9 +1,9 @@
 <header>
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div data-turbolinks="false" class="navbar-brand">
-      <a class="navbar-item site-title" href="/">
-        <h1>Foody!</h1>
-      </a>
+      <%= link_to home_path do %>
+        <h1 class="navbar-item site-title">Foody!</h1>
+      <% end %>
       <a role="button" class="navbar-burger burger burger-menu" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -31,10 +31,11 @@
               <p class="nav-name"><%= current_user.name %></p>
             </div>
             <div class="navbar-dropdown">
-              <%= link_to "all post", posts_path, class: "navbar-item nav-element" %>
+              <%= link_to "my page", users_show_path, class: "navbar-item nav-element" %>
+              <%= link_to "timeline", posts_path, class: "navbar-item nav-element" %>
               <%= link_to "remember", posts_path, class: "navbar-item nav-element" %>
-              <%= link_to "profile", users_show_path, class: "navbar-item nav-element" %>
-              <%= link_to "home", pages_home_path, class: "navbar-item nav-element", data: {"turbolinks" => false} %>
+              <%= link_to "about", about_path, class: "navbar-item nav-element" %>
+              <%= link_to "home", home_path, class: "navbar-item nav-element", data: {"turbolinks" => false} %>
               <hr class="navbar-divider">
               <%= link_to "logout", destroy_user_session_path, method: :delete, class: "navbar-item nav-element" %>
             </div>

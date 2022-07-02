@@ -9,11 +9,11 @@ $(function() {
 
 // 投稿フォーム出現関数
 $(function() {
-  $(document).on('click', '.post-form-appear', function() {
-    $('.post-form').css({
+  $(document).on('click', '.form-appear', function() {
+    $('.comment-form').css({
       'display': 'block'
     });
-    $('.post-form-appear').css({
+    $('.form-appear').css({
       'display': 'none'
     });
   });
@@ -21,11 +21,11 @@ $(function() {
 
 // 投稿フォーム削除関数
 $(function() {
-  $(document).on('click', '.post-form-disappear', function() {
-    $('.post-form').css({
+  $(document).on('click', '.form-disappear', function() {
+    $('.comment-form').css({
       'display': 'none'
     });
-    $('.post-form-appear').css({
+    $('.form-appear').css({
       'display': 'block'
     });
   });
