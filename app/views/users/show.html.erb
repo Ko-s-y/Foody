@@ -72,3 +72,13 @@
     </div>
   </div>
 </section>
+<!-- ログインユーザーのいいねした投稿一覧 -->
+<section class="liked_posts">
+  <h2 class="section-title">いいね一覧</h2>
+  <div>あなたがいいねした投稿件数 <%= current_user.liked_posts.count %></div>
+  <% current_user.liked_posts.each do |post| %>
+    <%= post.user.name %>
+    <%= post.title %>
+    <%= post.post_content %>
+  <% end %>
+</section>

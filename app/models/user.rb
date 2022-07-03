@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :liked_posts, through: :likes, source: :post
 
   has_one_attached :avatar
 
@@ -18,4 +19,8 @@ class User < ApplicationRecord
   end
 
   validates :introduction, presence: true, length: { maximum: 10 }
+
+  def already_liked?(post)
+    self.likes.exists?(post_id: post.id)
+  end
 end
