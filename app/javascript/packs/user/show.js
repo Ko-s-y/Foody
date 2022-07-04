@@ -28,7 +28,6 @@ $(function() {
   });
 });
 
-
 // rememberした投稿セクション出現関数
 $(function() {
   $(document).on('click', '.appear-remember-section', function() {

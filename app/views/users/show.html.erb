@@ -47,12 +47,14 @@
   </div>
 </section>
 <!-- 表示するセクション選択 -->
-<span class="appear-posted-section">投稿の確認</span>
-<span class="appear-liked-section">いいねした投稿の確認</span>
-<span class="appear-remember-section">rememberした投稿の確認</span>
+<section class="appear-section-links">
+  <span class="appear-posted-section appear-link">posted</span>
+  <span class="appear-liked-section appear-link">liked</span>
+  <span class="appear-remember-section appear-link">remember</span>
+</section>
 <!-- ログインユーザーの投稿一覧 -->
 <section class="user-posted-section">
-  <h2 class="section-title">投稿した記事</h2>
+  <h2 class="section-title">posted list</h2>
     <div class="user-posted-counter">*あなたの投稿件数 <%= @posts.count %></div>
   <div class="posts-container">
     <div class="posts-contents">
@@ -83,7 +85,7 @@
 </section>
 <!-- ログインユーザーのいいねした投稿一覧 -->
 <section class="liked-posts-section">
-  <h2 class="section-title">いいね一覧</h2>
+  <h2 class="section-title">liked list</h2>
   <div class="user-liked-post-counter">*あなたがいいねした投稿件数 <%= current_user.liked_posts.count %></div>
   <div class="posts-container">
     <div class="posts-contents">
@@ -114,7 +116,7 @@
 </section>
 <!-- rememberした投稿一覧 -->
 <section class="remember-posts-section">
-  <h2 class="section-title">remember一覧</h2>
+  <h2 class="section-title">remember list</h2>
   <div class="user-remember-post-counter">*あなたがrememberした投稿件数</div>
   <div class="posts-container">
     <div class="posts-contents">

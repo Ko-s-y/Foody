@@ -63,13 +63,23 @@
   display: none;
 }
 
-.appear-posted-section {
-  cursor: pointer;
+.appear-section-links {
+  display: flex;
+  justify-content: center;
 }
 
-.appear-liked-section {
+.appear-link {
   cursor: pointer;
+  width: 33%;
+  height: 40px;
+  text-align: center;
+  font-size: 25px;
+  border: solid 1px black;
+  border-radius: 20px;
+  margin: 30px 20px 10px;
+  background-color: whitesmoke;
 }
-.appear-remember-section {
-  cursor: pointer;
+
+.appear-link:hover {
+  background-color: rgb(215, 211, 211);;
 }

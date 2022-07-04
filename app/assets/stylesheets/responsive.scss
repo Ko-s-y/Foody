@@ -128,6 +128,13 @@
   .not-have-post-image {
     height: 600px;
   }
+
+///////////////////////////////////
+// userページ
+  .appear-link {
+    height: 40px;
+    margin: 30px 10px 10px !important;
+  }
 }
 
 @media (max-width: 768px) {
@@ -217,5 +224,13 @@
 
   .not-have-post-image {
     height: 200px;
+  }
+
+///////////////////////////////////
+// userページ
+  .appear-link {
+    font-size: 20px !important;
+    padding-top: 3px !important;
+    margin: 30px 5px 10px !important;
   }
 }
