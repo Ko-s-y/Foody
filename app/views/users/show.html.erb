@@ -46,15 +46,24 @@
     </div>
   </div>
 </section>
+<!-- 表示するセクション選択 -->
+<span class="appear-posted-section">投稿の確認</span>
+<span class="appear-liked-section">いいねした投稿の確認</span>
+<span class="appear-remember-section">rememberした投稿の確認</span>
 <!-- ログインユーザーの投稿一覧 -->
-<section class="time-line">
-  <h2 class="section-title">投稿一覧</h2>
+<section class="user-posted-section">
+  <h2 class="section-title">投稿した記事</h2>
+    <div class="user-posted-counter">*あなたの投稿件数 <%= @posts.count %></div>
   <div class="posts-container">
     <div class="posts-contents">
       <% @posts.each do |post| %>
         <div class="post-area">
           <%= link_to post_path(post.id) do %>
+            <figure>
+              <%= image_tag(avatar_url(post.user), class: "posted-user-icon", alt: "ユーザーアイコン") %>
+            </figure>
             <div class="post-area-text">
+              <div class="posted-user-name"><%= post.user.name %>(<%= post.user.introduction %>)</div>
               <div class="posted-date"><%= post_time(post.created_at) %></div>
               <div class="post-text">
                 <span class="post-title"><%= post.title %></span>
@@ -73,12 +82,43 @@
   </div>
 </section>
 <!-- ログインユーザーのいいねした投稿一覧 -->
-<section class="liked_posts">
+<section class="liked-posts-section">
   <h2 class="section-title">いいね一覧</h2>
-  <div>あなたがいいねした投稿件数 <%= current_user.liked_posts.count %></div>
-  <% current_user.liked_posts.each do |post| %>
-    <%= post.user.name %>
-    <%= post.title %>
-    <%= post.post_content %>
-  <% end %>
+  <div class="user-liked-post-counter">*あなたがいいねした投稿件数 <%= current_user.liked_posts.count %></div>
+  <div class="posts-container">
+    <div class="posts-contents">
+      <% current_user.liked_posts.each do |post| %>
+        <div class="post-area">
+          <%= link_to post_path(post.id) do %>
+            <figure>
+              <%= image_tag(avatar_url(post.user), class: "posted-user-icon", alt: "ユーザーアイコン") %>
+            </figure>
+            <div class="post-area-text">
+              <div class="posted-user-name"><%= post.user.name %>(<%= post.user.introduction %>)</div>
+              <div class="posted-date"><%= post_time(post.created_at) %></div>
+              <div class="post-text">
+                <span class="post-title"><%= post.title %></span>
+                <span class="post-content"><%= post.post_content %></span>
+                <% unless post.avatar.blank? %>
+                  <div class="post-pict">
+                    <%= image_tag(post_image_url(post), class: "post-image", alt: "投稿画像") %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </section>
+<!-- rememberした投稿一覧 -->
+<section class="remember-posts-section">
+  <h2 class="section-title">remember一覧</h2>
+  <div class="user-remember-post-counter">*あなたがrememberした投稿件数</div>
+  <div class="posts-container">
+    <div class="posts-contents">
+    </div>
+  </div>
+</section>
+<%= javascript_pack_tag 'user/show' %>

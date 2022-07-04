@@ -1,6 +1,6 @@
 <% provide(:title, "Profile") %>
 <!-- 他ユーザープロフィール -->
-<section class="hero is-dark is-small">
+<section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container">
       <div class="columns is-centered">
@@ -34,10 +34,10 @@
     <div class="posts-contents">
       <% @posts.each do |post| %>
         <div class="post-area">
-          <figure>
-            <%= link_to image_tag(avatar_url(post.user), class: "posted-user-icon", alt: "ユーザーアイコン"), controller: "users", action: "profile", id: @user.id %>
-          </figure>
           <%= link_to post_path(post.id) do %>
+            <figure>
+              <%= image_tag(avatar_url(post.user), class: "posted-user-icon", alt: "ユーザーアイコン") %>
+            </figure>
             <div class="post-area-text">
               <div class="posted-user-name"><%= post.user.name %>(<%= post.user.introduction %>)</div>
               <div class="posted-date"><%= post_time(post.created_at) %></div>

@@ -50,3 +50,26 @@
 .intro-btn:hover {
   background-color: #1b63d8;
 }
+
+.user-posted-section {
+  display: none;
+}
+
+.liked-posts-section {
+  display: none;
+}
+
+.remember-posts-section {
+  display: none;
+}
+
+.appear-posted-section {
+  cursor: pointer;
+}
+
+.appear-liked-section {
+  cursor: pointer;
+}
+.appear-remember-section {
+  cursor: pointer;
+}
