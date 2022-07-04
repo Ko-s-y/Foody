@@ -28,7 +28,6 @@
               </div>
             <% end %>
           </div>
-
           <% if current_user.already_liked?(@post) %>
             <%= link_to post_likes_path(@post.id), method: :delete do %>
               <span class="" style="color: red;"><i class="fa fa-heart"></i></i><%= @post.likes.count %></span>
@@ -38,12 +37,13 @@
               <span class="" style="color: black;"><i class="fa fa-heart"></i></i><%= @post.likes.count %></span>
             <% end %>
           <% end %>
-
-          <h2>いいねしたユーザー</h2>
-          <% @post.liked_users.each do |user| %>
-            <li><%= user.name %></li>
-          <% end %>
-
+          <h2 class="appear-liked-user">いいねしたユーザー一覧表示</h2>
+          <h2 class="disappear-liked-user">ユーザー一覧非表示</h2>
+          <ul class="liked-user-list">
+            <% @post.liked_users.each do |user| %>
+              <li><%= user.name %></li>
+            <% end %>
+          </ul>
         </div>
       </div>
     </div>
