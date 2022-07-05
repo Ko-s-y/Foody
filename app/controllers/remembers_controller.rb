@@ -1,0 +1,2 @@
+class RemembersController < ApplicationController
+end
