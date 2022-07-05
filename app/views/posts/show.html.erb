@@ -48,6 +48,17 @@
               <% end %>
             <% end %>
           </ul>
+
+          <% if current_user.checked_remember?(@post) %>
+            <%= link_to post_remembers_path(@post.id), method: :delete do %>
+              <span class="" style="color: green;"><i class="fa fa-book"></i></i><%= @post.remembers.count %></span>
+            <% end %>
+          <% else %>
+            <%= link_to post_remembers_path(@post.id), method: :post do %>
+              <span class="" style="color: silver;"><i class="fa fa-book"></i></i><%= @post.remembers.count %></span>
+            <% end %>
+          <% end %>
+
         </div>
       </div>
     </div>
