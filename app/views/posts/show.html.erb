@@ -48,17 +48,26 @@
               <% end %>
             <% end %>
           </ul>
-
           <% if current_user.checked_remember?(@post) %>
             <%= link_to post_remembers_path(@post.id), method: :delete do %>
-              <span class="" style="color: green;"><i class="fa fa-book"></i></i><%= @post.remembers.count %></span>
+              <span class="remember-btn" style="color: green;"><i class="fa fa-book"></i></i><%= @post.remembers.count %></span>
             <% end %>
           <% else %>
             <%= link_to post_remembers_path(@post.id), method: :post do %>
-              <span class="" style="color: silver;"><i class="fa fa-book"></i></i><%= @post.remembers.count %></span>
+              <span class="remember-btn" style="color: silver;"><i class="fa fa-book"></i></i><%= @post.remembers.count %></span>
             <% end %>
           <% end %>
-
+          <h2 class="appear-checked-remember-user">rememberしたユーザー一覧表示</h2>
+          <h2 class="disappear-checked-remember-user">rememberしたユーザー一覧非表示</h2>
+          <ul class="checked-remember-user-list">
+            <% @post.checked_remember_users.each do |user| %>
+              <% if user == current_user %>
+                <li><%= link_to "あなた", users_show_path %></li>
+              <% else %>
+                <li><%= link_to user.name, users_profile_path(name: user.name) %></li>
+              <% end %>
+            <% end %>
+          </ul>
         </div>
       </div>
     </div>
