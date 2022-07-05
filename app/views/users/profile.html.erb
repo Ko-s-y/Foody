@@ -49,9 +49,21 @@
                     <%= image_tag(post_image_url(post), class: "post-image", alt: "投稿画像") %>
                   </div>
                 <% end %>
-                <span class="comment-count"><i class="fa fa-comments"></i><%= post.comments.count %></span>
-                <span class="like-count"><i class="fa fa-heart"></i></i><%= post.likes.count %></span>
-                <span class="remember-count"><i class="fa fa-book"></i></i><%= post.comments.count %></span>
+                <% if current_user.already_commented?(post) %>
+                  <span class="comment-count" style="color: olive;"><i class="fa fa-comments"></i><%= post.comments.count %></span>
+                <% else %>
+                  <span class="comment-count" style="color: silver;"><i class="fa fa-comments"></i><%= post.comments.count %></span>
+                <% end %>
+                <% if current_user.already_liked?(post) %>
+                  <span class="like-count" style="color: red;"><i class="fa fa-heart"></i></i><%= post.likes.count %></span>
+                <% else %>
+                  <span class="like-count" style="color: silver;"><i class="fa fa-heart"></i></i><%= post.likes.count %></span>
+                <% end %>
+                <% if current_user.checked_remember?(post) %>
+                  <span class="remember-count" style="color: green;"><i class="fa fa-book"></i></i><%= post.remembers.count %></span>
+                <% else %>
+                  <span class="remember-count" style="color: silver;"><i class="fa fa-book"></i></i><%= post.remembers.count %></span>
+                <% end %>
               </div>
             </div>
           <% end %>
