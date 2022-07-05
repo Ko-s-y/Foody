@@ -83,3 +83,16 @@
 .appear-link:hover {
   background-color: rgb(215, 211, 211);;
 }
+
+.user-data {
+  display: none;
+}
+
+.disappear-user-data {
+  display: none;
+  cursor: pointer;
+}
+
+.appear-user-data {
+  cursor: pointer;
+}
