@@ -7,6 +7,12 @@ $(function() {
     $('.user-posted-section').css({
       'display': 'block'
     });
+    $('.appear-posted-section').css({
+      'background-color': 'rgb(215, 211, 211)'
+    });
+    $('.appear-remember-section').css({
+      'background-color': 'whitesmoke'
+    });
   });
 });
 
@@ -18,6 +24,12 @@ $(function() {
     });
     $('.remember-posts-section').css({
       'display': 'block'
+    });
+    $('.appear-remember-section').css({
+      'background-color': 'rgb(215, 211, 211)'
+    });
+    $('.appear-posted-section').css({
+      'background-color': 'whitesmoke'
     });
   });
 });

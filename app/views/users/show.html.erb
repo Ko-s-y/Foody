@@ -64,7 +64,6 @@
 </section>
 <!-- ログインユーザーの投稿一覧 -->
 <section class="user-posted-section">
-  <h2 class="section-title">posted list</h2>
   <div class="posts-container">
     <div class="posts-contents">
       <% @posts.each do |post| %>
@@ -109,7 +108,6 @@
 </section>
 <!-- rememberした投稿一覧 -->
 <section class="remember-posts-section">
-  <h2 class="section-title">remember list</h2>
   <div class="posts-container">
     <div class="posts-contents">
       <% current_user.checked_remember_posts.each do |post| %>

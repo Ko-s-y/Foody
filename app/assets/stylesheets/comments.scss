@@ -32,11 +32,12 @@
 }
 
 .comment_container {
+  border-top: solid 1px rgb(215, 211, 211);
   padding:0;
   background-color: white;
   overflow: hidden;
   max-width: 1500px;
-  width: 95%;
+  width: 100%;
   margin: 20px auto;
 
   .comment-image img {
@@ -189,4 +190,10 @@
       }
     }
   }
+}
+
+.comment-info {
+  font-size: 20px;
+  text-align: center;
+  padding-top: 12px;
 }
