@@ -30,3 +30,34 @@ $(function() {
     });
   });
 });
+
+// いいねしたユーザー表示関数
+$(function() {
+  $(document).on('click', '.appear-liked-user', function() {
+    $('.appear-liked-user').css({
+      'display': 'none'
+    });
+    $('.disappear-liked-user').css({
+      'display': 'block'
+    });
+    $('.liked-user-list').css({
+      'display': 'block'
+    });
+  });
+});
+
+// いいねしたユーザー非表示関数
+$(function() {
+  $(document).on('click', '.disappear-liked-user', function() {
+    $('.disappear-liked-user').css({
+      'display': 'none'
+    });
+    $('.appear-liked-user').css({
+      'display': 'block'
+    });
+    $('.liked-user-list').css({
+      'display': 'none'
+    });
+  });
+});
+

@@ -216,3 +216,20 @@ textarea {
   margin: 20px 0;
   position: relative;
 }
+
+.appear-liked-user {
+  cursor: pointer;
+}
+
+.liked-user-list {
+  display: none;
+}
+
+.disappear-liked-user {
+  cursor: pointer;
+  display: none;
+}
+
+.like-btn {
+  font-size: 30px;
+}
