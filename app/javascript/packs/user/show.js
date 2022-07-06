@@ -8,10 +8,10 @@ $(function() {
       'display': 'block'
     });
     $('.appear-posted-section').css({
-      'background-color': 'rgb(215, 211, 211)'
+      'background-color': 'whitesmoke'
     });
     $('.appear-remember-section').css({
-      'background-color': 'whitesmoke'
+      'background-color': 'white'
     });
   });
 });
@@ -26,10 +26,10 @@ $(function() {
       'display': 'block'
     });
     $('.appear-remember-section').css({
-      'background-color': 'rgb(215, 211, 211)'
+      'background-color': 'whitesmoke'
     });
     $('.appear-posted-section').css({
-      'background-color': 'whitesmoke'
+      'background-color': 'white'
     });
   });
 });

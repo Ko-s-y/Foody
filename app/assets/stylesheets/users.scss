@@ -73,12 +73,12 @@
   padding-top: 5px;
   text-align: center;
   font-size: 25px;
-  border: solid 1px black;
-  background-color: whitesmoke;
+  border: solid 1px rgb(215, 211, 211);
+  background-color: white;
 }
 
 .appear-link:hover {
-  background-color: rgb(215, 211, 211);
+  background-color: whitesmoke;
 }
 
 .user-data {
@@ -104,6 +104,7 @@
 }
 
 .posts-zero {
-  background-color: rgb(215, 211, 211);
-  padding-bottom: 12px;
+  background-color: whitesmoke;
+  padding-bottom: 15px;
+  font-size: 25px;
 }
