@@ -22,12 +22,15 @@
               <span class="user-element">調理ジャンル: <%= @user.introduction %></span>
             </div>
             <div class="field">
-              <span class="user-element appear-user-data"><i class="fa fa-database"></i>Foody活動の確認</span>
-              <span class="user-element disappear-user-data"><i class="fa fa-database"></i>Foody活動を閉じる</span>
+              <span class="user-element appear-user-data"><i class="	far fa-folder-open user-activity"></i>Foody activity</span>
+              <span class="user-element disappear-user-data"><i class="far fa-folder user-activity"></i>閉じる</span>
               <div class="user-data">
-                <span class="user-element">投稿件数: <%= @posts.count %></span>
-                <span class="user-element">いいねされた投稿件数: <%= @received_like %></span>
-                <span class="user-element">rememberされた投稿件数: <%= @received_remember %></span>
+                <span class="user-element">投稿件数: <%= @posts.count %>件</span>
+                <span class="user-element">コメントした回数: <%= @user.comments.count %>回</span>
+                <span class="user-element">いいねした投稿件数: <%= @user.liked_posts.count %>件</span>
+                <span class="user-element">rememberした投稿件数: <%= @user.checked_remember_posts.count %>件</span>
+                <span class="user-element">rememberされた回数: <%= @received_remember %>回</span>
+                <span class="user-element">いいねをもらった回数: <%= @received_like %>回</span>
               </div>
             </div>
           </div>
