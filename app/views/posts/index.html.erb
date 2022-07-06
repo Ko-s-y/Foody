@@ -44,6 +44,7 @@
 </section>
 <!-- タイムライン -->
 <section class="time-line">
+  <%= paginate @posts %>
   <div class="posts-container">
     <div class="posts-contents">
       <% @posts.each do |post| %>
@@ -89,5 +90,6 @@
       <% end %>
     </div>
   </div>
+  <%= paginate @posts %>
 </section>
 <%= javascript_pack_tag 'post/index' %>
