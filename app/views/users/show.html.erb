@@ -70,6 +70,7 @@
       <% if @posts.count.zero? %>
         <div class="zero-info posts-zero">まだあなたの投稿はありません</div>
       <% else %>
+        <div>ここもページネーション</div>
         <% @posts.each do |post| %>
           <div class="post-area">
             <%= link_to post_path(post.id) do %>
@@ -107,6 +108,7 @@
             <% end %>
           </div>
         <% end %>
+        <div>ここもページネーション</div>
       <% end %>
     </div>
   </div>
@@ -118,6 +120,7 @@
       <% if current_user.checked_remember_posts.count.zero? %>
         <div class="zero-info posts-zero">まだrememberした投稿はありません</div>
       <% else %>
+        <div>ここもページネーション</div>
         <% current_user.checked_remember_posts.each do |post| %>
           <div class="post-area">
             <%= link_to post_path(post.id) do %>
@@ -155,6 +158,7 @@
             <% end %>
           </div>
         <% end %>
+        <div>ここもページネーション</div>
       <% end %>
     </div>
   </div>
