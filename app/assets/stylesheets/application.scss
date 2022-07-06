@@ -123,6 +123,7 @@ footer {
   padding-top: 12px;
 }
 
+// ページネーション関連
 .pagination {
   width: 100%;
   margin: 0 auto;
@@ -130,4 +131,23 @@ footer {
   background-color: #e0dede;
   padding: 20px;
   max-width: 1500px;
+}
+
+.pagination a {
+  font-size: 20px;
+  display: block;
+  color: rgb(184, 180, 180);
+}
+
+.pagination a:hover {
+  color: black;
+}
+
+.current {
+  background-color: rgb(184, 180, 180);
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  color: white;
+  padding-top: 2px;
 }
