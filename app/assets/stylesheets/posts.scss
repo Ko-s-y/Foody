@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .post-form-appear {
-  margin: 30px auto 0;
+  margin: 30px auto;
   width: 80%;
   display: block;
   background-color: #209cee;
@@ -55,10 +55,10 @@
 
 .posts-container {
   padding: 0;
-  background: white;
+  background: whitesmoke;
   overflow: hidden;
   max-width: 1500px;
-  margin: 20px auto;
+  margin: 0 auto;
   font-size: 80%;
   border: solid 1px rgb(215, 211, 211);
   width: 100%;
@@ -232,4 +232,34 @@ textarea {
 
 .like-btn {
   font-size: 30px;
+}
+
+.appear-checked-remember-user {
+  cursor: pointer;
+}
+
+.checked-remember-user-list {
+  display: none;
+}
+
+.disappear-checked-remember-user {
+  cursor: pointer;
+  display: none;
+}
+
+.remember-btn {
+  font-size: 30px;
+}
+
+.like-area {
+  margin: 15px 0;
+}
+
+.remember-area {
+  margin-bottom: 5px;
+}
+
+.post-area-text h2 {
+  font-size: 15px;
+  margin-top: 5px;
 }

@@ -1,62 +1,84 @@
 <% provide(:title, "Profile") %>
 <!-- 他ユーザープロフィール -->
-<section class="hero is-white is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column is-10-desktop is-10-widescreen">
-          <div class="box">
-            <div class="field">
-              <div class="user-icon-field">
-                <% if @user.image? %>
-                  <%= image_tag @user.image.url %>
-                <% else %>
-                  <%= image_tag avatar_url(@user), class: "user-image", alt: "ユーザーアイコン" %>
-                <% end %>
-              </div>
-            </div>
-            <div class="field">
-              <span class="user-element">アカウント名: <%= @user.name %></span>
-            </div>
-            <div class="field">
-              <span class="user-element">調理ジャンル: <%= @user.introduction %></span>
-            </div>
-          </div>
+<section class="other-user-profile">
+  <div class="columns is-centered">
+    <div class="column is-10-desktop is-10-widescreen">
+      <div class="field">
+        <div class="user-icon-field">
+          <% if @user.image? %>
+            <%= image_tag @user.image.url %>
+          <% else %>
+            <%= image_tag avatar_url(@user), class: "user-image", alt: "ユーザーアイコン" %>
+          <% end %>
+        </div>
+      </div>
+      <div class="field">
+        <span class="user-element">アカウント名: <%= @user.name %></span>
+      </div>
+      <div class="field">
+        <span class="user-element">調理ジャンル: <%= @user.introduction %></span>
+      </div>
+      <div class="field">
+        <span class="user-element appear-user-data"><i class="	far fa-folder-open user-activity"></i>Foody activity</span>
+        <span class="user-element disappear-user-data"><i class="far fa-folder user-activity"></i>閉じる</span>
+        <div class="user-data">
+          <span class="user-element">投稿件数: <%= @posts.count %>件</span>
+          <span class="user-element">コメントした回数: <%= @user.comments.count %>回</span>
+          <span class="user-element">いいねした投稿件数: <%= @user.liked_posts.count %>件</span>
+          <span class="user-element">rememberした投稿件数: <%= @user.checked_remember_posts.count %>件</span>
+          <span class="user-element">rememberされた回数: <%= @received_remember %>回</span>
+          <span class="user-element">いいねをもらった回数: <%= @received_like %>回</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 <!-- 他ユーザー投稿一覧 -->
-<section class="time-line">
-  <h2 class="section-title"><%= @user.name %>さんの投稿一覧</h2>
+<section class="other-user-posts">
   <div class="posts-container">
     <div class="posts-contents">
-      <% @posts.each do |post| %>
-        <div class="post-area">
-          <%= link_to post_path(post.id) do %>
-            <figure>
-              <%= image_tag(avatar_url(post.user), class: "posted-user-icon", alt: "ユーザーアイコン") %>
-            </figure>
-            <div class="post-area-text">
-              <div class="posted-user-name"><%= post.user.name %>(<%= post.user.introduction %>)</div>
-              <div class="posted-date"><%= post_time(post.created_at) %></div>
-              <div class="post-text">
-                <span class="post-title"><%= post.title %></span>
-                <span class="post-content"><%= post.post_content %></span>
-                <% unless post.avatar.blank? %>
-                  <div class="post-pict">
-                    <%= image_tag(post_image_url(post), class: "post-image", alt: "投稿画像") %>
-                  </div>
-                <% end %>
-                <span class="comment-count"><i class="fa fa-comments"></i><%= post.comments.count %></span>
-                <span class="like-count"><i class="fa fa-heart"></i></i><%= post.likes.count %></span>
-                <span class="remember-count"><i class="fa fa-book"></i></i><%= post.comments.count %></span>
+      <% if @posts.count.zero? %>
+        <div class="zero-info posts-zero">まだ<%= @user.name %>さんの投稿はありません</div>
+      <% else %>
+        <% @posts.each do |post| %>
+          <div class="post-area">
+            <%= link_to post_path(post.id) do %>
+              <figure>
+                <%= image_tag(avatar_url(post.user), class: "posted-user-icon", alt: "ユーザーアイコン") %>
+              </figure>
+              <div class="post-area-text">
+                <div class="posted-user-name"><%= post.user.name %>(<%= post.user.introduction %>)</div>
+                <div class="posted-date"><%= post_time(post.created_at) %></div>
+                <div class="post-text">
+                  <span class="post-title"><%= post.title %></span>
+                  <span class="post-content"><%= post.post_content %></span>
+                  <% unless post.avatar.blank? %>
+                    <div class="post-pict">
+                      <%= image_tag(post_image_url(post), class: "post-image", alt: "投稿画像") %>
+                    </div>
+                  <% end %>
+                  <% if current_user.already_commented?(post) %>
+                    <span class="comment-count" style="color: olive;"><i class="fa fa-comments"></i><%= post.comments.count %></span>
+                  <% else %>
+                    <span class="comment-count" style="color: silver;"><i class="fa fa-comments"></i><%= post.comments.count %></span>
+                  <% end %>
+                  <% if current_user.already_liked?(post) %>
+                    <span class="like-count" style="color: red;"><i class="fa fa-heart"></i></i><%= post.likes.count %></span>
+                  <% else %>
+                    <span class="like-count" style="color: silver;"><i class="fa fa-heart"></i></i><%= post.likes.count %></span>
+                  <% end %>
+                  <% if current_user.checked_remember?(post) %>
+                    <span class="remember-count" style="color: green;"><i class="fa fa-book"></i></i><%= post.remembers.count %></span>
+                  <% else %>
+                    <span class="remember-count" style="color: silver;"><i class="fa fa-book"></i></i><%= post.remembers.count %></span>
+                  <% end %>
+                </div>
               </div>
-            </div>
-          <% end %>
-        </div>
+            <% end %>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>
 </section>
+<%= javascript_pack_tag 'user/profile' %>
