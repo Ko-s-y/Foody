@@ -62,6 +62,8 @@
 .appear-section-links {
   display: flex;
   justify-content: center;
+  max-width: 1500px;
+  margin: 0 auto;
 }
 
 .appear-link {
@@ -95,4 +97,13 @@
 .user-activity {
   color: #a3d1ff;
   margin-right: 5px;
+}
+
+.other-user-profile {
+  margin: 20px;
+}
+
+.posts-zero {
+  background-color: rgb(215, 211, 211);
+  padding-bottom: 12px;
 }

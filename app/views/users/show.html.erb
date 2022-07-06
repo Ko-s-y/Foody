@@ -67,42 +67,46 @@
 <section class="user-posted-section">
   <div class="posts-container">
     <div class="posts-contents">
-      <% @posts.each do |post| %>
-        <div class="post-area">
-          <%= link_to post_path(post.id) do %>
-            <figure>
-              <%= image_tag(avatar_url(post.user), class: "posted-user-icon", alt: "ユーザーアイコン") %>
-            </figure>
-            <div class="post-area-text">
-              <div class="posted-user-name"><%= post.user.name %>(<%= post.user.introduction %>)</div>
-              <div class="posted-date"><%= post_time(post.created_at) %></div>
-              <div class="post-text">
-                <span class="post-title"><%= post.title %></span>
-                <span class="post-content"><%= post.post_content %></span>
-                <% unless post.avatar.blank? %>
-                  <div class="post-pict">
-                    <%= image_tag(post_image_url(post), class: "post-image", alt: "投稿画像") %>
-                  </div>
-                <% end %>
-                <% if current_user.already_commented?(post) %>
-                  <span class="comment-count" style="color: olive;"><i class="fa fa-comments"></i><%= post.comments.count %></span>
-                <% else %>
-                  <span class="comment-count" style="color: silver;"><i class="fa fa-comments"></i><%= post.comments.count %></span>
-                <% end %>
-                <% if current_user.already_liked?(post) %>
-                  <span class="like-count" style="color: red;"><i class="fa fa-heart"></i></i><%= post.likes.count %></span>
-                <% else %>
-                  <span class="like-count" style="color: silver;"><i class="fa fa-heart"></i></i><%= post.likes.count %></span>
-                <% end %>
-                <% if current_user.checked_remember?(post) %>
-                  <span class="remember-count" style="color: green;"><i class="fa fa-book"></i></i><%= post.remembers.count %></span>
-                <% else %>
-                  <span class="remember-count" style="color: silver;"><i class="fa fa-book"></i></i><%= post.remembers.count %></span>
-                <% end %>
+      <% if @posts.count.zero? %>
+        <div class="zero-info posts-zero">まだあなたの投稿はありません</div>
+      <% else %>
+        <% @posts.each do |post| %>
+          <div class="post-area">
+            <%= link_to post_path(post.id) do %>
+              <figure>
+                <%= image_tag(avatar_url(post.user), class: "posted-user-icon", alt: "ユーザーアイコン") %>
+              </figure>
+              <div class="post-area-text">
+                <div class="posted-user-name"><%= post.user.name %>(<%= post.user.introduction %>)</div>
+                <div class="posted-date"><%= post_time(post.created_at) %></div>
+                <div class="post-text">
+                  <span class="post-title"><%= post.title %></span>
+                  <span class="post-content"><%= post.post_content %></span>
+                  <% unless post.avatar.blank? %>
+                    <div class="post-pict">
+                      <%= image_tag(post_image_url(post), class: "post-image", alt: "投稿画像") %>
+                    </div>
+                  <% end %>
+                  <% if current_user.already_commented?(post) %>
+                    <span class="comment-count" style="color: olive;"><i class="fa fa-comments"></i><%= post.comments.count %></span>
+                  <% else %>
+                    <span class="comment-count" style="color: silver;"><i class="fa fa-comments"></i><%= post.comments.count %></span>
+                  <% end %>
+                  <% if current_user.already_liked?(post) %>
+                    <span class="like-count" style="color: red;"><i class="fa fa-heart"></i></i><%= post.likes.count %></span>
+                  <% else %>
+                    <span class="like-count" style="color: silver;"><i class="fa fa-heart"></i></i><%= post.likes.count %></span>
+                  <% end %>
+                  <% if current_user.checked_remember?(post) %>
+                    <span class="remember-count" style="color: green;"><i class="fa fa-book"></i></i><%= post.remembers.count %></span>
+                  <% else %>
+                    <span class="remember-count" style="color: silver;"><i class="fa fa-book"></i></i><%= post.remembers.count %></span>
+                  <% end %>
+                </div>
               </div>
-            </div>
-          <% end %>
-        </div>
+            <% end %>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>
@@ -111,42 +115,46 @@
 <section class="remember-posts-section">
   <div class="posts-container">
     <div class="posts-contents">
-      <% current_user.checked_remember_posts.each do |post| %>
-        <div class="post-area">
-          <%= link_to post_path(post.id) do %>
-            <figure>
-              <%= image_tag(avatar_url(post.user), class: "posted-user-icon", alt: "ユーザーアイコン") %>
-            </figure>
-            <div class="post-area-text">
-              <div class="posted-user-name"><%= post.user.name %>(<%= post.user.introduction %>)</div>
-              <div class="posted-date"><%= post_time(post.created_at) %></div>
-              <div class="post-text">
-                <span class="post-title"><%= post.title %></span>
-                <span class="post-content"><%= post.post_content %></span>
-                <% unless post.avatar.blank? %>
-                  <div class="post-pict">
-                    <%= image_tag(post_image_url(post), class: "post-image", alt: "投稿画像") %>
-                  </div>
-                <% end %>
-                <% if current_user.already_commented?(post) %>
-                  <span class="comment-count" style="color: olive;"><i class="fa fa-comments"></i><%= post.comments.count %></span>
-                <% else %>
-                  <span class="comment-count" style="color: silver;"><i class="fa fa-comments"></i><%= post.comments.count %></span>
-                <% end %>
-                <% if current_user.already_liked?(post) %>
-                  <span class="like-count" style="color: red;"><i class="fa fa-heart"></i></i><%= post.likes.count %></span>
-                <% else %>
-                  <span class="like-count" style="color: silver;"><i class="fa fa-heart"></i></i><%= post.likes.count %></span>
-                <% end %>
-                <% if current_user.checked_remember?(post) %>
-                  <span class="remember-count" style="color: green;"><i class="fa fa-book"></i></i><%= post.remembers.count %></span>
-                <% else %>
-                  <span class="remember-count" style="color: silver;"><i class="fa fa-book"></i></i><%= post.remembers.count %></span>
-                <% end %>
+      <% if current_user.checked_remember_posts.count.zero? %>
+        <div class="zero-info posts-zero">まだrememberした投稿はありません</div>
+      <% else %>
+        <% current_user.checked_remember_posts.each do |post| %>
+          <div class="post-area">
+            <%= link_to post_path(post.id) do %>
+              <figure>
+                <%= image_tag(avatar_url(post.user), class: "posted-user-icon", alt: "ユーザーアイコン") %>
+              </figure>
+              <div class="post-area-text">
+                <div class="posted-user-name"><%= post.user.name %>(<%= post.user.introduction %>)</div>
+                <div class="posted-date"><%= post_time(post.created_at) %></div>
+                <div class="post-text">
+                  <span class="post-title"><%= post.title %></span>
+                  <span class="post-content"><%= post.post_content %></span>
+                  <% unless post.avatar.blank? %>
+                    <div class="post-pict">
+                      <%= image_tag(post_image_url(post), class: "post-image", alt: "投稿画像") %>
+                    </div>
+                  <% end %>
+                  <% if current_user.already_commented?(post) %>
+                    <span class="comment-count" style="color: olive;"><i class="fa fa-comments"></i><%= post.comments.count %></span>
+                  <% else %>
+                    <span class="comment-count" style="color: silver;"><i class="fa fa-comments"></i><%= post.comments.count %></span>
+                  <% end %>
+                  <% if current_user.already_liked?(post) %>
+                    <span class="like-count" style="color: red;"><i class="fa fa-heart"></i></i><%= post.likes.count %></span>
+                  <% else %>
+                    <span class="like-count" style="color: silver;"><i class="fa fa-heart"></i></i><%= post.likes.count %></span>
+                  <% end %>
+                  <% if current_user.checked_remember?(post) %>
+                    <span class="remember-count" style="color: green;"><i class="fa fa-book"></i></i><%= post.remembers.count %></span>
+                  <% else %>
+                    <span class="remember-count" style="color: silver;"><i class="fa fa-book"></i></i><%= post.remembers.count %></span>
+                  <% end %>
+                </div>
               </div>
-            </div>
-          <% end %>
-        </div>
+            <% end %>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>

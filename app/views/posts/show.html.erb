@@ -124,7 +124,7 @@
   <div class="comment_container">
     <div class="comment_contents">
       <% if @comments.count.zero? %>
-        <div class="comment-info">まだコメントはありません</div>
+        <div class="zero-info">まだコメントはありません</div>
       <% else %>
         <% @comments.each do |comment| %>
           <% if @post.user_id == comment.user_id %>
