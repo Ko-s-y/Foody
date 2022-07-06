@@ -3,6 +3,8 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :liked_posts, through: :likes, source: :post
+  has_many :remembers, dependent: :destroy
+  has_many :checked_remember_posts, through: :remembers, source: :post
 
   has_one_attached :avatar
 
@@ -26,5 +28,9 @@ class User < ApplicationRecord
 
   def already_liked?(post)
     self.likes.exists?(post_id: post.id)
+  end
+
+  def checked_remember?(post)
+    self.remembers.exists?(post_id: post.id)
   end
 end

@@ -1,29 +1,17 @@
-// 投稿セクション出現関数
+// 投稿一覧セクション出現関数
 $(function() {
   $(document).on('click', '.appear-posted-section', function() {
-    $('.liked-posts-section').css({
-      'display': 'none'
-    });
     $('.remember-posts-section').css({
       'display': 'none'
     });
     $('.user-posted-section').css({
       'display': 'block'
     });
-  });
-});
-
-//　　いいねした投稿セクション出現関数
-$(function() {
-  $(document).on('click', '.appear-liked-section', function() {
-    $('.remember-posts-section').css({
-      'display': 'none'
+    $('.appear-posted-section').css({
+      'background-color': 'whitesmoke'
     });
-    $('.user-posted-section').css({
-      'display': 'none'
-    });
-    $('.liked-posts-section').css({
-      'display': 'block'
+    $('.appear-remember-section').css({
+      'background-color': 'white'
     });
   });
 });
@@ -31,15 +19,47 @@ $(function() {
 // rememberした投稿セクション出現関数
 $(function() {
   $(document).on('click', '.appear-remember-section', function() {
-    $('.liked-posts-section').css({
-      'display': 'none'
-    });
     $('.user-posted-section').css({
       'display': 'none'
     });
     $('.remember-posts-section').css({
       'display': 'block'
     });
+    $('.appear-remember-section').css({
+      'background-color': 'whitesmoke'
+    });
+    $('.appear-posted-section').css({
+      'background-color': 'white'
+    });
   });
 });
 
+// userの活動実績表示関数
+$(function() {
+  $(document).on('click', '.appear-user-data', function() {
+    $('.appear-user-data').css({
+      'display': 'none'
+    });
+    $('.disappear-user-data').css({
+      'display': 'block'
+    });
+    $('.user-data').css({
+      'display': 'block'
+    });
+  });
+});
+
+// userの活動実績の非表示関数
+$(function() {
+  $(document).on('click', '.disappear-user-data', function() {
+    $('.disappear-user-data').css({
+      'display': 'none'
+    });
+    $('.appear-user-data').css({
+      'display': 'block'
+    });
+    $('.user-data').css({
+      'display': 'none'
+    });
+  });
+});

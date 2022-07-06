@@ -44,7 +44,6 @@
 </section>
 <!-- タイムライン -->
 <section class="time-line">
-  <h2 class="section-title">タイムライン</h2>
   <div class="posts-container">
     <div class="posts-contents">
       <% @posts.each do |post| %>
@@ -78,9 +77,11 @@
                 <% else %>
                   <span class="like-count" style="color: silver;"><i class="fa fa-heart"></i></i><%= post.likes.count %></span>
                 <% end %>
-
-                <span class="remember-count" style="color: green;"><i class="fa fa-book"></i></i><%= post.comments.count %></span>
-
+                <% if current_user.checked_remember?(post) %>
+                  <span class="remember-count" style="color: green;"><i class="fa fa-book"></i></i><%= post.remembers.count %></span>
+                <% else %>
+                  <span class="remember-count" style="color: silver;"><i class="fa fa-book"></i></i><%= post.remembers.count %></span>
+                <% end %>
               </div>
             </div>
           <% end %>

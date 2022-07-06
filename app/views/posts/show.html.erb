@@ -1,7 +1,6 @@
 <% provide(:title, "Show Post") %>
 <!-- 投稿詳細 -->
 <section class="show-post">
-  <h2 class="section-title">投稿詳細</h2>
   <div class="posts-container">
     <div class="posts-contents">
       <div class="post-area">
@@ -28,26 +27,58 @@
               </div>
             <% end %>
           </div>
-          <% if current_user.already_liked?(@post) %>
-            <%= link_to post_likes_path(@post.id), method: :delete do %>
-              <span class="like-btn" style="color: red;"><i class="fa fa-heart"></i></i><%= @post.likes.count %></span>
-            <% end %>
-          <% else %>
-            <%= link_to post_likes_path(@post.id), method: :post do %>
-              <span class="like-btn" style="color: silver;"><i class="fa fa-heart"></i></i><%= @post.likes.count %></span>
-            <% end %>
-          <% end %>
-          <h2 class="appear-liked-user">いいねしたユーザー一覧表示</h2>
-          <h2 class="disappear-liked-user">いいねしたユーザー一覧非表示</h2>
-          <ul class="liked-user-list">
-            <% @post.liked_users.each do |user| %>
-              <% if user == current_user %>
-                <li><%= link_to "あなた", users_show_path %></li>
-              <% else %>
-                <li><%= link_to user.name, users_profile_path(name: user.name) %></li>
+          <div class="like-area">
+            <% if current_user.already_liked?(@post) %>
+              <%= link_to post_likes_path(@post.id), method: :delete do %>
+                <span class="like-btn" style="color: red;"><i class="fa fa-heart"></i></i><%= @post.likes.count %></span>
+              <% end %>
+            <% else %>
+              <%= link_to post_likes_path(@post.id), method: :post do %>
+                <span class="like-btn" style="color: silver;"><i class="fa fa-heart"></i></i><%= @post.likes.count %></span>
               <% end %>
             <% end %>
-          </ul>
+            <% if @post.likes.count.zero? %>
+              <h2>まだいいねしたユーザーはいません</h2>
+            <% else %>
+              <h2 class="appear-liked-user">いいねしたユーザー一覧表示</h2>
+              <h2 class="disappear-liked-user">いいねしたユーザー一覧非表示</h2>
+              <ul class="liked-user-list">
+                <% @post.liked_users.each do |user| %>
+                  <% if user == current_user %>
+                    <li><%= link_to "あなた", users_show_path %></li>
+                  <% else %>
+                    <li><%= link_to user.name, users_profile_path(name: user.name) %></li>
+                  <% end %>
+                <% end %>
+              </ul>
+            <% end %>
+          </div>
+          <div class="remember-area">
+            <% if current_user.checked_remember?(@post) %>
+              <%= link_to post_remembers_path(@post.id), method: :delete do %>
+                <span class="remember-btn" style="color: green;"><i class="fa fa-book"></i></i><%= @post.remembers.count %></span>
+              <% end %>
+            <% else %>
+              <%= link_to post_remembers_path(@post.id), method: :post do %>
+                <span class="remember-btn" style="color: silver;"><i class="fa fa-book"></i></i><%= @post.remembers.count %></span>
+              <% end %>
+            <% end %>
+            <% if @post.remembers.count.zero? %>
+              <h2>まだrememberしたユーザーはいません</h2>
+            <% else %>
+              <h2 class="appear-checked-remember-user">rememberしたユーザー一覧表示</h2>
+              <h2 class="disappear-checked-remember-user">rememberしたユーザー一覧非表示</h2>
+              <ul class="checked-remember-user-list">
+                <% @post.checked_remember_users.each do |user| %>
+                  <% if user == current_user %>
+                    <li><%= link_to "あなた", users_show_path %></li>
+                  <% else %>
+                    <li><%= link_to user.name, users_profile_path(name: user.name) %></li>
+                  <% end %>
+                <% end %>
+              </ul>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
@@ -90,56 +121,59 @@
 </section>
 <!-- 投稿のコメント一覧 -->
 <section class="comment-tree">
-  <h2 class="section-title">コメント一覧</h2>
   <div class="comment_container">
     <div class="comment_contents">
-      <% @comments.each do |comment| %>
-        <% if @post.user_id == comment.user_id %>
-          <!-- 投稿主のコメント(右側) -->
-          <div class="post-owner-comment">
-            <div class="owner-text"><%= comment.comment_content %></div>
-            <div class="comment-image">
-              <% unless comment.avatar.blank? %>
-                <div class="comment-pict">
-                  <%= image_tag(post_image_url(comment), alt: "コメント画像", class: "owner-pic") %>
-                </div>
-              <% end %>
-            </div>
-            <% if current_user.id == comment.user.id %>
-              <%= link_to post_comment_path(@post, comment), method: :delete, data: {confirm: "本当に削除しますか？"} do %>
-                <i class="fas fa-trash-alt right-trash"></i>
-              <% end %>
-            <% end %>
-            <span class="comment-date"><%= comment.created_at.strftime('%m/%d %H:%M') %></span>
-          </div>
-        <% else %>
-          <!-- その他ユーザーのコメント(左側) -->
-          <div class="other-user-comment">
-            <figure>
-              <% if current_user.id == comment.user_id %>
-                <%= link_to image_tag(avatar_url(comment.user), class: "other-user-icon", alt: "ユーザーアイコン"), users_show_path %>
-              <% else %>
-                <%= link_to image_tag(avatar_url(comment.user), class: "other-user-icon", alt: "ユーザーアイコン"), users_profile_path(name: comment.user.name) %>
-              <% end %>
-            </figure>
-            <div class="other-user-text">
-              <div class="other-name"><%= comment.user.name %></div>
-              <div class="other-text"><%= comment.comment_content %></div>
+      <% if @comments.count.zero? %>
+        <div class="zero-info">まだコメントはありません</div>
+      <% else %>
+        <% @comments.each do |comment| %>
+          <% if @post.user_id == comment.user_id %>
+            <!-- 投稿主のコメント(右側) -->
+            <div class="post-owner-comment">
+              <div class="owner-text"><%= comment.comment_content %></div>
               <div class="comment-image">
                 <% unless comment.avatar.blank? %>
                   <div class="comment-pict">
-                    <%= image_tag(post_image_url(comment), alt: "コメント画像", class: "other-user-pic") %>
+                    <%= image_tag(post_image_url(comment), alt: "コメント画像", class: "owner-pic") %>
                   </div>
                 <% end %>
               </div>
               <% if current_user.id == comment.user.id %>
                 <%= link_to post_comment_path(@post, comment), method: :delete, data: {confirm: "本当に削除しますか？"} do %>
-                  <i class="fas fa-trash-alt left-trash"></i>
+                  <i class="fas fa-trash-alt right-trash"></i>
                 <% end %>
               <% end %>
               <span class="comment-date"><%= comment.created_at.strftime('%m/%d %H:%M') %></span>
             </div>
-          </div>
+          <% else %>
+            <!-- その他ユーザーのコメント(左側) -->
+            <div class="other-user-comment">
+              <figure>
+                <% if current_user.id == comment.user_id %>
+                  <%= link_to image_tag(avatar_url(comment.user), class: "other-user-icon", alt: "ユーザーアイコン"), users_show_path %>
+                <% else %>
+                  <%= link_to image_tag(avatar_url(comment.user), class: "other-user-icon", alt: "ユーザーアイコン"), users_profile_path(name: comment.user.name) %>
+                <% end %>
+              </figure>
+              <div class="other-user-text">
+                <div class="other-name"><%= comment.user.name %></div>
+                <div class="other-text"><%= comment.comment_content %></div>
+                <div class="comment-image">
+                  <% unless comment.avatar.blank? %>
+                    <div class="comment-pict">
+                      <%= image_tag(post_image_url(comment), alt: "コメント画像", class: "other-user-pic") %>
+                    </div>
+                  <% end %>
+                </div>
+                <% if current_user.id == comment.user.id %>
+                  <%= link_to post_comment_path(@post, comment), method: :delete, data: {confirm: "本当に削除しますか？"} do %>
+                    <i class="fas fa-trash-alt left-trash"></i>
+                  <% end %>
+                <% end %>
+                <span class="comment-date"><%= comment.created_at.strftime('%m/%d %H:%M') %></span>
+              </div>
+            </div>
+          <% end %>
         <% end %>
       <% end %>
     </div>
