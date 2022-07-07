@@ -13,7 +13,7 @@
               <div class="field">
                 <div class="user-icon-field">
                   <% if current_user.image? %>
-                    <%= image_tag current_user.image.url, alt: "ユーザーアイコン" %>
+                    <%= image_tag current_user.image.url, class: "user-image", alt: "ユーザーアイコン" %>
                   <% else %>
                     <%= image_tag avatar_url(current_user), class: "user-image", alt: "ユーザーアイコン" %>
                   <% end %>

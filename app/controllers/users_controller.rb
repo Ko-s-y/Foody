@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
 # my page
+  # rememberチェックしたposts切り出し
   def show
     @posts = current_user.posts.all.order(id: :desc)
     received_counter(@posts)
@@ -29,6 +30,7 @@ class UsersController < ApplicationController
     params.require(:user).permit(:avatar)
   end
 
+# ここメソッド2つに分ける
   def received_counter(posts)
     # いいねをもらった回数
     @received_like = 0
