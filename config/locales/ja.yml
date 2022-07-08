@@ -30,10 +30,9 @@ ja:
               blank: 'が入力されていません。'
               too_long: 'は%{count}文字以下に設定して下さい。'
               invalid: 'は有効でありません。'
-
   datetime:
     distance_in_words:
-      half_a_minute: "30秒"
+      half_a_minute: '30秒'
       less_than_x_seconds:
         one:   '1秒'
         other: '%{count}秒'
@@ -67,3 +66,10 @@ ja:
       over_x_years:
         one:   '1年以上'
         other: '%{count}年以上'
+  views:
+    pagination:
+      first: <i class="fas fa-angle-double-left"></i>
+      last: <i class="fas fa-angle-double-right"></i>
+      previous: <i class="fas fa-angle-left"></i>
+      next: <i class="fas fa-angle-right"></i>
+      truncate: "..."
