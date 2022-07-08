@@ -5,8 +5,8 @@
     <% visited = notification.visited %>
 
     <%= link_to users_profile_path(visitor.name) do %>
-      <%= image_tag avatar_url(visitor).to_s %>
-      <strong><%= visitor.name %></strong>さんが
+      <%= image_tag avatar_url(visitor) %>
+      <%= visitor.name %>さんが
     <% end %>
 
     <% if notification.action == "like" %>
@@ -16,38 +16,19 @@
       <%= link_to 'あなたの投稿', notification.post %>にrememberしました
 
     <% elsif notification.action == "comment" %>
-      <%= link_to 'あなたの投稿', notification.post %>にcommentしました
-
+      <% if notification.post.user_id == visited.id %>
+        <%= link_to "あなたの投稿", notification.post %>にコメントしました
+      <% else %>
+        <%= link_to post_path(notification.post) do %>
+          <%= image_tag avatar_url(notification.post.user) %>
+          <%= notification.post.user.name %>さんの投稿にコメントしました
+          <%= notification.comment %>
+        <% end %>
+      <% end %>
     <% end %>
 
+  <%= info_time(notification.created_at) %>
   <% end %>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <% else %>
   <p>通知はありません</p>
 <% end %>
