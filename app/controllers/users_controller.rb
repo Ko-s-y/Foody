@@ -4,14 +4,14 @@ class UsersController < ApplicationController
 # my page
   # rememberチェックしたposts切り出し
   def show
-    @posts = current_user.posts.all.order(id: :desc)
+    @posts = current_user.posts.all.order(created_at: :desc)
     received_counter(@posts)
   end
 
 # 他ユーザーページ
   def profile
     @user = User.find_by(name: params[:name])
-    @posts = @user.posts.all.order(id: :desc)
+    @posts = @user.posts.all.order(created_at: :desc)
     received_counter(@posts)
   end
 
