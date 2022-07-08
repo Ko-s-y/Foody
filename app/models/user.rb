@@ -5,6 +5,8 @@ class User < ApplicationRecord
   has_many :liked_posts, through: :likes, source: :post
   has_many :remembers, dependent: :destroy
   has_many :checked_remember_posts, through: :remembers, source: :post
+  has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
+  has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
 
   has_one_attached :avatar
 

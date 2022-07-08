@@ -5,6 +5,7 @@ class Post < ApplicationRecord
   has_many :liked_users, through: :likes, source: :user
   has_many :remembers, dependent: :destroy
   has_many :checked_remember_users, through: :remembers, source: :user
+  has_many :notifications, dependent: :destroy
 
   has_one_attached :avatar
 
