@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
 
+  resources :notifications, only: :index
+
   resources :posts do
     resources :comments, only: [:create, :destroy]
     resource :likes, only: [:create, :destroy]
