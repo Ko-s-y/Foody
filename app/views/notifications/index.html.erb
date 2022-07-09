@@ -11,24 +11,31 @@
                   <% visitor = notification.visitor %>
                   <% visited = notification.visited %>
                   <div class="info-area">
-                    <%= link_to users_profile_path(visitor.name) do %>
-                      <strong class="info-element"><%= visitor.name %></strong>さんが
-                    <% end %>
+                    <strong class="info-element"><%= link_to visitor.name, users_profile_path(visitor.name) %></strong>
+                    <span>さんが</span>
+
                     <% if notification.action == "like" %>
-                      <strong class="info-element"><%= link_to 'あなたの投稿', notification.post %></strong>に<span class="like-action">like</span>しました
+                      <strong class="info-element"><%= link_to 'あなたの投稿', notification.post %></strong>
+                      <span>にlikeしました</span>
+
                     <% elsif notification.action == "remember" %>
-                      <strong class="info-element"><%= link_to 'あなたの投稿', notification.post %></strong>に<span class="remember-action">remember</span>しました
+                      <strong class="info-element"><%= link_to 'あなたの投稿', notification.post %></strong>
+                      <span>にrememberしました</span>
+
                     <% elsif notification.action == "comment" %>
                       <% if notification.post.user_id == visited.id %>
-                        <strong class="info-element"><%= link_to "あなたの投稿", notification.post %></strong>に<span class="comment-action">コメント</span>しました
+                        <strong class="info-element"><%= link_to "あなたの投稿", notification.post %></strong>
+                        <span>にコメントしました</span>
                         <div class="comment-content"><%= notification.comment.comment_content %></div>
                       <% else %>
                         <%= link_to post_path(notification.post) do %>
-                          <strong class="info-element"><%= notification.post.user.name %>さんの投稿</strong>に<span class="comment-action">コメント</span>しました
-                          <div class="comment-content"><%= notification.comment.comment_content %></div>
+                          <strong class="info-element"><%= notification.post.user.name %>さんの投稿</strong>
                         <% end %>
+                        <span>にコメントしました</span>
+                        <div class="comment-content"><%= notification.comment.comment_content %></div>
                       <% end %>
                     <% end %>
+
                     <span class="info-date"><%= info_time(notification.created_at) %></span>
                   </div>
                 <% end %>
