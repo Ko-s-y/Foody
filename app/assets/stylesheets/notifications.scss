@@ -7,6 +7,11 @@
   position: relative;
   line-height: 135%;
 
+  .none-info {
+    font-size: 20px;
+    text-align: center;
+  }
+
   .info-area {
     width: 100%;
     display: block;
@@ -32,18 +37,6 @@
 
     .comment-content {
       color: #8a9aa4;
-    }
-
-    .like-action {
-      color: red;
-    }
-
-    .remember-action {
-      color: green;
-    }
-
-    .comment-action {
-      color: olive;
     }
   }
 }

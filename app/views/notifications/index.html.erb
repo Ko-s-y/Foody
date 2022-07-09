@@ -13,15 +13,12 @@
                   <div class="info-area">
                     <strong class="info-element"><%= link_to visitor.name, users_profile_path(visitor.name) %></strong>
                     <span>さんが</span>
-
                     <% if notification.action == "like" %>
                       <strong class="info-element"><%= link_to 'あなたの投稿', notification.post %></strong>
                       <span>にlikeしました</span>
-
                     <% elsif notification.action == "remember" %>
                       <strong class="info-element"><%= link_to 'あなたの投稿', notification.post %></strong>
                       <span>にrememberしました</span>
-
                     <% elsif notification.action == "comment" %>
                       <% if notification.post.user_id == visited.id %>
                         <strong class="info-element"><%= link_to "あなたの投稿", notification.post %></strong>
@@ -35,12 +32,12 @@
                         <div class="comment-content"><%= notification.comment.comment_content %></div>
                       <% end %>
                     <% end %>
-
                     <span class="info-date"><%= info_time(notification.created_at) %></span>
                   </div>
+                  <% notification.update(checked: true) %>
                 <% end %>
               <% else %>
-                <p>通知はありません</p>
+                <p class="none-info">現在新しい通知はありません</p>
               <% end %>
             </div>
           </div>
