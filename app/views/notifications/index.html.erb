@@ -1,46 +1,50 @@
-<section class="user-notification">
-  <div class="posts-container">
-    <div class="posts-contents">
-      <% if @notifications.exists? %>
-        <% @notifications.each do |notification| %>
-
-          <!-- それぞれのuserを格納 -->
-          <% visitor = notification.visitor %>
-          <% visited = notification.visited %>
-
-          <div class="post-area">
-            <%= link_to users_profile_path(visitor.name) do %>
-              <figure>
-                <%= image_tag avatar_url(visitor), classs: "posted-user-icon", alt: "ユーザーアイコン" %>
-              </figure>
-              <strong><%= visitor.name %></strong>さんが
-            <% end %>
-
-            <% if notification.action == "like" %>
-              <%= link_to 'あなたの投稿', notification.post %>にlikeしました
-
-            <% elsif notification.action == "remember" %>
-              <%= link_to 'あなたの投稿', notification.post %>にrememberしました
-
-            <% elsif notification.action == "comment" %>
-              <% if notification.post.user_id == visited.id %>
-                <%= link_to "あなたの投稿", notification.post %>にコメントしました
-              <% else %>
-                <%= link_to post_path(notification.post) do %>
-                  <%= image_tag avatar_url(notification.post.user) %>
-                  <%= notification.post.user.name %>さんの投稿にコメントしました
-                  <%= notification.comment %>
+<section class="user-notification hero is-light is-fullheight">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-10-desktop is-10-widescreen">
+          <div class="box">
+            <div class="info-contents">
+              <% if @notifications.exists? %>
+                <% @notifications.each do |notification| %>
+                  <!-- それぞれのuserを格納 -->
+                  <% visitor = notification.visitor %>
+                  <% visited = notification.visited %>
+                  <div class="info-area">
+                    <%= link_to users_profile_path(visitor.name) do %>
+                      <figure>
+                        <%= image_tag avatar_url(visitor), classs: "info-user-icon", alt: "ユーザーアイコン" %>
+                      </figure>
+                      <strong class="visitor-name"><%= visitor.name %></strong>さんが
+                    <% end %>
+                    <% if notification.action == "like" %>
+                      <%= link_to 'あなたの投稿', notification.post %>にlikeしました
+                    <% elsif notification.action == "remember" %>
+                      <%= link_to 'あなたの投稿', notification.post %>にrememberしました
+                    <% elsif notification.action == "comment" %>
+                      <% if notification.post.user_id == visited.id %>
+                        <%= link_to "あなたの投稿", notification.post %>にコメントしました
+                        <%= notification.comment.comment_content %>
+                      <% else %>
+                        <%= link_to post_path(notification.post) do %>
+                          <figure>
+                            <%= image_tag avatar_url(notification.post.user), class: "info-user-icon" %>
+                          </figure>
+                          <%= notification.post.user.name %>さんの投稿にコメントしました
+                          <%= notification.comment.comment_content %>
+                        <% end %>
+                      <% end %>
+                    <% end %>
+                    <span class="info-date"><%= info_time(notification.created_at) %></span>
+                  </div>
                 <% end %>
+              <% else %>
+                <p>通知はありません</p>
               <% end %>
-            <% end %>
-
-            <%= info_time(notification.created_at) %>
+            </div>
           </div>
-        <% end %>
-
-      <% else %>
-        <p>通知はありません</p>
-      <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </section>

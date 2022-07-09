@@ -1,3 +1,43 @@
 // Place all the styles related to the notifications controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.info-contents {
+  overflow: hidden;
+  position: relative;
+  line-height: 135%;
+
+  .info-area {
+    width: 100%;
+    display: block;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-bottom: solid 1px rgb(215, 211, 211);
+    overflow: hidden;
+
+    // 最後の投稿の下線消し
+    &:last-child {
+      border-bottom: solid 0px;
+    }
+
+    figure {
+      width: 50px;
+      margin: 0 10px;
+      float: left;
+
+      .posted-user-icon {
+        width: 50px;
+      }
+    }
+
+    .visitor-name {
+      font-weight: 900;
+      color: green;
+    }
+
+    .info-date {
+      color: #8a9aa4;
+      float: right;
+    }
+  }
+}
