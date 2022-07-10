@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.user-notification {
+  padding: 20px;
+}
+
 .info-contents {
   overflow: hidden;
   position: relative;
@@ -10,6 +14,20 @@
   .none-info {
     font-size: 20px;
     text-align: center;
+  }
+
+  .posts-link {
+    margin: 15px auto 5px;
+    width: 50%;
+    display: block;
+    background-color: #209cee;
+    color: white !important;
+    text-align: center;
+    border-radius: 20px;
+    height: 40px;
+    font-size: 20px;
+    max-width: 500px;
+    padding-top: 8px;
   }
 
   .info-area {
