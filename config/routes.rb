@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :notifications, only: :index
+  get 'notifications/checked', to: 'notifications#checked'
 
   resources :posts do
     resources :comments, only: [:create, :destroy]
