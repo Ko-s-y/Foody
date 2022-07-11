@@ -32,7 +32,6 @@
                 <% end %>
                 <span class="info-date"><%= info_time(notification.created_at) %></span>
               </div>
-              <% notification.update(checked: true) %>
             <% end %>
           <% else %>
             <p class="none-info">現在新しい通知はありません</p>
