@@ -3,13 +3,14 @@ class NotificationsController < ApplicationController
   after_action :checked_true!, only: :index
 
   def index
-    @notifications = current_user.passive_notifications.order(created_at: :desc)
-    @notifications = @notifications.where.not(visitor_id: current_user.id)
-    @notifications = @notifications.where(checked: false)
+    @notifications = current_user.passive_notifications.
+                                  where(checked: false).
+                                  order(created_at: :desc)
   end
 
   private
 
+  # notifications訪れたら既読にする
   def checked_true!
     @notifications.each do |notification|
       notification.update(checked: true)
