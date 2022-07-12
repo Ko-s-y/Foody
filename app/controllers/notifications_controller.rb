@@ -2,14 +2,12 @@ class NotificationsController < ApplicationController
   before_action :authenticate_user!
   after_action :checked_true!, only: :index
 
-# notificationsはmodelファイルにて　　default_scope -> { order(created_at: :desc) }　に指定しています
-
   def index
-    @notifications = current_user.passive_notifications.where(checked: false)
+    @notifications = current_user.passive_notifications.where(checked: false).order(created_at: :desc)
   end
 
   def checked
-    @checked_notifications = current_user.passive_notifications.page(params[:page]).per(30)
+    @checked_notifications = current_user.passive_notifications.where.not(visitor_id: current_user.id).order(created_at: :desc).page(params[:page]).per(30)
   end
 
   private

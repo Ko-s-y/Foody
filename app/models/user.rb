@@ -25,14 +25,14 @@ class User < ApplicationRecord
   validates :introduction, presence: true, length: { maximum: 10 }
 
   def already_commented?(post)
-    self.comments.exists?(post_id: post.id)
+    comments.exists?(post_id: post.id)
   end
 
   def already_liked?(post)
-    self.likes.exists?(post_id: post.id)
+    likes.exists?(post_id: post.id)
   end
 
   def checked_remember?(post)
-    self.remembers.exists?(post_id: post.id)
+    remembers.exists?(post_id: post.id)
   end
 end

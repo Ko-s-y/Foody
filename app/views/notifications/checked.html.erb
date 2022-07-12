@@ -25,7 +25,11 @@
                     <div class="comment-content"><%= notification.comment.comment_content %></div>
                   <% else %>
                     <%= link_to post_path(notification.post) do %>
-                      <strong class="info-element"><%= notification.post.user.name %>さんの投稿</strong>
+                      <% if visitor.name == notification.post.user.name %>
+                        <strong class="info-element">自身の投稿</strong>
+                      <% else %>
+                        <strong class="info-element"><%= notification.post.user.name %>さんの投稿</strong>
+                      <% end %>
                     <% end %>
                     <span>にコメントしました</span>
                     <div class="comment-content"><%= notification.comment.comment_content %></div>

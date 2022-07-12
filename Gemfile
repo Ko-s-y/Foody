@@ -71,5 +71,5 @@ gem 'devise'
 # heroku画像をamazonS3へ
 gem "aws-sdk"
 
-#　ページネーションの実装
+# ページネーションの実装
 gem 'kaminari'
