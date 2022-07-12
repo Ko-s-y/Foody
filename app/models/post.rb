@@ -15,7 +15,13 @@ class Post < ApplicationRecord
   # like　=> notification
   def create_notification_like!(current_user)
     # すでにlikeされているか検索
-    like_record = Notification.where(["visitor_id = ? and visited_id = ? and post_id = ? and action = ? ", current_user.id, user_id, id, 'like'])
+    like_record = Notification.where([
+      "visitor_id = ? and visited_id = ? and post_id = ? and action = ? ",
+      current_user.id,
+      user_id,
+      id,
+      'like',
+    ])
     # likeされていない場合のみ、通知レコードを作成
     if like_record.blank?
       notification = current_user.active_notifications.new(
@@ -34,7 +40,13 @@ class Post < ApplicationRecord
   # remember　=> notification
   def create_notification_remember!(current_user)
     # すでにrememberされているか検索
-    remember_record = Notification.where(["visitor_id = ? and visited_id = ? and post_id = ? and action = ? ", current_user.id, user_id, id, 'remember'])
+    remember_record = Notification.where([
+      "visitor_id = ? and visited_id = ? and post_id = ? and action = ? ",
+      current_user.id,
+      user_id,
+      id,
+      'remember',
+    ])
     # rememberされていない場合のみ、通知レコードを作成
     if remember_record.blank?
       notification = current_user.active_notifications.new(
