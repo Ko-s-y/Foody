@@ -16,7 +16,7 @@ class NotificationsController < ApplicationController
     @my_notifications = current_user.passive_notifications.order(created_at: :desc)
   end
 
-  # index訪れたら既読にする
+  # indexからページ遷移したら既読にする
   def checked_true!
     @notifications.each do |notification|
       notification.update(checked: true)
