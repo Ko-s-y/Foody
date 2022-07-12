@@ -3,8 +3,10 @@ class CommentsController < ApplicationController
 
   def create
     @comment = current_user.comments.new(comment_params)
+    post = @comment.post
     if @comment.save
       flash[:notice] = "投稿にコメントしました。"
+      post.create_notification_comment!(current_user, @comment.id)
     else
       flash[:alert] = @comment.errors.full_messages[0]
     end
