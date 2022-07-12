@@ -27,7 +27,7 @@ module ApplicationHelper
     end
   end
 
-  def new_notifications
-    current_user.passive_notifications.where(checked: false)
+  def new_notifications(user)
+    user.passive_notifications.where(checked: false)
   end
 end
