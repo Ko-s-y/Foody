@@ -23,6 +23,16 @@
     font-size: 20px;
   }
 
+  .info-notice {
+    margin-right: 35px !important;
+  }
+
+  .new-notice-count {
+    padding-top: 2px !important;
+    right: 46% !important;
+    top: 65px !important;
+  }
+
 ///////////////////////////////////
 // homeページ
   .intro-message {
@@ -133,6 +143,16 @@
 @media (max-width: 768px) {
 
 ///////////////////////////////////
+// header
+  .info-notice {
+    margin-right: 30px !important;
+  }
+
+  .new-notice-count {
+    padding-top: 1px !important;
+    right: 41% !important;
+  }
+
 // footer
   footer {
     height: 80px !important;

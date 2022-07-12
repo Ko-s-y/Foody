@@ -1,0 +1,86 @@
+// Place all the styles related to the notifications controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.user-notification {
+  padding: 20px;
+}
+
+.info-contents {
+  overflow: hidden;
+  position: relative;
+  line-height: 135%;
+
+  .none-info {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .checked-notifications-link {
+    text-align: center;
+    display: block;
+    width: 50%;
+    margin: 15px auto 0;
+  }
+
+  .posts-link {
+    margin: 15px auto 5px;
+    width: 50%;
+    display: block;
+    background-color: #209cee;
+    color: white !important;
+    text-align: center;
+    border-radius: 20px;
+    height: 40px;
+    font-size: 20px;
+    max-width: 500px;
+    padding-top: 8px;
+  }
+
+  .info-area {
+    width: 100%;
+    display: block;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-bottom: solid 1px rgb(215, 211, 211);
+    overflow: hidden;
+
+    // 最後の投稿の下線消し
+    &:last-child {
+      border-bottom: solid 0px;
+    }
+
+    .info-element {
+      font-weight: 900;
+      color: green;
+    }
+
+    .info-date {
+      color: #8a9aa4;
+      float: right;
+    }
+
+    .comment-content {
+      color: #8a9aa4;
+    }
+  }
+}
+
+.none-exists-info {
+  font-size: 20px;
+  text-align: center;
+}
+
+.posts-link-to {
+  margin: 15px auto 5px;
+  width: 50%;
+  display: block;
+  background-color: #209cee;
+  color: white !important;
+  text-align: center;
+  border-radius: 20px;
+  height: 40px;
+  font-size: 20px;
+  max-width: 500px;
+  padding-top: 6px;
+}

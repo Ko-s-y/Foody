@@ -4,6 +4,8 @@ class RemembersController < ApplicationController
   def create
     @remember = current_user.remembers.create(post_id: params[:post_id])
     @remember.save
+    post = @remember.post
+    post.create_notification_remember!(current_user)
     redirect_to post_path(params[:post_id])
   end
 
