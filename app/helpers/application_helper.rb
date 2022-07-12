@@ -26,4 +26,8 @@ module ApplicationHelper
       ActionController::Base.helpers.asset_path('tortelli.jpg')
     end
   end
+
+  def new_notifications
+    current_user.passive_notifications.where(checked: false)
+  end
 end
