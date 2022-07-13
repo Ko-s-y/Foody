@@ -3,7 +3,7 @@
 <% if @range == "Post" %>
   <% if @posts.present? %>
     <div>
-      <h1>「<b><%= params[:word] %><%= @keywords %>」</b>の検索結果<span><%= @posts.count %>件</span></h1>
+      <h1>「<b><%= params[:word] %>」</b>の検索結果<span><%= @posts.count %>件</span></h1>
     </div>
     <ul>
       <% @posts.each do |post| %>
