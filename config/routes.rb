@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     post 'users/show', to: 'users#update' # アイコン変更
   end
 
+  get 'searches/search', to: 'searches#search'
+
   get 'home', to: 'pages#home'
   get 'about', to: 'pages#about'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

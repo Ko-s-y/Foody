@@ -1,0 +1,44 @@
+<h2>検索結果</h2>
+
+<% if @range == "Post" %>
+  <% if @posts.present? %>
+    <div>
+      <h1>「<b><%= params[:word] %>」</b>の検索結果<span><%= @posts.count %>件</span></h1>
+    </div>
+    <ul>
+      <% @posts.each do |post| %>
+        <h2><%= post.title %></h2>
+        <p><%= post.post_content.truncate(110).delete '#,`,*,\,' %></p>
+      <% end %>
+    </ul>
+
+  <% else %>
+    <div>
+      <p>「<b><%= params[:word] %></b>」の検索結果はありませんでした。</p>
+      <p>キーワードを変更してもう一度検索してください。</p>
+      <button>検索のヒント</button>
+    </div>
+  <% end %>
+
+<% elsif @range == 'Comment' %>
+  <% if @comments.present? %>
+    <div>
+      <h1>「<b><%= params[:word] %>」</b>の検索結果<span><%= @comments.count %>件</span></h1>
+    </div>
+    <ul>
+      <% @comments.each do |comment| %>
+        <p><%= comment.comment_content.truncate(110).delete '#,`,*,\,' %></p>
+      <% end %>
+    </ul>
+
+  <% else %>
+    <div>
+      <p>「<b><%= params[:word] %></b>」の検索結果はありませんでした。</p>
+      <p>キーワードを変更してもう一度検索してください。</p>
+      <button>検索のヒント</button>
+    </div>
+  <% end %>
+<% end %>
+
+
+
