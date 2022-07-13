@@ -89,6 +89,16 @@ class Post < ApplicationRecord
   end
 
   def self.looks(search, word)
-    @post = Post.where("title LIKE?","%#{word}%").or(Post.where("post_content LIKE?","%#{word}%"))
+    # 空文字があれば
+    if word.include?(" ") || word.include?("　")
+      words = word.split(/[[:blank:]]+/)
+      word_1 = words.first
+      word_2 = words.second
+      @posts = Post.where("title LIKE ? AND title LIKE ?", "%#{word_1}%", "%#{word_2}%").or(Post.where("post_content LIKE ? AND post_content LIKE ?", "%#{word_1}%", "%#{word_2}%"))
+    # 空文字なければ
+    else
+      @posts = Post.where("title LIKE ? OR post_content LIKE ?", "%#{word}%", "%#{word}%")
+    end
+    @posts = @posts.order(id: :DESC)
   end
 end
