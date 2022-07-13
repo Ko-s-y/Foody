@@ -3,57 +3,55 @@
   <div class="columns is-centered">
     <div class="column is-10-desktop is-10-widescreen">
       <div class="box">
-        <div class="info-contents">
-
-
+        <div class="result-contents">
           <% if @range == "Post" %>
-            <% if @posts.present? %>
-              <%= paginate @posts %>
-              <div>
-                <h1>「<b><%= params[:word] %>」</b>の検索結果<span><%= @posts.total_count %>件</span></h1>
-                <p><%= @posts.current_page %> / <%= @posts.total_pages %> ページ</p>
-              </div>
-              <ul>
-                <% @posts.each do |post| %>
-                  <h2><%= post.title %></h2>
-                  <p><%= post.post_content.truncate(110).delete '#,`,*,\,' %></p>
-                <% end %>
-              </ul>
-              <%= paginate @posts %>
-
-            <% else %>
-              <div>
-                <p>「<b><%= params[:word] %></b>」の投稿からの検索結果はありませんでした。</p>
-                <p>キーワードを変更,もしくは投稿とコメントを変更してもう一度検索してください。</p>
-                <button>検索のヒント</button>
-              </div>
-            <% end %>
-
-
+            <div class="post-result">
+              <% if @posts.present? %>
+                <div class="result-count-area">
+                  <h1 class="result-count">「 <%= params[:word] %> 」を含む投稿のヒット件数:<span> <%= @posts.total_count %>件</span></h1>
+                </div>
+                <%= paginate @posts %>
+                <div class="hit-content">
+                  <% @posts.each do |post| %>
+                    <%= link_to post_path(post.id) do %>
+                      <h2 class="hit-post-title"><%= post.title %></h2>
+                      <p class="hit-post-content"><%= post.post_content.truncate(110).delete '#,`,*,\,' %></p>
+                    <% end %>
+                  <% end %>
+                </div>
+                <%= paginate @posts %>
+              <% else %>
+                <div>
+                  <p>「 <%= params[:word] %> 」を含む投稿はありませんでした。</p>
+                  <p>キーワードを変更,もしくは投稿とコメントを変更してもう一度検索してください。</p>
+                  <button>検索のヒント</button>
+                </div>
+              <% end %>
+            </div>
           <% elsif @range == 'Comment' %>
-            <% if @comments.present? %>
-              <%= paginate @comments %>
-              <div>
-                <h1>「<b><%= params[:word] %>」</b>の検索結果<span><%= @comments.total_count %>件</span></h1>
-                <p><%= @comments.current_page %> / <%= @comments.total_pages %> ページ</p>
-              </div>
-              <ul>
-                <% @comments.each do |comment| %>
-                  <p><%= comment.comment_content.truncate(110).delete '#,`,*,\,' %></p>
-                <% end %>
-              </ul>
-              <%= paginate @comments %>
-
-            <% else %>
-              <div>
-                <p>「<b><%= params[:word] %></b>」のコメントからの検索結果はありませんでした。</p>
-                <p>キーワードを変更,もしくは投稿とコメントを変更してもう一度検索してください。</p>
-                <button>検索のヒント</button>
-              </div>
-            <% end %>
+            <div class="comment-result">
+              <% if @comments.present? %>
+                <div class="result-count-area">
+                  <h1 class="result-count">「 <%= params[:word] %> 」を含むコメントのヒット件数<span><%= @comments.total_count %>件</span></h1>
+                </div>
+                <%= paginate @comments %>
+                <div class="hit-content">
+                  <% @comments.each do |comment| %>
+                    <%= link_to post_path(comment.post.id) do %>
+                      <p class="hit-comment-content"><%= comment.comment_content.truncate(110).delete '#,`,*,\,' %></p>
+                    <% end %>
+                  <% end %>
+                </div>
+                <%= paginate @comments %>
+              <% else %>
+                <div>
+                  <p>「 <%= params[:word] %> 」を含むコメントはありませんでした。</p>
+                  <p>キーワードを変更,もしくは投稿とコメントを変更してもう一度検索してください。</p>
+                  <button>検索のヒント</button>
+                </div>
+              <% end %>
+            </div>
           <% end %>
-
-
         </div>
       </div>
     </div>

@@ -5,3 +5,26 @@
 .search-result {
   padding: 20px;
 }
+
+.result-contents {
+  font-size: 20px;
+}
+
+.result-count-area {
+  text-align: center;
+  height: 30px;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.hit-content {
+  border-top: solid 1px rgb(215, 211, 211);
+}
+
+.hit-post-content {
+  border-bottom: solid 1px rgb(215, 211, 211);
+}
+
+.hit-comment-content {
+  border-bottom: solid 1px rgb(215, 211, 211);
+}
