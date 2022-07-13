@@ -66,6 +66,48 @@ a.navbar-item:hover {
   text-align: center;
 }
 
+.search-form {
+  width: 550px;
+  height: 70px;
+  background-color: gray;
+  margin: 0 auto;
+}
+
+.search-icon {
+  font-size: 20px;
+  position: relative;
+  left: 25px;
+  z-index: 1;
+  color: white;
+}
+
+.search-word-area {
+  width: 200px;
+  height: 45px;
+  float: left;
+  margin-top: 12px;
+  font-size: 20px;
+  border-radius: 5px;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+#range {
+  width: 180px;
+  font-size: 20px;
+  height: 45px;
+  padding: 5px;
+  margin-top: 12px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.search-submit-btn {
+  width: 100px;
+  margin-top: 16px;
+  position: absolute;
+}
+
 .notice {
   background-color: aquamarine;
   color: black;
