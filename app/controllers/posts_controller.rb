@@ -6,17 +6,6 @@ class PostsController < ApplicationController
     @post = current_user.posts.new
   end
 
-
-  # def search
-  #   @keyword = params[:keyword]
-  #   @keywords = @keyword.split(/[[:blank:]]+/)
-  #   @keywords.each do |keyword|
-  #     @posts = Post.where("title like :q OR post_content like :q ", q: "%#{keyword}%")
-  #   end
-  #   @posts = @posts.order(id: :DESC).page(params[:page])
-  # end
-
-
   def show
     @post = Post.find(params[:id])
     @comments = @post.comments
