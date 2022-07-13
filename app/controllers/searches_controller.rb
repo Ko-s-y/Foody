@@ -2,14 +2,18 @@ class SearchesController < ApplicationController
   before_action :authenticate_user!
 
   def result
+    if params[:word].blank?
+      flash[:alert] = "不正な値です。キーワードを正確に入力してください。"
+      redirect_to posts_path
+    end
     @range = params[:range]
     if @range == "Post"
-      @posts = Post.looks(params[:search], params[:word])
+      @posts = Post.looks(params[:search], params[:word]).page(params[:page]).per(3)
     elsif @range == "Comment"
-      @comments= Comment.looks(params[:search], params[:word])
+      @comments= Comment.looks(params[:search], params[:word]).page(params[:page]).per(3)
     else
-      flash[:alert] = "エラーが発生しました"
-      redirect_to root_path
+      flash[:alert] = "不正な値です。キーワードを正確に入力してください。"
+      redirect_to posts_path
     end
   end
 end

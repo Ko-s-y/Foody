@@ -1,9 +1,9 @@
-<h2>検索結果</h2>
-
 <% if @range == "Post" %>
   <% if @posts.present? %>
+    <%= paginate @posts %>
     <div>
-      <h1>「<b><%= params[:word] %>」</b>の検索結果<span><%= @posts.count %>件</span></h1>
+      <h1>「<b><%= params[:word] %>」</b>の検索結果<span><%= @posts.total_count %>件</span></h1>
+      <p><%= @posts.current_page %> / <%= @posts.total_pages %> ページ</p>
     </div>
     <ul>
       <% @posts.each do |post| %>
@@ -11,30 +11,35 @@
         <p><%= post.post_content.truncate(110).delete '#,`,*,\,' %></p>
       <% end %>
     </ul>
+    <%= paginate @posts %>
 
   <% else %>
     <div>
-      <p>「<b><%= params[:word] %></b>」の検索結果はありませんでした。</p>
-      <p>キーワードを変更してもう一度検索してください。</p>
+      <p>「<b><%= params[:word] %></b>」の投稿からの検索結果はありませんでした。</p>
+      <p>キーワードを変更,もしくは投稿とコメントを変更してもう一度検索してください。</p>
       <button>検索のヒント</button>
     </div>
   <% end %>
 
+
 <% elsif @range == 'Comment' %>
   <% if @comments.present? %>
+    <%= paginate @comments %>
     <div>
-      <h1>「<b><%= params[:word] %>」</b>の検索結果<span><%= @comments.count %>件</span></h1>
+      <h1>「<b><%= params[:word] %>」</b>の検索結果<span><%= @comments.total_count %>件</span></h1>
+      <p><%= @comments.current_page %> / <%= @comments.total_pages %> ページ</p>
     </div>
     <ul>
       <% @comments.each do |comment| %>
         <p><%= comment.comment_content.truncate(110).delete '#,`,*,\,' %></p>
       <% end %>
     </ul>
+    <%= paginate @comments %>
 
   <% else %>
     <div>
-      <p>「<b><%= params[:word] %></b>」の検索結果はありませんでした。</p>
-      <p>キーワードを変更してもう一度検索してください。</p>
+      <p>「<b><%= params[:word] %></b>」のコメントからの検索結果はありませんでした。</p>
+      <p>キーワードを変更,もしくは投稿とコメントを変更してもう一度検索してください。</p>
       <button>検索のヒント</button>
     </div>
   <% end %>
