@@ -141,7 +141,6 @@
 }
 
 @media (max-width: 768px) {
-
 ///////////////////////////////////
 // header
   .info-notice {
@@ -151,6 +150,30 @@
   .new-notice-count {
     padding-top: 1px !important;
     right: 41% !important;
+  }
+
+// search form
+  .search-form {
+    width: 360px !important;
+  }
+
+  .search-word-area {
+    width: 130px !important;
+    font-size: 15px !important;
+    margin-top: 1px !important;
+  }
+
+  #range {
+    width: 130px !important;
+    font-size: 14px !important;
+    margin-top: 2px !important;
+  }
+
+  .search-submit-btn {
+    width: 70px !important;
+    height: 27px !important;
+    margin-top: 4px !important;
+    padding-top: 1px !important;
   }
 
 // footer
