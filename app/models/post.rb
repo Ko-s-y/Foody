@@ -89,6 +89,6 @@ class Post < ApplicationRecord
   end
 
   def self.looks(search, word)
-    @post = Post.where("title LIKE?","%#{word}%")
+    @post = Post.where("title LIKE?","%#{word}%").or(Post.where("post_content LIKE?","%#{word}%"))
   end
 end
