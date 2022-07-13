@@ -4,18 +4,6 @@
       <%= link_to home_path do %>
         <h1 class="navbar-item site-title">Foody!</h1>
       <% end %>
-
-      <% unless (!user_signed_in?) %>
-        <div class="search-form">
-          <%= form_with url: searches_result_path, local: true, method: :get do |f| %>
-            <%= f.text_field :word, placeholder: "ハーブ 保管方法", required: true, class: "search-word-area" %>
-            <%= f.select :range, options_for_select([["投稿から探す", "Post"], ["コメントから探す", "Comment"]]), class: "search-select-area" %>
-            <i class="fas fa-search search-icon"></i>
-            <%= f.submit "検索", class: "button is-info search-submit-btn" %>
-          <% end %>
-        </div>
-      <% end %>
-
       <a role="button" class="navbar-burger burger burger-menu" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>

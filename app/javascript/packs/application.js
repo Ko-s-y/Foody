@@ -19,3 +19,33 @@ $(function() {
     $('.navbar-menu').toggleClass('is-active');
   });
 });
+
+// 検索フォーム出現関数
+$(function() {
+  $(document).on('click', '.search-icon', function() {
+    $('.search-form-appear').css({
+      'display': 'none'
+    });
+    $('.search-form-disappear').css({
+      'display': 'block'
+    });
+    $('.search-form').css({
+      'display': 'block'
+    });
+  });
+});
+
+// 検索フォーム削除関数
+$(function() {
+  $(document).on('click', '.dis-search-icon', function() {
+    $('.search-form-disappear').css({
+      'display': 'none'
+    });
+    $('.search-form').css({
+      'display': 'none'
+    });
+    $('.search-form-appear').css({
+      'display': 'block'
+    });
+  });
+});
