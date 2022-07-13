@@ -5,7 +5,7 @@
         <h1 class="navbar-item site-title">Foody!</h1>
       <% end %>
       <div class="search-form">
-        <%= form_with url: searches_search_path, local: true, method: :get do |f| %>
+        <%= form_with url: searches_result_path, local: true, method: :get do |f| %>
           <%= f.text_field :word, placeholder: "キーワードで探す", required: true %>
           <%= f.select :range, options_for_select([['Post'], ['Comment']]) %>
           <%= f.select :search, options_for_select([["完全一致","perfect_match"], ["前方一致","forward_match"],  ["後方一致","backward_match"], ["部分一致","partial_match"]]) %>
