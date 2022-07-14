@@ -1,5 +1,5 @@
 <% provide(:title, "Search Result") %>
-<section class="search-result hero is-white is-fullheight">
+<section class="search-result hero is-white is-halfheight">
   <div class="columns is-centered">
     <div class="column is-10-desktop is-10-widescreen">
       <div class="box">
@@ -24,7 +24,7 @@
                 <div>
                   <p>「 <%= params[:word] %> 」を含む投稿はありませんでした。</p>
                   <p>キーワードを変更,もしくは投稿とコメントを変更してもう一度検索してください。</p>
-                  <button>検索のヒント</button>
+                  <button class="button is-info search-advise-btn">検索のヒント</button>
                 </div>
               <% end %>
             </div>
@@ -46,8 +46,8 @@
               <% else %>
                 <div>
                   <p>「 <%= params[:word] %> 」を含むコメントはありませんでした。</p>
-                  <p>キーワードを変更,もしくは投稿とコメントを変更してもう一度検索してください。</p>
-                  <button>検索のヒント</button>
+                  <p>キーワードを変更して検索してください。</p>
+                  <button class="button is-info search-advise-btn">検索のヒント</button>
                 </div>
               <% end %>
             </div>
@@ -57,3 +57,40 @@
     </div>
   </div>
 </section>
+<div class="search-advise">
+  <section class="hero is-dark is-halfheight">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-10-desktop is-10-widescreen">
+            <div class="box">
+              <div class="field has-text-centered">
+                <strong>検索のヒント</strong>
+              </div>
+              <div class="box">
+                <div class="field">
+                  <div class="advise-area">
+                    <div class="advise-text">
+                      <p>- 検索範囲を切り替えて試して見てください。</p>
+                      <p>例：投稿を => コメントを</p>
+                      <br>
+                      <p>- 二つの検索ワードでヒットしなかった場合は一つの検索ワードで試して見てください。</p>
+                      <p>例：野菜 保管 => 野菜</p>
+                      <br>
+                      <p>- 漢字をひらがな、もしくはひらがなを漢字に変換して試して見てください。</p>
+                      <p>例：桃 => もも, やさい => 野菜</p>
+                    </div>
+                    <br>
+                    <button class="button is-danger">閉じる</button>
+                    <br><br>
+                    <%= link_to "問い合わせる", about_path, class: "button is-info" %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
