@@ -66,6 +66,69 @@ a.navbar-item:hover {
   text-align: center;
 }
 
+.search-section {
+  width: 100%;
+  background-color: black;
+  height: 40px;
+}
+
+.search-form-disappear {
+  display: none;
+}
+
+.search-form {
+  margin-top: 2px;
+  float: right;
+  width: 450px;
+  display: none;
+}
+
+.search-icon {
+  font-size: 20px;
+  color: white;
+  margin-top: 10px;
+  margin-right: 20px;
+  float: right;
+  display: block;
+  cursor: pointer;
+}
+
+.dis-search-icon {
+  font-size: 20px;
+  color: white;
+  margin-top: 10px;
+  margin-right: 20px;
+  margin-left: 10px;
+  float: right;
+  display: block;
+  cursor: pointer;
+}
+
+.search-word-area {
+  width: 170px;
+  float: left;
+  font-size: 18px;
+  border-radius: 5px;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+#range {
+  margin-top: 1px;
+  width: 170px;
+  font-size: 17px;
+  padding: 5px;
+  margin-right: 7px;
+  border-radius: 5px;
+}
+
+.search-submit-btn {
+  width: 80px;
+  height: 30px;
+  margin-top: 3px;
+  padding-top: 3px;
+}
+
 .notice {
   background-color: aquamarine;
   color: black;
@@ -150,6 +213,12 @@ footer {
   height: 30px;
   color: white;
   padding-top: 2px;
+}
+
+.ope-btn {
+  display: block;
+  margin: 0 auto;
+  width: 150px;
 }
 
 .new-notice-count {

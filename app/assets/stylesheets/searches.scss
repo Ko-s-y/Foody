@@ -1,0 +1,42 @@
+// Place all the styles related to the searches controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.search-result {
+  padding: 20px;
+}
+
+.result-contents {
+  font-size: 20px;
+}
+
+.result-count-area {
+  text-align: center;
+  height: 30px;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.hit-content {
+  border-top: solid 1px rgb(215, 211, 211);
+}
+
+.hit-post-content {
+  border-bottom: solid 1px rgb(215, 211, 211);
+}
+
+.hit-comment-content {
+  border-bottom: solid 1px rgb(215, 211, 211);
+}
+
+.keyword-highlight {
+  background-color: #3CB371;
+  font-weight: 700;
+  padding: 1px 10px 2px 4px;
+  margin: 2px;
+  font-style: italic;
+}
+
+.search-advise {
+  display: none;
+}
