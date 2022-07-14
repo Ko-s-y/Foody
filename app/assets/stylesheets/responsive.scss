@@ -141,7 +141,6 @@
 }
 
 @media (max-width: 768px) {
-
 ///////////////////////////////////
 // header
   .info-notice {
@@ -151,6 +150,30 @@
   .new-notice-count {
     padding-top: 1px !important;
     right: 41% !important;
+  }
+
+// search form
+  .search-form {
+    width: 300px !important;
+  }
+
+  .search-word-area {
+    width: 125px !important;
+    font-size: 15px !important;
+    margin-top: 2px !important;
+  }
+
+  #range {
+    width: 100px !important;
+    font-size: 15px !important;
+    margin-top: 3px !important;
+  }
+
+  .search-submit-btn {
+    width: 50px !important;
+    height: 27px !important;
+    margin-top: 5px !important;
+    padding-top: 1px !important;
   }
 
 // footer
@@ -242,5 +265,12 @@
 // ページネーション関連
   .pagination span {
     margin: -9px 20px 0;
+  }
+
+///////////////////////////////////
+// resultページ
+  .result-count-area {
+    font-size: 15px !important;
+    margin-bottom: 10px !important;
   }
 }
