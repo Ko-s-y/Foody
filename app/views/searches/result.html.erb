@@ -23,7 +23,7 @@
               <% else %>
                 <div>
                   <p>「 <%= params[:word] %> 」を含む投稿はありませんでした。</p>
-                  <p>キーワードを変更,もしくは投稿とコメントを変更してもう一度検索してください。</p>
+                  <p>キーワードを変更して試して見てください</p>
                   <button class="button is-info search-advise-btn">検索のヒント</button>
                 </div>
               <% end %>
@@ -46,7 +46,7 @@
               <% else %>
                 <div>
                   <p>「 <%= params[:word] %> 」を含むコメントはありませんでした。</p>
-                  <p>キーワードを変更して検索してください。</p>
+                  <p>キーワードを変更して試して見てください</p>
                   <button class="button is-info search-advise-btn">検索のヒント</button>
                 </div>
               <% end %>
@@ -81,7 +81,7 @@
                       <p>例：桃 => もも, やさい => 野菜</p>
                     </div>
                     <br>
-                    <button class="button is-danger">閉じる</button>
+                    <button class="button is-danger dis-advise-btn">閉じる</button>
                     <br><br>
                     <%= link_to "問い合わせる", about_path, class: "button is-info" %>
                   </div>
@@ -94,3 +94,4 @@
     </div>
   </section>
 </div>
+<%= javascript_pack_tag 'search/result' %>
