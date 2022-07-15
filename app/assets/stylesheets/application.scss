@@ -235,4 +235,21 @@ footer {
 
 .footer-menu-section {
   display: none;
+  height: 50px;
+  width: 100%;
+  background-color: gray;
+}
+
+.footer-menu-area {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.menu-list {
+  display: flex;
+  text-align: center;
+}
+
+.menu-item {
+  width: 25%;
 }
