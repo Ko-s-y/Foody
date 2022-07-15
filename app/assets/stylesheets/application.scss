@@ -235,14 +235,13 @@ footer {
 
 // footer_menu
 .footer-menu-section {
-  background-color: gray;
   display: none;
   height: 50px;
   width: 100%;
 }
 
 .footer-menu-area {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -253,4 +252,22 @@ footer {
 
 .menu-item {
   width: 25%;
+  border: 1px solid black;
+}
+
+.footer-icon {
+  font-size: 1.5em;
+}
+
+.bell-icon {
+  font-size: 1.5em;
+  position: relative;
+  left: 10px;
+}
+
+.new-notice-sign {
+  color: orange;
+  position: relative;
+  top: -10px;
+  left: -3px;
 }
