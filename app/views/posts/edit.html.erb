@@ -15,7 +15,7 @@
                 <div class="field">
                   <%= f.label :title ,"タイトル", class: "label" %>
                   <div class="control has-icons-left">
-                    <%= f.text_field :title, autofocus: true, autocomplete: "title", class: "input is-info", required: true %>
+                    <%= f.text_field :title, autofocus: true, autocomplete: "title", class: "input is-info", required: true, maxlength: 20 %>
                     <span class="icon is-small is-left">
                       <i class="fas fa-pen"></i>
                     </span>
@@ -25,7 +25,7 @@
                 <div class="field">
                   <%= f.label :post_content, "内容", class: "label" %>
                   <div class="control has-icons-left">
-                    <%= f.text_area :post_content, autocomplete: "post_content", class: "input is-info", required: true %>
+                    <%= f.text_area :post_content, autocomplete: "post_content", class: "input is-info", required: true, maxlength: 200 %>
                     <span class="icon is-small is-left">
                       <i class="far fa-sticky-note"></i>
                     </span>
