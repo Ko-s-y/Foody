@@ -14,6 +14,7 @@
   font-size: 20px;
   padding-top: 6px;
   max-width: 800px;
+  cursor: pointer;
 }
 
 .post-form-appear:hover {
@@ -23,11 +24,11 @@
 .post-form {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 5;
   width: 100%;
   top: 0;
   background:rgba(15, 15, 15, 0.6);
-  height: 490px;
+  height: 670px;
   padding: 71px 10px 0;
 }
 
@@ -191,6 +192,7 @@
 
 textarea {
   resize: none;
+  height: 200px !important;
 }
 
 .comment-count {

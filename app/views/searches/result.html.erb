@@ -86,7 +86,7 @@
                       <button class="button is-danger dis-advise-btn ope-btn">閉じる</button>
                     </div>
                     <div class="field">
-                      <%= link_to "問い合わせる", about_path, class: "button is-info ope-btn" %>
+                      <%= link_to "問い合わせる", new_contact_path(user_id: current_user.id), class: "button is-info ope-btn" %>
                     </div>
                   </div>
                 </div>

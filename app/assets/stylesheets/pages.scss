@@ -175,6 +175,7 @@
 }
 
 .my-message {
+  width: 60%;
   font-size: 30px;
   position: absolute;
   top: 50%;
@@ -191,26 +192,55 @@
   font-weight: 300;
   font-size: 50px;
   text-align: center;
+  padding-bottom: 30px;
 }
 
 .my-message p {
   font-weight: 200;
   font-size: 35px;
-  margin: 20px;
+  margin: 30px 0;
 }
 
 .how-to-view {
-  background-color: rgb(215, 211, 211);
-  color: black;
+  background-color: whitesmoke;
+  color: rgb(65, 63, 63);
   text-align: center;
 }
 
 .how-to-message {
   font-size: 30px;
   letter-spacing: 0.2em;
+  padding: 10px;
 }
 
-.contact-area {
-  height: 300px;
-  background-color: whitesmoke;
+.paragraph {
+  margin: 20px;
+}
+
+.last-paragraph {
+  position: relative;
+  top: 10px;
+  left: 20%;
+}
+
+.contact-link {
+  height: 120px;
+  background-color: silver;
+  padding-top: 40px;
+}
+
+.contact-btn {
+  text-align: center;
+  display: block;
+  width: 60%;
+  font-size: 25px;
+  margin: 0 auto;
+  color: whitesmoke;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.contact-btn:hover {
+  background-color: rgb(165, 165, 165);
+  color: whitesmoke;
 }

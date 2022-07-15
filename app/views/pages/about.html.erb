@@ -5,8 +5,8 @@
     <div class="my-message">
       <h1>Foody!とは</h1>
       <p>コック歴２０年以上のベテランシェフから、見習いコックの方まで全ての料理人がフラットに意見交換や知識の共有ができる場所です。</p>
-      <p>恐らく多くの料理人の方達は、１日に自分が自由に使える時間はかなり限られています。</p>
-      <p>限られた時間の中で、成長を求めるコック達の一助になれば幸いです。</p>
+      <p>多くの料理人は、１日のうちに自由に使える時間は限られているかと思われます。</p>
+      <p>その限られた時間の中で、成長を求めるコック達の一助になれば幸いです。</p>
       <p>また昨今のコロナ禍で交流の機会が減った料理人の方同士の、新たな知見を得る場所になれたらと思います。</p>
     </div>
   </div>
@@ -14,22 +14,40 @@
 <div class="how-to-view">
   <div class="how-to-container">
     <div class="how-to-message">
-      <h2>使い方</h2>
-      <p>新たな発見をどんどん発信して下さい。</p>
-      <p>過去の投稿を検索して、知りたい情報を探すこともできます。</p>
-      <p>Foody!が全ての料理人達にとって</p>
-      <p>当たり前の存在になれたら幸いです。</p>
+      <div class="first-paragraph paragraph">
+        <p>日々の新たな発見をどんどん発信して下さい。</p>
+        <p>その発信した投稿が料理人の財産になります。</p>
+      </div>
+      <div class="second-paragraph paragraph">
+        <p>あなたの料理の悩みをさらけ出して下さい。</p>
+        <p>その悩みが料理人に新たな視点を与えます。</p>
+      </div>
+      <div class="third-paragraph paragraph">
+        <p>Foody!では過去の投稿を検索して</p>
+        <p>知りたい情報を探す事が出来ます。</p>
+      </div>
+      <div class="fourth-paragraph paragraph">
+        <p>またすぐに見たい投稿をrememberする事で</p>
+        <p>my pageよりいつでも確認が出来ます。</p>
+      </div>
+      <div class="fifth-paragraph paragraph">
+        <p>Foody!が全ての料理人にとって</p>
+        <p>当たり前の存在になれたら幸いです。</p>
+      </div>
+      <div class="sixth-paragraph paragraph">
+        <p>以前みたいに賑やかな日々が</p>
+        <p>一日でも早く来る事を願って。</p>
+      </div>
+      <div class="last-paragraph paragraph">
+        <p>- 元料理人のFoody!管理人より -</p>
+      </div>
     </div>
   </div>
 </div>
-<div class="contact-area">
-  <div class="contact-form">
-    <p>こんにちは</p>
-    <p>こんにちは</p>
-    <p>こんにちは</p>
-    <p>こんにちは</p>
-    <p>こんにちは</p>
-    <p>こんにちは</p>
-  </div>
+<div class="contact-link">
+  <% if (!user_signed_in?) %>
+    <%= link_to "登録する", new_user_registration_path, class: "contact-btn" %>
+  <% else %>
+    <%= link_to "お問合せはこちら", new_contact_path(user_id: current_user.id), class: "contact-btn" %>
+  <% end %>
 </div>
-

@@ -73,3 +73,6 @@ gem "aws-sdk"
 
 # ページネーションの実装
 gem 'kaminari'
+
+# 環境変数設定
+gem 'dotenv-rails'
