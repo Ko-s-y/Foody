@@ -2,10 +2,31 @@
   <div class="footer-menu-area">
     <div class="footer-menues">
       <ul class="menu-list">
-        <li class="menu-item"><%= link_to "my page", users_show_path %></li>
-        <li class="menu-item"><%= link_to "投稿一覧", posts_path %></li>
-        <li class="menu-item"><%= link_to "お知らせ", notifications_path %></li>
-        <li class="menu-item"><%= link_to "home", home_path, data: {"turbolinks" => false} %></li>
+
+        <li class="menu-item">
+          <%= link_to users_show_path do %>
+            <i class="fas fa-user"></i>
+          <% end %>
+        </li>
+
+        <li class="menu-item">
+          <%= link_to posts_path do %>
+            <i class="fas fa-align-justify"></i>
+          <% end %>
+        </li>
+
+        <li class="menu-item">
+          <%= link_to notifications_path do %>
+            <i class="fas fa-bell"></i>
+          <% end %>
+        </li>
+
+        <li class="menu-item">
+          <%= link_to home_path, data: {"turbolinks" => false} do %>
+            <i class="fas fa-home"></i>
+          <% end %>
+        </li>
+
       </ul>
     </div>
   </div>
