@@ -31,6 +31,7 @@
               <p class="nav-name"><%= current_user.name %></p>
             </div>
             <div class="navbar-dropdown">
+              <%= link_to "timeline", posts_path, class: "navbar-item nav-element" %>
               <%= link_to "my page", users_show_path, class: "navbar-item nav-element" %>
               <% if new_notifications(current_user).blank? %>
                 <%= link_to "info", notifications_path, class: "navbar-item nav-element" %>
@@ -38,7 +39,7 @@
                 <%= link_to "info", notifications_path, class: "navbar-item nav-element info-notice" %>
                 <span class="new-notice-count"><%= new_notifications(current_user).count %></span>
               <% end %>
-              <%= link_to "timeline", posts_path, class: "navbar-item nav-element" %>
+              <%= link_to "contact", new_contact_path(user_id: current_user.id), class: "navbar-item nav-element" %>
               <%= link_to "about", about_path, class: "navbar-item nav-element" %>
               <%= link_to "home", home_path, class: "navbar-item nav-element", data: {"turbolinks" => false} %>
               <hr class="navbar-divider">

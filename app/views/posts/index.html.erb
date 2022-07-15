@@ -1,6 +1,6 @@
 <% provide(:title, "Timeline") %>
 <!-- 投稿作成フォーム -->
-<a class="post-form-appear">タイムラインに投稿する</a>
+<div class="post-form-appear">タイムラインに投稿する</div>
 <section class="post-form">
   <div class="container">
     <div class="columns is-centered">
@@ -9,7 +9,7 @@
           <%= form_with model: @post do |f| %>
             <div class="field">
               <div class="control has-icons-left">
-                <%= f.text_field :title, placeholder: "○○について", class: "input is-info", required: true %>
+                <%= f.text_field :title, placeholder: "○○について", class: "input is-info", required: true, maxlength: 20 %>
                 <span class="icon is-small is-left">
                   <i class="fas fa-pen"></i>
                 </span>
@@ -18,7 +18,7 @@
             </div>
             <div class="field">
               <div class="control has-icons-left">
-                <%= f.text_area :post_content, class: "input is-info", placeholder: "投稿内容", required: true %>
+                <%= f.text_area :post_content, class: "input is-info", placeholder: "投稿内容", required: true, maxlength: 200 %>
                 <span class="icon is-small is-left">
                   <i class="far fa-sticky-note"></i>
                 </span>

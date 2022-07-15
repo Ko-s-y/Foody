@@ -14,7 +14,7 @@
                 <div class="field">
                   <%= f.label :アカウント名, class: "label" %>
                   <div class="control has-icons-left">
-                    <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "input is-info", placeholder: "(必須)" %>
+                    <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "input is-info", placeholder: "(必須)", maxlength: 12 %>
                     <span class="icon is-small is-left">
                       <i class="fas fa-user"></i>
                     </span>
@@ -24,7 +24,7 @@
                 <div class="field">
                   <%= f.label :調理ジャンル, class: "label" %>
                   <div class="control has-icons-left">
-                    <%= f.text_field :introduction, autocomplete: "introduction", class: "input is-info", placeholder: "(必須)" %>
+                    <%= f.text_field :introduction, autocomplete: "introduction", class: "input is-info", placeholder: "(必須)", maxlength: 10 %>
                     <span class="icon is-small is-left">
                       <i class="fas fa-utensils"></i>
                     </span>

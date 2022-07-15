@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
 
+  resources :contacts, only: [:new, :create]
+
   resources :notifications, only: :index
   get 'notifications/checked'
 

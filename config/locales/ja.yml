@@ -3,6 +3,7 @@ ja:
     models:
       user: 'アカウント'
       post: '投稿'
+      contact: 'お問い合わせ'
     attributes:
       user:
         name: 'アカウント名'
@@ -12,6 +13,9 @@ ja:
         post_content: '投稿内容'
       comment:
         comment_content: 'コメント内容'
+      contact:
+        name: 'お名前'
+        content: 'お問い合わせ内容'
     errors:
       models:
         post:
@@ -30,6 +34,12 @@ ja:
               blank: 'が入力されていません。'
               too_long: 'は%{count}文字以下に設定して下さい。'
               invalid: 'は有効でありません。'
+        contact:
+          attributes:
+            name:
+              blank: 'が入力されていません。'
+            content:
+              blank: 'が入力されていません。'
   datetime:
     distance_in_words:
       half_a_minute: '30秒'
