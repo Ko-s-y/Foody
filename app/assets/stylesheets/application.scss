@@ -239,6 +239,7 @@ footer {
   width: 100%;
   position: fixed;
   bottom: 0;
+  background-color: whitesmoke;
 }
 
 .footer-menu-area {
@@ -249,11 +250,22 @@ footer {
 .menu-list {
   display: flex;
   text-align: center;
+  height: 50px;
 }
 
 .menu-item {
   width: 25%;
-  border: 1px solid black;
+  border-top: 1px solid rgb(215, 211, 211);
+  padding-top: 5px;
+}
+
+.icon-border {
+  border-left: 1px solid rgb(215, 211, 211);
+  border-right: 1px solid rgb(215, 211, 211);
+}
+
+.icon-border-right {
+  border-right: 1px solid rgb(215, 211, 211);
 }
 
 .footer-icon {
