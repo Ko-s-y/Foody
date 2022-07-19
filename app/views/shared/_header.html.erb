@@ -13,19 +13,23 @@
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
         <div class="navbar-item">
+          <!-- 管理人がログインしている場合 -->
+          <% if admin_user_signed_in? %>
+            <div class="navbar-item has-dropdown is-hoverable navbar-name">
+              <div class="navbar-item is-hidden-mobile is-hidden-tablet-only navbar-menu">
+                <p class="nav-name">Admin Menu</p>
+              </div>
+              <div class="navbar-dropdown">
+                <%= current_admin_user.email %>
+                <%= link_to t('admin_page'), rails_admin_path, class: "navbar-item nav-element" %>
+                <hr class="navbar-divider">
+                <%= link_to t('admin_log_out'), destroy_admin_user_session_path, method: :delete, class: "navbar-item nav-element" %>
+              </div>
+            </div>
+          <% end %>
         </div>
       </div>
       <div class="navbar-end">
-
-
-        <% if admin_user_signed_in? %>
-              <li><%= current_admin_user.email %></li>
-              <li><%= link_to t('log_out'), destroy_admin_user_session_path, method: :delete %></li>
-        <% else %>
-              <li><%= link_to t('log_in'), new_admin_user_session_path %></li>
-        <% end %>
-
-
         <!-- ログインしていない場合 -->
         <% if (!user_signed_in?) %>
           <div class="navbar-item attend">
