@@ -115,10 +115,10 @@
 <section class="remember-posts-section">
   <div class="posts-container">
     <div class="posts-contents">
-      <% if current_user.checked_remember_posts.count.zero? %>
+      <% if @remember_posts.count.zero? %>
         <div class="zero-info posts-zero">まだrememberした投稿はありません</div>
       <% else %>
-        <% current_user.checked_remember_posts.each do |post| %>
+        <% @remember_posts.each do |post| %>
           <div class="post-area">
             <%= link_to post_path(post.id) do %>
               <figure>
