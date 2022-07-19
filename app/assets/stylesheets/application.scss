@@ -232,3 +232,59 @@ footer {
   border-radius: 100%;
   padding-bottom: 2px;
 }
+
+// footer_menu
+.footer-menu-section {
+  display: none;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+}
+
+.footer-menu-area {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.menu-list {
+  display: flex;
+  text-align: center;
+  height: 50px;
+}
+
+.menu-item {
+  width: 25%;
+  border-top: 1px solid rgb(215, 211, 211);
+}
+
+.menu-item a {
+  height: 50px;
+  padding-top: 12px;
+}
+
+.icon-border {
+  border-left: 1px solid rgb(215, 211, 211);
+  border-right: 1px solid rgb(215, 211, 211);
+}
+
+.icon-border-right {
+  border-right: 1px solid rgb(215, 211, 211);
+}
+
+.footer-icon {
+  font-size: 1.5em;
+}
+
+.bell-icon {
+  font-size: 1.5em;
+  position: relative;
+  left: 10px;
+}
+
+.new-notice-sign {
+  color: orange;
+  position: relative;
+  top: -10px;
+  left: -3px;
+}

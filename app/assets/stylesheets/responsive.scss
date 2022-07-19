@@ -64,13 +64,13 @@
   .touch-slide-left {
     left: 0;
     position: absolute;
-    top: 480px;
+    top: 520px;
     z-index: 1;
   }
 
   .touch-slide-right {
     position: absolute;
-    top: 480px;
+    top: 520px;
     z-index: 1;
     right: 0;
   }
@@ -171,15 +171,24 @@
 
   .search-submit-btn {
     width: 50px !important;
-    height: 27px !important;
-    margin-top: 5px !important;
-    padding-top: 1px !important;
+    height: 30px !important;
+  }
+
+///////////////////////////////////
+// footer_menu
+  .footer-menu-section {
+    display: block !important;
   }
 
 // footer
   footer {
     height: 80px !important;
     padding-top: 26px !important;
+    margin-bottom: 50px !important;
+  }
+
+  .not-login-footer {
+    margin-bottom: 0 !important;
   }
 
   .copy-right {
@@ -212,11 +221,11 @@
   }
 
   .touch-slide-left {
-    top: 280px;
+    top: 320px;
   }
 
   .touch-slide-right {
-    top: 280px;
+    top: 320px;
   }
 
   .pagination-area {
