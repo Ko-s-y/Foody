@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   # my page
   def show
     @posts = current_user.posts.all.order(created_at: :desc)
+    @remember_posts = current_user.checked_remember_posts.order(created_at: :desc)
     received_counter(@posts)
   end
 
