@@ -16,6 +16,16 @@
         </div>
       </div>
       <div class="navbar-end">
+
+
+        <% if admin_user_signed_in? %>
+              <li><%= current_admin_user.email %></li>
+              <li><%= link_to t('log_out'), destroy_admin_user_session_path, method: :delete %></li>
+        <% else %>
+              <li><%= link_to t('log_in'), new_admin_user_session_path %></li>
+        <% end %>
+
+
         <!-- ログインしていない場合 -->
         <% if (!user_signed_in?) %>
           <div class="navbar-item attend">
