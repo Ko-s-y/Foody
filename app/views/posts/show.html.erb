@@ -20,7 +20,7 @@
             <% end %>
           <div class="post-text">
             <span class="post-title"><%= @post.title %></span>
-            <span class="post-content"><%= @post.post_content %></span>
+            <span class="post-content"><%= simple_format(@post.post_content) %></span>
             <% unless @post.avatar.blank? %>
               <div class="post-pict">
                 <%= image_tag(post_image_url(@post), class: "post-image", alt: "投稿画像") %>
@@ -94,7 +94,8 @@
           <%= form_with(model:[@post, @comment], method: :post) do |f| %>
             <div class="field">
               <div class="control has-icons-left">
-                <%= f.text_area :comment_content, placeholder: "コメント内容", class: "input is-info", required: true, maxlength: 200 %>
+                <%= f.text_area :comment_content, placeholder: "コメント内容", class: "input is-info form-text", required: true, maxlength: 200 %>
+                <p class="form-str-counter"></p>
                 <span class="icon is-small is-left">
                   <i class="fas fa-pen"></i>
                 </span>
@@ -130,7 +131,7 @@
           <% if @post.user_id == comment.user_id %>
             <!-- 投稿主のコメント(右側) -->
             <div class="post-owner-comment">
-              <div class="owner-text"><%= comment.comment_content %></div>
+              <div class="owner-text"><%= simple_format(comment.comment_content) %></div>
               <div class="comment-image">
                 <% unless comment.avatar.blank? %>
                   <div class="comment-pict">
@@ -157,7 +158,7 @@
               </figure>
               <div class="other-user-text">
                 <div class="other-name"><%= comment.user.name %></div>
-                <div class="other-text"><%= comment.comment_content %></div>
+                <div class="other-text"><%= simple_format(comment.comment_content) %></div>
                 <div class="comment-image">
                   <% unless comment.avatar.blank? %>
                     <div class="comment-pict">

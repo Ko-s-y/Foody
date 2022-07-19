@@ -81,7 +81,7 @@
                 <div class="posted-date"><%= post_time(post.created_at) %></div>
                 <div class="post-text">
                   <span class="post-title"><%= post.title %></span>
-                  <span class="post-content"><%= post.post_content %></span>
+                  <span class="post-content"><%= simple_format(post.post_content) %></span>
                   <% unless post.avatar.blank? %>
                     <div class="post-pict">
                       <%= image_tag(post_image_url(post), class: "post-image", alt: "投稿画像") %>
@@ -115,10 +115,10 @@
 <section class="remember-posts-section">
   <div class="posts-container">
     <div class="posts-contents">
-      <% if current_user.checked_remember_posts.count.zero? %>
+      <% if @remember_posts.count.zero? %>
         <div class="zero-info posts-zero">まだrememberした投稿はありません</div>
       <% else %>
-        <% current_user.checked_remember_posts.each do |post| %>
+        <% @remember_posts.each do |post| %>
           <div class="post-area">
             <%= link_to post_path(post.id) do %>
               <figure>
@@ -129,7 +129,7 @@
                 <div class="posted-date"><%= post_time(post.created_at) %></div>
                 <div class="post-text">
                   <span class="post-title"><%= post.title %></span>
-                  <span class="post-content"><%= post.post_content %></span>
+                  <span class="post-content"><%= simple_format(post.post_content) %></span>
                   <% unless post.avatar.blank? %>
                     <div class="post-pict">
                       <%= image_tag(post_image_url(post), class: "post-image", alt: "投稿画像") %>

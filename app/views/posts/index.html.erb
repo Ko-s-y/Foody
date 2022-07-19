@@ -18,7 +18,8 @@
             </div>
             <div class="field">
               <div class="control has-icons-left">
-                <%= f.text_area :post_content, class: "input is-info", placeholder: "投稿内容", required: true, maxlength: 200 %>
+                <%= f.text_area :post_content, class: "input is-info form-text", placeholder: "投稿内容", required: true, maxlength: 200 %>
+                <p class="form-str-counter"></p>
                 <span class="icon is-small is-left">
                   <i class="far fa-sticky-note"></i>
                 </span>
@@ -62,7 +63,7 @@
               <div class="posted-date"><%= post_time(post.created_at) %></div>
               <div class="post-text">
                 <span class="post-title"><%= post.title %></span>
-                <span class="post-content"><%= post.post_content %></span>
+                <span class="post-content"><%= simple_format(post.post_content) %></span>
                 <% unless post.avatar.blank? %>
                   <div class="post-pict">
                     <%= image_tag(post_image_url(post), class: "post-image", alt: "投稿画像") %>
