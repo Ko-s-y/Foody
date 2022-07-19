@@ -76,3 +76,6 @@ gem 'kaminari'
 
 # 環境変数設定
 gem 'dotenv-rails'
+
+# admin機能
+gem 'rails_admin', '~> 2.0'
