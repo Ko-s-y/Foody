@@ -11,21 +11,26 @@
       </a>
     </div>
     <div id="navbarBasicExample" class="navbar-menu">
-      <div class="navbar-start">
+      <div class="navbar-end">
         <div class="navbar-item">
+          <!-- 管理人がログインしている場合 -->
+          <% if admin_user_signed_in? %>
+            <div class="navbar-item has-dropdown is-hoverable navbar-name">
+              <div class="navbar-item is-hidden-mobile is-hidden-tablet-only navbar-menu">
+                <p class="nav-name">Admin Menu</p>
+              </div>
+              <div class="navbar-dropdown">
+                <%= link_to "admin page", rails_admin_path, class: "navbar-item nav-element" %>
+                <hr class="navbar-divider">
+                <%= link_to "admin logout", destroy_admin_user_session_path, method: :delete, class: "navbar-item nav-element" %>
+              </div>
+            </div>
+          <% end %>
         </div>
       </div>
       <div class="navbar-end">
-        <!-- ログインしていない場合 -->
-        <% if (!user_signed_in?) %>
-          <div class="navbar-item attend">
-            <div class="buttons">
-              <%= link_to "ログイン", new_user_session_path, class: "button is-primary" %>
-              <%= link_to "登録する", new_user_registration_path, class: "button is-white" %>
-            </div>
-          </div>
         <!-- ログインしている場合 -->
-        <% else %>
+        <% if user_signed_in? %>
           <div class="navbar-item has-dropdown is-hoverable navbar-name">
             <div class="navbar-item is-hidden-mobile is-hidden-tablet-only navbar-menu">
               <p class="nav-name"><%= current_user.name %></p>
@@ -44,6 +49,14 @@
               <%= link_to "home", home_path, class: "navbar-item nav-element", data: {"turbolinks" => false} %>
               <hr class="navbar-divider">
               <%= link_to "logout", destroy_user_session_path, method: :delete, class: "navbar-item nav-element" %>
+            </div>
+          </div>
+        <!-- ログインしていない場合 -->
+        <% else %>
+          <div class="navbar-item attend">
+            <div class="buttons">
+              <%= link_to "ログイン", new_user_session_path, class: "button is-primary" %>
+              <%= link_to "登録する", new_user_registration_path, class: "button is-white" %>
             </div>
           </div>
         <% end %>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
   root to: 'pages#home'
 
   resources :contacts, only: [:new, :create]
@@ -11,6 +13,10 @@ Rails.application.routes.draw do
     resource :likes, only: [:create, :destroy]
     resource :remembers, only: [:create, :destroy]
   end
+
+  devise_for :admin_users, controllers: {
+    sessions: 'admin_users/sessions'
+  }
 
   devise_for :users
 
