@@ -14,7 +14,7 @@
                 <div class="hit-content">
                   <% @posts.each do |post| %>
                     <%= link_to post_path(post.id) do %>
-                      <h2 class="hit-post-title">投稿タイトル：<%= emphasize_keyword(post.title, params[:word]) %></h2>
+                      <h2 class="hit-post-title">タイトル：<%= emphasize_keyword(post.title, params[:word]) %></h2>
                       <p class="hit-post-content">投稿内容：<%= emphasize_keyword(post.post_content, params[:word]) %></p>
                     <% end %>
                   <% end %>
