@@ -35,8 +35,19 @@ ja:
         password: 'パスワード'
         password_confirmation: '確認用パスワード'
         remember_me: '次回から自動的にログイン'
+      admin_user:
+        current_password: '現在のパスワード'
+        email: 'メールアドレス'
+        password: 'パスワード'
+        password_confirmation: '確認用パスワード'
+        remember_me: 'ログインを記憶'
+        reset_password_sent_at: 'パスワードリセット送信時刻'
+        remember_created_at: 'ログイン記憶時刻'
+        created_at: '作成日'
+        updated_at: '更新日'
     models:
       user: 'アカウント'
+      admin_user: '管理人'
   devise:
     confirmations:
       confirmed: 'アカウントを登録しました。'
@@ -95,3 +106,20 @@ ja:
       not_saved:
         one: 'エラーにより、この%{resource}情報を登録できません：'
         other: '%{count}つのエラーにより、この%{resource}情報を登録できません：'
+  admin_user:
+    attributes:
+      email:
+        taken: '既に使用されています。'
+        blank: '入力してください。'
+        too_short: '%{count}文字以上で入力してください。'
+        too_long: '%{count}文字以下で入力してください。'
+        invalid: '形式が正しくありません。'
+      password:
+        blank: '入力してください。'
+        too_short: '%{count}文字以上で入力してください。'
+        too_long: '%{count}文字以下で入力してください。'
+      password_confirmation:
+        confirmation: '%{attribute}と一致しません。'
+      current_password:
+        blank: '入力してください。'
+        invalid: '違います。'

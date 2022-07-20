@@ -6,7 +6,12 @@ class ApplicationController < ActionController::Base
   # end
 
   def after_sign_in_path_for(resource) # オーバーライド
-    posts_path # ログインした後の遷移先
+    if current_admin_user
+      flash[:notice] = "管理人ログインに成功しました。"
+      rails_admin_path
+    else
+      posts_path
+    end
   end
 
   def after_sign_out_path_for(resource)
