@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   end
 
   devise_for :admin_users, controllers: {
-    sessions: 'admin_users/sessions'
+    sessions: 'admin_users/sessions',
   }
 
   devise_for :users
