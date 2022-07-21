@@ -14,9 +14,24 @@
                 <div class="hit-content">
                   <% @posts.each do |post| %>
                     <%= link_to post_path(post.id) do %>
-                      <p class="hit-post-title">タイトル：<%= post.title %></p>
-                      <p class="hit-post-content">投稿内容：<%= pick_trancate_sentence(post.post_content, params[:word]) %></p>
-                      <p class="hit-post-date">投稿日時：<%= post.created_at.strftime('%Y/%m/%d %H:%M') %></p>
+                      <p class="hit-post-title"><%= post.title %></p>
+                      <p class="hit-post-content"><%= pick_trancate_sentence(post.post_content, params[:word]) %></p>
+                      <% if current_user.already_commented?(post) %>
+                        <span class="hit-comment-count" style="color: olive;"><i class="fa fa-comments"></i><%= post.comments.count %></span>
+                      <% else %>
+                        <span class="hit-comment-count" style="color: silver;"><i class="fa fa-comments"></i><%= post.comments.count %></span>
+                      <% end %>
+                      <% if current_user.already_liked?(post) %>
+                        <span class="hit-like-count" style="color: red;"><i class="fa fa-heart"></i></i><%= post.likes.count %></span>
+                      <% else %>
+                        <span class="hit-like-count" style="color: silver;"><i class="fa fa-heart"></i></i><%= post.likes.count %></span>
+                      <% end %>
+                      <% if current_user.checked_remember?(post) %>
+                        <span class="hit-remember-count" style="color: green;"><i class="fa fa-book"></i></i><%= post.remembers.count %></span>
+                      <% else %>
+                        <span class="hit-remember-count" style="color: silver;"><i class="fa fa-book"></i></i><%= post.remembers.count %></span>
+                      <% end %>
+                      <p class="hit-post-date"><%= post.created_at.strftime('%Y/%m/%d %H:%M') %></p>
                     <% end %>
                   <% end %>
                 </div>
@@ -33,14 +48,14 @@
             <div class="comment-result">
               <% if @comments.present? %>
                 <div class="result-count-area">
-                  <h1 class="result-count">「 <%= params[:word] %> 」を含むコメントのヒット件数<span><%= @comments.total_count %>件</span></h1>
+                  <h1 class="result-count">「 <%= params[:word] %> 」を含むコメントのヒット件数:<span><%= @comments.total_count %>件</span></h1>
                 </div>
                 <%= paginate @comments %>
                 <div class="hit-content">
                   <% @comments.each do |comment| %>
                     <%= link_to post_path(comment.post.id) do %>
-                      <p class="hit-comment-content">コメント内容：<%= pick_trancate_sentence(comment.comment_content, params[:word]) %></p>
-                      <p class="hit-comment-date">コメント日時：<%= comment.created_at.strftime('%Y/%m/%d %H:%M') %></p>
+                      <p class="hit-comment-content"><%= pick_trancate_sentence(comment.comment_content, params[:word]) %></p>
+                      <p class="hit-comment-date"><%= comment.created_at.strftime('%Y/%m/%d %H:%M') %></p>
                     <% end %>
                   <% end %>
                 </div>
