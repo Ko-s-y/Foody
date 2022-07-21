@@ -14,8 +14,9 @@
                 <div class="hit-content">
                   <% @posts.each do |post| %>
                     <%= link_to post_path(post.id) do %>
-                      <h2 class="hit-post-title">タイトル：<%= post.title %></h2>
+                      <p class="hit-post-title">タイトル：<%= post.title %></p>
                       <p class="hit-post-content">投稿内容：<%= pick_trancate_sentence(post.post_content, params[:word]) %></p>
+                      <p class="hit-post-date">投稿日時：<%= post.created_at.strftime('%Y/%m/%d %H:%M') %></p>
                     <% end %>
                   <% end %>
                 </div>
@@ -39,6 +40,7 @@
                   <% @comments.each do |comment| %>
                     <%= link_to post_path(comment.post.id) do %>
                       <p class="hit-comment-content">コメント内容：<%= pick_trancate_sentence(comment.comment_content, params[:word]) %></p>
+                      <p class="hit-comment-date">コメント日時：<%= comment.created_at.strftime('%Y/%m/%d %H:%M') %></p>
                     <% end %>
                   <% end %>
                 </div>
@@ -58,7 +60,7 @@
   </div>
 </section>
 <div class="search-advise">
-  <section class="hero is-dark is-halfheight">
+  <section class="hero is-dark is-fullheight">
     <div class="hero-body">
       <div class="container">
         <div class="columns is-centered">
