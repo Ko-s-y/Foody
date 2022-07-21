@@ -14,8 +14,8 @@
                 <div class="hit-content">
                   <% @posts.each do |post| %>
                     <%= link_to post_path(post.id) do %>
-                      <h2 class="hit-post-title">タイトル：<%= emphasize_keyword(post.title, params[:word]) %></h2>
-                      <p class="hit-post-content">投稿内容：<%= emphasize_keyword(post.post_content, params[:word]) %></p>
+                      <h2 class="hit-post-title">タイトル：<%= post.title %></h2>
+                      <p class="hit-post-content">投稿内容：<%= pick_trancate_sentence(post.post_content, params[:word]) %></p>
                     <% end %>
                   <% end %>
                 </div>
@@ -38,7 +38,7 @@
                 <div class="hit-content">
                   <% @comments.each do |comment| %>
                     <%= link_to post_path(comment.post.id) do %>
-                      <p class="hit-comment-content">コメント内容：<%= emphasize_keyword(comment.comment_content, params[:word]) %></p>
+                      <p class="hit-comment-content">コメント内容：<%= pick_trancate_sentence(comment.comment_content, params[:word]) %></p>
                     <% end %>
                   <% end %>
                 </div>
