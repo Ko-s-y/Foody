@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
   .rails-default-error-page {
-    background-color: #EFEFEF;
+    background-color: whitesmoke;
     color: #2E2F30;
     text-align: center;
     font-family: arial, sans-serif;
@@ -23,7 +23,7 @@
     border-right-color: #999;
     border-left-color: #999;
     border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
+    border-top: gray solid 4px;
     border-top-left-radius: 9px;
     border-top-right-radius: 9px;
     background-color: white;
@@ -33,7 +33,7 @@
 
   .rails-default-error-page h1 {
     font-size: 100%;
-    color: #730E15;
+    color: black;
     line-height: 1.5em;
   }
 
@@ -51,6 +51,19 @@
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
+
+  .rails-default-error-page a {
+    color: white;
+    background-color: #209cee;
+    margin: 0 auto 30px;
+    display: block;
+    padding: 5px;
+    text-align: center;
+    width: 80%;
+    border: 1px solid black;
+    border-radius: 20px;
+    text-decoration: none;
+  }
   </style>
 </head>
 
@@ -58,10 +71,10 @@
   <!-- This file lives in public/404.html -->
   <div class="dialog">
     <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
+      <h1>お探しのページは見つかりませんでした(404)</h1>
+      <p>URLを再度ご確認下さい</p>
+      <a href="https://vast-brushlands-89395.herokuapp.com">Foody!トップページに戻る</a>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
   </div>
 </body>
 </html>
