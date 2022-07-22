@@ -8,7 +8,9 @@
         background-image: url("https://vast-brushlands-89395.herokuapp.com/images/sciacca.jpg");
         background-size: cover;
         background-repeat: no-repeat;
-        min-height: 600px;
+        position: relative;
+        min-height: 1300px;
+        font-size: 30px;
       }
 
       .error-page-view {
@@ -18,7 +20,7 @@
       .error-content {
         text-align: center;
         background-color: whitesmoke;
-        background-color:rgba(255,255,255,0.7);
+        background-color:rgba(255,255,255,0.8);
         background-blend-mode:lighten;
         max-width: 33em;
         margin: 0 auto;
@@ -51,6 +53,34 @@
       border-radius: 20px;
       text-decoration: none;
       }
+
+      .photo-data {
+        position: absolute;
+        bottom: 0;
+        right: 20px;
+        font-weight: 600;
+      }
+
+      @media (max-width: 1500px) {
+        body {
+          min-height: 1000px;
+          font-size: 25px;
+        }
+      }
+
+      @media (max-width: 1023px) {
+        body {
+          min-height: 800px;
+          font-size: 20px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        body {
+          min-height: 500px;
+          font-size: 15px;
+        }
+      }
     </style>
   </head>
 
@@ -68,6 +98,9 @@
             <a href="https://vast-brushlands-89395.herokuapp.com">Foody!トップページに戻る</a>
           </div>
         </div>
+      </div>
+      <div class="photo-data">
+        <p>シチリア島 陶器の町 シャッカ(Sciacca)より</p>
       </div>
     </section>
   </body>
