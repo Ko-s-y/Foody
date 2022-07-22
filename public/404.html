@@ -4,7 +4,18 @@
     <title>お探しのページは見つかりませんでした(404)</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
       body {
+        display: flex;
+        flex-flow: column;
+      }
+
+      .error-page {
         background-image: url("https://vast-brushlands-89395.herokuapp.com/images/sciacca.jpg");
         background-size: cover;
         background-repeat: no-repeat;
@@ -22,7 +33,9 @@
         background-color: whitesmoke;
         background-color:rgba(255,255,255,0.8);
         background-blend-mode:lighten;
-        max-width: 33em;
+        /* max-width: 33em; */
+        width: 95%;
+        max-width: 1500px;
         margin: 0 auto;
         border: 1px solid #CCC;
         border-right-color: #999;
@@ -39,16 +52,18 @@
       font-size: 100%;
       color: black;
       line-height: 1.5em;
+      margin-top: 10px;
+      margin-bottom: 10px;
       }
 
       a {
       color: white;
       background-color: #209cee;
-      margin: 0 auto 30px;
+      margin: 10px auto 20px;
       display: block;
       padding: 5px;
       text-align: center;
-      width: 80%;
+      width: 90%;
       border: 1px solid black;
       border-radius: 20px;
       text-decoration: none;
@@ -56,27 +71,40 @@
 
       .photo-data {
         position: absolute;
-        bottom: 0;
+        bottom: 10px;
         right: 20px;
         font-weight: 600;
       }
 
+      footer {
+      height: 150px;
+      background-color: black;
+      color: white;
+      text-align: center;
+      padding-top: 60px;
+      }
+
+      .copy-right {
+        font-size: 20px;
+        font-weight: 500;
+      }
+
       @media (max-width: 1500px) {
-        body {
+        .error-page {
           min-height: 1000px;
           font-size: 25px;
         }
       }
 
       @media (max-width: 1023px) {
-        body {
+        .error-page {
           min-height: 800px;
           font-size: 20px;
         }
       }
 
       @media (max-width: 768px) {
-        body {
+        .error-page {
           min-height: 500px;
           font-size: 15px;
         }
@@ -103,5 +131,12 @@
         <p>シチリア島 陶器の町 シャッカ(Sciacca)より</p>
       </div>
     </section>
+    <footer>
+      <div class="footer-container">
+        <div class="copy-right">
+          <p>&copy; 2022- Copyright Ko-s-y .</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
