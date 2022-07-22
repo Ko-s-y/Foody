@@ -14,6 +14,10 @@
         display: flex;
         flex-flow: column;
         background-color: whitesmoke;
+        min-height: 100vh;
+        position: relative;
+        padding-bottom: 150px;
+        box-sizing: border-box;
       }
 
       header {
@@ -40,8 +44,8 @@
         background-size: cover;
         background-repeat: no-repeat;
         position: relative;
-        min-height: 1142px;
         font-size: 30px;
+        min-height: 1500px;
       }
 
       .error-page-view {
@@ -93,6 +97,7 @@
         bottom: 10px;
         right: 20px;
         font-weight: 600;
+        opacity: 0.6;
       }
 
       footer {
@@ -113,7 +118,7 @@
 
       @media (max-width: 1500px) {
         .error-page {
-          min-height: 1000px;
+          min-height: 1150px;
           font-size: 25px;
         }
       }
@@ -126,6 +131,10 @@
       }
 
       @media (max-width: 768px) {
+        body {
+          padding-bottom: 80px !important;
+        }
+
         .error-page {
           min-height: 515px;
           font-size: 15px;
