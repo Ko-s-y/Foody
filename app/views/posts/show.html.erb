@@ -27,14 +27,10 @@
               </div>
             <% end %>
           </div>
-
-
           <div class="like-area">
-            <div id="like_buttons_<%= @post.id %>">
+            <div id="like-buttons-<%= @post.id %>">
               <%= render "likes/like_function", post: @post %>
             </div>
-
-
             <% if @post.likes.count.zero? %>
               <h2>まだいいねしたユーザーはいません</h2>
             <% else %>
@@ -51,14 +47,10 @@
               </ul>
             <% end %>
           </div>
-
-
           <div class="remember-area">
-            <div id="remember_buttons_<%= @post.id %>">
+            <div id="remember-buttons-<%= @post.id %>">
               <%= render "remembers/remember_function", post: @post %>
             </div>
-
-
             <% if @post.remembers.count.zero? %>
               <h2>まだrememberしたユーザーはいません</h2>
             <% else %>
