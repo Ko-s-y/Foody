@@ -1,67 +1,207 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>The page you were looking for doesn't exist (404)</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+  <head>
+    <title>お探しのページは見つかりませんでした(404)</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+      body {
+        display: flex;
+        flex-flow: column;
+        background-color: whitesmoke;
+        min-height: 100vh;
+        position: relative;
+        padding-bottom: 150px;
+        box-sizing: border-box;
+      }
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+      header {
+        height: 70px;
+        background-color: whitesmoke;
+      }
 
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
+      .site-title {
+        font-size: 30px;
+        font-weight: normal;
+        width: 180px;
+        text-align: center;
+        display: block;
+        text-decoration: none;
+        color: #4a4a4a;
+        display: block;
+        line-height: 1.5;
+        padding: 0.5rem 0.75rem;
+        margin-top: 5px;
+      }
 
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-  </style>
-</head>
+      .error-page {
+        background-image: url("https://vast-brushlands-89395.herokuapp.com/images/sciacca.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        font-size: 30px;
+        min-height: 1500px;
+      }
 
-<body class="rails-default-error-page">
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
+      .error-page-view {
+        margin-top: 80px;
+      }
+
+      .error-content {
+        text-align: center;
+        background-color: whitesmoke;
+        background-color:rgba(255,255,255,0.8);
+        background-blend-mode:lighten;
+        width: 95%;
+        max-width: 1500px;
+        margin: 0 auto;
+        border: 1px solid #CCC;
+        border-right-color: #999;
+        border-left-color: #999;
+        border-bottom-color: #BBB;
+        border-top: gray solid 4px;
+        border-top-left-radius: 9px;
+        border-top-right-radius: 9px;
+        padding: 7px 12% 0;
+        box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+      }
+
+      h1 {
+        font-size: 100%;
+        color: black;
+        line-height: 1.5em;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      .error-dispose {
+        margin-bottom: 20px;
+      }
+
+      .photo-data {
+        position: absolute;
+        bottom: 10px;
+        right: 20px;
+        font-weight: 600;
+        opacity: 0.6;
+      }
+
+      .foody-link-area {
+        height: 120px;
+        padding-top: 40px;
+      }
+
+      .home-link-btn a {
+        color: white;
+        background-color: #209cee;
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+        width: 50%;
+        height: 40px;
+        border: 1px solid black;
+        border-radius: 20px;
+        text-decoration: none;
+        font-size: 20px;
+        padding: 3px;
+      }
+
+      footer {
+        height: 150px;
+        width: 100%;
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding-top: 60px;
+        position: absolute;
+        bottom: 0;
+      }
+
+      .copy-right {
+        font-size: 20px;
+        font-weight: 500;
+      }
+
+      @media (max-width: 1500px) {
+        .error-page {
+          min-height: 1150px;
+          font-size: 25px;
+        }
+      }
+
+      @media (max-width: 1023px) {
+        .error-page {
+          min-height: 860px;
+          font-size: 20px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        body {
+          padding-bottom: 80px !important;
+        }
+
+        .error-page {
+          min-height: 515px;
+          font-size: 13px;
+        }
+
+        .error-page-view {
+          margin-top: 20px !important;
+        }
+
+        .foody-link-area {
+          height: 80px;
+          padding-top: 20px;
+        }
+
+        .home-link-btn a {
+          width: 80% !important;
+          }
+
+        footer {
+          height: 80px !important;
+          padding-top: 26px !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <a class="site-title" href="https://vast-brushlands-89395.herokuapp.com">Foody!</a>
+    </header>
+    <section class="error-page">
+      <div class="error-page-view">
+        <div class="error-content">
+          <div class="error-title">
+            <h1>お探しのページは見つかりませんでした(404)</h1>
+          </div>
+          <div class="error-dispose">
+            <p>URLを再度ご確認下さい。</p>
+          </div>
+        </div>
+      </div>
+      <div class="photo-data">
+        <p>シチリア島 陶器の町 シャッカ(Sciacca)より</p>
+      </div>
+    </section>
+    <div class="foody-link-area">
+      <div class="home-link-btn">
+        <a href="https://vast-brushlands-89395.herokuapp.com">Foody!トップページに戻る</a>
+      </div>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
-  </div>
-</body>
+    <footer>
+      <div class="footer-container">
+        <div class="copy-right">
+          <p>&copy; 2022- Copyright Ko-s-y .</p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
