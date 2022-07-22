@@ -58,10 +58,11 @@
   <!-- This file lives in public/422.html -->
   <div class="dialog">
     <div>
-      <h1>The change you wanted was rejected.</h1>
-      <p>Maybe you tried to change something you didn't have access to.</p>
+      <!-- CSRF対策のため生じるエラー -->
+      <h1>セキュリティ対策の為のエラーです。</h1>
+      <p>ブラウザのタブを放置し続けたり複数の端末から開いたりすると発生します。</p>
+      <p>タブの削除やCoockieの削除により解決する可能性があります。</p>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
   </div>
 </body>
 </html>
