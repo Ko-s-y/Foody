@@ -12,6 +12,10 @@ class PostsController < ApplicationController
     @comment = current_user.comments.new
   end
 
+  def action_user
+    @post = Post.find(params[:id])
+  end
+
   def create
     @post = current_user.posts.new(post_params)
     if @post.save

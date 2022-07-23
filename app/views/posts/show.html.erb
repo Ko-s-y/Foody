@@ -39,42 +39,7 @@
             <%= render "remembers/remember_function", post: @post %>
           </div>
 
-
-          <div class="action-user-list">
-            <% if @post.likes.count.zero? %>
-              <h2>まだいいねしたユーザーはいません</h2>
-            <% else %>
-              <h2 class="appear-liked-user">いいねしたユーザー一覧表示</h2>
-              <h2 class="disappear-liked-user">いいねしたユーザー一覧非表示</h2>
-              <ul class="liked-user-list">
-                <% @post.liked_users.each do |user| %>
-                  <% if user == current_user %>
-                    <li><%= link_to "あなた", users_show_path %></li>
-                  <% else %>
-                    <li><%= link_to user.name, users_profile_path(name: user.name) %></li>
-                  <% end %>
-                <% end %>
-              </ul>
-            <% end %>
-            <% if @post.remembers.count.zero? %>
-              <h2>まだrememberしたユーザーはいません</h2>
-            <% else %>
-              <h2 class="appear-checked-remember-user">rememberしたユーザー一覧表示</h2>
-              <h2 class="disappear-checked-remember-user">rememberしたユーザー一覧非表示</h2>
-              <ul class="checked-remember-user-list">
-                <% @post.checked_remember_users.each do |user| %>
-                  <% if user == current_user %>
-                    <li><%= link_to "あなた", users_show_path %></li>
-                  <% else %>
-                    <li><%= link_to user.name, users_profile_path(name: user.name) %></li>
-                  <% end %>
-                <% end %>
-              </ul>
-            <% end %>
-          </div>
-
-
-
+          <%= link_to "action users list", "/posts/#{@post.id}/action_user" %>
 
         </div>
       </div>
