@@ -1,9 +1,9 @@
 <% if current_user.checked_remember?(post) %>
   <%= link_to post_remembers_path(post.id), method: :delete, remote: true do %>
-    <span class="remember-btn" style="color: green;"><i class="fa fa-book"></i></i><%= post.remembers.count %></span>
+    <span class="remember-count" style="color: green;"><i class="fa fa-book"></i></i><%= post.remembers.count %></span>
   <% end %>
 <% else %>
   <%= link_to post_remembers_path(post.id), method: :post, remote: true do %>
-    <span class="remember-btn" style="color: silver;"><i class="fa fa-book"></i></i><%= post.remembers.count %></span>
+    <span class="remember-count" style="color: silver;"><i class="fa fa-book"></i></i><%= post.remembers.count %></span>
   <% end %>
 <% end %>

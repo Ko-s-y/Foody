@@ -69,15 +69,11 @@
                     <%= image_tag(post_image_url(post), class: "post-image", alt: "投稿画像") %>
                   </div>
                 <% end %>
-
-
                 <% if current_user.already_commented?(post) %>
                   <span class="comment-count" style="color: olive;"><i class="fa fa-comments"></i><%= post.comments.count %></span>
                 <% else %>
                   <span class="comment-count" style="color: silver;"><i class="fa fa-comments"></i><%= post.comments.count %></span>
                 <% end %>
-
-
                 <div id="like-buttons-<%= post.id %>">
                   <% if current_user.already_liked?(post) %>
                     <%= link_to post_likes_path(post.id), method: :delete, remote: true do %>
@@ -89,8 +85,6 @@
                     <% end %>
                   <% end %>
                 </div>
-
-
                 <div id="remember-buttons-<%= post.id %>">
                   <% if current_user.checked_remember?(post) %>
                     <%= link_to post_remembers_path(post.id), method: :delete, remote: true do %>
@@ -102,8 +96,6 @@
                     <% end %>
                   <% end %>
                 </div>
-
-
               </div>
             </div>
           <% end %>

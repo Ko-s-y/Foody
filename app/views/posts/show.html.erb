@@ -27,10 +27,20 @@
               </div>
             <% end %>
           </div>
-          <div class="like-area">
-            <div id="like-buttons-<%= @post.id %>">
-              <%= render "likes/like_function", post: @post %>
-            </div>
+          <% if current_user.already_commented?(@post) %>
+            <span class="comment-count" style="color: olive;"><i class="fa fa-comments"></i><%= @post.comments.count %></span>
+          <% else %>
+            <span class="comment-count" style="color: silver;"><i class="fa fa-comments"></i><%= @post.comments.count %></span>
+          <% end %>
+          <div id="like-buttons-<%= @post.id %>">
+            <%= render "likes/like_function", post: @post %>
+          </div>
+          <div id="remember-buttons-<%= @post.id %>">
+            <%= render "remembers/remember_function", post: @post %>
+          </div>
+
+
+          <div class="action-user-list">
             <% if @post.likes.count.zero? %>
               <h2>まだいいねしたユーザーはいません</h2>
             <% else %>
@@ -46,11 +56,6 @@
                 <% end %>
               </ul>
             <% end %>
-          </div>
-          <div class="remember-area">
-            <div id="remember-buttons-<%= @post.id %>">
-              <%= render "remembers/remember_function", post: @post %>
-            </div>
             <% if @post.remembers.count.zero? %>
               <h2>まだrememberしたユーザーはいません</h2>
             <% else %>
@@ -67,6 +72,10 @@
               </ul>
             <% end %>
           </div>
+
+
+
+
         </div>
       </div>
     </div>
