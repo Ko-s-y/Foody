@@ -14,6 +14,8 @@ class PostsController < ApplicationController
 
   def action_user
     @post = Post.find(params[:id])
+    @liked_users = @post.liked_users
+    @remember_users = @post.checked_remember_users
   end
 
   def create
