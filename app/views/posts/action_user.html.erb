@@ -11,16 +11,16 @@
       <div class="box">
         <div class="info-contents">
           <% if @liked_users.exists? %>
-            <% @liked_users.each do |user| %>
+            <% @post.likes.each do |like| %>
               <div class="info-area">
-                <% if user == current_user %>
-                  <%= link_to image_tag(avatar_url(user), class: "action-user-icon", alt: "ユーザーアイコン"), users_show_path %>
+                <% if like.user == current_user %>
+                  <%= link_to image_tag(avatar_url(like.user), class: "action-user-icon", alt: "ユーザーアイコン"), users_show_path %>
                   <strong class="info-element"><%= link_to "あなた", users_show_path, class: "action-user-name" %></strong>
-                  <span class="info-date"><%= info_time(user.created_at) %></span>
+                  <span class="info-date"><%= info_time(like.created_at) %></span>
                 <% else %>
-                  <%= link_to image_tag(avatar_url(user), class: "action-user-icon", alt: "ユーザーアイコン"), users_profile_path(name: user.name) %>
-                  <strong class="info-element"><%= link_to "#{user.name}さん", users_profile_path(name: user.name), class: "action-user-name" %></strong>
-                  <span class="info-date"><%= info_time(user.created_at) %></span>
+                  <%= link_to image_tag(avatar_url(like.user), class: "action-user-icon", alt: "ユーザーアイコン"), users_profile_path(name: like.user.name) %>
+                  <strong class="info-element"><%= link_to "#{like.user.name}さん", users_profile_path(name: like.user.name), class: "action-user-name" %></strong>
+                  <span class="info-date"><%= info_time(like.created_at) %></span>
                 <% end %>
               </div>
             <% end %>
@@ -39,16 +39,16 @@
       <div class="box">
         <div class="info-contents">
           <% if @remember_users.exists? %>
-            <% @remember_users.each do |user| %>
+            <% @post.remembers.each do |remember| %>
               <div class="info-area">
-                <% if user == current_user %>
-                  <%= link_to image_tag(avatar_url(user), class: "action-user-icon", alt: "ユーザーアイコン"), users_show_path %>
+                <% if remember.user == current_user %>
+                  <%= link_to image_tag(avatar_url(remember.user), class: "action-user-icon", alt: "ユーザーアイコン"), users_show_path %>
                   <strong class="info-element"><%= link_to "あなた", users_show_path, class: "action-user-name" %></strong>
-                  <span class="info-date"><%= info_time(user.created_at) %></span>
+                  <span class="info-date"><%= info_time(remember.created_at) %></span>
                 <% else %>
-                  <%= link_to image_tag(avatar_url(user), class: "action-user-icon", alt: "ユーザーアイコン"), users_profile_path(name: user.name) %>
-                  <strong class="info-element"><%= link_to "#{user.name}さん", users_profile_path(name: user.name), class: "action-user-name" %></strong>
-                  <span class="info-date"><%= info_time(user.created_at) %></span>
+                  <%= link_to image_tag(avatar_url(remember.user), class: "action-user-icon", alt: "ユーザーアイコン"), users_profile_path(name: remember.user.name) %>
+                  <strong class="info-element"><%= link_to "#{remember.user.name}さん", users_profile_path(name: remember.user.name), class: "action-user-name" %></strong>
+                  <span class="info-date"><%= info_time(remember.created_at) %></span>
                 <% end %>
               </div>
             <% end %>
