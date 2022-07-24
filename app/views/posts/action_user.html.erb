@@ -9,7 +9,7 @@
   <div class="columns is-centered">
     <div class="column is-10-desktop is-10-widescreen">
       <div class="box">
-        <div class="info-contents">
+        <div class="action-user-info">
           <% if @liked_users.exists? %>
             <% @post.likes.each do |like| %>
               <div class="info-area">
@@ -25,7 +25,7 @@
               </div>
             <% end %>
           <% else %>
-            <h2>まだlikeしたユーザーはいません</h2>
+            <h2 class="none-info">まだlikeしたユーザーはいません</h2>
           <% end %>
         </div>
       </div>
@@ -37,7 +37,7 @@
   <div class="columns is-centered">
     <div class="column is-10-desktop is-10-widescreen">
       <div class="box">
-        <div class="info-contents">
+        <div class="action-user-info">
           <% if @remember_users.exists? %>
             <% @post.remembers.each do |remember| %>
               <div class="info-area">
@@ -53,7 +53,7 @@
               </div>
             <% end %>
           <% else %>
-            <h2>まだrememberしたユーザーはいません</h2>
+            <h2 class="none-info">まだrememberしたユーザーはいません</h2>
           <% end %>
         </div>
       </div>

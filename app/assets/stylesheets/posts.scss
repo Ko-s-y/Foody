@@ -270,6 +270,18 @@ textarea {
   float: right;
 }
 
+.liked-user-list {
+  padding: 20px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.checked-remember-user-list {
+  padding: 20px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
 .action-user-icon {
   width: 60px;
   height: 60px;
@@ -281,4 +293,39 @@ textarea {
   margin-left: 15px;
   margin-top: 18px;
   display: inline-block;
+}
+
+.action-user-info {
+  overflow: hidden;
+  position: relative;
+  line-height: 135%;
+
+  .none-info {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .info-area {
+    width: 100%;
+    display: block;
+    padding: 10px;
+    overflow: hidden;
+    border-bottom: solid 1px rgb(215, 211, 211);
+
+    // 最後の投稿の下線消し
+    &:last-child {
+      border-bottom: solid 0px;
+    }
+
+    .info-element {
+      font-weight: 900;
+      color: green;
+    }
+
+    .info-date {
+      color: #8a9aa4;
+      float: right;
+      margin-top: 18px;
+    }
+  }
 }
