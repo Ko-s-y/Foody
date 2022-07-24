@@ -1,40 +1,64 @@
 <% provide(:title, "Action user") %>
-<div class="action-user-list">
 
+<h2 class="appear-liked-user">いいねしたユーザー一覧表示</h2>
+<h2 class="disappear-liked-user">いいねしたユーザー一覧非表示</h2>
+<h2 class="appear-checked-remember-user">rememberしたユーザー一覧表示</h2>
+<h2 class="disappear-checked-remember-user">rememberしたユーザー一覧非表示</h2>
 
-  <% if @liked_users.exists? %>
-    <h2 class="appear-liked-user">いいねしたユーザー一覧表示</h2>
-    <h2 class="disappear-liked-user">いいねしたユーザー一覧非表示</h2>
-    <ul class="liked-user-list">
-      <% @liked_users.each do |user| %>
-        <% if user == current_user %>
-          <li><%= link_to "あなた", users_show_path %></li>
-        <% else %>
-          <li><%= link_to user.name, users_profile_path(name: user.name) %></li>
-        <% end %>
-      <% end %>
-    </ul>
-  <% else %>
-    <h2>まだいいねしたユーザーはいません</h2>
-  <% end %>
+<section class="liked-user-list hero is-white is-halfheight">
+  <div class="columns is-centered">
+    <div class="column is-10-desktop is-10-widescreen">
+      <div class="box">
+        <div class="info-contents">
+          <% if @liked_users.exists? %>
+            <% @liked_users.each do |user| %>
+              <div class="info-area">
+                <% if user == current_user %>
+                  <%= link_to image_tag(avatar_url(user), class: "action-user-icon", alt: "ユーザーアイコン"), users_show_path %>
+                  <strong class="info-element"><%= link_to "あなた", users_show_path, class: "action-user-name" %></strong>
+                  <span class="info-date"><%= info_time(user.created_at) %></span>
+                <% else %>
+                  <%= link_to image_tag(avatar_url(user), class: "action-user-icon", alt: "ユーザーアイコン"), users_profile_path(name: user.name) %>
+                  <strong class="info-element"><%= link_to "#{user.name}さん", users_profile_path(name: user.name), class: "action-user-name" %></strong>
+                  <span class="info-date"><%= info_time(user.created_at) %></span>
+                <% end %>
+              </div>
+            <% end %>
+          <% else %>
+            <h2>まだlikeしたユーザーはいません</h2>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-
-  <% if @remember_users.exists? %>
-    <h2 class="appear-checked-remember-user">rememberしたユーザー一覧表示</h2>
-    <h2 class="disappear-checked-remember-user">rememberしたユーザー一覧非表示</h2>
-    <ul class="checked-remember-user-list">
-      <% @remember_users.each do |user| %>
-        <% if user == current_user %>
-          <li><%= link_to "あなた", users_show_path %></li>
-        <% else %>
-          <li><%= link_to user.name, users_profile_path(name: user.name) %></li>
-        <% end %>
-      <% end %>
-    </ul>
-  <% else %>
-    <h2>まだrememberしたユーザーはいません</h2>
-  <% end %>
-</div>
-
+<section class="checked-remember-user-list hero is-white is-halfheight">
+  <div class="columns is-centered">
+    <div class="column is-10-desktop is-10-widescreen">
+      <div class="box">
+        <div class="info-contents">
+          <% if @remember_users.exists? %>
+            <% @remember_users.each do |user| %>
+              <div class="info-area">
+                <% if user == current_user %>
+                  <%= link_to image_tag(avatar_url(user), class: "action-user-icon", alt: "ユーザーアイコン"), users_show_path %>
+                  <strong class="info-element"><%= link_to "あなた", users_show_path, class: "action-user-name" %></strong>
+                  <span class="info-date"><%= info_time(user.created_at) %></span>
+                <% else %>
+                  <%= link_to image_tag(avatar_url(user), class: "action-user-icon", alt: "ユーザーアイコン"), users_profile_path(name: user.name) %>
+                  <strong class="info-element"><%= link_to "#{user.name}さん", users_profile_path(name: user.name), class: "action-user-name" %></strong>
+                  <span class="info-date"><%= info_time(user.created_at) %></span>
+                <% end %>
+              </div>
+            <% end %>
+          <% else %>
+            <h2>まだrememberしたユーザーはいません</h2>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <%= javascript_pack_tag 'post/action_user' %>
