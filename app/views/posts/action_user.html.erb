@@ -1,4 +1,7 @@
+<% provide(:title, "Action user") %>
 <div class="action-user-list">
+
+
   <% if @post.likes.count.zero? %>
     <h2>まだいいねしたユーザーはいません</h2>
   <% else %>
@@ -14,6 +17,8 @@
       <% end %>
     </ul>
   <% end %>
+
+
   <% if @post.remembers.count.zero? %>
     <h2>まだrememberしたユーザーはいません</h2>
   <% else %>
@@ -30,3 +35,6 @@
     </ul>
   <% end %>
 </div>
+
+
+<%= javascript_pack_tag 'post/action_user' %>
