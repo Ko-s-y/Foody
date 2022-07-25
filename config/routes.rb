@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     post 'users/show', to: 'users#update' # アイコン変更
   end
 
+  get 'posts/:id/action_user', to: 'posts#action_user'
   get 'searches/result'
   get 'home', to: 'pages#home'
   get 'about', to: 'pages#about'
