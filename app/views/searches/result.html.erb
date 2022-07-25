@@ -68,6 +68,32 @@
                 </div>
               <% end %>
             </div>
+
+
+          <% elsif @range == "User" %>
+            <div class="post-result">
+              <% if @users.present? %>
+                <div class="result-count-area">
+                  <h1 class="result-count">「 <%= params[:word] %> 」を含むユーザーのヒット件数:<span> <%= @users.total_count %>件</span></h1>
+                </div>
+                <%= paginate @users %>
+                <div class="hit-content">
+                  <% @users.each do |user| %>
+                    <p class="hit-post-title"><%= user.name %></p>
+                    <p class="hit-post-content"><%= user.introduction %></p>
+                  <% end %>
+                </div>
+                <%= paginate @users %>
+              <% else %>
+                <div>
+                  <p>「 <%= params[:word] %> 」を含むユーザーはいませんでした。</p>
+                  <p>キーワードを変更して試して見てください</p>
+                  <button class="button is-info search-advise-btn ope-btn">検索のヒント</button>
+                </div>
+              <% end %>
+            </div>
+
+
           <% end %>
         </div>
       </div>
