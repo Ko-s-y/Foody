@@ -105,15 +105,18 @@
 
       .posted-user-name {
         font-weight: 800;
+        color: black;
       }
 
       .post-title {
         font-weight: 600;
+        color: black;
       }
 
       .post-content {
         display: block;
         font-weight: 400;
+        color: black;
       }
 
       .post-edit-link {
@@ -348,4 +351,12 @@ textarea {
   display: block;
   padding: 5px 0 20px;
   font-size: 25px;
+}
+
+.action-user-link-btn {
+  font-size: 15px;
+  padding-top: 5px;
+  margin-bottom: 5px;
+  display: block;
+  color: black;
 }

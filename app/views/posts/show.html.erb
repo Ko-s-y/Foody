@@ -38,9 +38,7 @@
           <div id="remember-buttons-<%= @post.id %>">
             <%= render "remembers/remember_function", post: @post %>
           </div>
-
-          <%= link_to "action users list", "/posts/#{@post.id}/action_user" %>
-
+          <%= link_to "アクションしたユーザー一覧", "/posts/#{@post.id}/action_user", class: "action-user-link-btn" %>
         </div>
       </div>
     </div>
