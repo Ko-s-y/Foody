@@ -200,7 +200,7 @@ textarea {
 
 .comment-count {
   font-size: 25px;
-  position: absolute;
+  position: relative;
   left: 10%;
   margin: 20px 0;
   display: inline-block;
@@ -219,7 +219,7 @@ textarea {
   display: inline-block;
   left: 80%;
   margin: 20px 0;
-  position: relative;
+  position: absolute;
 }
 
 .appear-liked-user {
@@ -303,9 +303,10 @@ textarea {
   position: relative;
   line-height: 135%;
 
-  .none-info {
+  .action-zero {
     font-size: 20px;
     text-align: center;
+    margin-top: 15px;
   }
 
   .info-area {

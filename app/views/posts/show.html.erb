@@ -27,17 +27,17 @@
               </div>
             <% end %>
           </div>
-          <% if current_user.already_commented?(@post) %>
-            <span class="comment-count" style="color: olive;"><i class="fa fa-comments"></i><%= @post.comments.count %></span>
-          <% else %>
-            <span class="comment-count" style="color: silver;"><i class="fa fa-comments"></i><%= @post.comments.count %></span>
-          <% end %>
           <div id="like-buttons-<%= @post.id %>">
             <%= render "likes/like_function", post: @post %>
           </div>
           <div id="remember-buttons-<%= @post.id %>">
             <%= render "remembers/remember_function", post: @post %>
           </div>
+          <% if current_user.already_commented?(@post) %>
+            <span class="comment-count" style="color: olive;"><i class="fa fa-comments"></i><%= @post.comments.count %></span>
+          <% else %>
+            <span class="comment-count" style="color: silver;"><i class="fa fa-comments"></i><%= @post.comments.count %></span>
+          <% end %>
           <%= link_to "アクションしたユーザー一覧", "/posts/#{@post.id}/action_user", class: "action-user-link-btn" %>
         </div>
       </div>

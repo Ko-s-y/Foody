@@ -70,19 +70,7 @@
                   </div>
                 <% end %>
               </div>
-
-
             <% end %>
-
-            <% if current_user.already_commented?(post) %>
-              <span class="comment-count" style="color: olive;"><i class="fa fa-comments"></i><%= post.comments.count %></span>
-            <% else %>
-              <span class="comment-count" style="color: silver;"><i class="fa fa-comments"></i><%= post.comments.count %></span>
-            <% end %>
-
-
-
-
             <div id="like-buttons-<%= post.id %>">
               <% if current_user.already_liked?(post) %>
                 <%= link_to post_likes_path(post.id), method: :delete, remote: true do %>
@@ -94,8 +82,6 @@
                 <% end %>
               <% end %>
             </div>
-
-
             <div id="remember-buttons-<%= post.id %>">
               <% if current_user.checked_remember?(post) %>
                 <%= link_to post_remembers_path(post.id), method: :delete, remote: true do %>
@@ -107,8 +93,13 @@
                 <% end %>
               <% end %>
             </div>
-
-
+            <%= link_to post_path(post.id) do %>
+              <% if current_user.already_commented?(post) %>
+                <span class="comment-count" style="color: olive;"><i class="fa fa-comments"></i><%= post.comments.count %></span>
+              <% else %>
+                <span class="comment-count" style="color: silver;"><i class="fa fa-comments"></i><%= post.comments.count %></span>
+              <% end %>
+            <% end %>
           </div>
         </div>
       <% end %>
