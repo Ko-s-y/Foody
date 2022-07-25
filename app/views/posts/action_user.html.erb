@@ -1,11 +1,10 @@
 <% provide(:title, "Action user") %>
-
-<h2 class="appear-liked-user">いいねしたユーザー一覧表示</h2>
-<h2 class="disappear-liked-user">いいねしたユーザー一覧非表示</h2>
-<h2 class="appear-checked-remember-user">rememberしたユーザー一覧表示</h2>
-<h2 class="disappear-checked-remember-user">rememberしたユーザー一覧非表示</h2>
-
-<section class="liked-user-list hero is-white is-halfheight">
+<div class="ope-btn-area">
+  <h2 class="appear-liked-user appear-link">Like User : <%= @post.likes.count %>件</h2>
+  <h2 class="appear-checked-remember-user appear-link">Remember User : <%= @post.remembers.count %>件</h2>
+</div>
+<div class="like-users">
+<section class="liked-user-list hero is-light is-fullheight">
   <div class="columns is-centered">
     <div class="column is-10-desktop is-10-widescreen">
       <div class="box">
@@ -32,8 +31,9 @@
     </div>
   </div>
 </section>
-
-<section class="checked-remember-user-list hero is-white is-halfheight">
+</div>
+<div class="remember-users">
+<section class="checked-remember-user-list hero is-light is-fullheight">
   <div class="columns is-centered">
     <div class="column is-10-desktop is-10-widescreen">
       <div class="box">
@@ -60,5 +60,5 @@
     </div>
   </div>
 </section>
-
+</div>
 <%= javascript_pack_tag 'post/action_user' %>
