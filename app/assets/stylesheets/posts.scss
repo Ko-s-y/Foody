@@ -203,20 +203,20 @@ textarea {
   position: absolute;
   left: 10%;
   margin: 20px 0;
-  display: block;
+  display: inline-block;
 }
 
 .like-count {
   font-size: 25px;
   left: 44%;
-  display: block;
+  display: inline-block;
   margin: 20px 0;
   position: absolute;
 }
 
 .remember-count {
   font-size: 25px;
-  display: block;
+  display: inline-block;
   left: 80%;
   margin: 20px 0;
   position: relative;
