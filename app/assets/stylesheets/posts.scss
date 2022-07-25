@@ -105,15 +105,18 @@
 
       .posted-user-name {
         font-weight: 800;
+        color: black;
       }
 
       .post-title {
         font-weight: 600;
+        color: black;
       }
 
       .post-content {
         display: block;
         font-weight: 400;
+        color: black;
       }
 
       .post-edit-link {
@@ -197,26 +200,26 @@ textarea {
 
 .comment-count {
   font-size: 25px;
-  position: absolute;
+  position: relative;
   left: 10%;
   margin: 20px 0;
-  display: block;
+  display: inline-block;
 }
 
 .like-count {
   font-size: 25px;
   left: 44%;
-  display: block;
+  display: inline-block;
   margin: 20px 0;
   position: absolute;
 }
 
 .remember-count {
   font-size: 25px;
-  display: block;
+  display: inline-block;
   left: 80%;
   margin: 20px 0;
-  position: relative;
+  position: absolute;
 }
 
 .appear-liked-user {
@@ -268,4 +271,93 @@ textarea {
 
 .form-str-counter {
   float: right;
+}
+
+.liked-user-list {
+  padding: 20px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.checked-remember-user-list {
+  padding: 20px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.action-user-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  float: left;
+}
+
+.action-user-name {
+  margin-left: 15px;
+  margin-top: 18px;
+  display: inline-block;
+}
+
+.action-user-info {
+  overflow: hidden;
+  position: relative;
+  line-height: 135%;
+
+  .action-zero {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  .info-area {
+    width: 100%;
+    display: block;
+    padding: 10px;
+    overflow: hidden;
+    border-bottom: solid 1px rgb(215, 211, 211);
+
+    // 最後の投稿の下線消し
+    &:last-child {
+      border-bottom: solid 0px;
+    }
+
+    .info-element {
+      font-weight: 900;
+      color: green;
+    }
+
+    .info-date {
+      color: #8a9aa4;
+      float: right;
+      margin-top: 18px;
+    }
+  }
+}
+
+.like-users {
+  display: none;
+}
+
+.remember-users {
+  display: none;
+}
+
+.ope-btn-area {
+  display: flex;
+}
+
+.action-user-count {
+  border-bottom: solid 1px rgb(215, 211, 211);
+  text-align: center;
+  display: block;
+  padding: 5px 0 20px;
+  font-size: 25px;
+}
+
+.action-user-link-btn {
+  font-size: 15px;
+  padding-top: 5px;
+  margin-bottom: 5px;
+  display: block;
+  color: black;
 }
