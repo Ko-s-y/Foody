@@ -57,23 +57,33 @@
               <%= link_to image_tag(avatar_url(post.user), class: "posted-user-icon", alt: "ユーザーアイコン"), users_profile_path(name: post.user.name) %>
             <% end %>
           </figure>
+
+
+
           <%= link_to post_path(post.id) do %>
             <div class="post-area-text">
               <div class="posted-user-name"><%= post.user.name %>(<%= post.user.introduction %>)</div>
               <div class="posted-date"><%= post_time(post.created_at) %></div>
               <div class="post-text">
-                <span class="post-title"><%= post.title %></span>
-                <span class="post-content"><%= simple_format(post.post_content) %></span>
+                <div class="post-title"><%= post.title %></div>
+                <div class="post-content"><%= simple_format(post.post_content) %></div>
                 <% unless post.avatar.blank? %>
                   <div class="post-pict">
                     <%= image_tag(post_image_url(post), class: "post-image", alt: "投稿画像") %>
                   </div>
                 <% end %>
+
+
+          <% end %>
+
+
+
                 <% if current_user.already_commented?(post) %>
                   <span class="comment-count" style="color: olive;"><i class="fa fa-comments"></i><%= post.comments.count %></span>
                 <% else %>
                   <span class="comment-count" style="color: silver;"><i class="fa fa-comments"></i><%= post.comments.count %></span>
                 <% end %>
+
                 <div id="like-buttons-<%= post.id %>">
                   <% if current_user.already_liked?(post) %>
                     <%= link_to post_likes_path(post.id), method: :delete, remote: true do %>
@@ -85,6 +95,7 @@
                     <% end %>
                   <% end %>
                 </div>
+
                 <div id="remember-buttons-<%= post.id %>">
                   <% if current_user.checked_remember?(post) %>
                     <%= link_to post_remembers_path(post.id), method: :delete, remote: true do %>
@@ -96,9 +107,13 @@
                     <% end %>
                   <% end %>
                 </div>
+
+
+
               </div>
             </div>
-          <% end %>
+
+
         </div>
       <% end %>
     </div>
