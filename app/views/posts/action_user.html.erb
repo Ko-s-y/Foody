@@ -1,14 +1,16 @@
 <% provide(:title, "Action user") %>
 <div class="ope-btn-area">
-  <h2 class="appear-liked-user appear-link">Like User : <%= @post.likes.count %>件</h2>
-  <h2 class="appear-checked-remember-user appear-link">Remember User : <%= @post.remembers.count %>件</h2>
+  <h2 class="appear-liked-user appear-link">Like List</h2>
+  <h2 class="appear-checked-remember-user appear-link">Remember List</h2>
 </div>
+
 <div class="like-users">
 <section class="liked-user-list hero is-light is-fullheight">
   <div class="columns is-centered">
     <div class="column is-10-desktop is-10-widescreen">
       <div class="box">
         <div class="action-user-info">
+          <p class="action-user-count">Like : <%= @post.likes.count %>件</p>
           <% if @liked_users.exists? %>
             <% @post.likes.each do |like| %>
               <div class="info-area">
@@ -38,6 +40,7 @@
     <div class="column is-10-desktop is-10-widescreen">
       <div class="box">
         <div class="action-user-info">
+          <p class="action-user-count">Remember : <%= @post.remembers.count %>件</p>
           <% if @remember_users.exists? %>
             <% @post.remembers.each do |remember| %>
               <div class="info-area">
