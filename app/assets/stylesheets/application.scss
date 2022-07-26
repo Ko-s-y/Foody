@@ -35,6 +35,11 @@ main {
   flex: 1;
 }
 
+textarea {
+  resize: none;
+  height: 120px !important;
+}
+
 // ここ削除でバーガーメニュー開くと自動でmargin-bottom:auto
 .navbar {
   height: 70px;
