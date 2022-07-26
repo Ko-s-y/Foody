@@ -45,12 +45,14 @@
                   <span class="user-element">いいねをもらった回数: <%= @received_like %>回</span>
                 </div>
               </div>
-              <div class="field">
-                <%= link_to edit_user_registration_path do %>
-                  <i class="far fa-sun"></i>
-                  <span class="link-btn">setting</span>
-                <% end %>
-              </div>
+              <% if current_user.email != "guest@sample.com" %>
+                <div class="field">
+                  <%= link_to edit_user_registration_path do %>
+                    <i class="far fa-sun"></i>
+                    <span class="link-btn">setting</span>
+                  <% end %>
+                </div>
+              <% end %>
             </div>
           </div>
         </div>
