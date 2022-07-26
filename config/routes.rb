@@ -20,7 +20,8 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  devise_scope :users do
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#new_guest' # ゲストユーザー機能
     get 'users/show' # 自分の詳細画面
     get 'users/:name', to: 'users#profile', as: 'users/profile' # 他ユーザーの詳細画面
     post 'users/show', to: 'users#update' # アイコン変更
