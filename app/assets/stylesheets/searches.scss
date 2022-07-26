@@ -12,9 +12,8 @@
 
 .result-count-area {
   text-align: center;
-  height: 30px;
   font-size: 22px;
-  margin-bottom: 15px;
+  margin-bottom: 17px;
 }
 
 .hit-content {
@@ -33,7 +32,7 @@
 .hit-comment-count {
   font-size: 25px;
   position: absolute;
-  left: 20%;
+  left: 22%;
   margin: 20px 0;
   display: block;
 }
@@ -59,13 +58,27 @@
   color: #8a9aa4;
 }
 
-// .keyword-highlight {
-//   background-color: #3CB371;
-//   font-weight: 700;
-//   padding: 1px 10px 2px 4px;
-//   margin: 2px;
-//   font-style: italic;
-// }
+.hit-user-content {
+  border-top: solid 1px rgb(215, 211, 211);
+}
+
+.hit-user-area {
+  border-bottom: solid 1px rgb(215, 211, 211);
+}
+
+.hit-user-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin: 30px 20px 0;
+}
+
+.hit-user-intro {
+  position: relative;
+  bottom: 60px;
+  left: 120px;
+  font-weight: 600;
+}
 
 .search-advise {
   display: none;
