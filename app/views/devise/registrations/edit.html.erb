@@ -24,12 +24,35 @@
                 <div class="field">
                   <%= f.label :調理ジャンル, class: "label" %>
                   <div class="control has-icons-left">
-                    <%= f.text_field :introduction, autocomplete: "introduction", class: "input is-info", placeholder: "(必須)", maxlength: 10 %>
+                    <%= f.text_field :introduction, autocomplete: "introduction", class: "input is-info", placeholder: "(必須)", maxlength: 10, list: "job-name" %>
+                    <datalist id="job-name">
+                      <option value="うどん">
+                      <option value="郷土料理">
+                      <option value="スイーツ">
+                      <option value="寿司">
+                      <option value="蕎麦">
+                      <option value="中華">
+                      <option value="鉄板焼き">
+                      <option value="天ぷら">
+                      <option value="パン">
+                      <option value="ピッツァ">
+                      <option value="焼肉">
+                      <option value="ラーメン">
+                      <option value="イタリア料理">
+                      <option value="韓国料理">
+                      <option value="スペイン料理">
+                      <option value="タイ料理">
+                      <option value="フランス料理">
+                      <option value="メキシコ料理">
+                      <option value="洋食">
+                      <option value="ロシア料理">
+                      <option value="和食">
+                    </datalist>
                     <span class="icon is-small is-left">
                       <i class="fas fa-utensils"></i>
                     </span>
                   </div>
-                  <p class="help is-danger">*10字以内 例)フレンチ,イタリアン,和食,中華等</p>
+                  <p class="help is-danger">*10字以内 該当する物がなければ入力をお願い致します</p>
                 </div>
                 <div class="field">
                   <%= f.label :メールアドレス, class: "label" %>

@@ -35,4 +35,9 @@ class User < ApplicationRecord
   def checked_remember?(post)
     remembers.exists?(post_id: post.id)
   end
+
+  def self.looks(search, word)
+    @users = User.where("introduction LIKE ?", "%#{word}%")
+    @users = @users.order(id: :DESC)
+  end
 end
