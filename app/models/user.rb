@@ -47,6 +47,7 @@ class User < ApplicationRecord
       user.introduction = "イタリア料理"
       user.password = SecureRandom.urlsafe_base64
       user.password_confirmation = user.password
+      # user.confirmed_at = Time.now
     end
   end
 end

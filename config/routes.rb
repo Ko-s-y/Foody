@@ -18,7 +18,9 @@ Rails.application.routes.draw do
     sessions: 'admin_users/sessions',
   }
 
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
 
   devise_scope :user do
     post 'users/guest_sign_in', to: 'users/sessions#new_guest' # ゲストユーザー機能
