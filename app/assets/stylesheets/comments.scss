@@ -152,7 +152,7 @@
         position: relative;
         padding: 10px;
         border-radius: 20px;
-        background-color: whitesmoke;
+        background-color: white;
         float: left;
 
         // 吹き出し
@@ -164,7 +164,7 @@
           height: 0;
           left: -10px;
           top: 10px;
-          border-right: 20px solid whitesmoke;
+          border-right: 20px solid white;
           border-top: 10px solid transparent;
           border-bottom: 10px solid transparent;
         }
@@ -176,7 +176,7 @@
         display: block;
         width: 100px;
         text-align: right;
-        left: 55px;
+        left: 45px;
         bottom: -25px;
         color: #8a9aa4;
         font-size: 90%;
@@ -184,7 +184,7 @@
 
       .left-trash {
         position: absolute;
-        left: 170px;
+        left: 160px;
         bottom: -22px;
         color: #8a9aa4;
       }
