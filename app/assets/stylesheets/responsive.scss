@@ -284,6 +284,14 @@
     height: 100px !important;
   }
 
+  .posted-date {
+    display: none;
+  }
+
+  .smart-phone-post-date {
+    display: block;
+  }
+
 // ページネーション関連
   .pagination span {
     margin: -9px 20px 0;
