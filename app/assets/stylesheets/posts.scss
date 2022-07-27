@@ -119,6 +119,7 @@
         display: block;
         font-weight: 400;
         font-size: 20px;
+        margin-top: 5px;
         margin-bottom: 3px;
         color: black;
       }
@@ -129,7 +130,7 @@
         right: 40px;
         text-align:right;
         color: #8a9aa4;
-        font-size: 15px;
+        font-size: 20px;
         cursor: pointer;
       }
 
@@ -139,7 +140,7 @@
         right: 5px;
         text-align:right;
         color: #8a9aa4;
-        font-size: 15px;
+        font-size: 20px;
         cursor: pointer;
       }
 
@@ -149,7 +150,34 @@
         right: 5px;
         text-align:right;
         color: #8a9aa4;
-        font-size: 15px;
+        font-size: 17px;
+        font-weight: 600;
+      }
+
+      .posted-date-show {
+        position: absolute;
+        top: 1px;
+        right: 5px;
+        text-align:right;
+        color: #8a9aa4;
+        font-size: 17px;
+        font-weight: 600;
+      }
+
+      .sp-edit-delete-area {
+        display: none;
+        margin: 10px 0 20px;
+      }
+
+      .sp-post-edit {
+        color: #8a9aa4;
+        font-size: 20px;
+        margin-right: 50px;
+      }
+
+      .sp-post-delete {
+        color: #8a9aa4;
+        font-size: 20px;
       }
 
       .post-text {

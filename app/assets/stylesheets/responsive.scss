@@ -284,8 +284,16 @@
     height: 100px !important;
   }
 
-  .posted-date {
+  .posted-date-show {
     display: none;
+  }
+
+  .edit-delete-area {
+    display: none;
+  }
+
+  .sp-edit-delete-area {
+    display: block !important;
   }
 
   .smart-phone-post-date {
