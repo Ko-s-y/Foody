@@ -104,9 +104,10 @@
 
       .right-trash {
         position: absolute;
-        right: 90px;
+        right: 92px;
         bottom: -22px;
         color: #8a9aa4;
+        z-index: 1;
       }
     }
 
