@@ -106,19 +106,6 @@
     </div>
   </section>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- 投稿のコメント一覧 -->
 <section class="comment-tree">
   <div class="comment_container">
@@ -166,7 +153,7 @@
                   <% end %>
                 </div>
                 <% if current_user.id == comment.user.id %>
-                  <%= link_to post_comment_path(@post, comment), method: :delete, data: {confirm: "本当に削除しますか？"} do %>
+                  <%= link_to post_comment_path(@post, comment), method: :delete, data: {confirm: "本当にコメントを削除しますか？"} do %>
                     <i class="fas fa-trash-alt left-trash"></i>
                   <% end %>
                 <% end %>
