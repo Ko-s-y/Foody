@@ -15,8 +15,12 @@
           <div class="posted-user-name"><%= @post.user.name %>(<%= @post.user.introduction %>)</div>
           <div class="posted-date"><%= @post.created_at.strftime('%y/%m/%d %H:%M') %></div>
             <% if @post.user_id == current_user.id %>
-              <%= link_to "編集", edit_post_path, class: "post-edit-link" %>
-              <%= link_to "削除", @post, method: :delete, data: {confirm: "本当に削除しますか？"}, class: "post-delete-link" %>
+              <%= link_to edit_post_path do %>
+                <span class="post-edit-link"><i class="fas fa-pen"></i></span>
+              <% end %>
+              <%= link_to @post, method: :delete, data: {confirm: "本当に削除しますか？"} do %>
+                <span class="post-delete-link"><i class="fas fa-trash-alt left-trash"></i></span>
+              <% end %>
             <% end %>
           <div class="post-text">
             <span class="post-title"><%= @post.title %></span>
