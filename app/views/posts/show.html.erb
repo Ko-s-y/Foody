@@ -13,7 +13,16 @@
         </figure>
         <div class="post-area-text">
           <div class="posted-user-name"><%= @post.user.name %>(<%= @post.user.introduction %>)</div>
-          <div class="posted-date-show"><%= @post.created_at.strftime('%y/%m/%d %H:%M') %></div>
+          <% if @post.user_id == current_user.id %>
+            <div class="appear-menu-btn">•••</div>
+            <div class="post-menu">
+              <div class="sp-edit-delete-area">
+                <p><%= link_to "投稿の編集", edit_post_path, class: "sp-post-edit-btn" %></p>
+                <p><%= link_to "投稿の削除", @post, method: :delete, data: {confirm: "本当に投稿を削除しますか？"} %></p>
+              </div>
+            </div>
+          <% end %>
+          <div class="posted-date-show"><%= @post.created_at.strftime('%Y/%m/%d %H:%M') %></div>
           <% if @post.user_id == current_user.id %>
             <div class="edit-delete-area">
               <%= link_to edit_post_path do %>
@@ -44,18 +53,8 @@
           <% else %>
             <span class="comment-count" style="color: silver;"><i class="fa fa-comments"></i>&nbsp;<%= @post.comments.count %></span>
           <% end %>
-          <% if @post.user_id == current_user.id %>
-            <div class="sp-edit-delete-area">
-              <%= link_to edit_post_path do %>
-                <span class="sp-post-edit"><i class="fa fa-edit"></i></span>
-              <% end %>
-              <%= link_to @post, method: :delete, data: {confirm: "本当に投稿を削除しますか？"} do %>
-                <span class="sp-post-delete"><i class="fas fa-trash-alt left-trash"></i></span>
-              <% end %>
-            </div>
-          <% end %>
           <%= link_to "アクションしたユーザー一覧", "/posts/#{@post.id}/action_user", class: "action-user-link-btn" %>
-          <div class="smart-phone-post-date"><%= @post.created_at.strftime('%y/%m/%d %H:%M') %></div>
+          <div class="smart-phone-post-date"><%= @post.created_at.strftime('%Y/%m/%d %H:%M') %></div>
         </div>
       </div>
     </div>

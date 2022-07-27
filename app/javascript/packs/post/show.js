@@ -66,3 +66,9 @@ $(function() {
     $(".form-str-counter").text( "残り" + restStrCount + "文字");
   });
 });
+
+$(function() {
+  $(document).on('click', '.appear-menu-btn', function() {
+    $(".post-menu").slideToggle("1000");
+  });
+});
