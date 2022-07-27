@@ -31,8 +31,8 @@ $(function() {
     $('.post-form').css({
       'display': 'block'
     });
-    $('.post-form-appear').css({
-      'display': 'none'
+    $('.navbar').css({
+      'z-index': '0'
     });
   });
 });
@@ -43,8 +43,8 @@ $(function() {
     $('.post-form').css({
       'display': 'none'
     });
-    $('.post-form-appear').css({
-      'display': 'block'
+    $('.navbar').css({
+      'z-index': '1'
     });
   });
 });

@@ -29,8 +29,8 @@ $(function() {
     $('.comment-form').css({
       'display': 'block'
     });
-    $('.form-appear').css({
-      'display': 'none'
+    $('.navbar').css({
+      'z-index': '0'
     });
   });
 });
@@ -41,8 +41,8 @@ $(function() {
     $('.comment-form').css({
       'display': 'none'
     });
-    $('.form-appear').css({
-      'display': 'block'
+    $('.navbar').css({
+      'z-index': '1'
     });
   });
 });
