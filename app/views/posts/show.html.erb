@@ -13,7 +13,7 @@
         </figure>
         <div class="post-area-text">
           <div class="posted-user-name"><%= @post.user.name %>(<%= @post.user.introduction %>)</div>
-          <div class="posted-date"><%= @post.created_at.strftime('%Y/%m/%d %H:%M') %></div>
+          <div class="posted-date"><%= @post.created_at.strftime('%y/%m/%d %H:%M') %></div>
             <% if @post.user_id == current_user.id %>
               <%= link_to "編集", edit_post_path, class: "post-edit-link" %>
               <%= link_to "削除", @post, method: :delete, data: {confirm: "本当に削除しますか？"}, class: "post-delete-link" %>
