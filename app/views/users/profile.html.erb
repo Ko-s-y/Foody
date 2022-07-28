@@ -19,8 +19,7 @@
         <span class="user-element">調理ジャンル: <%= @user.introduction %></span>
       </div>
       <div class="field">
-        <span class="user-element appear-user-data"><i class="	far fa-folder-open user-activity"></i>Foody activity</span>
-        <span class="user-element disappear-user-data"><i class="far fa-folder user-activity"></i>閉じる</span>
+        <span class="user-element appear-user-data">アクティビティの確認</span>
         <div class="user-data">
           <span class="user-element">投稿件数: <%= @posts.count %>件</span>
           <span class="user-element">コメントした回数: <%= @user.comments.count %>回</span>
@@ -93,4 +92,3 @@
     </div>
   </div>
 </section>
-<%= javascript_pack_tag 'user/profile' %>

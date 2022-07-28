@@ -92,6 +92,7 @@
   right: 0;
   margin: 5px auto;
   padding: 5px;
+  z-index: 1;
 }
 
 .disappear-user-data {
@@ -101,6 +102,8 @@
 
 .appear-user-data {
   cursor: pointer;
+  width: 250px;
+  margin: 0 auto;
 }
 
 .user-activity {
