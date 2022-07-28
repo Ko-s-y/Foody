@@ -24,10 +24,10 @@
         <div class="user-data">
           <span class="user-element">投稿件数: <%= @posts.count %>件</span>
           <span class="user-element">コメントした回数: <%= @user.comments.count %>回</span>
-          <span class="user-element">いいねした投稿件数: <%= @user.liked_posts.count %>件</span>
-          <span class="user-element">rememberした投稿件数: <%= @user.checked_remember_posts.count %>件</span>
-          <span class="user-element">rememberされた回数: <%= @received_remember %>回</span>
-          <span class="user-element">いいねをもらった回数: <%= @received_like %>回</span>
+          <span class="user-element"><i class="fa fa-star" style="color: #209cee;"></i>を押した投稿件数: <%= @user.liked_posts.count %>件</span>
+          <span class="user-element"><i class="fa fa-book" style="color: green;"></i>を押した投稿件数: <%= @user.checked_remember_posts.count %>件</span>
+          <span class="user-element"><i class="fa fa-star" style="color: #209cee;"></i>をもらった回数: <%= @received_like %>回</span>
+          <span class="user-element"><i class="fa fa-book" style="color: green;"></i>をもらった回数: <%= @received_remember %>回</span>
         </div>
       </div>
     </div>

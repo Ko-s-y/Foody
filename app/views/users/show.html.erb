@@ -39,10 +39,10 @@
                 <div class="user-data">
                   <span class="user-element">投稿件数: <%= @posts.count %>件</span>
                   <span class="user-element">コメントした回数: <%= current_user.comments.count %>回</span>
-                  <span class="user-element">いいねした投稿件数: <%= current_user.liked_posts.count %>件</span>
-                  <span class="user-element">rememberした投稿件数: <%= current_user.checked_remember_posts.count %>件</span>
-                  <span class="user-element">rememberされた回数: <%= @received_remember %>回</span>
-                  <span class="user-element">いいねをもらった回数: <%= @received_like %>回</span>
+                  <span class="user-element"><i class="fa fa-star" style="color: #209cee;"></i>を押した投稿件数: <%= current_user.liked_posts.count %>件</span>
+                  <span class="user-element"><i class="fa fa-book" style="color: green;"></i>を押した投稿件数: <%= current_user.checked_remember_posts.count %>件</span>
+                  <span class="user-element"><i class="fa fa-star" style="color: #209cee;"></i>をもらった回数: <%= @received_like %>回</span>
+                  <span class="user-element"><i class="fa fa-book" style="color: green;"></i>をもらった回数: <%= @received_remember %>回</span>
                 </div>
               </div>
               <% if current_user.email != "guest@sample.com" %>
@@ -63,7 +63,7 @@
 <!-- 表示するセクション選択 -->
 <section class="appear-section-links">
   <span class="appear-posted-section appear-link">投稿一覧</span>
-  <span class="appear-remember-section appear-link">remember一覧</span>
+  <span class="appear-remember-section appear-link"><i class="fa fa-book" style="color: green;"></i></span>
 </section>
 <!-- ログインユーザーの投稿一覧 -->
 <section class="user-posted-section">
@@ -130,7 +130,7 @@
   <div class="posts-container">
     <div class="posts-contents">
       <% if @remember_posts.count.zero? %>
-        <div class="zero-info posts-zero">まだrememberした投稿はありません</div>
+        <div class="zero-info posts-zero">まだ <i class="fa fa-book" style="color: green; font-size: 15px;"></i> を押した投稿はありません</div>
       <% else %>
         <% @remember_posts.each do |post| %>
           <div class="post-area">
