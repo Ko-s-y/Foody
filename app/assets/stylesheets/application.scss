@@ -57,6 +57,10 @@ a.navbar-item:hover {
   display: block;
 }
 
+.exists-new-info {
+  color: coral;
+}
+
 .burger-menu {
   height: 70px;
 }
@@ -231,18 +235,6 @@ footer {
   display: block;
   margin: 0 auto;
   width: 150px;
-}
-
-.new-notice-count {
-  background-color: coral;
-  color: white;
-  position: absolute;
-  right: 0;
-  top: 46px;
-  display: block;
-  width: 25px;
-  border-radius: 100%;
-  padding-bottom: 2px;
 }
 
 // footer_menu
