@@ -49,3 +49,23 @@ $(function() {
     });
   });
 });
+
+// ・・・メニューの表示/非表示関数
+$(function() {
+  $(document).on('click', '.appear-menu-btn', function() {
+    $(".post-menu").slideToggle(200);
+    $(".appear-menu-btn").css({
+      'color': 'blue'
+    });
+    $(".appear-menu-btn").addClass('open')
+  });
+});
+
+$(function() {
+  $(document).on('click', '.open', function() {
+    $(".appear-menu-btn").css({
+      'color': 'black'
+    });
+    $(".appear-menu-btn").removeClass('open')
+  });
+});

@@ -66,27 +66,3 @@ $(function() {
     $(".form-str-counter").text( "残り" + restStrCount + "文字");
   });
 });
-
-$(function() {
-  $(document).on('click', '.appear-menu-btn', function() {
-    $(".post-menu").css({
-      'display': 'inline-block'
-    });
-    $(".appear-menu-btn").css({
-      'color': 'blue'
-    });
-    $(".appear-menu-btn").addClass('open')
-  });
-});
-
-$(function() {
-  $(document).on('click', '.open', function() {
-    $(".post-menu").css({
-      'display': 'none'
-    });
-    $(".appear-menu-btn").css({
-      'color': 'black'
-    });
-    $(".appear-menu-btn").removeClass('open')
-  });
-});
