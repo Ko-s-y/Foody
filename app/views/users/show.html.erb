@@ -90,14 +90,14 @@
                     </div>
                   <% end %>
                   <% if current_user.already_commented?(post) %>
-                    <span class="comment-count" style="color: olive;"><i class="fa fa-comments"></i>&nbsp;<%= post.comments.count %></span>
+                    <span class="comment-count" style="color: coral;"><i class="fa fa-comments"></i>&nbsp;<%= post.comments.count %></span>
                   <% else %>
                     <span class="comment-count" style="color: silver;"><i class="fa fa-comments"></i>&nbsp;<%= post.comments.count %></span>
                   <% end %>
                   <% if current_user.already_liked?(post) %>
-                    <span class="like-count" style="color: red;"><i class="fa fa-heart"></i></i>&nbsp;<%= post.likes.count %></span>
+                    <span class="like-count" style="color: #209cee;"><i class="fa fa-star"></i></i>&nbsp;<%= post.likes.count %></span>
                   <% else %>
-                    <span class="like-count" style="color: silver;"><i class="fa fa-heart"></i></i>&nbsp;<%= post.likes.count %></span>
+                    <span class="like-count" style="color: silver;"><i class="fa fa-star"></i></i>&nbsp;<%= post.likes.count %></span>
                   <% end %>
                   <% if current_user.checked_remember?(post) %>
                     <span class="remember-count" style="color: green;"><i class="fa fa-book"></i></i>&nbsp;<%= post.remembers.count %></span>
@@ -138,14 +138,14 @@
                     </div>
                   <% end %>
                   <% if current_user.already_commented?(post) %>
-                    <span class="comment-count" style="color: olive;"><i class="fa fa-comments"></i>&nbsp;<%= post.comments.count %></span>
+                    <span class="comment-count" style="color: coral;"><i class="fa fa-comments"></i>&nbsp;<%= post.comments.count %></span>
                   <% else %>
                     <span class="comment-count" style="color: silver;"><i class="fa fa-comments"></i>&nbsp;<%= post.comments.count %></span>
                   <% end %>
                   <% if current_user.already_liked?(post) %>
-                    <span class="like-count" style="color: red;"><i class="fa fa-heart"></i></i>&nbsp;<%= post.likes.count %></span>
+                    <span class="like-count" style="color: #209cee;"><i class="fa fa-star"></i></i>&nbsp;<%= post.likes.count %></span>
                   <% else %>
-                    <span class="like-count" style="color: silver;"><i class="fa fa-heart"></i></i>&nbsp;<%= post.likes.count %></span>
+                    <span class="like-count" style="color: silver;"><i class="fa fa-star"></i></i>&nbsp;<%= post.likes.count %></span>
                   <% end %>
                   <% if current_user.checked_remember?(post) %>
                     <span class="remember-count" style="color: green;"><i class="fa fa-book"></i></i>&nbsp;<%= post.remembers.count %></span>

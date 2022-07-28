@@ -54,11 +54,6 @@
     </section>
   </div>
 </div>
-
-
-
-
-
 <!-- タイムライン -->
 <section class="time-line">
   <%= paginate @posts %>
@@ -90,11 +85,11 @@
             <div id="like-buttons-<%= post.id %>">
               <% if current_user.already_liked?(post) %>
                 <%= link_to post_likes_path(post.id), method: :delete, remote: true do %>
-                  <span class="like-count" style="color: red;"><i class="fa fa-heart"></i></i>&nbsp;<%= post.likes.count %></span>
+                  <span class="like-count" style="color: #209cee;"><i class="fa fa-star"></i></i>&nbsp;<%= post.likes.count %></span>
                 <% end %>
               <% else %>
                 <%= link_to post_likes_path(post.id), method: :post, remote: true do %>
-                  <span class="like-count" style="color: silver;"><i class="fa fa-heart"></i></i>&nbsp;<%= post.likes.count %></span>
+                  <span class="like-count" style="color: silver;"><i class="fa fa-star"></i>&nbsp;<%= post.likes.count %></span>
                 <% end %>
               <% end %>
             </div>
@@ -110,7 +105,7 @@
               <% end %>
             </div>
             <% if current_user.already_commented?(post) %>
-              <span class="comment-count" style="color: olive;"><i class="fa fa-comments"></i>&nbsp;<%= post.comments.count %></span>
+              <span class="comment-count" style="color: coral;"><i class="fa fa-comments"></i>&nbsp;<%= post.comments.count %></span>
             <% else %>
               <span class="comment-count" style="color: silver;"><i class="fa fa-comments"></i>&nbsp;<%= post.comments.count %></span>
             <% end %>

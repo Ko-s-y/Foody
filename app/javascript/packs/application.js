@@ -20,7 +20,7 @@ $(function() {
   });
 });
 
-// 検索フォーム出現関数
+// 検索フォーム表示/非表示関数
 $(function() {
   $(document).on('click', '.search-icon', function() {
     $('.search-form-appear').css({
@@ -35,7 +35,6 @@ $(function() {
   });
 });
 
-// 検索フォーム削除関数
 $(function() {
   $(document).on('click', '.dis-search-icon', function() {
     $('.search-form-disappear').css({
@@ -55,7 +54,7 @@ $(function() {
   $(document).on('click', '.appear-menu-btn', function() {
     $(".post-menu").slideToggle(200);
     $(".appear-menu-btn").css({
-      'color': 'blue'
+      'color': '#3273dc'
     });
     $(".appear-menu-btn").addClass('open')
   });
