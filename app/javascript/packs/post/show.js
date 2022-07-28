@@ -69,6 +69,24 @@ $(function() {
 
 $(function() {
   $(document).on('click', '.appear-menu-btn', function() {
-    $(".post-menu").slideToggle("1000");
+    $(".post-menu").css({
+      'display': 'inline-block'
+    });
+    $(".appear-menu-btn").css({
+      'color': 'blue'
+    });
+    $(".appear-menu-btn").addClass('open')
+  });
+});
+
+$(function() {
+  $(document).on('click', '.open', function() {
+    $(".post-menu").css({
+      'display': 'none'
+    });
+    $(".appear-menu-btn").css({
+      'color': 'black'
+    });
+    $(".appear-menu-btn").removeClass('open')
   });
 });
