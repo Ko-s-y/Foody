@@ -83,6 +83,15 @@
 
 .user-data {
   display: none;
+  position: absolute;
+  background-color: white;
+  border: 2px solid black;
+  width: 300px;
+  border-radius: 10px;
+  left: 0;
+  right: 0;
+  margin: 5px auto;
+  padding: 5px;
 }
 
 .disappear-user-data {
