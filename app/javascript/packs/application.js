@@ -72,7 +72,7 @@ $(function() {
 // usersページのアクティビティ表示/非表示関数
 $(function() {
   $(document).on('click', '.appear-user-data', function() {
-    $(".user-data").slideToggle(200);
+    $(".user-data").slideToggle(300);
     let text = $(this).text();
     if (text === "アクティビティの確認") {
         $(this).text("アクティビティを閉じる");
