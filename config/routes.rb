@@ -5,8 +5,11 @@ Rails.application.routes.draw do
 
   resources :contacts, only: [:new, :create]
 
-  resources :notifications, only: :index
-  get 'notifications/checked'
+  resources :notifications, only: :index do
+    collection do
+      get 'checked'
+    end
+  end
 
   resources :posts do
     resources :comments, only: [:create, :destroy]
