@@ -9,7 +9,7 @@ class Comment < ApplicationRecord
 
   def self.looks(search, word)
     # 空文字があれば
-    if word.include?(" ") || word.include?("　")
+    if word.include?("")
       words = word.split(/[[:blank:]]+/)
       word_1 = words.first
       word_2 = words.second
