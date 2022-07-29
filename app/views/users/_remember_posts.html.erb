@@ -14,8 +14,8 @@
                 <div class="posted-user-name"><%= post.user.name %>(<%= post.user.introduction %>)</div>
                 <div class="posted-date"><%= post_time(post.created_at) %></div>
                 <div class="post-text">
-                  <span class="post-title"><%= post.title %></span>
-                  <span class="post-content"><%= simple_format(post.post_content) %></span>
+                  <div class="post-title"><%= post.title %></div>
+                  <div class="post-content"><%= simple_format(post.post_content) %></div>
                   <% unless post.avatar.blank? %>
                     <div class="post-pict">
                       <%= image_tag(post_image_url(post), class: "post-image", alt: "投稿画像") %>
