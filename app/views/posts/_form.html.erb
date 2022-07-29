@@ -1,0 +1,53 @@
+<div class="post-form">
+  <div class="post-form-section">
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column is-12-mobile is-10-tablet is-11-desktop is-10-widescreen is-10-fullhd">
+              <div class="box">
+                <%= form_with model: post do |f| %>
+                  <div class="field">
+                    <div class="control has-icons-left">
+                      <%= f.text_field :title, placeholder: "○○について", class: "input is-info", required: true, maxlength: 20 %>
+                      <span class="icon is-small is-left">
+                        <i class="fas fa-pen"></i>
+                      </span>
+                    </div>
+                    <p class="help is-danger">*必須,20字以内</p>
+                  </div>
+                  <div class="field">
+                    <div class="control has-icons-left">
+                      <%= f.text_area :post_content, class: "input is-info form-text", placeholder: "投稿内容", required: true, maxlength: 200 %>
+                      <p class="form-str-counter"></p>
+                      <span class="icon is-small is-left">
+                        <i class="far fa-sticky-note"></i>
+                      </span>
+                    </div>
+                    <p class="help is-danger">*必須,200字以内</p>
+                  </div>
+                  <div class="field">
+                    <% unless post.avatar.blank? %>
+                      <%= image_tag(post_image_url(post), class: "current-post-image", alt: "投稿画像") %>
+                    <% else %>
+                      <img class="not-have-post-image">
+                    <% end %>
+                    <%= f.label :avatar ,"画像ファイルを選択", class: "image-input-btn" %>
+                    <div class="control">
+                      <%= f.file_field :avatar, class: "image-form", accept: 'image/jpeg,image/gif,image/png' %>
+                    </div>
+                    <p class="help is-info state">*画像ファイルの選択は任意です</p>
+                  </div>
+                  <div class="field">
+                    <%= f.submit "投稿する", class: "button is-link is-fullwidth m-b-10" %>
+                  </div>
+                  <a class="post-form-disappear button is-danger is-fullwidth">投稿をやめる</a>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
