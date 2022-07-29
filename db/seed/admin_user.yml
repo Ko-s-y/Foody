@@ -1,3 +1,6 @@
 - id: 1
   email: ENV['FOODY_ADMIN_ADDRESS']
   password: ENV['FOODY_ADMIN_PASS']
+- id: 2
+  email: admin@sample.com
+  password: testadminpass
