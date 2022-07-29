@@ -63,6 +63,26 @@
   <span class="appear-posted-section appear-link">投稿一覧</span>
   <span class="appear-remember-section appear-link"><i class="fa fa-book" style="color: green;"></i></span>
 </section>
-<%= render "posts", { posts: @posts, user: current_user } %>
-<%= render "remember_posts", remember_posts: @remember_posts %>
+<section class="user-posted-section">
+  <div class="posts-container">
+    <div class="posts-contents">
+      <% if @posts.count.zero? %>
+        <div class="zero-info posts-zero">まだあなたの投稿はありません</div>
+      <% else %>
+        <%= render "posts", posts: @posts %>
+      <% end %>
+    </div>
+  </div>
+</section>
+<section class="remember-posts-section">
+  <div class="posts-container">
+    <div class="posts-contents">
+      <% if @remember_posts.count.zero? %>
+        <div class="zero-info posts-zero">まだ <i class="fa fa-book" style="color: green; font-size: 15px;"></i> を押した投稿はありません</div>
+      <% else %>
+        <%= render "posts", posts: @remember_posts %>
+      <% end %>
+    </div>
+  </div>
+</section>
 <%= javascript_pack_tag 'user/show' %>
