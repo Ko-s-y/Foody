@@ -1,5 +1,4 @@
-<% provide(:title, "Show Post") %>
-<!-- 投稿詳細 -->
+<% provide(:title, "投稿詳細") %>
 <section class="show-post">
   <div class="posts-container">
     <div class="posts-contents">
@@ -60,111 +59,7 @@
     </div>
   </div>
 </section>
-<!-- コメント投稿フォーム -->
 <a class="form-appear">この投稿にコメントする</a>
-<div class="comment-form">
-  <div class="comment-form-section">
-    <section class="hero">
-      <div class="hero-body">
-        <div class="container">
-          <div class="columns is-centered">
-            <div class="column is-12-mobile is-10-tablet is-11-desktop is-10-widescreen is-10-fullhd">
-              <div class="box">
-                <%= form_with(model:[@post, @comment], method: :post) do |f| %>
-                  <div class="field">
-                    <div class="control has-icons-left">
-                      <%= f.text_area :comment_content, placeholder: "コメント内容", class: "input is-info form-text", required: true, maxlength: 200 %>
-                      <p class="form-str-counter"></p>
-                      <span class="icon is-small is-left">
-                        <i class="fas fa-pen"></i>
-                      </span>
-                    </div>
-                    <p class="help is-danger">*必須,200字以内</p>
-                  </div>
-                  <div class="field">
-                    <% unless @comment.avatar.blank? %>
-                      <%= image_tag(post_image_url(@comment), class: "current-post-image", alt: "投稿画像") %>
-                    <% else %>
-                      <img class="not-have-post-image">
-                    <% end %>
-                    <%= f.label :avatar ,"画像ファイルを選択", class: "image-input-btn" %>
-                    <div class="control">
-                      <%= f.file_field :avatar, class: "image-form", accept: 'image/jpeg,image/gif,image/png' %>
-                    </div>
-                    <p class="help is-info state">*画像ファイルの選択は任意です</p>
-                  </div>
-                  <div class="field">
-                    <%= f.hidden_field :post_id, value: @post.id %>
-                    <%= f.submit "コメントする", class: "button is-link is-fullwidth m-b-10" %>
-                  </div>
-                  <a class="form-disappear button is-danger is-fullwidth m-b-10">コメントをやめる</a>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-</div>
-<!-- 投稿のコメント一覧 -->
-<section class="comment-tree">
-  <div class="comment_container">
-    <div class="comment_contents">
-      <% if @comments.count.zero? %>
-        <div class="zero-info">まだコメントはありません</div>
-      <% else %>
-        <% @comments.each do |comment| %>
-          <% if @post.user_id == comment.user_id %>
-            <!-- 投稿主のコメント(右側) -->
-            <div class="post-owner-comment">
-              <div class="owner-text"><%= simple_format(comment.comment_content) %></div>
-              <div class="comment-image">
-                <% unless comment.avatar.blank? %>
-                  <div class="comment-pict">
-                    <%= image_tag(post_image_url(comment), alt: "コメント画像", class: "owner-pic") %>
-                  </div>
-                <% end %>
-              </div>
-              <% if current_user.id == comment.user.id %>
-                <%= link_to post_comment_path(@post, comment), method: :delete, data: {confirm: "本当に削除しますか？"} do %>
-                  <i class="fas fa-trash-alt right-trash"></i>
-                <% end %>
-              <% end %>
-              <span class="comment-date"><%= comment.created_at.strftime('%m/%d %H:%M') %></span>
-            </div>
-          <% else %>
-            <!-- その他ユーザーのコメント(左側) -->
-            <div class="other-user-comment">
-              <figure>
-                <% if current_user.id == comment.user_id %>
-                  <%= link_to image_tag(avatar_url(comment.user), class: "other-user-icon", alt: "ユーザーアイコン"), users_show_path %>
-                <% else %>
-                  <%= link_to image_tag(avatar_url(comment.user), class: "other-user-icon", alt: "ユーザーアイコン"), users_profile_path(name: comment.user.name) %>
-                <% end %>
-              </figure>
-              <div class="other-user-text">
-                <div class="other-name"><%= comment.user.name %>(<%= comment.user.introduction %>)</div>
-                <div class="other-text"><%= simple_format(comment.comment_content) %></div>
-                <div class="comment-image">
-                  <% unless comment.avatar.blank? %>
-                    <div class="comment-pict">
-                      <%= image_tag(post_image_url(comment), alt: "コメント画像", class: "other-user-pic") %>
-                    </div>
-                  <% end %>
-                </div>
-                <% if current_user.id == comment.user.id %>
-                  <%= link_to post_comment_path(@post, comment), method: :delete, data: {confirm: "本当にコメントを削除しますか？"} do %>
-                    <i class="fas fa-trash-alt left-trash"></i>
-                  <% end %>
-                <% end %>
-                <span class="comment-date"><%= comment.created_at.strftime('%m/%d %H:%M') %></span>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-</section>
+<%= render "comments/form", { post: @post, comment: @comment } %>
+<%= render "comments/tree", { post: @post, comments: @comments } %>
 <%= javascript_pack_tag 'post/show' %>
