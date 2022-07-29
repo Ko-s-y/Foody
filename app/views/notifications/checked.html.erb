@@ -1,4 +1,4 @@
-<% provide(:title, "All Info") %>
+<% provide(:title, "通知一覧") %>
 <section class="user-notification hero is-light is-halfheight">
   <div class="columns is-centered">
     <div class="column is-12-mobile is-10-tablet is-9-desktop is-8-widescreen is-6-fullhd">
@@ -7,7 +7,6 @@
           <%= paginate @checked_notifications %>
           <div class="info-contents">
             <% @checked_notifications.each do |notification| %>
-              <!-- それぞれのuserを格納 -->
               <% visitor = notification.visitor %>
               <% visited = notification.visited %>
               <div class="info-area">
