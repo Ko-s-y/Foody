@@ -32,12 +32,20 @@ class UsersController < ApplicationController
     # いいねをもらった回数
     @received_like = 0
     @posts.each do |post|
-      @received_like += post.likes.count
+      post.likes.each do |like|
+        if like.user_id != current_user.id
+          @received_like += 1
+        end
+      end
     end
     # rememberされた回数
     @received_remember = 0
     @posts.each do |post|
-      @received_remember += post.remembers.count
+      post.remembers.each do |remember|
+        if remember.user_id != current_user.id
+          @received_remember += 1
+        end
+      end
     end
   end
 end
