@@ -29,8 +29,8 @@ class UsersController < ApplicationController
   end
 
   def received_counter(user, posts)
-    # いいねをもらった回数
     @received_like = 0
+    @received_remember = 0
     @posts.each do |post|
       post.likes.each do |like|
         if like.user_id != user.id
@@ -38,8 +38,6 @@ class UsersController < ApplicationController
         end
       end
     end
-    # rememberされた回数
-    @received_remember = 0
     @posts.each do |post|
       post.remembers.each do |remember|
         if remember.user_id != user.id

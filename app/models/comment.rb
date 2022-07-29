@@ -13,11 +13,11 @@ class Comment < ApplicationRecord
       words = word.split(/[[:blank:]]+/)
       word_1 = words.first
       word_2 = words.second
-      @comments = Comment.where("comment_content LIKE ? AND comment_content LIKE ?", "%#{word_1}%", "%#{word_2}%")
+      comments = Comment.where("comment_content LIKE ? AND comment_content LIKE ?", "%#{word_1}%", "%#{word_2}%")
     # 空文字なければ
     else
-      @comments = Comment.where("comment_content LIKE ?", "%#{word}%")
+      comments = Comment.where("comment_content LIKE ?", "%#{word}%")
     end
-    @comments = @comments.order(id: :DESC)
+    comments = comments.order(id: :DESC)
   end
 end

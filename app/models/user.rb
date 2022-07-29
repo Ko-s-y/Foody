@@ -37,8 +37,8 @@ class User < ApplicationRecord
   end
 
   def self.looks(search, word)
-    @users = User.where("introduction LIKE ?", "%#{word}%")
-    @users = @users.order(id: :DESC)
+    users = User.where("introduction LIKE ?", "%#{word}%")
+    users = users.order(id: :DESC)
   end
 
   def self.guest
