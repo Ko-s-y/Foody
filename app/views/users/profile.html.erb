@@ -2,7 +2,7 @@
 <!-- 他ユーザープロフィール -->
 <section class="other-user-profile">
   <div class="columns is-centered">
-    <div class="column is-10-desktop is-10-widescreen">
+    <div class="column">
       <div class="field">
         <div class="user-icon-field">
           <% if @user.image? %>
@@ -19,15 +19,14 @@
         <span class="user-element">調理ジャンル: <%= @user.introduction %></span>
       </div>
       <div class="field">
-        <span class="user-element appear-user-data"><i class="	far fa-folder-open user-activity"></i>Foody activity</span>
-        <span class="user-element disappear-user-data"><i class="far fa-folder user-activity"></i>閉じる</span>
+        <span class="user-element appear-user-data">アクティビティの確認</span>
         <div class="user-data">
           <span class="user-element">投稿件数: <%= @posts.count %>件</span>
           <span class="user-element">コメントした回数: <%= @user.comments.count %>回</span>
-          <span class="user-element">いいねした投稿件数: <%= @user.liked_posts.count %>件</span>
-          <span class="user-element">rememberした投稿件数: <%= @user.checked_remember_posts.count %>件</span>
-          <span class="user-element">rememberされた回数: <%= @received_remember %>回</span>
-          <span class="user-element">いいねをもらった回数: <%= @received_like %>回</span>
+          <span class="user-element"><i class="fa fa-star" style="color: #209cee;"></i>を押した投稿件数: <%= @user.liked_posts.count %>件</span>
+          <span class="user-element"><i class="fa fa-book" style="color: green;"></i>を押した投稿件数: <%= @user.checked_remember_posts.count %>件</span>
+          <span class="user-element"><i class="fa fa-star" style="color: #209cee;"></i>をもらった回数: <%= @received_like %>回</span>
+          <span class="user-element"><i class="fa fa-book" style="color: green;"></i>をもらった回数: <%= @received_remember %>回</span>
         </div>
       </div>
     </div>
@@ -57,20 +56,32 @@
                       <%= image_tag(post_image_url(post), class: "post-image", alt: "投稿画像") %>
                     </div>
                   <% end %>
+                  <div id="like-buttons-<%= post.id %>">
+                    <% if current_user.already_liked?(post) %>
+                      <%= link_to post_likes_path(post.id), method: :delete, remote: true do %>
+                        <span class="like-count" style="color: #209cee;"><i class="fa fa-star"></i></i>&nbsp;<%= post.likes.count %></span>
+                      <% end %>
+                    <% else %>
+                      <%= link_to post_likes_path(post.id), method: :post, remote: true do %>
+                        <span class="like-count" style="color: silver;"><i class="fa fa-star"></i>&nbsp;<%= post.likes.count %></span>
+                      <% end %>
+                    <% end %>
+                  </div>
+                  <div id="remember-buttons-<%= post.id %>">
+                    <% if current_user.checked_remember?(post) %>
+                      <%= link_to post_remembers_path(post.id), method: :delete, remote: true do %>
+                        <span class="remember-count" style="color: green;"><i class="fa fa-book"></i></i>&nbsp;<%= post.remembers.count %></span>
+                      <% end %>
+                    <% else %>
+                      <%= link_to post_remembers_path(post.id), method: :post, remote: true do %>
+                        <span class="remember-count" style="color: silver;"><i class="fa fa-book"></i></i>&nbsp;<%= post.remembers.count %></span>
+                      <% end %>
+                    <% end %>
+                  </div>
                   <% if current_user.already_commented?(post) %>
-                    <span class="comment-count" style="color: olive;"><i class="fa fa-comments"></i><%= post.comments.count %></span>
+                    <span class="comment-count" style="color: coral;"><i class="fa fa-comments"></i>&nbsp;<%= post.comments.count %></span>
                   <% else %>
-                    <span class="comment-count" style="color: silver;"><i class="fa fa-comments"></i><%= post.comments.count %></span>
-                  <% end %>
-                  <% if current_user.already_liked?(post) %>
-                    <span class="like-count" style="color: red;"><i class="fa fa-heart"></i></i><%= post.likes.count %></span>
-                  <% else %>
-                    <span class="like-count" style="color: silver;"><i class="fa fa-heart"></i></i><%= post.likes.count %></span>
-                  <% end %>
-                  <% if current_user.checked_remember?(post) %>
-                    <span class="remember-count" style="color: green;"><i class="fa fa-book"></i></i><%= post.remembers.count %></span>
-                  <% else %>
-                    <span class="remember-count" style="color: silver;"><i class="fa fa-book"></i></i><%= post.remembers.count %></span>
+                    <span class="comment-count" style="color: silver;"><i class="fa fa-comments"></i>&nbsp;<%= post.comments.count %></span>
                   <% end %>
                 </div>
               </div>
@@ -81,4 +92,3 @@
     </div>
   </div>
 </section>
-<%= javascript_pack_tag 'user/profile' %>

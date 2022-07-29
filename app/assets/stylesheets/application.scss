@@ -28,10 +28,16 @@ body {
   display: flex;
   flex-flow: column;
   min-height: 100vh;
+  background-color: whitesmoke;
 }
 
 main {
   flex: 1;
+}
+
+textarea {
+  resize: none;
+  height: 120px !important;
 }
 
 // ここ削除でバーガーメニュー開くと自動でmargin-bottom:auto
@@ -49,6 +55,10 @@ a.navbar-item:hover {
   width: 180px;
   text-align: center;
   display: block;
+}
+
+.exists-new-info {
+  color: coral;
 }
 
 .burger-menu {
@@ -225,18 +235,6 @@ footer {
   display: block;
   margin: 0 auto;
   width: 150px;
-}
-
-.new-notice-count {
-  background-color: coral;
-  color: white;
-  position: absolute;
-  right: 0;
-  top: 46px;
-  display: block;
-  width: 25px;
-  border-radius: 100%;
-  padding-bottom: 2px;
 }
 
 // footer_menu

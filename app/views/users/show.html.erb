@@ -4,7 +4,7 @@
   <div class="hero-body">
     <div class="container">
       <div class="columns is-centered">
-        <div class="column is-10-desktop is-10-widescreen">
+        <div class="column is-12-mobile is-10-tablet is-11-desktop is-10-widescreen is-10-fullhd">
           <div class="box">
             <div class="field has-text-centered">
               <strong>アカウント情報</strong>
@@ -34,15 +34,14 @@
                 <span class="user-element">調理ジャンル: <%= current_user.introduction %></span>
               </div>
               <div class="field">
-                <span class="user-element appear-user-data"><i class="	far fa-folder-open user-activity"></i>Foody activity</span>
-                <span class="user-element disappear-user-data"><i class="far fa-folder user-activity"></i>閉じる</span>
+                <span class="user-element appear-user-data">アクティビティの確認</span>
                 <div class="user-data">
                   <span class="user-element">投稿件数: <%= @posts.count %>件</span>
                   <span class="user-element">コメントした回数: <%= current_user.comments.count %>回</span>
-                  <span class="user-element">いいねした投稿件数: <%= current_user.liked_posts.count %>件</span>
-                  <span class="user-element">rememberした投稿件数: <%= current_user.checked_remember_posts.count %>件</span>
-                  <span class="user-element">rememberされた回数: <%= @received_remember %>回</span>
-                  <span class="user-element">いいねをもらった回数: <%= @received_like %>回</span>
+                  <span class="user-element"><i class="fa fa-star" style="color: #209cee;"></i>を押した投稿件数: <%= current_user.liked_posts.count %>件</span>
+                  <span class="user-element"><i class="fa fa-book" style="color: green;"></i>を押した投稿件数: <%= current_user.checked_remember_posts.count %>件</span>
+                  <span class="user-element"><i class="fa fa-star" style="color: #209cee;"></i>をもらった回数: <%= @received_like %>回</span>
+                  <span class="user-element"><i class="fa fa-book" style="color: green;"></i>をもらった回数: <%= @received_remember %>回</span>
                 </div>
               </div>
               <% if current_user.email != "guest@sample.com" %>
@@ -62,8 +61,8 @@
 </section>
 <!-- 表示するセクション選択 -->
 <section class="appear-section-links">
-  <span class="appear-posted-section appear-link">posted</span>
-  <span class="appear-remember-section appear-link">remember</span>
+  <span class="appear-posted-section appear-link">投稿一覧</span>
+  <span class="appear-remember-section appear-link"><i class="fa fa-book" style="color: green;"></i></span>
 </section>
 <!-- ログインユーザーの投稿一覧 -->
 <section class="user-posted-section">
@@ -89,20 +88,32 @@
                       <%= image_tag(post_image_url(post), class: "post-image", alt: "投稿画像") %>
                     </div>
                   <% end %>
+                  <div id="like-buttons-<%= post.id %>">
+                    <% if current_user.already_liked?(post) %>
+                      <%= link_to post_likes_path(post.id), method: :delete, remote: true do %>
+                        <span class="like-count" style="color: #209cee;"><i class="fa fa-star"></i></i>&nbsp;<%= post.likes.count %></span>
+                      <% end %>
+                    <% else %>
+                      <%= link_to post_likes_path(post.id), method: :post, remote: true do %>
+                        <span class="like-count" style="color: silver;"><i class="fa fa-star"></i>&nbsp;<%= post.likes.count %></span>
+                      <% end %>
+                    <% end %>
+                  </div>
+                  <div id="remember-buttons-<%= post.id %>">
+                    <% if current_user.checked_remember?(post) %>
+                      <%= link_to post_remembers_path(post.id), method: :delete, remote: true do %>
+                        <span class="remember-count" style="color: green;"><i class="fa fa-book"></i></i>&nbsp;<%= post.remembers.count %></span>
+                      <% end %>
+                    <% else %>
+                      <%= link_to post_remembers_path(post.id), method: :post, remote: true do %>
+                        <span class="remember-count" style="color: silver;"><i class="fa fa-book"></i></i>&nbsp;<%= post.remembers.count %></span>
+                      <% end %>
+                    <% end %>
+                  </div>
                   <% if current_user.already_commented?(post) %>
-                    <span class="comment-count" style="color: olive;"><i class="fa fa-comments"></i><%= post.comments.count %></span>
+                    <span class="comment-count" style="color: coral;"><i class="fa fa-comments"></i>&nbsp;<%= post.comments.count %></span>
                   <% else %>
-                    <span class="comment-count" style="color: silver;"><i class="fa fa-comments"></i><%= post.comments.count %></span>
-                  <% end %>
-                  <% if current_user.already_liked?(post) %>
-                    <span class="like-count" style="color: red;"><i class="fa fa-heart"></i></i><%= post.likes.count %></span>
-                  <% else %>
-                    <span class="like-count" style="color: silver;"><i class="fa fa-heart"></i></i><%= post.likes.count %></span>
-                  <% end %>
-                  <% if current_user.checked_remember?(post) %>
-                    <span class="remember-count" style="color: green;"><i class="fa fa-book"></i></i><%= post.remembers.count %></span>
-                  <% else %>
-                    <span class="remember-count" style="color: silver;"><i class="fa fa-book"></i></i><%= post.remembers.count %></span>
+                    <span class="comment-count" style="color: silver;"><i class="fa fa-comments"></i>&nbsp;<%= post.comments.count %></span>
                   <% end %>
                 </div>
               </div>
@@ -118,7 +129,7 @@
   <div class="posts-container">
     <div class="posts-contents">
       <% if @remember_posts.count.zero? %>
-        <div class="zero-info posts-zero">まだrememberした投稿はありません</div>
+        <div class="zero-info posts-zero">まだ <i class="fa fa-book" style="color: green; font-size: 15px;"></i> を押した投稿はありません</div>
       <% else %>
         <% @remember_posts.each do |post| %>
           <div class="post-area">
@@ -138,19 +149,19 @@
                     </div>
                   <% end %>
                   <% if current_user.already_commented?(post) %>
-                    <span class="comment-count" style="color: olive;"><i class="fa fa-comments"></i><%= post.comments.count %></span>
+                    <span class="comment-count" style="color: coral;"><i class="fa fa-comments"></i>&nbsp;<%= post.comments.count %></span>
                   <% else %>
-                    <span class="comment-count" style="color: silver;"><i class="fa fa-comments"></i><%= post.comments.count %></span>
+                    <span class="comment-count" style="color: silver;"><i class="fa fa-comments"></i>&nbsp;<%= post.comments.count %></span>
                   <% end %>
                   <% if current_user.already_liked?(post) %>
-                    <span class="like-count" style="color: red;"><i class="fa fa-heart"></i></i><%= post.likes.count %></span>
+                    <span class="like-count" style="color: #209cee;"><i class="fa fa-star"></i></i>&nbsp;<%= post.likes.count %></span>
                   <% else %>
-                    <span class="like-count" style="color: silver;"><i class="fa fa-heart"></i></i><%= post.likes.count %></span>
+                    <span class="like-count" style="color: silver;"><i class="fa fa-star"></i></i>&nbsp;<%= post.likes.count %></span>
                   <% end %>
                   <% if current_user.checked_remember?(post) %>
-                    <span class="remember-count" style="color: green;"><i class="fa fa-book"></i></i><%= post.remembers.count %></span>
+                    <span class="remember-count" style="color: green;"><i class="fa fa-book"></i></i>&nbsp;<%= post.remembers.count %></span>
                   <% else %>
-                    <span class="remember-count" style="color: silver;"><i class="fa fa-book"></i></i><%= post.remembers.count %></span>
+                    <span class="remember-count" style="color: silver;"><i class="fa fa-book"></i></i>&nbsp;<%= post.remembers.count %></span>
                   <% end %>
                 </div>
               </div>

@@ -1,7 +1,7 @@
 <% provide(:title, "Action user") %>
 <div class="ope-btn-area">
-  <h2 class="appear-liked-user appear-link">Like List</h2>
-  <h2 class="appear-checked-remember-user appear-link">Remember List</h2>
+  <h2 class="appear-liked-user appear-link"><i class="fa fa-star" style="color: #209cee;"></i>&nbsp;:&nbsp;<%= @post.likes.count %>件</span></h2>
+  <h2 class="appear-checked-remember-user appear-link"><i class="fa fa-book" style="color: green;"></i>&nbsp;:&nbsp;<%= @post.remembers.count %>件</span></h2>
 </div>
 <div class="like-users">
 <section class="liked-user-list hero is-light is-fullheight">
@@ -9,7 +9,6 @@
     <div class="column is-10-desktop is-10-widescreen">
       <div class="box">
         <div class="action-user-info">
-          <p class="action-user-count">Like : <%= @post.likes.count %>件</p>
           <% if @liked_users.exists? %>
             <% @post.likes.each do |like| %>
               <div class="info-area">
@@ -25,7 +24,7 @@
               </div>
             <% end %>
           <% else %>
-            <h2 class="action-zero">まだlikeしたユーザーはいません</h2>
+            <h2 class="action-count-zero">まだ<span><i class="fa fa-star" style="color: #209cee;"></i></span>したユーザーはいません</h2>
           <% end %>
         </div>
       </div>
@@ -39,7 +38,6 @@
     <div class="column is-10-desktop is-10-widescreen">
       <div class="box">
         <div class="action-user-info">
-          <p class="action-user-count">Remember : <%= @post.remembers.count %>件</p>
           <% if @remember_users.exists? %>
             <% @post.remembers.each do |remember| %>
               <div class="info-area">
@@ -55,7 +53,7 @@
               </div>
             <% end %>
           <% else %>
-            <h2 class="action-zero">まだrememberしたユーザーはいません</h2>
+            <h2 class="action-count-zero">まだ<span><i class="fa fa-book" style="color: green;"></i></span>したユーザーはいません</h2>
           <% end %>
         </div>
       </div>

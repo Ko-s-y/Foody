@@ -24,12 +24,19 @@
 .post-form {
   display: none;
   position: fixed;
-  z-index: 5;
+  z-index: 1;
   width: 100%;
+  height: 100vh;
   top: 0;
   background:rgba(15, 15, 15, 0.6);
-  height: 670px;
-  padding: 71px 10px 0;
+}
+
+.post-form-section {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 .image-input-btn {
@@ -84,38 +91,43 @@
     }
 
     figure {
-      width: 50px;
       padding: 0;
       margin: 0;
       float: left;
 
       .posted-user-icon {
         border-radius: 50%;
-        width: 50px;
-        height: 50px;
+        width: 70px;
+        height: 70px;
       }
     }
 
     .post-area-text {
       margin: 0;
       position: relative;
-      margin-left: 60px;
+      margin-left: 80px;
       padding-right: 10px;
       color: black;
 
       .posted-user-name {
-        font-weight: 800;
+        font-weight: 600;
+        font-size: 15px;
         color: black;
       }
 
       .post-title {
-        font-weight: 600;
+        font-weight: 800;
+        font-size: 22px;
+        margin-bottom: 3px;
         color: black;
       }
 
       .post-content {
         display: block;
         font-weight: 400;
+        font-size: 20px;
+        margin-top: 5px;
+        margin-bottom: 3px;
         color: black;
       }
 
@@ -125,6 +137,8 @@
         right: 40px;
         text-align:right;
         color: #8a9aa4;
+        font-size: 20px;
+        cursor: pointer;
       }
 
       .post-delete-link {
@@ -133,14 +147,44 @@
         right: 5px;
         text-align:right;
         color: #8a9aa4;
+        font-size: 20px;
+        cursor: pointer;
       }
 
       .posted-date {
         position: absolute;
-        top:0;
+        top: 1px;
         right: 5px;
         text-align:right;
         color: #8a9aa4;
+        font-size: 17px;
+        font-weight: 600;
+      }
+
+      .posted-date-show {
+        position: absolute;
+        top: 1px;
+        right: 5px;
+        text-align:right;
+        color: #8a9aa4;
+        font-size: 17px;
+        font-weight: 600;
+      }
+
+      .sp-edit-delete-area {
+        display: none;
+        margin: 2px 0 15px;
+      }
+
+      .sp-post-edit {
+        color: #8a9aa4;
+        font-size: 20px;
+        margin-right: 50px;
+      }
+
+      .sp-post-delete {
+        color: #8a9aa4;
+        font-size: 20px;
       }
 
       .post-text {
@@ -178,7 +222,7 @@
   display: block;
   margin: 0 auto;
   width: 95%;
-  height: 800px;
+  height: 700px;
   object-fit: cover;
 }
 
@@ -189,13 +233,8 @@
   -moz-border-radius: 20px;  /* Firefox用 */
   margin: 0 auto;
   width: 95%;
-  height: 800px;
+  height: 700px;
   object-fit: cover;
-}
-
-textarea {
-  resize: none;
-  height: 200px !important;
 }
 
 .comment-count {
@@ -346,12 +385,9 @@ textarea {
   display: flex;
 }
 
-.action-user-count {
-  border-bottom: solid 1px rgb(215, 211, 211);
+.action-count-zero {
   text-align: center;
-  display: block;
-  padding: 5px 0 20px;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .action-user-link-btn {
@@ -360,4 +396,50 @@ textarea {
   margin-bottom: 5px;
   display: block;
   color: black;
+  width: 200px;
+}
+
+.smart-phone-post-date {
+  display: none;
+  color: #8a9aa4;
+  font-size: 15px;
+  float: right;
+}
+
+.appear-menu-btn {
+  display: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  position: absolute;
+  top: -5px;
+  right: 0;
+  height: 30px;
+  font-size: 15px;
+}
+
+.post-menu {
+  background: white;
+  display: none;
+  float: right;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  width: 100px;
+  text-align: center;
+  height: 70px;
+  padding: 5px;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.sp-post-edit-btn {
+  border-bottom: solid 1px rgb(215, 211, 211);
+}
+
+.post-menu a {
+  margin: 3px 0;
+  color: black;
+  font-size: 16px;
+  display: block;
+  padding: 5px 0;
 }
