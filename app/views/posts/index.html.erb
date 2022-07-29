@@ -29,26 +29,10 @@
               </div>
             <% end %>
             <div id="like-buttons-<%= post.id %>">
-              <% if current_user.already_liked?(post) %>
-                <%= link_to post_likes_path(post.id), method: :delete, remote: true do %>
-                  <span class="like-count" style="color: #209cee;"><i class="fa fa-star"></i></i>&nbsp;<%= post.likes.count %></span>
-                <% end %>
-              <% else %>
-                <%= link_to post_likes_path(post.id), method: :post, remote: true do %>
-                  <span class="like-count" style="color: silver;"><i class="fa fa-star"></i>&nbsp;<%= post.likes.count %></span>
-                <% end %>
-              <% end %>
+              <%= render "likes/like_function", post: post %>
             </div>
             <div id="remember-buttons-<%= post.id %>">
-              <% if current_user.checked_remember?(post) %>
-                <%= link_to post_remembers_path(post.id), method: :delete, remote: true do %>
-                  <span class="remember-count" style="color: green;"><i class="fa fa-book"></i></i>&nbsp;<%= post.remembers.count %></span>
-                <% end %>
-              <% else %>
-                <%= link_to post_remembers_path(post.id), method: :post, remote: true do %>
-                  <span class="remember-count" style="color: silver;"><i class="fa fa-book"></i></i>&nbsp;<%= post.remembers.count %></span>
-                <% end %>
-              <% end %>
+              <%= render "remembers/remember_function", post: post %>
             </div>
             <% if current_user.already_commented?(post) %>
               <span class="comment-count" style="color: coral;"><i class="fa fa-comments"></i>&nbsp;<%= post.comments.count %></span>
