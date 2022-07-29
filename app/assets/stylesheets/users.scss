@@ -55,10 +55,6 @@
   display: none;
 }
 
-.remember-posts-section {
-  display: none;
-}
-
 .appear-section-links {
   display: flex;
   justify-content: center;
@@ -95,20 +91,10 @@
   z-index: 1;
 }
 
-.disappear-user-data {
-  display: none;
-  cursor: pointer;
-}
-
 .appear-user-data {
   cursor: pointer;
   width: 250px;
   margin: 0 auto;
-}
-
-.user-activity {
-  color: #a3d1ff;
-  margin-right: 5px;
 }
 
 .other-user-profile {
