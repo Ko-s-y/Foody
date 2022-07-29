@@ -8,8 +8,17 @@ class ContactMailer < ApplicationMailer
 
   # mail from: '"Foody運営" <noreply@foody.com>', to: user.email, bcc: ENV["FOODY_ADMIN_ADDRESS"], bcc: ENV["FOODY_PRODUCTION_USER"], bcc: ENV["USER_ADDRESS"], bcc: ENV["ACTION_MAILER_USER"], subject: "お問い合わせについて【自動送信】"
 
+  # def contact_mail(contact, user)
+  #   @contact = contact
+  #   mail from: '"Foody運営" <noreply@foody.com>', to: user.email, bcc: 'so129@me.com', subject: "お問い合わせについて【自動送信】"
+  # end
+
   def contact_mail(contact, user)
     @contact = contact
-    mail from: '"Foody運営" <noreply@foody.com>', to: user.email, bcc: 'so129@me.com', subject: "お問い合わせについて【自動送信】"
+    mail from: '"Foody運営" <noreply@foody.com>',
+         to: user.email,
+         bcc: 'so129@me.com',
+         bcc: ENV["FOODY_PRODUCTION_USER"],
+         subject: "お問い合わせについて【自動送信】"
   end
 end
