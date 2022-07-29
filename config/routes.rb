@@ -12,6 +12,9 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
     resource :likes, only: [:create, :destroy]
     resource :remembers, only: [:create, :destroy]
+    member do
+      get 'action_user'
+    end
   end
 
   devise_for :admin_users, controllers: {
@@ -30,7 +33,6 @@ Rails.application.routes.draw do
     post 'users/show', to: 'users#update' # アイコン変更
   end
 
-  get 'posts/:id/action_user', to: 'posts#action_user'
   get 'searches/result'
   get 'home', to: 'pages#home'
   get 'about', to: 'pages#about'
