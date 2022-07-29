@@ -59,70 +59,10 @@
     </div>
   </div>
 </section>
-<!-- 表示するセクション選択 -->
 <section class="appear-section-links">
   <span class="appear-posted-section appear-link">投稿一覧</span>
   <span class="appear-remember-section appear-link"><i class="fa fa-book" style="color: green;"></i></span>
 </section>
-<!-- ログインユーザーの投稿一覧 -->
-<section class="user-posted-section">
-  <div class="posts-container">
-    <div class="posts-contents">
-      <% if @posts.count.zero? %>
-        <div class="zero-info posts-zero">まだあなたの投稿はありません</div>
-      <% else %>
-        <% @posts.each do |post| %>
-          <div class="post-area">
-            <%= link_to post_path(post.id) do %>
-              <figure>
-                <%= image_tag(avatar_url(post.user), class: "posted-user-icon", alt: "ユーザーアイコン") %>
-              </figure>
-              <div class="post-area-text">
-                <div class="posted-user-name"><%= post.user.name %>(<%= post.user.introduction %>)</div>
-                <div class="posted-date"><%= post_time(post.created_at) %></div>
-                <div class="post-text">
-                  <span class="post-title"><%= post.title %></span>
-                  <span class="post-content"><%= simple_format(post.post_content) %></span>
-                  <% unless post.avatar.blank? %>
-                    <div class="post-pict">
-                      <%= image_tag(post_image_url(post), class: "post-image", alt: "投稿画像") %>
-                    </div>
-                  <% end %>
-                  <div id="like-buttons-<%= post.id %>">
-                    <% if current_user.already_liked?(post) %>
-                      <%= link_to post_likes_path(post.id), method: :delete, remote: true do %>
-                        <span class="like-count" style="color: #209cee;"><i class="fa fa-star"></i></i>&nbsp;<%= post.likes.count %></span>
-                      <% end %>
-                    <% else %>
-                      <%= link_to post_likes_path(post.id), method: :post, remote: true do %>
-                        <span class="like-count" style="color: silver;"><i class="fa fa-star"></i>&nbsp;<%= post.likes.count %></span>
-                      <% end %>
-                    <% end %>
-                  </div>
-                  <div id="remember-buttons-<%= post.id %>">
-                    <% if current_user.checked_remember?(post) %>
-                      <%= link_to post_remembers_path(post.id), method: :delete, remote: true do %>
-                        <span class="remember-count" style="color: green;"><i class="fa fa-book"></i></i>&nbsp;<%= post.remembers.count %></span>
-                      <% end %>
-                    <% else %>
-                      <%= link_to post_remembers_path(post.id), method: :post, remote: true do %>
-                        <span class="remember-count" style="color: silver;"><i class="fa fa-book"></i></i>&nbsp;<%= post.remembers.count %></span>
-                      <% end %>
-                    <% end %>
-                  </div>
-                  <% if current_user.already_commented?(post) %>
-                    <span class="comment-count" style="color: coral;"><i class="fa fa-comments"></i>&nbsp;<%= post.comments.count %></span>
-                  <% else %>
-                    <span class="comment-count" style="color: silver;"><i class="fa fa-comments"></i>&nbsp;<%= post.comments.count %></span>
-                  <% end %>
-                </div>
-              </div>
-            <% end %>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-</section>
+<%= render "posts", { posts: @posts, user: current_user } %>
 <%= render "remember_posts", remember_posts: @remember_posts %>
 <%= javascript_pack_tag 'user/show' %>
