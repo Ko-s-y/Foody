@@ -20,14 +20,23 @@ Rails.application.routes.draw do
     end
   end
 
-  devise_for :admin_users, controllers: {
-    sessions: 'admin_users/sessions',
-  }
+  devise_for :admin_users,
+    controllers: {
+      sessions: 'admin_users/sessions',
+    }
 
-  devise_for :users, controllers: {
-    registrations: 'users/registrations',
-    passwords: 'users/passwords',
-  }
+  devise_for :users,
+    path: '',
+    path_names: {
+      sign_up: 'signup',
+      sign_in: 'login',
+      sign_out: 'logout',
+      edit: 'users/setting',
+    },
+    controllers: {
+      registrations: 'users/registrations',
+      passwords: 'users/passwords',
+    }
 
   devise_scope :user do
     post 'users/guest_sign_in', to: 'users/sessions#new_guest' # ゲストユーザー機能
