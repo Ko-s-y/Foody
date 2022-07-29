@@ -13,11 +13,26 @@
         </figure>
         <div class="post-area-text">
           <div class="posted-user-name"><%= @post.user.name %>(<%= @post.user.introduction %>)</div>
-          <div class="posted-date"><%= @post.created_at.strftime('%Y/%m/%d %H:%M') %></div>
-            <% if @post.user_id == current_user.id %>
-              <%= link_to "編集", edit_post_path, class: "post-edit-link" %>
-              <%= link_to "削除", @post, method: :delete, data: {confirm: "本当に削除しますか？"}, class: "post-delete-link" %>
-            <% end %>
+          <% if @post.user_id == current_user.id %>
+            <div class="appear-menu-btn">•••</div>
+            <div class="post-menu">
+              <div class="sp-edit-delete-area">
+                <p><%= link_to "投稿の編集", edit_post_path, class: "sp-post-edit-btn" %></p>
+                <p><%= link_to "投稿の削除", @post, method: :delete, data: {confirm: "本当に投稿を削除しますか？"} %></p>
+              </div>
+            </div>
+          <% end %>
+          <div class="posted-date-show"><%= @post.created_at.strftime('%Y/%m/%d %H:%M') %></div>
+          <% if @post.user_id == current_user.id %>
+            <div class="edit-delete-area">
+              <%= link_to edit_post_path do %>
+                <span class="post-edit-link"><i class="fa fa-edit"></i></span>
+              <% end %>
+              <%= link_to @post, method: :delete, data: {confirm: "本当に投稿を削除しますか？"} do %>
+                <span class="post-delete-link"><i class="fas fa-trash-alt left-trash"></i></span>
+              <% end %>
+            </div>
+          <% end %>
           <div class="post-text">
             <span class="post-title"><%= @post.title %></span>
             <span class="post-content"><%= simple_format(@post.post_content) %></span>
@@ -34,11 +49,12 @@
             <%= render "remembers/remember_function", post: @post %>
           </div>
           <% if current_user.already_commented?(@post) %>
-            <span class="comment-count" style="color: olive;"><i class="fa fa-comments"></i>&nbsp;<%= @post.comments.count %></span>
+            <span class="comment-count" style="color: coral;"><i class="fa fa-comments"></i>&nbsp;<%= @post.comments.count %></span>
           <% else %>
             <span class="comment-count" style="color: silver;"><i class="fa fa-comments"></i>&nbsp;<%= @post.comments.count %></span>
           <% end %>
           <%= link_to "アクションしたユーザー一覧", "/posts/#{@post.id}/action_user", class: "action-user-link-btn" %>
+          <div class="smart-phone-post-date"><%= @post.created_at.strftime('%Y/%m/%d %H:%M') %></div>
         </div>
       </div>
     </div>
@@ -46,40 +62,51 @@
 </section>
 <!-- コメント投稿フォーム -->
 <a class="form-appear">この投稿にコメントする</a>
-<section class="comment-form" id="comment-form">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-10-desktop is-10-widescreen">
-        <div class="box">
-          <%= form_with(model:[@post, @comment], method: :post) do |f| %>
-            <div class="field">
-              <div class="control has-icons-left">
-                <%= f.text_area :comment_content, placeholder: "コメント内容", class: "input is-info form-text", required: true, maxlength: 200 %>
-                <p class="form-str-counter"></p>
-                <span class="icon is-small is-left">
-                  <i class="fas fa-pen"></i>
-                </span>
+<div class="comment-form">
+  <div class="comment-form-section">
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column is-12-mobile is-10-tablet is-11-desktop is-10-widescreen is-10-fullhd">
+              <div class="box">
+                <%= form_with(model:[@post, @comment], method: :post) do |f| %>
+                  <div class="field">
+                    <div class="control has-icons-left">
+                      <%= f.text_area :comment_content, placeholder: "コメント内容", class: "input is-info form-text", required: true, maxlength: 200 %>
+                      <p class="form-str-counter"></p>
+                      <span class="icon is-small is-left">
+                        <i class="fas fa-pen"></i>
+                      </span>
+                    </div>
+                    <p class="help is-danger">*必須,200字以内</p>
+                  </div>
+                  <div class="field">
+                    <% unless @comment.avatar.blank? %>
+                      <%= image_tag(post_image_url(@comment), class: "current-post-image", alt: "投稿画像") %>
+                    <% else %>
+                      <img class="not-have-post-image">
+                    <% end %>
+                    <%= f.label :avatar ,"画像ファイルを選択", class: "image-input-btn" %>
+                    <div class="control">
+                      <%= f.file_field :avatar, class: "image-form", accept: 'image/jpeg,image/gif,image/png' %>
+                    </div>
+                    <p class="help is-info state">*画像ファイルの選択は任意です</p>
+                  </div>
+                  <div class="field">
+                    <%= f.hidden_field :post_id, value: @post.id %>
+                    <%= f.submit "コメントする", class: "button is-link is-fullwidth m-b-10" %>
+                  </div>
+                  <a class="form-disappear button is-danger is-fullwidth m-b-10">コメントをやめる</a>
+                <% end %>
               </div>
-              <p class="help is-danger">*必須,200字以内</p>
             </div>
-            <div class="field">
-              <%= f.label :avatar ,"画像ファイルを選択", class: "image-input-btn" %>
-              <div class="control">
-                <%= f.file_field :avatar, class: "image-form", accept: 'image/jpeg,image/gif,image/png' %>
-              </div>
-              <p class="help is-info state">*画像ファイルの選択は任意です</p>
-            </div>
-            <div class="field">
-              <%= f.hidden_field :post_id, value: @post.id %>
-              <%= f.submit "コメントする", class: "button is-link is-fullwidth m-b-10" %>
-            </div>
-            <a class="form-disappear button is-danger is-fullwidth m-b-10">コメントをやめる</a>
-          <% end %>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   </div>
-</section>
+</div>
 <!-- 投稿のコメント一覧 -->
 <section class="comment-tree">
   <div class="comment_container">
@@ -117,7 +144,7 @@
                 <% end %>
               </figure>
               <div class="other-user-text">
-                <div class="other-name"><%= comment.user.name %></div>
+                <div class="other-name"><%= comment.user.name %>(<%= comment.user.introduction %>)</div>
                 <div class="other-text"><%= simple_format(comment.comment_content) %></div>
                 <div class="comment-image">
                   <% unless comment.avatar.blank? %>
@@ -127,7 +154,7 @@
                   <% end %>
                 </div>
                 <% if current_user.id == comment.user.id %>
-                  <%= link_to post_comment_path(@post, comment), method: :delete, data: {confirm: "本当に削除しますか？"} do %>
+                  <%= link_to post_comment_path(@post, comment), method: :delete, data: {confirm: "本当にコメントを削除しますか？"} do %>
                     <i class="fas fa-trash-alt left-trash"></i>
                   <% end %>
                 <% end %>

@@ -36,19 +36,18 @@
               <p class="nav-name"><%= current_user.name %></p>
             </div>
             <div class="navbar-dropdown">
-              <%= link_to "timeline", posts_path, class: "navbar-item nav-element" %>
+              <%= link_to "タイムライン", posts_path, class: "navbar-item nav-element" %>
               <% if new_notifications(current_user).blank? %>
-                <%= link_to "info", notifications_path, class: "navbar-item nav-element" %>
+                <%= link_to "通知一覧", notifications_checked_path, class: "navbar-item nav-element" %>
               <% else %>
-                <%= link_to "info", notifications_path, class: "navbar-item nav-element info-notice" %>
-                <span class="new-notice-count"><%= new_notifications(current_user).count %></span>
+                <%= link_to "新着通知: #{new_notifications(current_user).count}件", notifications_path, class: "navbar-item nav-element exists-new-info" %>
               <% end %>
-              <%= link_to "my page", users_show_path, class: "navbar-item nav-element" %>
-              <%= link_to "contact", new_contact_path(user_id: current_user.id), class: "navbar-item nav-element" %>
-              <%= link_to "about", about_path, class: "navbar-item nav-element" %>
-              <%= link_to "home", home_path, class: "navbar-item nav-element", data: {"turbolinks" => false} %>
+              <%= link_to "マイページ", users_show_path, class: "navbar-item nav-element" %>
+              <%= link_to "お問合せ", new_contact_path(user_id: current_user.id), class: "navbar-item nav-element" %>
+              <%= link_to "使い方", about_path, class: "navbar-item nav-element" %>
+              <%= link_to "ホーム", home_path, class: "navbar-item nav-element", data: {"turbolinks" => false} %>
               <hr class="navbar-divider">
-              <%= link_to "logout", destroy_user_session_path, method: :delete, class: "navbar-item nav-element" %>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "navbar-item nav-element" %>
             </div>
           </div>
         <!-- ログインしていない場合 -->

@@ -1,5 +1,5 @@
 <% provide(:title, "Search Result") %>
-<section class="search-result hero is-white is-halfheight">
+<section class="search-result hero is-light is-halfheight">
   <div class="columns is-centered">
     <div class="column is-10-desktop is-10-widescreen">
       <div class="box">
@@ -17,14 +17,14 @@
                       <p class="hit-post-title"><%= post.title %></p>
                       <p class="hit-post-content"><%= pick_trancate_sentence(post.post_content, params[:word]) %></p>
                       <% if current_user.already_commented?(post) %>
-                        <span class="hit-comment-count" style="color: olive;"><i class="fa fa-comments"></i>&nbsp;<%= post.comments.count %></span>
+                        <span class="hit-comment-count" style="color: coral;"><i class="fa fa-comments"></i>&nbsp;<%= post.comments.count %></span>
                       <% else %>
                         <span class="hit-comment-count" style="color: silver;"><i class="fa fa-comments"></i>&nbsp;<%= post.comments.count %></span>
                       <% end %>
                       <% if current_user.already_liked?(post) %>
-                        <span class="hit-like-count" style="color: red;"><i class="fa fa-heart"></i></i>&nbsp;<%= post.likes.count %></span>
+                        <span class="hit-like-count" style="color: #209cee;"><i class="fa fa-star"></i></i>&nbsp;<%= post.likes.count %></span>
                       <% else %>
-                        <span class="hit-like-count" style="color: silver;"><i class="fa fa-heart"></i></i>&nbsp;<%= post.likes.count %></span>
+                        <span class="hit-like-count" style="color: silver;"><i class="fa fa-star"></i></i>&nbsp;<%= post.likes.count %></span>
                       <% end %>
                       <% if current_user.checked_remember?(post) %>
                         <span class="hit-remember-count" style="color: green;"><i class="fa fa-book"></i></i>&nbsp;<%= post.remembers.count %></span>
@@ -68,8 +68,6 @@
                 </div>
               <% end %>
             </div>
-
-
           <% elsif @range == "User" %>
             <div class="user-result">
               <% if @users.present? %>
@@ -94,8 +92,6 @@
                 </div>
               <% end %>
             </div>
-
-
           <% end %>
         </div>
       </div>

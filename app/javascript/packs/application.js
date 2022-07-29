@@ -20,7 +20,7 @@ $(function() {
   });
 });
 
-// 検索フォーム出現関数
+// 検索フォーム表示/非表示関数
 $(function() {
   $(document).on('click', '.search-icon', function() {
     $('.search-form-appear').css({
@@ -35,7 +35,6 @@ $(function() {
   });
 });
 
-// 検索フォーム削除関数
 $(function() {
   $(document).on('click', '.dis-search-icon', function() {
     $('.search-form-disappear').css({
@@ -47,5 +46,38 @@ $(function() {
     $('.search-form-appear').css({
       'display': 'block'
     });
+  });
+});
+
+// ・・・メニューの表示/非表示関数
+$(function() {
+  $(document).on('click', '.appear-menu-btn', function() {
+    $(".post-menu").slideToggle(200);
+    $(".appear-menu-btn").css({
+      'color': '#3273dc'
+    });
+    $(".appear-menu-btn").addClass('open')
+  });
+});
+
+$(function() {
+  $(document).on('click', '.open', function() {
+    $(".appear-menu-btn").css({
+      'color': 'black'
+    });
+    $(".appear-menu-btn").removeClass('open')
+  });
+});
+
+// usersページのアクティビティ表示/非表示関数
+$(function() {
+  $(document).on('click', '.appear-user-data', function() {
+    $(".user-data").slideToggle(300);
+    let text = $(this).text();
+    if (text === "アクティビティの確認") {
+        $(this).text("アクティビティを閉じる");
+    } else {
+      $(this).text("アクティビティの確認");
+    }
   });
 });
