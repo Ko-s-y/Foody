@@ -1,14 +1,12 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
 
-  # my page
   def show
     @posts = current_user.posts.all.order(created_at: :desc)
     @remember_posts = current_user.checked_remember_posts.order(created_at: :desc)
     received_counter(@posts)
   end
 
-  # 他ユーザーページ
   def profile
     @user = User.find_by(name: params[:name])
     @posts = @user.posts.all.order(created_at: :desc)
