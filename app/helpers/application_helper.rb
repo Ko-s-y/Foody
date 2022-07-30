@@ -5,6 +5,10 @@ module ApplicationHelper
     page_title.blank? ? BASE_TITLE : "#{page_title} - #{BASE_TITLE}"
   end
 
+  def elapsed_time_counter(datetime)
+    time_ago_in_words(datetime, include_seconds: true) + '前'
+  end
+
   # userのimage
   def avatar_url(user)
     if user.avatar.attached?
