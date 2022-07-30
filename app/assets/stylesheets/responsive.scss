@@ -128,15 +128,19 @@
 ///////////////////////////////////
 // postページ
   .post-pict img {
-    height: 600px !important;
+    height: 500px !important;
   }
 
   .current-post-image {
-    height: 600px;
+    height: 500px;
+  }
+
+  .comment-image img {
+    max-height: 500px;
   }
 
   .not-have-post-image {
-    height: 600px;
+    height: 500px;
   }
 }
 
@@ -269,7 +273,7 @@
   }
 
   .post-pict img {
-    height: 200px !important;
+    height: 250px !important;
   }
 
   .post-title {
@@ -282,11 +286,15 @@
   }
 
   .current-post-image {
-    height: 200px;
+    height: 250px;
   }
 
   .not-have-post-image {
-    height: 200px;
+    height: 250px;
+  }
+
+  .comment-image img {
+    max-height: 250px;
   }
 
   .form-text {
