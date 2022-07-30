@@ -100,5 +100,6 @@ class Post < ApplicationRecord
       posts = Post.where("title LIKE ? OR post_content LIKE ?", "%#{word}%", "%#{word}%")
     end
     posts = posts.order(id: :DESC)
+    posts # 明示的に記載しないとrubocopにUselessAssignmentと怒られるため(searches/controllerで使ってます)
   end
 end

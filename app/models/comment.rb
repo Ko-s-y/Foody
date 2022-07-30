@@ -19,5 +19,6 @@ class Comment < ApplicationRecord
       comments = Comment.where("comment_content LIKE ?", "%#{word}%")
     end
     comments = comments.order(id: :DESC)
+    comments # 明示的に記載しないとrubocopにUselessAssignmentと怒られるため(searches/controllerで使ってます)
   end
 end
