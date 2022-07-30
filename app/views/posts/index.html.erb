@@ -17,7 +17,7 @@
           <div class="post-area-text">
             <%= link_to post_path(post.id) do %>
               <div class="posted-user-name"><%= post.user.name %>(<%= post.user.introduction %>)</div>
-              <div class="posted-date"><%= post_time(post.created_at) %></div>
+              <div class="posted-date"><%= elapsed_time_counter(post.created_at) %></div>
               <div class="post-text">
                 <div class="post-title"><%= post.title %></div>
                 <div class="post-content"><%= simple_format(post.post_content) %></div>

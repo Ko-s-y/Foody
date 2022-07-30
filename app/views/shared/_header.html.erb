@@ -39,7 +39,7 @@
               <%= link_to "タイムライン", posts_path, class: "navbar-item nav-element" %>
               <%= link_to "マイページ", users_show_path, class: "navbar-item nav-element" %>
               <% if new_notifications(current_user).blank? %>
-                <%= link_to "通知一覧", notifications_checked_path, class: "navbar-item nav-element" %>
+                <%= link_to "通知一覧", checked_notifications_path, class: "navbar-item nav-element" %>
               <% else %>
                 <%= link_to "新規通知: #{new_notifications(current_user).count}件", notifications_path, class: "navbar-item nav-element exists-new-info" %>
               <% end %>

@@ -34,14 +34,14 @@
                     <div class="comment-content"><%= notification.comment.comment_content %></div>
                   <% end %>
                 <% end %>
-                <span class="info-date"><%= info_time(notification.created_at) %></span>
+                <span class="info-date"><%= elapsed_time_counter(notification.created_at) %></span>
               </div>
               <% notification.update(checked: true) %>
             <% end %>
           <% else %>
             <p class="none-info">現在新しい通知はありません</p>
             <%= link_to "timelineへ", posts_path, class: "posts-link" %>
-            <%= link_to "過去の通知を確認する", notifications_checked_path, class: "checked-notifications-link" %>
+            <%= link_to "過去の通知を確認する", checked_notifications_path, class: "checked-notifications-link" %>
           <% end %>
         </div>
       </div>

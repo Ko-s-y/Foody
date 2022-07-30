@@ -90,15 +90,30 @@ class Post < ApplicationRecord
 
   def self.looks(search, word)
     # 空文字があれば
-    if word.include?(" ") || word.include?("　")
+    if word.include?("")
       words = word.split(/[[:blank:]]+/)
       word_1 = words.first
       word_2 = words.second
-      @posts = Post.where("title LIKE ? AND title LIKE ?", "%#{word_1}%", "%#{word_2}%").or(Post.where("post_content LIKE ? AND post_content LIKE ?", "%#{word_1}%", "%#{word_2}%")).or(Post.where("title LIKE ? AND post_content LIKE ?", "%#{word_1}%", "%#{word_2}%")).or(Post.where("post_content LIKE ? AND title LIKE ?", "%#{word_1}%", "%#{word_2}%"))
+      posts = Post.where(
+        "title LIKE ? AND title LIKE ?", "%#{word_1}%", "%#{word_2}%"
+      ).or(
+        Post.where(
+          "post_content LIKE ? AND post_content LIKE ?", "%#{word_1}%", "%#{word_2}%"
+        )
+      ).or(
+        Post.where(
+          "title LIKE ? AND post_content LIKE ?", "%#{word_1}%", "%#{word_2}%"
+        )
+      ).or(
+        Post.where(
+          "post_content LIKE ? AND title LIKE ?", "%#{word_1}%", "%#{word_2}%"
+        )
+      )
     # 空文字なければ
     else
-      @posts = Post.where("title LIKE ? OR post_content LIKE ?", "%#{word}%", "%#{word}%")
+      posts = Post.where("title LIKE ? OR post_content LIKE ?", "%#{word}%", "%#{word}%")
     end
-    @posts = @posts.order(id: :DESC)
+    posts = posts.order(id: :DESC)
+    posts # 明示的に記載しないとrubocopにUselessAssignmentと怒られるため(searches/controllerで使ってます)
   end
 end

@@ -52,7 +52,7 @@
           <% else %>
             <span class="comment-count" style="color: silver;"><i class="fa fa-comments"></i>&nbsp;<%= @post.comments.count %></span>
           <% end %>
-          <%= link_to "アクションしたユーザー一覧", "/posts/#{@post.id}/action_user", class: "action-user-link-btn" %>
+          <%= link_to "アクションしたユーザー一覧", action_user_post_path(@post.id), class: "action-user-link-btn" %>
           <div class="smart-phone-post-date"><%= @post.created_at.strftime('%Y/%m/%d %H:%M') %></div>
         </div>
       </div>

@@ -1,18 +1,16 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
 
-  # my page
   def show
     @posts = current_user.posts.all.order(created_at: :desc)
     @remember_posts = current_user.checked_remember_posts.order(created_at: :desc)
-    received_counter(@posts)
+    received_counter(current_user, @posts)
   end
 
-  # 他ユーザーページ
   def profile
     @user = User.find_by(name: params[:name])
     @posts = @user.posts.all.order(created_at: :desc)
-    received_counter(@posts)
+    received_counter(@user, @posts)
   end
 
   def update
@@ -30,16 +28,22 @@ class UsersController < ApplicationController
     params.require(:user).permit(:avatar)
   end
 
-  def received_counter(posts)
-    # いいねをもらった回数
+  def received_counter(user, posts)
     @received_like = 0
-    @posts.each do |post|
-      @received_like += post.likes.count
-    end
-    # rememberされた回数
     @received_remember = 0
     @posts.each do |post|
-      @received_remember += post.remembers.count
+      post.likes.each do |like|
+        if like.user_id != user.id
+          @received_like += 1
+        end
+      end
+    end
+    @posts.each do |post|
+      post.remembers.each do |remember|
+        if remember.user_id != user.id
+          @received_remember += 1
+        end
+      end
     end
   end
 end

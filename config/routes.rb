@@ -1,27 +1,27 @@
 Rails.application.routes.draw do
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-
   root to: 'pages#home'
 
-  resources :contacts, only: [:new, :create]
+  # admin
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
-  resources :notifications, only: :index
-  get 'notifications/checked'
+  devise_for :admin_users,
+    controllers: {
+      sessions: 'admin_users/sessions',
+    }
 
-  resources :posts do
-    resources :comments, only: [:create, :destroy]
-    resource :likes, only: [:create, :destroy]
-    resource :remembers, only: [:create, :destroy]
-  end
-
-  devise_for :admin_users, controllers: {
-    sessions: 'admin_users/sessions',
-  }
-
-  devise_for :users, controllers: {
-    registrations: 'users/registrations',
-    passwords: 'users/passwords',
-  }
+  # user
+  devise_for :users,
+    path: '',
+    path_names: {
+      sign_up: 'signup',
+      sign_in: 'login',
+      sign_out: 'logout',
+      edit: 'users/setting',
+    },
+    controllers: {
+      registrations: 'users/registrations',
+      passwords: 'users/passwords',
+    }
 
   devise_scope :user do
     post 'users/guest_sign_in', to: 'users/sessions#new_guest' # ゲストユーザー機能
@@ -30,9 +30,30 @@ Rails.application.routes.draw do
     post 'users/show', to: 'users#update' # アイコン変更
   end
 
-  get 'posts/:id/action_user', to: 'posts#action_user'
+  # post, comment, like, remember
+  resources :posts do
+    resources :comments, only: [:create, :destroy]
+    resource :likes, only: [:create, :destroy]
+    resource :remembers, only: [:create, :destroy]
+    member do
+      get 'action_user'
+    end
+  end
+
+  # notification
+  resources :notifications, only: :index do
+    collection do
+      get 'checked'
+    end
+  end
+
+  # contact
+  resources :contacts, only: [:new, :create]
+
+  # その他
   get 'searches/result'
   get 'home', to: 'pages#home'
   get 'about', to: 'pages#about'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
