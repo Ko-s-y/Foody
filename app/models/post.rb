@@ -94,7 +94,21 @@ class Post < ApplicationRecord
       words = word.split(/[[:blank:]]+/)
       word_1 = words.first
       word_2 = words.second
-      posts = Post.where("title LIKE ? AND title LIKE ?", "%#{word_1}%", "%#{word_2}%").or(Post.where("post_content LIKE ? AND post_content LIKE ?", "%#{word_1}%", "%#{word_2}%")).or(Post.where("title LIKE ? AND post_content LIKE ?", "%#{word_1}%", "%#{word_2}%")).or(Post.where("post_content LIKE ? AND title LIKE ?", "%#{word_1}%", "%#{word_2}%"))
+      posts = Post.where(
+        "title LIKE ? AND title LIKE ?", "%#{word_1}%", "%#{word_2}%"
+      ).or(
+        Post.where(
+          "post_content LIKE ? AND post_content LIKE ?", "%#{word_1}%", "%#{word_2}%"
+        )
+      ).or(
+        Post.where(
+          "title LIKE ? AND post_content LIKE ?", "%#{word_1}%", "%#{word_2}%"
+        )
+      ).or(
+        Post.where(
+          "post_content LIKE ? AND title LIKE ?", "%#{word_1}%", "%#{word_2}%"
+        )
+      )
     # 空文字なければ
     else
       posts = Post.where("title LIKE ? OR post_content LIKE ?", "%#{word}%", "%#{word}%")
