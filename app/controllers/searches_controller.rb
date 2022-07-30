@@ -1,5 +1,5 @@
 class SearchesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: :result
 
   def result
     if params[:word].blank?

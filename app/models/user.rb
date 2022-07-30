@@ -37,8 +37,9 @@ class User < ApplicationRecord
   end
 
   def self.looks(search, word)
-    @users = User.where("introduction LIKE ?", "%#{word}%")
-    @users = @users.order(id: :DESC)
+    users = User.where("introduction LIKE ?", "%#{word}%")
+    users = users.order(id: :DESC)
+    users # 明示的に記載しないとrubocopにUselessAssignmentと怒られるため(searches/controllerで使ってます)
   end
 
   def self.guest

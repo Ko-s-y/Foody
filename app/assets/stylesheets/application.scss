@@ -17,6 +17,7 @@
 @import 'bulma';
 @import 'bulma-extensions';
 
+// 共通css
 * {
   box-sizing: border-box;
   margin: 0;
@@ -40,6 +41,51 @@ textarea {
   height: 120px !important;
 }
 
+.notice {
+  background-color: aquamarine;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+}
+
+.alert {
+  background-color: coral;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+.back-btn {
+  display: block;
+  text-align: center;
+  margin: 10px auto;
+  width: 20%;
+  border: 1px solid rgb(164, 163, 163);
+  border-radius: 5px;
+}
+
+.link-btn {
+  font-size: 18px;
+}
+
+.shared-link-btn {
+  font-size: 15px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+.forget-pass-btn {
+  font-size: 15px;
+}
+
+.zero-info {
+  font-size: 20px;
+  text-align: center;
+  padding-top: 12px;
+}
+
+// header
 // ここ削除でバーガーメニュー開くと自動でmargin-bottom:auto
 .navbar {
   height: 70px;
@@ -82,6 +128,7 @@ a.navbar-item:hover {
   display: block;
 }
 
+// search area
 .search-section {
   width: 100%;
   background-color: black;
@@ -145,20 +192,7 @@ a.navbar-item:hover {
   padding-top: 3px;
 }
 
-.notice {
-  background-color: aquamarine;
-  color: black;
-  text-align: center;
-  font-weight: bold;
-}
-
-.alert {
-  background-color: coral;
-  color: white;
-  text-align: center;
-  font-weight: bold;
-}
-
+// footer
 footer {
   height: 150px;
   background-color: black;
@@ -170,36 +204,6 @@ footer {
 .copy-right {
   font-size: 20px;
   font-weight: 500;
-}
-
-.back-btn {
-  display: block;
-  text-align: center;
-  margin: 10px auto;
-  width: 20%;
-  border: 1px solid rgb(164, 163, 163);
-  border-radius: 5px;
-}
-
-.link-btn {
-  font-size: 18px;
-}
-
-.shared-link-btn {
-  font-size: 15px;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  display: inline-block;
-}
-
-.forget-pass-btn {
-  font-size: 15px;
-}
-
-.zero-info {
-  font-size: 20px;
-  text-align: center;
-  padding-top: 12px;
 }
 
 // ページネーション関連
@@ -237,7 +241,7 @@ footer {
   width: 150px;
 }
 
-// footer_menu
+// footer menu
 .footer-menu-section {
   display: none;
   width: 100%;
