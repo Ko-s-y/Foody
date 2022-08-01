@@ -1,3 +1,24 @@
+@media (min-width: 1500px) { // slide-areaのimageのmax-width
+  .appear-btn-area {
+    width: 1500px;
+    margin: 0 auto;
+    border-right: 1px solid rgb(215, 211, 211);
+    border-left: 1px solid rgb(215, 211, 211);
+    padding: 0.1px;
+  }
+
+  .comment_container {
+    width: 1500px;
+    border-right: 1px solid rgb(215, 211, 211);
+    border-left: 1px solid rgb(215, 211, 211);
+    margin: 0 auto;
+  }
+
+  .zero-info {
+    margin-bottom: 15px;
+  }
+}
+
 @media (max-width: 1500px) { // slide-areaのimageのmax-width
   .back-image {
     display: none

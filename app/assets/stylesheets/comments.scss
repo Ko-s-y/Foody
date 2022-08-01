@@ -14,6 +14,7 @@
   font-size: 20px;
   padding-top: 6px;
   max-width: 800px;
+  cursor: pointer;
 }
 
 .form-appear:hover {
@@ -45,7 +46,7 @@
   overflow: hidden;
   max-width: 1500px;
   width: 100%;
-  margin: 20px auto;
+  margin: 0 auto 20px;
 
   .comment-image img {
     margin-top: 5px;
@@ -74,7 +75,6 @@
       .owner-pic {
         float: right;
         height: auto;
-        max-width: 1200px;
         max-height: 800px;
       }
 
