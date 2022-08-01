@@ -35,7 +35,9 @@
               </figure>
               <div class="other-user-text">
                 <div class="other-name"><%= comment.user.name %>(<%= comment.user.introduction %>)</div>
-                <div class="other-text"><%= simple_format(comment.comment_content) %></div>
+                <div class="comment-area">&nbsp;
+                  <div class="other-text"><%= simple_format(comment.comment_content) %></div>
+                </div>
                 <div class="comment-image">
                   <% unless comment.avatar.blank? %>
                     <div class="comment-pict">
