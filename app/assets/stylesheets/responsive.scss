@@ -14,8 +14,10 @@
     margin: 0 auto;
   }
 
-  .zero-info {
-    margin-bottom: 15px;
+  .comment_contents {
+    &:last-child {
+      margin-bottom: 20px;
+    }
   }
 }
 
