@@ -73,7 +73,9 @@
 
       .owner-pic {
         float: right;
-        width: auto;
+        height: auto;
+        max-width: 1200px;
+        max-height: 800px;
       }
 
       .owner-text {
@@ -144,7 +146,9 @@
 
       .other-user-pic {
         float: left;
-        width: auto;
+        height: auto;
+        max-width: 1200px;
+        max-height: 800px;
       }
 
       .other-user-text {
