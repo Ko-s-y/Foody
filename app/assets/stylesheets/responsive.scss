@@ -287,10 +287,20 @@
 
   .current-post-image {
     height: 220px;
+    width: auto;
   }
 
   .not-have-post-image {
     height: 220px;
+    width: auto;
+  }
+
+  .owner-pic {
+    height: 220px !important;
+  }
+
+  .other-user-pic {
+    height: 220px !important;
   }
 
   .form-text {
