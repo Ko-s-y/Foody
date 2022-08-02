@@ -192,18 +192,18 @@
 // search form
   .search-form {
     width: 300px !important;
+
+    select {
+      width: 100px !important;
+      font-size: 15px !important;
+      margin-top: 4px !important;
+    }
   }
 
   .search-word-area {
     width: 125px !important;
     font-size: 15px !important;
     margin-top: 2px !important;
-  }
-
-  #range {
-    width: 100px !important;
-    font-size: 15px !important;
-    margin-top: 4px !important;
   }
 
   .search-submit-btn {

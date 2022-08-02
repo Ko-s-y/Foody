@@ -59,7 +59,7 @@ $(function() {
 });
 
 $(function() {
-  $(document).on('click', '.dis-search-icon', function() {
+  $(document).on('click', '.close-tab-sp-search-btn', function() {
     $('.tab-sp-search').css({
       'display': 'none'
     });
