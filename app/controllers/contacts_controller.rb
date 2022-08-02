@@ -1,5 +1,9 @@
 class ContactsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:index, :new, :create]
+
+  def index
+    @contacts = current_user.contacts
+  end
 
   def new
     @contact = Contact.new
