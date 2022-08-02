@@ -142,6 +142,24 @@ a.navbar-item:hover {
   height: 40px;
 }
 
+.tab-sp-search-form-section {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.tab-sp-search {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  background:rgba(15, 15, 15, 0.6);
+}
+
 .search-form-disappear {
   display: none;
 }
@@ -154,6 +172,16 @@ a.navbar-item:hover {
 }
 
 .search-icon {
+  font-size: 20px;
+  color: white;
+  margin-top: 10px;
+  margin-right: 20px;
+  float: right;
+  display: block;
+  cursor: pointer;
+}
+
+.tab-sp-search-icon {
   font-size: 20px;
   color: white;
   margin-top: 10px;

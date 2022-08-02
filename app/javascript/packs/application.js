@@ -49,6 +49,23 @@ $(function() {
   });
 });
 
+// タブレット,スマホ専用検索フォーム表示/非表示関数
+$(function() {
+  $(document).on('click', '.tab-sp-search-icon', function() {
+    $('.tab-sp-search').css({
+      'display': 'block'
+    });
+  });
+});
+
+$(function() {
+  $(document).on('click', '.dis-search-icon', function() {
+    $('.tab-sp-search').css({
+      'display': 'none'
+    });
+  });
+});
+
 // ・・・メニューの表示/非表示関数
 $(function() {
   $(document).on('click', '.appear-menu-btn', function() {

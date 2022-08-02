@@ -16,25 +16,26 @@
   </section>
 
 
+
+
   <section class="tab-sp-search-section">
-    <div class="search-form-disappear">
-      <i class="fas fa-angle-right dis-search-icon"></i>
-    </div>
-    <div class="search-form-appear">
-      <i class="fas fa-search search-icon"></i>
-    </div>
-    <div class="search-form">
-      <%= form_with url: searches_result_path, local: true, method: :get do |f| %>
-        <%= f.text_field :word, placeholder: "ハーブ 保管方法", required: true, class: "search-word-area" %>
-        <%= f.select :range, options_for_select([["投稿を", "Post"], ["コメントを", "Comment"], ["ユーザーを", "User"]]) %>
-        <%= f.submit "検索", class: "button is-info search-submit-btn" %>
-      <% end %>
+    <div class="tab-sp-search-form-appear">
+      <i class="fas fa-search tab-sp-search-icon"></i>
     </div>
   </section>
 
-
-
-
-
-
+  <div class="tab-sp-search">
+    <section class="tab-sp-search-form-section">
+      <div class="tab-sp-search-area">
+        <%= form_with url: searches_result_path, local: true, method: :get do |f| %>
+          <%= f.text_field :word, placeholder: "ハーブ 保管方法", required: true, class: "search-word-area" %>
+          <%= f.select :range, options_for_select([["投稿を", "Post"], ["コメントを", "Comment"], ["ユーザーを", "User"]]) %>
+          <%= f.submit "検索", class: "button is-info search-submit-btn" %>
+        <% end %>
+      </div>
+      <div class="tab-sp-search-form-close">
+        <i class="fas fa-angle-right dis-search-icon"></i>
+      </div>
+    </section>
+  </div>
 <% end %>
