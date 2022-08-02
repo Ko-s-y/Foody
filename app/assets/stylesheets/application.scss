@@ -162,7 +162,15 @@ a.navbar-item:hover {
 
 .tab-sp-search-area {
   text-align: center;
-  padding: 10px;
+  padding-top: 10px;
+
+  select {
+    margin-bottom: 10px;
+    width: 170px;
+    font-size: 17px;
+    padding: 5px;
+    border-radius: 5px;
+  }
 }
 
 .tab-sp-search-word-area {
@@ -170,7 +178,14 @@ a.navbar-item:hover {
   font-size: 18px;
   border-radius: 5px;
   padding: 5px;
-  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.close-tab-sp-search-btn {
+  position: absolute;
+  top: 20px;
+  left: 15px;
+  cursor: pointer;
 }
 
 .search-form-disappear {
@@ -182,6 +197,15 @@ a.navbar-item:hover {
   float: right;
   width: 450px;
   display: none;
+
+  select {
+    margin-top: 1px;
+    width: 170px;
+    font-size: 17px;
+    padding: 5px;
+    margin-right: 7px;
+    border-radius: 5px;
+  }
 }
 
 .search-icon {
@@ -222,15 +246,6 @@ a.navbar-item:hover {
   border-radius: 5px;
   padding: 5px;
   margin-right: 10px;
-}
-
-#range {
-  margin-top: 1px;
-  width: 170px;
-  font-size: 17px;
-  padding: 5px;
-  margin-right: 7px;
-  border-radius: 5px;
 }
 
 .search-submit-btn {

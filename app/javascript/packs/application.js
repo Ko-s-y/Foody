@@ -55,6 +55,9 @@ $(function() {
     $('.tab-sp-search').css({
       'display': 'block'
     });
+    $('.footer-menu-section').css({
+      'z-index': '1'
+    });
   });
 });
 
@@ -62,6 +65,9 @@ $(function() {
   $(document).on('click', '.close-tab-sp-search-btn', function() {
     $('.tab-sp-search').css({
       'display': 'none'
+    });
+    $('.footer-menu-section').css({
+      'z-index': '0'
     });
   });
 });

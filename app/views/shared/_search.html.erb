@@ -24,7 +24,7 @@
       <div class="hero-body">
         <div class="container">
           <div class="columns is-centered">
-            <div class="column is-12-mobile is-10-tablet is-11-desktop is-10-widescreen is-10-fullhd">
+            <div class="column is-12-mobile is-12-tablet">
               <div class="box">
                 <div class="tab-sp-search-area">
                   <%= form_with url: searches_result_path, local: true, method: :get do |f| %>
@@ -38,7 +38,7 @@
                       <%= f.submit "検索", class: "button is-info tab-sp-search-submit-btn ope-btn" %>
                     </div>
                     <div class="field">
-                      <button class="button is-danger close-tab-sp-search-btn ope-btn">閉じる</button>
+                      <i class="fas fa-times fa-lg close-tab-sp-search-btn"></i>
                     </div>
                   <% end %>
                 </div>
