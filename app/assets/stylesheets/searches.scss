@@ -25,7 +25,6 @@
 }
 
 .hit-post-date {
-  border-bottom: solid 1px rgb(215, 211, 211);
   color: #8a9aa4;
 }
 
@@ -78,6 +77,15 @@
   margin-bottom: -25px;
   bottom: 55px;
   left: 80px;
+}
+
+.not-found {
+  text-align: center;
+  margin-bottom: 5px;
+
+  button {
+    margin-top: 10px;
+  }
 }
 
 .search-advise {
