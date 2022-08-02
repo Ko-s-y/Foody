@@ -59,7 +59,9 @@
     </div>
   </div>
 </section>
-<a class="form-appear">この投稿にコメントする</a>
+<div class="appear-btn-area">
+  <div class="form-appear">この投稿にコメントする</div>
+</div>
 <%= render "comments/form", { post: @post, comment: @comment } %>
 <%= render "comments/tree", { post: @post, comments: @comments } %>
 <%= javascript_pack_tag 'post/show' %>
