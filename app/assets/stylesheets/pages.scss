@@ -25,7 +25,7 @@
   padding: 1em;
   text-align: right;
   position: absolute;
-  z-index: 2;
+  z-index: 1;
   font-size: 20px;
   color: whitesmoke;
   text-shadow: 5px 6px 4px rgba(0, 0, 0, 0.8);
@@ -166,6 +166,7 @@
 .about-view {
   position: relative;
   height: 1130px;
+  width: 100%;
 }
 
 .about-image {
@@ -205,6 +206,7 @@
   background-color: whitesmoke;
   color: rgb(65, 63, 63);
   text-align: center;
+  width: 100%;
 }
 
 .how-to-message {

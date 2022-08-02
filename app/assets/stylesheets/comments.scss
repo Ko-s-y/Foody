@@ -14,6 +14,7 @@
   font-size: 20px;
   padding-top: 6px;
   max-width: 800px;
+  cursor: pointer;
 }
 
 .form-appear:hover {
@@ -45,7 +46,7 @@
   overflow: hidden;
   max-width: 1500px;
   width: 100%;
-  margin: 20px auto;
+  margin: 0 auto 20px;
 
   .comment-image img {
     margin-top: 5px;
@@ -73,6 +74,8 @@
 
       .owner-pic {
         float: right;
+        height: auto;
+        max-height: 800px;
       }
 
       .owner-text {
@@ -143,6 +146,9 @@
 
       .other-user-pic {
         float: left;
+        height: auto;
+        max-width: 1200px;
+        max-height: 800px;
       }
 
       .other-user-text {
@@ -152,6 +158,14 @@
           font-size: 80%;
           color: black;
         }
+      }
+
+      .comment-area {
+        width: 100%;
+        background-color: whitesmoke;
+        display: none;
+        height: 42px;
+        display: block;
       }
 
       .other-text {
