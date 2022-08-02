@@ -31,12 +31,18 @@
                   </div>
                   <p class="help is-danger">*必ず記入をお願い致します。</p>
                 </div>
+                <%= f.hidden_field :user_id, value: current_user.id %>
                 <div class="field">
                   <%= f.submit "送信する", class: "button is-link is-fullwidth m-t-10 m-b-10" %>
                 </div>
                 <div class="field">
                   <%= link_to "もどる", root_path, class: "button is-danger ope-btn" %>
                 </div>
+
+                <div class="field">
+                  <%= link_to "お問合せ履歴", contacts_path(current_user.name), class: "button is-danger ope-btn" %>
+                </div>
+
               <% end %>
             </div>
           </div>

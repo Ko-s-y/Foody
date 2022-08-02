@@ -48,7 +48,7 @@ Rails.application.routes.draw do
   end
 
   # contact
-  resources :contacts, only: [:new, :create]
+  resources :contacts, only: [:index, :new, :create]
 
   # その他
   get 'searches/result'

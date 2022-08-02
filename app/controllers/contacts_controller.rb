@@ -1,5 +1,9 @@
 class ContactsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:index, :new, :create]
+
+  def index
+    @contacts = current_user.contacts
+  end
 
   def new
     @contact = Contact.new
@@ -20,6 +24,6 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
-    params.require(:contact).permit(:name, :content)
+    params.require(:contact).permit(:user_id, :name, :content)
   end
 end
