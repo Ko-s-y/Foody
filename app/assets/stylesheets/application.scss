@@ -139,7 +139,7 @@ a.navbar-item:hover {
   display: none;
   width: 100%;
   background-color: black;
-  height: 40px;
+  height: 50px;
 }
 
 .tab-sp-search-form-section {
@@ -221,8 +221,9 @@ a.navbar-item:hover {
 .tab-sp-search-icon {
   font-size: 20px;
   color: white;
-  margin-top: 10px;
-  margin-right: 20px;
+  margin-top: 15px;
+  margin-right: 10px;
+  width: 40px !important;
   float: right;
   display: block;
   cursor: pointer;
