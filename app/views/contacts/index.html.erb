@@ -7,7 +7,6 @@
           <% if @contacts.exists? %>
             <% @contacts.each do |contact| %>
               <div class="info-area">
-                <p class="contact-title"><%= contact.title %></p>
                 <p class="contact-content"><%= contact.content %></p>
                 <p class="contact-date"><%= contact.created_at.strftime('%Y/%m/%d %H:%M') %></p>
               </div>

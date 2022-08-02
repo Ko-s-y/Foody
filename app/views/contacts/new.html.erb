@@ -13,24 +13,6 @@
               <%= form_with(model: @contact, local: true) do |f| %>
                 <div class="field">
                   <div class="control has-icons-left">
-                    <%= f.text_field :title, placeholder: "○○について", class: "input is-info", required: true, maxlength: 20, list: "contact-title" %>
-                    <datalist id="contact-title">
-                      <option value="ユーザーについて">
-                      <option value="投稿について">
-                      <option value="コメントについて">
-                      <option value="アクションについて">
-                      <option value="通知機能について">
-                      <option value="検索について">
-                      <option value="その他設定について">
-                    </datalist>
-                    <span class="icon is-small is-left">
-                      <i class="fas fa-pen"></i>
-                    </span>
-                  </div>
-                  <p class="help is-danger">*必須,20字以内</p>
-                </div>
-                <div class="field">
-                  <div class="control has-icons-left">
                     <%= f.text_area :content, class: "input is-info contact-textarea", placeholder: "お問合せ内容", required: true %>
                     <span class="icon is-small is-left">
                       <i class="far fa-sticky-note"></i>
