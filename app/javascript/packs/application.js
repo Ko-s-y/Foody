@@ -58,6 +58,25 @@ $(function() {
     $('.footer-menu-section').css({
       'z-index': '2'
     });
+    $(".tab-sp-search-icon").addClass('search-form-opening')
+    $('.tab-sp-search-section').css({
+      'z-index': '3'
+    });
+  });
+});
+
+$(function() {
+  $(document).on('click', '.search-form-opening', function() {
+    $('.tab-sp-search').css({
+      'display': 'none'
+    });
+    $('.footer-menu-section').css({
+      'z-index': '0'
+    });
+    $(".tab-sp-search-icon").removeClass('search-form-opening')
+    $('.tab-sp-search-section').css({
+      'z-index': '0'
+    });
   });
 });
 
@@ -67,6 +86,10 @@ $(function() {
       'display': 'none'
     });
     $('.footer-menu-section').css({
+      'z-index': '0'
+    });
+    $(".tab-sp-search-icon").removeClass('search-form-opening')
+    $('.tab-sp-search-section').css({
       'z-index': '0'
     });
   });
