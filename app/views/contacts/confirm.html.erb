@@ -11,10 +11,10 @@
             <div class="box">
               <%= form_with url: contacts_path, method: :post do |f| %>
                 <div class="field">
-                  件名：<%= @contact.name %>
+                  <span class="contact-element">件名：</span><span class="contact-value"><%= simple_format(@contact.name) %></span>
                 </div>
                 <div class="field">
-                  内容：<%= @contact.content %>
+                  <span class="contact-element">内容：</span><span class="contact-value"><%= simple_format(@contact.content) %></span>
                 </div>
                 <%= f.hidden_field :name, value: @contact.name %>
                 <%= f.hidden_field :content, value: @contact.content %>

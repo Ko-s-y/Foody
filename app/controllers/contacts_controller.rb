@@ -7,15 +7,13 @@ class ContactsController < ApplicationController
 
   def new
     @contact = Contact.new
-    render action: 'new'
   end
 
   def confirm
     @contact = Contact.new(contact_params)
-    if @contact.valid?
-      render action: 'confirm'
-    else
-      render action: 'index'
+    if @contact.invalid?
+      flash[:alert] = "不正な値です。"
+      render :new
     end
   end
 

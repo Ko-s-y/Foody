@@ -19,3 +19,16 @@
   float: right;
   color: #8a9aa4;
 }
+
+.contact-element {
+  position: absolute;
+}
+
+.contact-value {
+  position: relative;
+  left: 50px;
+
+  p {
+    width: 90%;
+  }
+}
