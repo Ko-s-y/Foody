@@ -182,6 +182,14 @@ footer {
   .not-have-post-image {
     height: 500px;
   }
+
+///////////////////////////////////
+// contactページ
+  .contact-value {
+    p {
+      width: 90%;
+    }
+  }
 }
 
 @media (max-width: 768px) {
@@ -388,5 +396,13 @@ footer {
   .result-count-area {
     font-size: 15px !important;
     margin-bottom: 10px !important;
+  }
+
+///////////////////////////////////
+// contactページ
+  .contact-value {
+    p {
+      width: 80%;
+    }
   }
 }
