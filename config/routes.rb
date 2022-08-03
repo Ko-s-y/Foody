@@ -54,8 +54,10 @@ Rails.application.routes.draw do
     end
   end
 
-  # その他
+  # searches_controller
   get 'searches/result'
+
+  # pages_controller
   get 'home', to: 'pages#home'
   get 'about', to: 'pages#about'
 

@@ -16,7 +16,7 @@ ja:
       comment:
         comment_content: 'コメント内容'
       contact:
-        name: 'お名前'
+        name: 'お問合わせ件名'
         content: 'お問い合わせ内容'
     errors:
       models:
