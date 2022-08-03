@@ -49,6 +49,7 @@ Rails.application.routes.draw do
 
   # contact
   resources :contacts, only: [:index, :new, :create]
+  post 'contacts/confirm'
 
   # その他
   get 'searches/result'

@@ -10,39 +10,45 @@
             </div>
             <div class="box">
               <%= render "shared/error", object: @contact %>
-              <%= form_with(model: @contact, local: true) do |f| %>
+              <%= form_with url: contacts_confirm_path, method: :post, local: true do |f| %>
                 <div class="field">
-                  <%= f.label :お名前, class: "label" %>
                   <div class="control has-icons-left">
-                    <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "input is-info", placeholder: "(必須)" %>
+                    <%= f.text_field :name, placeholder: "○○について", class: "input is-info", required: true, maxlength: 20, list: "contact-title" %>
+                    <datalist id="contact-title">
+                      <option value="ユーザーについて">
+                      <option value="投稿について">
+                      <option value="コメントについて">
+                      <option value="アクションについて">
+                      <option value="通知機能について">
+                      <option value="検索について">
+                      <option value="設定について">
+                      <option value="その他">
+                    </datalist>
                     <span class="icon is-small is-left">
-                      <i class="fas fa-user"></i>
+                      <i class="fas fa-pen"></i>
                     </span>
                   </div>
-                  <p class="help is-danger">*必ず記入をお願い致します。</p>
+                  <p class="help is-danger">*必須,20字以内</p>
                 </div>
                 <div class="field">
-                  <%= f.label :お問い合わせ内容, class: "label" %>
                   <div class="control has-icons-left">
-                    <%= f.text_area :content, autocomplete: "introduction", class: "input is-info contact-textarea", placeholder: "(必須)" %>
+                    <%= f.text_area :content, class: "input is-info contact-textarea", placeholder: "お問合せ内容", required: true %>
                     <span class="icon is-small is-left">
                       <i class="far fa-sticky-note"></i>
                     </span>
                   </div>
-                  <p class="help is-danger">*必ず記入をお願い致します。</p>
+                  <p class="help is-danger">*必須</p>
                 </div>
                 <%= f.hidden_field :user_id, value: current_user.id %>
                 <div class="field">
-                  <%= f.submit "送信する", class: "button is-link is-fullwidth m-t-10 m-b-10" %>
+                  <%= f.submit "入力内容を確認", class: "button is-link is-fullwidth m-t-10 m-b-10" %>
                 </div>
                 <div class="field">
-                  <%= link_to "もどる", root_path, class: "button is-danger ope-btn" %>
+                  <%= link_to "タイムラインへ", posts_path, class: "button is-danger ope-btn" %>
                 </div>
-
                 <div class="field">
-                  <%= link_to "お問合せ履歴", contacts_path(current_user.name), class: "button is-danger ope-btn" %>
+                  <%= link_to "お問合せ履歴", contacts_path(current_user.name), class: "button" %>
                 </div>
-
               <% end %>
             </div>
           </div>
