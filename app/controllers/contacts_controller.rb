@@ -1,12 +1,22 @@
 class ContactsController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :new, :create]
+  before_action :authenticate_user!, only: [:index, :new, :confirm, :create]
 
   def index
-    @contacts = current_user.contacts.order(id: :desc)
+    @contacts = current_user.contacts.order(id: :desc).page(params[:page])
   end
 
   def new
     @contact = Contact.new
+    render action: 'new'
+  end
+
+  def confirm
+    @contact = Contact.new(contact_params)
+    if @contact.valid?
+      render action: 'confirm'
+    else
+      render action: 'index'
+    end
   end
 
   def create
@@ -24,6 +34,6 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
-    params.require(:contact).permit(:user_id, :name, :content)
+    params.permit(:user_id, :name, :content)
   end
 end

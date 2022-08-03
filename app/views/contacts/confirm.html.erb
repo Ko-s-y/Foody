@@ -1,0 +1,35 @@
+<% provide(:title, "お問合せ確認") %>
+<section class="hero is-dark is-fullheight">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-12-mobile is-10-tablet is-10-desktop is-10-widescreen is-9-fullhd">
+          <div class="box">
+            <div class="field has-text-centered">
+              <strong>お問い合わせ確認</strong>
+            </div>
+            <div class="box">
+              <%= form_with url: contacts_path, method: :post do |f| %>
+                <div class="field">
+                  件名：<%= @contact.name %>
+                </div>
+                <div class="field">
+                  内容：<%= @contact.content %>
+                </div>
+                <%= f.hidden_field :name, value: @contact.name %>
+                <%= f.hidden_field :content, value: @contact.content %>
+                <%= f.hidden_field :user_id, value: current_user.id %>
+                <div class="field">
+                  <%= f.submit "送信する", class: "button is-link is-fullwidth m-t-10 m-b-10" %>
+                </div>
+                <div class="field">
+                  <%= link_to "戻る", :back, class: "button is-danger ope-btn" %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

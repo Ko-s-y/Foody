@@ -8,10 +8,11 @@
             <% @contacts.each do |contact| %>
               <div class="info-area">
                 <p class="contact-content"><%= contact.name %></p>
-                <p class="contact-content"><%= contact.content %></p>
+                <p class="contact-content"><%= simple_format(contact.content) %></p>
                 <p class="contact-date"><%= contact.created_at.strftime('%Y/%m/%d %H:%M') %></p>
               </div>
             <% end %>
+            <%= paginate @contacts %>
           <% else %>
             <p class="none-info">お問合せ履歴がありません</p>
             <%= link_to "タイムラインへ", posts_path, class: "posts-link" %>

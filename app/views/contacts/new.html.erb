@@ -10,7 +10,7 @@
             </div>
             <div class="box">
               <%= render "shared/error", object: @contact %>
-              <%= form_with(model: @contact, local: true) do |f| %>
+              <%= form_with url: contacts_confirm_path, method: :post, local: true do |f| %>
                 <div class="field">
                   <div class="control has-icons-left">
                     <%= f.text_field :name, placeholder: "○○について", class: "input is-info", required: true, maxlength: 20, list: "contact-title" %>
@@ -41,10 +41,10 @@
                 </div>
                 <%= f.hidden_field :user_id, value: current_user.id %>
                 <div class="field">
-                  <%= f.submit "送信する", class: "button is-link is-fullwidth m-t-10 m-b-10" %>
+                  <%= f.submit "入力内容を確認", class: "button is-link is-fullwidth m-t-10 m-b-10" %>
                 </div>
                 <div class="field">
-                  <%= link_to "もどる", root_path, class: "button is-danger ope-btn" %>
+                  <%= link_to "タイムラインへ", posts_path, class: "button is-danger ope-btn" %>
                 </div>
                 <div class="field">
                   <%= link_to "お問合せ履歴", contacts_path(current_user.name), class: "button" %>
