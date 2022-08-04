@@ -1,4 +1,4 @@
-// 検索ヒント表示関数
+// 検索ヒント表示/非表示関数
 $(function() {
   $(document).on('click', '.search-advise-btn', function() {
     $('.search-result').css({
@@ -10,7 +10,6 @@ $(function() {
   });
 });
 
-// 検索ヒント非表示関数
 $(function() {
   $(document).on('click', '.dis-advise-btn', function() {
     $('.search-advise').css({
