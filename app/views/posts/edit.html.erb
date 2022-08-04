@@ -24,7 +24,8 @@
                 <div class="field">
                   <%= f.label :post_content, "内容", class: "label" %>
                   <div class="control has-icons-left">
-                    <%= f.text_area :post_content, autocomplete: "post_content", class: "input is-info", required: true, maxlength: 200 %>
+                    <%= f.text_area :post_content, autocomplete: "post_content", class: "input is-info form-text", required: true, maxlength: 200 %>
+                    <p class="form-str-counter"></p>
                     <span class="icon is-small is-left">
                       <i class="far fa-sticky-note"></i>
                     </span>
