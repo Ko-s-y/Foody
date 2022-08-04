@@ -30,6 +30,10 @@ Rails.application.routes.draw do
     post 'users/show', to: 'users#update' # アイコン変更
   end
 
+  resources :users, only: [:show, :profile] do
+    resource :follows, only: [:create, :destroy]
+  end
+
   # post, comment, like, remember
   resources :posts do
     resources :comments, only: [:create, :destroy]

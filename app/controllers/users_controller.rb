@@ -5,12 +5,16 @@ class UsersController < ApplicationController
     @posts = current_user.posts.all.order(created_at: :desc)
     @remember_posts = current_user.checked_remember_posts.order(created_at: :desc)
     received_counter(current_user, @posts)
+    @following_users = current_user.following_user
+    @follower_users = current_user.follower_user
   end
 
   def profile
     @user = User.find_by(name: params[:name])
     @posts = @user.posts.all.order(created_at: :desc)
     received_counter(@user, @posts)
+    @following_users = @user.following_user
+    @follower_users = @user.follower_user
   end
 
   def update

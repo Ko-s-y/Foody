@@ -18,6 +18,14 @@
         <span class="user-element">調理ジャンル: <%= @user.introduction %></span>
       </div>
       <div class="field">
+        <% if current_user.following?(@user) %>
+          <%= link_to 'フォローを外す', user_follows_path(@user.id), method: :delete, class: "button is-danger ope-btn" %>
+        <% else %>
+          <%= link_to 'フォローする', user_follows_path(@user.id), method: :post, class:"button is-info ope-btn" %>
+        <% end %>
+        <span class="user-element">フォロー中：<%= @following_users.count %>&nbsp;&nbsp;&nbsp;フォロワー：<%= @follower_users.count %></span>
+      </div>
+      <div class="field">
         <span class="user-element appear-user-data">アクティビティの確認</span>
         <div class="user-data">
           <span class="user-element">投稿件数: <%= @posts.count %>件</span>

@@ -33,6 +33,9 @@
                 <span class="user-element">調理ジャンル: <%= current_user.introduction %></span>
               </div>
               <div class="field">
+                <span class="user-element">フォロー中：<%= @following_users.count %>&nbsp;&nbsp;&nbsp;フォロワー：<%= @follower_users.count %></span>
+              </div>
+              <div class="field">
                 <span class="user-element appear-user-data">アクティビティの確認</span>
                 <div class="user-data">
                   <span class="user-element">投稿件数: <%= @posts.count %>件</span>
