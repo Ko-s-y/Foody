@@ -29,8 +29,7 @@
 }
 
 @media (max-width: 1023px) {
-///////////////////////////////////
-// header
+  // header
   .site-title {
     width: 125px !important;
   }
@@ -57,7 +56,7 @@
     top: 65px !important;
   }
 
-// search form
+  // search
   .search-section {
     display: none;
   }
@@ -66,15 +65,13 @@
     display: block !important;
   }
 
-///////////////////////////////////
-// footer
-footer {
-  height: 80px !important;
-  padding-top: 26px !important;
-}
+  // footer
+  footer {
+    height: 80px !important;
+    padding-top: 26px !important;
+  }
 
-///////////////////////////////////
-// homeページ
+  // home
   .intro-message {
     letter-spacing: 0.12em;
   }
@@ -83,7 +80,7 @@ footer {
     height: 900px;
   }
 
-// slide-handler
+  // slide-handler
   .only-pc-handler {
     display: none;
   }
@@ -139,8 +136,7 @@ footer {
     opacity: 0.5;
   }
 
-///////////////////////////////////
-  // aboutページ
+  // about
   .about-view {
     height: 900px;
   }
@@ -165,8 +161,7 @@ footer {
     letter-spacing: 0.12em;
   }
 
-///////////////////////////////////
-// postページ
+  // post
   .post-pict img {
     height: 500px !important;
   }
@@ -183,8 +178,7 @@ footer {
     height: 500px;
   }
 
-///////////////////////////////////
-// contactページ
+  // contact
   .contact-value {
     p {
       width: 90%;
@@ -193,8 +187,7 @@ footer {
 }
 
 @media (max-width: 768px) {
-///////////////////////////////////
-// header
+  // header
   .info-notice {
     margin-right: 30px !important;
   }
@@ -204,7 +197,7 @@ footer {
     right: 41% !important;
   }
 
-// search form
+  // search
   .search-form {
     width: 300px !important;
 
@@ -231,13 +224,12 @@ footer {
     left: 15px !important;
   }
 
-///////////////////////////////////
-// footer
+  // footer
   footer {
     margin-bottom: 50px !important;
   }
 
-// footer_menu
+  // footer_menu
   .footer-menu-section {
     display: block !important;
   }
@@ -251,8 +243,7 @@ footer {
     font-weight: 400 !important;
   }
 
-///////////////////////////////////
-// home
+  // home
   .intro-message {
     letter-spacing: 0.08em;
   }
@@ -269,7 +260,7 @@ footer {
     font-size: 15px;
   }
 
-// slide-handler
+  // slide-handler
   .touch-handler-btn {
     height: 60px;
     width: 30px;
@@ -287,8 +278,7 @@ footer {
     top: 500px;
   }
 
-///////////////////////////////////
-  // aboutページ
+  // about
   .about-view {
     height: 600px;
   }
@@ -312,8 +302,7 @@ footer {
     letter-spacing: 0.08em;
   }
 
-///////////////////////////////////
-// postページ
+  // post
   .posted-user-icon {
     width: 50px !important;
     height: 50px !important;
@@ -324,7 +313,7 @@ footer {
   }
 
   .post-pict img {
-    height: 220px !important;
+    height: 300px !important;
   }
 
   .post-title {
@@ -347,7 +336,7 @@ footer {
   }
 
   .owner-pic {
-    height: 220px !important;
+    height: 250px !important;
   }
 
   .other-user-comment {
@@ -359,7 +348,7 @@ footer {
   }
 
   .other-user-pic {
-    height: 220px !important;
+    height: 250px !important;
   }
 
   .form-text {
@@ -386,20 +375,18 @@ footer {
     display: inline-block;
   }
 
-// ページネーション関連
+  // ページネーション
   .pagination span {
     margin: -9px 20px 0;
   }
 
-///////////////////////////////////
-// resultページ
+  // result
   .result-count-area {
     font-size: 15px !important;
     margin-bottom: 10px !important;
   }
 
-///////////////////////////////////
-// contactページ
+  // contact
   .contact-value {
     p {
       width: 80%;

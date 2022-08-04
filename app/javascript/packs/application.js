@@ -20,7 +20,7 @@ $(function() {
   });
 });
 
-// 検索フォーム表示/非表示関数
+// PC専用検索フォーム表示/非表示関数
 $(function() {
   $(document).on('click', '.search-icon', function() {
     $('.search-form-appear').css({

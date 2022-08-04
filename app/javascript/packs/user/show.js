@@ -1,4 +1,4 @@
-// 投稿一覧セクション出現関数
+// 投稿一覧セクション表示関数
 $(function() {
   $(document).on('click', '.appear-posted-section', function() {
     $('.remember-posts-section').css({
@@ -16,7 +16,7 @@ $(function() {
   });
 });
 
-// rememberした投稿セクション出現関数
+// rememberした投稿セクション表示関数
 $(function() {
   $(document).on('click', '.appear-remember-section', function() {
     $('.user-posted-section').css({

@@ -64,4 +64,5 @@
 </div>
 <%= render "comments/form", { post: @post, comment: @comment } %>
 <%= render "comments/tree", { post: @post, comments: @comments } %>
+<%= javascript_pack_tag 'post/common' %>
 <%= javascript_pack_tag 'post/show' %>
