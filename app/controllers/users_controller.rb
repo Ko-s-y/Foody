@@ -4,17 +4,15 @@ class UsersController < ApplicationController
   def show
     @posts = current_user.posts.all.order(created_at: :desc)
     @remember_posts = current_user.checked_remember_posts.order(created_at: :desc)
-    received_counter(current_user, @posts)
-    @following_users = current_user.following_user
-    @follower_users = current_user.follower_user
+    get_follow_info(current_user)
+    get_received_count(current_user, @posts)
   end
 
   def profile
     @user = User.find_by(name: params[:name])
     @posts = @user.posts.all.order(created_at: :desc)
-    received_counter(@user, @posts)
-    @following_users = @user.following_user
-    @follower_users = @user.follower_user
+    get_follow_info(@user)
+    get_received_count(@user, @posts)
   end
 
   def update
@@ -32,7 +30,12 @@ class UsersController < ApplicationController
     params.require(:user).permit(:avatar)
   end
 
-  def received_counter(user, posts)
+  def get_follow_info(user)
+    @following_users = user.following_user
+    @follower_users = user.follower_user
+  end
+
+  def get_received_count(user, posts)
     @received_like = 0
     @received_remember = 0
     @posts.each do |post|
