@@ -1,8 +1,6 @@
 // 選択した画像ファイル名表示とプレビュー機能の関数
 $(function() {
-  // 画像が選択された時に発火
   $(document).on('change', '.image-form', function() {
-
     // 選択した画像ファイル名表示機能
     let fileName = $(this).prop('files')[0];
     $('.state').text(fileName.name);

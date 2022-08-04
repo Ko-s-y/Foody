@@ -1,10 +1,10 @@
 // 選択した画像ファイル名表示とプレビュー機能の関数
 $(function() {
-  // 画像が選択された時に発火
   $(document).on('change', '.image-form', function() {
     // 選択した画像ファイル名表示機能
     let fileName = $(this).prop('files')[0];
     $('.state').text(fileName.name);
+
     // 選択した画像ファイルのプレビュー機能
     let file = this.files[0];  // .file_filedからデータを取得して変数fileに代入
     let reader = new FileReader();  // FileReaderオブジェクトを作成
@@ -23,7 +23,7 @@ $(function() {
   });
 });
 
-// 投稿フォーム出現関数
+// 投稿フォーム表示/非表示関数
 $(function() {
   $(document).on('click', '.form-appear', function() {
     $('.comment-form').css({
@@ -35,7 +35,6 @@ $(function() {
   });
 });
 
-// 投稿フォーム削除関数
 $(function() {
   $(document).on('click', '.form-disappear', function() {
     $('.comment-form').css({
@@ -47,10 +46,10 @@ $(function() {
   });
 });
 
-// formの残文字数カウント関数
+// フォームの残文字数カウント関数
 $(function() {
-  let nowStrCount = $(".form-text").text().replace(/\n/g, "改行").length; //現在のformに入力されている文字数, 改行は2文字扱い(Rails側に合わせる)
-  let restStrCount = 200 - nowStrCount; //残りの入力できる文字数
+  let nowStrCount = $(".form-text").text().replace(/\n/g, "改行").length; //現在入力されている文字数, 改行は2文字扱い(Rails側に合わせて)
+  let restStrCount = 200 - nowStrCount; //残りの入力可能文字数
 
   $(".form-str-counter").text( "残り" + restStrCount + "文字");
   $(".form-text").on("keyup", function() {
