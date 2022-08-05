@@ -33,9 +33,9 @@ Rails.application.routes.draw do
 
   get 'users/show' # 自分の詳細画面
   get 'users/:name', to: 'users#profile', as: 'users/profile' # 他ユーザーの詳細画面
+  get 'users/:name/followings', to: 'users#followings', as: 'users/followings' #フォロー中ユーザー一覧ページ
+  get 'users/:name/followers', to: 'users#followers', as: 'users/followers' # フォロワー一覧ページ
   post 'users/show', to: 'users#update' # アイコン変更
-  get ':name/followings', to: 'users#followings', as: 'users/followings'
-  get ':name/followers', to: 'users#followers', as: 'users/followers'
 
   # post, comment, like, remember
   resources :posts do
