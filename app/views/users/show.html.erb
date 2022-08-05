@@ -32,8 +32,13 @@
               <div class="field">
                 <span class="user-element">調理ジャンル: <%= current_user.introduction %></span>
               </div>
-              <div class="field">
-                <span class="user-element">フォロー中：<%= @following_users.count %>&nbsp;&nbsp;&nbsp;フォロワー：<%= @follower_users.count %></span>
+              <div class="field user-element">
+                <%= link_to followings_user_path(current_user) do %>
+                  <span>フォロー<%= @following_users.count %></span>
+                <% end %>&nbsp;&nbsp;
+                <%= link_to followers_user_path(current_user) do %>
+                  <span>フォロワー<%= @follower_users.count %></span>
+                <% end %>
               </div>
               <div class="field">
                 <span class="user-element appear-user-data">アクティビティの確認</span>

@@ -1,0 +1,30 @@
+<% provide(:title, "フォロワーリスト") %>
+<section class="search-result hero is-light is-halfheight">
+  <div class="columns is-centered">
+    <div class="column is-10-desktop is-10-widescreen">
+      <div class="box">
+        <div class="result-contents">
+          <div class="user-result">
+            <% if @follower_users.present? %>
+              <div class="following-count-area">
+                <h1 class="result-count"><%= @user.name %>のフォロワー<span><%= @follower_users.count %>人</span></h1>
+              </div>
+              <div class="hit-user-content">
+                <% @follower_users.each do |user| %>
+                  <div class="hit-user-area">
+                    <figure class="hit-icon"><%= link_to image_tag(avatar_url(user), class: "hit-user-icon", alt: "ユーザーアイコン"), users_profile_path(name: user.name) %></figure>
+                    <p class="hit-user-intro"><%= link_to "#{user.name}(#{user.introduction})", users_profile_path(name: user.name) %></p>
+                  </div>
+                <% end %>
+              </div>
+            <% else %>
+              <div class="not-found">
+                <p>フォロワーはいません。</p>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

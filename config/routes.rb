@@ -29,6 +29,9 @@ Rails.application.routes.draw do
 
   resources :users, only: [] do
     resource :follows, only: [:create, :destroy]
+    member do
+      get :followings, :followers
+    end
   end
 
   get 'users/show' # 自分の詳細画面

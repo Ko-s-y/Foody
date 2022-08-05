@@ -15,6 +15,16 @@ class UsersController < ApplicationController
     get_received_count(@user, @posts)
   end
 
+  def followings
+    @user = User.find(params[:id])
+    @following_users = @user.following_user
+  end
+
+  def followers
+    @user = User.find(params[:id])
+    @follower_users = @user.follower_user
+  end
+
   def update
     if current_user.update(current_user_params)
       flash[:notice] = "アイコン画像を更新しました。"

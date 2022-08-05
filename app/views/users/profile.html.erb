@@ -23,7 +23,14 @@
         <% else %>
           <%= link_to 'フォローする', user_follows_path(@user.id), method: :post, class:"button is-info ope-btn" %>
         <% end %>
-        <span class="user-element">フォロー中：<%= @following_users.count %>&nbsp;&nbsp;&nbsp;フォロワー：<%= @follower_users.count %></span>
+        <div class="field user-element">
+          <%= link_to followings_user_path(@user) do %>
+            <span>フォロー<%= @following_users.count %></span>
+          <% end %>&nbsp;&nbsp;
+          <%= link_to followers_user_path(@user) do %>
+            <span>フォロワー<%= @follower_users.count %></span>
+          <% end %>
+        </div>
       </div>
       <div class="field">
         <span class="user-element appear-user-data">アクティビティの確認</span>
