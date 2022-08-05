@@ -6,20 +6,37 @@
         <div class="result-contents">
           <div class="user-result">
             <% if @following_users.present? %>
-              <div class="following-count-area">
-                <h1 class="result-count"><%= @user.name %>のフォロー中<span><%= @following_users.count %>人</span></h1>
+              <div class="result-count-area">
+
+
+                <% if @user.id == current_user.id %>
+                  <h1 class="result-count">あなたがフォローしたユーザー<span><%= @following_users.count %>人</span></h1>
+                <% else %>
+                  <h1 class="result-count"><%= @user.name %>さんがフォロー中のユーザー<span><%= @following_users.count %>人</span></h1>
+                <% end %>
+
+
               </div>
               <div class="hit-user-content">
                 <% @following_users.each do |user| %>
                   <div class="hit-user-area">
+                  <% if user.id == current_user.id %>
+                    <figure class="hit-icon"><%= link_to image_tag(avatar_url(user), class: "hit-user-icon", alt: "ユーザーアイコン"), users_show_path %></figure>
+                    <p class="hit-user-intro"><%= link_to "あなた(#{current_user.introduction})", users_show_path %></p>
+                  <% else %>
                     <figure class="hit-icon"><%= link_to image_tag(avatar_url(user), class: "hit-user-icon", alt: "ユーザーアイコン"), users_profile_path(name: user.name) %></figure>
                     <p class="hit-user-intro"><%= link_to "#{user.name}(#{user.introduction})", users_profile_path(name: user.name) %></p>
+                  <% end %>
                   </div>
                 <% end %>
               </div>
             <% else %>
               <div class="not-found">
-                <p>フォロー中はいません。</p>
+                <% if @user.id == current_user.id %>
+                  <p>あなたがフォローしたユーザーはまだいません。</p>
+                <% else %>
+                  <p><%= @user.name %>さんがフォローしたユーザーはまだいません。</p>
+                <% end %>
               </div>
             <% end %>
           </div>
