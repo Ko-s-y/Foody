@@ -33,10 +33,10 @@
                 <span class="user-element">調理ジャンル: <%= current_user.introduction %></span>
               </div>
               <div class="field user-element">
-                <%= link_to followings_user_path(current_user) do %>
+                <%= link_to users_followings_path(name: current_user.name) do %>
                   <span>フォロー<%= @following_users.count %></span>
                 <% end %>&nbsp;&nbsp;
-                <%= link_to followers_user_path(current_user) do %>
+                <%= link_to users_followers_path(name: current_user.name) do %>
                   <span>フォロワー<%= @follower_users.count %></span>
                 <% end %>
               </div>

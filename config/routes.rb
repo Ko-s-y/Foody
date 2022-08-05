@@ -29,14 +29,13 @@ Rails.application.routes.draw do
 
   resources :users, only: [] do
     resource :follows, only: [:create, :destroy]
-    member do
-      get :followings, :followers
-    end
   end
 
   get 'users/show' # 自分の詳細画面
   get 'users/:name', to: 'users#profile', as: 'users/profile' # 他ユーザーの詳細画面
   post 'users/show', to: 'users#update' # アイコン変更
+  get ':name/followings', to: 'users#followings', as: 'users/followings'
+  get ':name/followers', to: 'users#followers', as: 'users/followers'
 
   # post, comment, like, remember
   resources :posts do

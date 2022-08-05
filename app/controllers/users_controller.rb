@@ -40,7 +40,7 @@ class UsersController < ApplicationController
   end
 
   def set_user
-    @user = User.find(params[:id])
+    @user = User.find_by(name: params[:name])
   end
 
   def get_follow_info(user)
