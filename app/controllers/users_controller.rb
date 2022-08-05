@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_user, only: [:followings, :followers]
 
   def show
     @posts = current_user.posts.all.order(created_at: :desc)
@@ -16,12 +17,10 @@ class UsersController < ApplicationController
   end
 
   def followings
-    @user = User.find(params[:id])
     @following_users = @user.following_user
   end
 
   def followers
-    @user = User.find(params[:id])
     @follower_users = @user.follower_user
   end
 
@@ -38,6 +37,10 @@ class UsersController < ApplicationController
 
   def current_user_params
     params.require(:user).permit(:avatar)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 
   def get_follow_info(user)

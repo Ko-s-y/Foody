@@ -7,15 +7,11 @@
           <div class="user-result">
             <% if @following_users.present? %>
               <div class="result-count-area">
-
-
                 <% if @user.id == current_user.id %>
                   <h1 class="result-count">あなたがフォローしたユーザー<span><%= @following_users.count %>人</span></h1>
                 <% else %>
                   <h1 class="result-count"><%= @user.name %>さんがフォロー中のユーザー<span><%= @following_users.count %>人</span></h1>
                 <% end %>
-
-
               </div>
               <div class="hit-user-content">
                 <% @following_users.each do |user| %>
