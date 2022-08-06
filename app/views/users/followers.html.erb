@@ -8,9 +8,9 @@
             <% if @follower_users.present? %>
               <div class="result-count-area">
                 <% if @user.id == current_user.id %>
-                  <h1 class="result-count">あなたのフォロワー<span><%= @follower_users.count %>人</span></h1>
+                  <h1 class="result-count">あなたのフォロワー：<span><%= @follower_users.count %>人</span></h1>
                 <% else %>
-                  <h1 class="result-count"><%= @user.name %>さんのフォロワー<span><%= @follower_users.count %>人</span></h1>
+                  <h1 class="result-count"><%= @user.name %>さんのフォロワー：<span><%= @follower_users.count %>人</span></h1>
                 <% end %>
               </div>
               <div class="hit-user-content">

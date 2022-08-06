@@ -1,18 +1,15 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user, only: [:followings, :followers]
+  before_action :set_user, only: [:profile, :followings, :followers]
 
   def show
     @posts = current_user.posts.all.order(created_at: :desc)
     @remember_posts = current_user.checked_remember_posts.order(created_at: :desc)
-    get_follow_info(current_user)
     get_received_count(current_user, @posts)
   end
 
   def profile
-    @user = User.find_by(name: params[:name])
     @posts = @user.posts.all.order(created_at: :desc)
-    get_follow_info(@user)
     get_received_count(@user, @posts)
   end
 
@@ -41,11 +38,6 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find_by(name: params[:name])
-  end
-
-  def get_follow_info(user)
-    @following_users = user.following_user
-    @follower_users = user.follower_user
   end
 
   def get_received_count(user, posts)
