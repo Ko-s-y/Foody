@@ -3,3 +3,11 @@
 <% else %>
   <%= link_to 'フォローする', user_follows_path(user.id), method: :post, remote: true, class:"button is-info ope-btn follow-btn" %>
 <% end %>
+<div class="field user-element">
+  <%= link_to users_followings_path(name: user.name) do %>
+    <span>フォロー<%= user.following_user.count %></span>
+  <% end %>&nbsp;&nbsp;
+  <%= link_to users_followers_path(name: user.name) do %>
+    <span>フォロワー<%= user.follower_user.count %></span>
+  <% end %>
+</div>
