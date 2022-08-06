@@ -19,7 +19,9 @@
       </div>
       <div class="field follow-area">
 
-        <%= render "follows/follow_function", user: @user %>
+        <div id="follow-button-<%= @user.id %>">
+          <%= render "follows/follow_function", user: @user %>
+        </div>
 
         <div class="field user-element">
           <%= link_to users_followings_path(name: @user.name) do %>
