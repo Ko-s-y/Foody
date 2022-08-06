@@ -18,11 +18,9 @@
         <span class="user-element">調理ジャンル: <%= @user.introduction %></span>
       </div>
       <div class="field follow-area">
-        <% if current_user.following?(@user) %>
-          <%= link_to 'フォロー中', user_follows_path(@user.id), method: :delete, data: { confirm: "フォローを外しますか？" }, class: "button ope-btn follow-btn" %>
-        <% else %>
-          <%= link_to 'フォローする', user_follows_path(@user.id), method: :post, class:"button is-info ope-btn follow-btn" %>
-        <% end %>
+
+        <%= render "follows/follow_function", user: @user %>
+
         <div class="field user-element">
           <%= link_to users_followings_path(name: @user.name) do %>
             <span>フォロー<%= @following_users.count %></span>
