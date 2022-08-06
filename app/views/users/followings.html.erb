@@ -11,9 +11,9 @@
           <% if @following_users.present? %>
             <div class="follow-count-area">
               <% if @user.id == current_user.id %>
-                <h1 class="follow-count">あなたがフォロー中のユーザー：<span><%= @user.following_user.count %>人</span></h1>
+                <h1 class="follow-count">あなたがフォロー中ユーザー：<span><%= @user.following_user.count %>人</span></h1>
               <% else %>
-                <h1 class="follow-count"><%= @user.name %>さんがフォロー中のユーザー：<span><%= @user.following_user.count %>人</span></h1>
+                <h1 class="follow-count"><%= @user.name %>さんがフォロー中ユーザー：<span><%= @user.following_user.count %>人</span></h1>
               <% end %>
             </div>
             <% @following_users.each do |user| %>

@@ -34,10 +34,10 @@
               </div>
               <div class="field user-element">
                 <%= link_to users_followings_path(name: current_user.name) do %>
-                  <span>フォロー中：<%= current_user.following_user.count %></span>
+                  <span class="my-follow-count">フォロー中：<%= current_user.following_user.count %></span>
                 <% end %>&nbsp;&nbsp;
                 <%= link_to users_followers_path(name: current_user.name) do %>
-                  <span>フォロワー：<%= current_user.follower_user.count %></span>
+                  <span class="my-follow-count">フォロワー：<%= current_user.follower_user.count %></span>
                 <% end %>
               </div>
               <div class="field">
