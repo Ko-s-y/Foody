@@ -1,41 +1,39 @@
 <% provide(:title, "フォロー中リスト") %>
-<section class="search-result hero is-light is-halfheight">
+<div class="ope-btn-area">
+  <h2 class="appear-link current_page">フォロー中</h2>
+  <h2 class="appear-link">フォロワー</h2>
+</div>
+<section class="follow-user-list hero is-light is-halfheight">
   <div class="columns is-centered">
     <div class="column is-10-desktop is-10-widescreen">
       <div class="box">
-        <div class="result-contents">
-          <div class="user-result">
-            <% if @following_users.present? %>
-              <div class="result-count-area">
-                <% if @user.id == current_user.id %>
-                  <h1 class="result-count">あなたがフォロー中のユーザー：<span><%= @following_users.count %>人</span></h1>
+        <div class="action-user-info">
+          <% if @following_users.present? %>
+            <div class="follow-count-area">
+              <% if @user.id == current_user.id %>
+                <h1 class="follow-count">あなたがフォロー中のユーザー：<span><%= @user.following_user.count %>人</span></h1>
+              <% else %>
+                <h1 class="follow-count"><%= @user.name %>さんがフォロー中のユーザー：<span><%= @user.following_user.count %>人</span></h1>
+              <% end %>
+            </div>
+            <% @following_users.each do |user| %>
+              <div class="info-area">
+                <% if user.id == current_user.id %>
+                  <%= link_to image_tag(avatar_url(user), class: "action-user-icon", alt: "ユーザーアイコン"), users_show_path %>
+                  <strong class="info-element"><%= link_to "あなた(#{user.introduction})", users_show_path, class: "action-user-name" %></strong>
                 <% else %>
-                  <h1 class="result-count"><%= @user.name %>さんがフォロー中のユーザー：<span><%= @following_users.count %>人</span></h1>
-                <% end %>
-              </div>
-              <div class="hit-user-content">
-                <% @following_users.each do |user| %>
-                  <div class="hit-user-area">
-                  <% if user.id == current_user.id %>
-                    <figure class="hit-icon"><%= link_to image_tag(avatar_url(user), class: "hit-user-icon", alt: "ユーザーアイコン"), users_show_path %></figure>
-                    <p class="hit-user-intro"><%= link_to "あなた(#{current_user.introduction})", users_show_path %></p>
-                  <% else %>
-                    <figure class="hit-icon"><%= link_to image_tag(avatar_url(user), class: "hit-user-icon", alt: "ユーザーアイコン"), users_profile_path(name: user.name) %></figure>
-                    <p class="hit-user-intro"><%= link_to "#{user.name}(#{user.introduction})", users_profile_path(name: user.name) %></p>
-                  <% end %>
-                  </div>
-                <% end %>
-              </div>
-            <% else %>
-              <div class="not-found">
-                <% if @user.id == current_user.id %>
-                  <p>あなたがフォローしたユーザーはまだいません。</p>
-                <% else %>
-                  <p><%= @user.name %>さんがフォローしたユーザーはまだいません。</p>
+                  <%= link_to image_tag(avatar_url(user), class: "action-user-icon", alt: "ユーザーアイコン"), users_profile_path(name: user.name) %>
+                  <strong class="info-element"><%= link_to "#{user.name}さん(#{user.introduction})", users_profile_path(name: user.name), class: "action-user-name" %></strong>
                 <% end %>
               </div>
             <% end %>
-          </div>
+          <% else %>
+            <% if @user.id == current_user.id %>
+              <h2 class="action-count-zero">あなたがフォローしたユーザーはまだいません。</h2>
+            <% else %>
+              <h2 class="action-count-zero"><%= @user.name %>さんがフォローしたユーザーはまだいません。</h2>
+            <% end %>
+          <% end %>
         </div>
       </div>
     </div>
