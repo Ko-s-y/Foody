@@ -27,7 +27,7 @@ Rails.application.routes.draw do
     post 'users/guest_sign_in', to: 'users/sessions#new_guest' # ゲストユーザー機能
   end
 
-  resources :users, only: [] do
+  resources :users, only: [] do # userのroutesはid => nameにしたい為ここでは生成しない
     resource :follows, only: [:create, :destroy]
   end
 
