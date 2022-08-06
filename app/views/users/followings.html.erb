@@ -1,7 +1,7 @@
 <% provide(:title, "フォロー中リスト") %>
 <div class="ope-btn-area">
   <h2 class="appear-link current_page">フォロー中</h2>
-  <h2 class="appear-link">フォロワー</h2>
+  <%= link_to "フォロワー", users_followers_path(name: @user.name), class: "appear-link" %>
 </div>
 <section class="follow-user-list hero is-light is-halfheight">
   <div class="columns is-centered">
