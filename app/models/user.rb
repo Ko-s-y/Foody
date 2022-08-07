@@ -75,7 +75,7 @@ class User < ApplicationRecord
 
   # follow　=> notification
   def create_notification_follow!(current_user)
-    follow_record = Notification.where(["visitor_id = ? and visited_id = ? and action = ? ",current_user.id, id, 'follow'])
+    follow_record = Notification.where(["visitor_id = ? and visited_id = ? and action = ? ", current_user.id, id, 'follow'])
     if follow_record.blank?
       notification = current_user.active_notifications.new(
         visited_id: id,
