@@ -42,3 +42,47 @@ $(function() {
     $(".form-str-counter").text( "残り" + restStrCount + "文字");
   });
 });
+
+// comment投稿フォーム表示/非表示関数
+$(function() {
+  $(document).on('click', '.form-appear', function() {
+    $('.comment-form').css({
+      'display': 'block'
+    });
+    $('.navbar').css({
+      'z-index': '0'
+    });
+  });
+});
+$(function() {
+  $(document).on('click', '.form-disappear', function() {
+    $('.comment-form').css({
+      'display': 'none'
+    });
+    $('.navbar').css({
+      'z-index': '1'
+    });
+  });
+});
+
+// post投稿フォーム表示/非表示関数
+$(function() {
+  $(document).on('click', '.post-form-appear', function() {
+    $('.post-form').css({
+      'display': 'block'
+    });
+    $('.navbar').css({
+      'z-index': '0'
+    });
+  });
+});
+$(function() {
+  $(document).on('click', '.post-form-disappear', function() {
+    $('.post-form').css({
+      'display': 'none'
+    });
+    $('.navbar').css({
+      'z-index': '1'
+    });
+  });
+});

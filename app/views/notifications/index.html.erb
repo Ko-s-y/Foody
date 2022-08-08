@@ -17,6 +17,8 @@
                 <% elsif notification.action == "remember" %>
                   <strong class="info-element"><%= link_to 'あなたの投稿', notification.post %></strong>
                   <span>にrememberしました</span>
+                <% elsif notification.action == "follow" %>
+                  <span>あなたをフォローしました</span>
                 <% elsif notification.action == "comment" %>
                   <% if notification.post.user_id == visited.id %>
                     <strong class="info-element"><%= link_to "あなたの投稿", notification.post %></strong>
