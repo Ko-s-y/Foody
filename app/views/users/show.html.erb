@@ -32,15 +32,23 @@
               <div class="field">
                 <span class="user-element">調理ジャンル: <%= current_user.introduction %></span>
               </div>
+              <div class="field user-element">
+                <%= link_to users_followings_path(name: current_user.name) do %>
+                  <span class="my-follow-count">フォロー中：<%= current_user.following_user.count %></span>
+                <% end %>&nbsp;&nbsp;
+                <%= link_to users_followers_path(name: current_user.name) do %>
+                  <span class="my-follow-count">フォロワー：<%= current_user.follower_user.count %></span>
+                <% end %>
+              </div>
               <div class="field">
                 <span class="user-element appear-user-data">アクティビティの確認</span>
                 <div class="user-data">
-                  <span class="user-element">投稿件数: <%= @posts.count %>件</span>
-                  <span class="user-element">コメントした回数: <%= current_user.comments.count %>回</span>
-                  <span class="user-element"><i class="fa fa-star" style="color: #209cee;"></i>を押した投稿件数: <%= current_user.liked_posts.count %>件</span>
-                  <span class="user-element"><i class="fa fa-book" style="color: green;"></i>を押した投稿件数: <%= current_user.checked_remember_posts.count %>件</span>
-                  <span class="user-element"><i class="fa fa-star" style="color: #209cee;"></i>をもらった回数: <%= @received_like %>回</span>
-                  <span class="user-element"><i class="fa fa-book" style="color: green;"></i>をもらった回数: <%= @received_remember %>回</span>
+                  <span class="user-element">投稿件数：<%= @posts.count %>件</span>
+                  <span class="user-element">コメントした回数：<%= current_user.comments.count %>回</span>
+                  <span class="user-element"><i class="fa fa-star" style="color: #209cee;"></i>を押した投稿件数：<%= current_user.liked_posts.count %>件</span>
+                  <span class="user-element"><i class="fa fa-book" style="color: green;"></i>を押した投稿件数：<%= current_user.checked_remember_posts.count %>件</span>
+                  <span class="user-element"><i class="fa fa-star" style="color: #209cee;"></i>をもらった回数：<%= @received_like %>回</span>
+                  <span class="user-element"><i class="fa fa-book" style="color: green;"></i>をもらった回数：<%= @received_remember %>回</span>
                 </div>
               </div>
               <% if current_user.email != "guest@sample.com" %>

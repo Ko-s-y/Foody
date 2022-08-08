@@ -6,6 +6,7 @@ ja:
       contact: 'お問い合わせ'
       notification: '通知'
       comment: 'コメント'
+      follow: 'フォロー'
     attributes:
       user:
         name: 'アカウント名'
@@ -18,6 +19,9 @@ ja:
       contact:
         name: 'お問合わせ件名'
         content: 'お問い合わせ内容'
+      follow:
+        followed: 'フォローされたユーザー'
+        follower: 'フォローしたユーザー'
     errors:
       models:
         post:
