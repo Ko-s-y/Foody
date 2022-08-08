@@ -161,6 +161,12 @@
     letter-spacing: 0.12em;
   }
 
+  // user
+  .user-image {
+    width:  150px !important;
+    height: 150px !important;
+  }
+
   // post
   .post-pict img {
     height: 500px !important;
@@ -381,12 +387,17 @@
   }
 
   // user
+  .user-image {
+    width:  120px !important;
+    height: 120px !important;
+  }
+
   .follow-count {
     font-size: 15px !important;
   }
 
-  .my-follow-count {
-    font-size: 17px !important;
+  .action-count-zero {
+    font-size: 15px !important;
   }
 
   // result
