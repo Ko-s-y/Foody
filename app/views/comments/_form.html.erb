@@ -23,7 +23,7 @@
                     <% else %>
                       <img class="not-have-post-image">
                     <% end %>
-                    <%= f.label :avatar ,"画像ファイルを選択", class: "image-input-btn" %>
+                    <%= f.label :avatar ,"画像ファイルを選択", class: "image-input-btn button is-primary" %>
                     <div class="control">
                       <%= f.file_field :avatar, class: "image-form", accept: 'image/jpeg,image/gif,image/png' %>
                     </div>
@@ -31,9 +31,9 @@
                   </div>
                   <div class="field">
                     <%= f.hidden_field :post_id, value: post.id %>
-                    <%= f.submit "コメントする", class: "button is-link is-fullwidth m-b-10" %>
+                    <%= f.submit "コメントする", class: "button is-info is-fullwidth" %>
                   </div>
-                  <a class="form-disappear button is-danger is-fullwidth m-b-10">コメントをやめる</a>
+                  <a class="form-disappear button is-light ope-btn">コメントをやめる</a>
                 <% end %>
               </div>
             </div>

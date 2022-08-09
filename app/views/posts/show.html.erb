@@ -17,7 +17,7 @@
             <div class="post-menu">
               <div class="sp-edit-delete-area">
                 <p><%= link_to "投稿の編集", edit_post_path, class: "sp-post-edit-btn" %></p>
-                <p><%= link_to "投稿の削除", @post, method: :delete, data: {confirm: "本当に投稿を削除しますか？"} %></p>
+                <p><%= link_to "投稿の削除", @post, method: :delete, data: {confirm: "この投稿を削除しますか？"} %></p>
               </div>
             </div>
           <% end %>
