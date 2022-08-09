@@ -35,6 +35,7 @@ ja:
         password: 'パスワード'
         password_confirmation: '確認用パスワード'
         remember_me: '次回から自動的にログイン'
+        agreement_terms: '利用規約'
       admin_user:
         current_password: '現在のパスワード'
         email: 'メールアドレス'
