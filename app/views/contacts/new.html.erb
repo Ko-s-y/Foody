@@ -45,7 +45,7 @@
                   <%= f.submit "入力内容を確認", class: "button is-link is-fullwidth" %>
                 </div>
                 <div class="field">
-                  <%= link_to "タイムラインへ", posts_path, class: "button is-light ope-btn" %>
+                  <%= link_to "戻る", "javascript:history.back()", class: "button is-light ope-btn" %>
                 </div>
                 <div class="field">
                   <%= link_to "お問合せ履歴", contacts_path(current_user.name), class: "button" %>
