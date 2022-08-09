@@ -77,6 +77,16 @@ $(function() {
   });
 });
 $(function() {
+  $(document).on('click', '.sp-tab-open-icon', function() {
+    $('.post-form').css({
+      'display': 'block'
+    });
+    $('.navbar').css({
+      'z-index': '0'
+    });
+  });
+});
+$(function() {
   $(document).on('click', '.post-form-disappear', function() {
     $('.post-form').css({
       'display': 'none'
