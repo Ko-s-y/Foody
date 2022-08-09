@@ -55,6 +55,16 @@ $(function() {
   });
 });
 $(function() {
+  $(document).on('click', '.sp-tab-open-icon', function() {
+    $('.comment-form').css({
+      'display': 'block'
+    });
+    $('.navbar').css({
+      'z-index': '0'
+    });
+  });
+});
+$(function() {
   $(document).on('click', '.form-disappear', function() {
     $('.comment-form').css({
       'display': 'none'

@@ -64,4 +64,7 @@
 </div>
 <%= render "comments/form", { post: @post, comment: @comment } %>
 <%= render "comments/tree", { post: @post, comments: @comments } %>
+<div class="sp-tab-open-form-area">
+  <div class="sp-tab-open-icon"><i class="fa fa-comments"></i></div>
+</div>
 <%= javascript_pack_tag 'post/common' %>
