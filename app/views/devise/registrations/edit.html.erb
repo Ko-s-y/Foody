@@ -98,9 +98,14 @@
                 <div class="field">
                   <%= f.submit "更新する", class: "button is-link is-fullwidth m-t-10 m-b-10" %>
                 </div>
+                <div class="field">
+                  <%= link_to "戻る", :back, class: "button is-light ope-btn" %>
+                </div>
+                <div class="field">
+                  <p class="help is-danger">*削除すると全てのデータが失われます。ご注意ください。</p>
+                  <%= button_to "アカウントの削除", registration_path(resource_name), data: { confirm: "本当にこのアカウントを削除しますか？" }, method: :delete, class: "button is-danger is-fullwidth m-t-10 m-b-10" %>
+                </div>
               <% end %>
-              <%= link_to "戻る", :back, class: "back-btn" %>
-              <%= button_to "アカウントの削除", registration_path(resource_name), data: { confirm: "本当に削除しますか？" }, method: :delete, class: "button is-danger is-fullwidth m-t-10 m-b-10" %>
             </div>
           </div>
         </div>
