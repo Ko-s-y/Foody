@@ -39,6 +39,7 @@
               <div class="field">
                 <span class="user-element appear-user-data">アクティビティの確認</span>
                 <div class="user-data">
+                  <span class="user-element"><%= current_user.created_at.strftime('%Y年%m月%d日') %>から利用中</span>
                   <span class="user-element">投稿件数：<%= @posts.count %>件</span>
                   <span class="user-element">コメントした回数：<%= current_user.comments.count %>回</span>
                   <span class="user-element">いいねした投稿：<%= current_user.liked_posts.count %>件</span>
