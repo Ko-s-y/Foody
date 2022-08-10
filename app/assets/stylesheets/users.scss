@@ -148,3 +148,34 @@ a.appear-link {
   border-bottom: 1px solid black;
   cursor: pointer;
 }
+
+.terms-of-service {
+  display: none;
+}
+
+.terms-form > .paragraph {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.terms-form p {
+  padding: 0 30px;
+}
+
+.nest-term  {
+  margin-left: 15px;
+}
+
+.double-nest-term {
+  margin-left: 30px;
+}
+
+.paragraph-first {
+  font-size: 25px !important;
+  border-bottom: 2px solid black;
+  width: 101px;
+}
+
+.paragraph-last {
+  float: right;
+}

@@ -127,3 +127,25 @@ $(function() {
     }
   });
 });
+
+// 利用規約フォーム表示/非表示関数
+$(function() {
+  $(document).on('click', '.open-terms-of-service', function() {
+    $('.registration-form').css({
+      'display': 'none'
+    });
+    $('.terms-of-service').css({
+      'display': 'block'
+    });
+  });
+});
+$(function() {
+  $(document).on('click', '.close-terms-of-service', function() {
+    $('.terms-of-service').css({
+      'display': 'none'
+    });
+    $('.registration-form').css({
+      'display': 'block'
+    });
+  });
+});
