@@ -20,7 +20,7 @@
                 <%= f.hidden_field :content, value: @contact.content %>
                 <%= f.hidden_field :user_id, value: current_user.id %>
                 <div class="field">
-                  <%= f.submit "この内容で送信する", class: "button is-link is-fullwidth" %>
+                  <%= f.submit "この内容で送信する", class: "button is-info is-fullwidth" %>
                 </div>
                 <div class="field">
                   <%= link_to "戻る", "javascript:history.back()", class: "button is-light ope-btn" %>
