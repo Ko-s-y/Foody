@@ -46,6 +46,7 @@
               <%= link_to "お問合せ", new_contact_path(user_id: current_user.id), class: "navbar-item nav-element" %>
               <%= link_to "ホーム", home_path, class: "navbar-item nav-element", data: {"turbolinks" => false} %>
               <%= link_to "Foody!とは", about_path, class: "navbar-item nav-element" %>
+              <%= link_to "利用規約", terms_path, class: "navbar-item nav-element" %>
               <hr class="navbar-divider">
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "navbar-item nav-element" %>
             </div>
