@@ -92,10 +92,11 @@
                   </div>
                 </div>
                 <div class="field">
+                  <%= f.label :利用規約, class: "label" %>
                   <%= render "shared/terms" %>
                   <%= f.check_box :agreement_terms, as: :boolean %>
                   <span>利用規約に同意する</span>
-                  <p class="help is-danger">*同意いただけない場合登録できません</p>
+                  <p class="help is-danger">*同意いただけない場合、当サイトはご利用いただけません</p>
                 </div>
                 <div class="field">
                   <%= f.submit "登録する", class: "button is-info is-fullwidth" %>
@@ -109,4 +110,3 @@
     </div>
   </div>
 </section>
-<%= render "shared/terms" %>
