@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   # admin
-  mount RailsAdmin::Engine => '/admin_user/operation', as: 'rails_admin'
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   devise_for :admin_users,
     controllers: {

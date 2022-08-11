@@ -4,9 +4,11 @@ class AdminUsers::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
-  # def new
-  #   super
-  # end
+  def new
+    if current_user.email == ENV["FOODY_ADMIN_ADDRESS"] || ENV["USER_ADDRESS"]
+      super
+    end
+  end
 
   # POST /resource/sign_in
   # def create
