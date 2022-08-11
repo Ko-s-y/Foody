@@ -144,6 +144,10 @@ a.appear-link {
   background-color: whitesmoke;
 }
 
+.term-text-area {
+  width: 100%;
+}
+
 .open-terms-of-service {
   border-bottom: 1px solid black;
   cursor: pointer;
@@ -173,7 +177,7 @@ a.appear-link {
 .paragraph-first {
   font-size: 25px !important;
   border-bottom: 2px solid black;
-  width: 101px;
+  width: 100px;
 }
 
 .paragraph-last {
