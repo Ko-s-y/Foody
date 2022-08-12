@@ -1,4 +1,4 @@
-<% provide(:title, "パスワードリセット") %>
+<% provide(:title, "パスワード変更") %>
 <section class="registration-form hero is-dark is-fullheight">
   <div class="hero-body">
     <div class="container">
@@ -22,7 +22,7 @@
                   <p class="help is-danger">*ご登録中のメールアドレスをご入力下さい</p>
                 </div>
                 <div class="field">
-                  <%= f.submit "パスワードリセットメールを送信する", class: "button is-info is-fullwidth" %>
+                  <%= f.submit "パスワード変更メールを送信", class: "button is-info is-fullwidth" %>
                 </div>
               <% end %>
               <%= render "devise/shared/links" %>
