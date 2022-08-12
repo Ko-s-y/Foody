@@ -9,6 +9,7 @@ class AdminUsers::SessionsController < Devise::SessionsController
       redirect_to home_path
       flash[:alert] = "権限がありません"
     elsif current_user.email == ENV["FOODY_ADMIN_ADDRESS"]
+      flash[:alert] = "管理人としてこちらよりログインしてください"
       super
     elsif current_user.email != ENV["FOODY_ADMIN_ADDRESS"]
       redirect_to posts_path
