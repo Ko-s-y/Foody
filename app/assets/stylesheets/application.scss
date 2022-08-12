@@ -321,7 +321,7 @@ footer {
 .menu-list {
   display: flex;
   text-align: center;
-  height: 50px;
+  height: 40px;
 }
 
 .menu-item {
@@ -331,7 +331,7 @@ footer {
 
 .menu-item a {
   height: 50px;
-  padding-top: 12px;
+  padding-top: 10px;
 }
 
 .icon-border {
@@ -343,19 +343,10 @@ footer {
   border-right: 1px solid rgb(215, 211, 211);
 }
 
-.footer-icon {
-  font-size: 24px;
-}
-
-.bell-icon {
-  font-size: 24px;
-  position: relative;
-  left: 10px;
-}
-
 .new-notice-sign {
   color: orange;
+  font-size: 12px;
   position: relative;
-  top: -10px;
-  left: -3px;
+  top: -8px;
+  left: -10px;
 }

@@ -161,7 +161,25 @@
     letter-spacing: 0.12em;
   }
 
+  // user
+  .user-image {
+    width:  150px !important;
+    height: 150px !important;
+  }
+
   // post
+  .appear-btn-area {
+    display: none;
+  }
+
+  .post-form-appear {
+    display: none;
+  }
+
+  .sp-tab-open-form-area {
+    display: block;
+  }
+
   .post-pict img {
     height: 500px !important;
   }
@@ -226,7 +244,7 @@
 
   // footer
   footer {
-    margin-bottom: 50px !important;
+    margin-bottom: 40px !important;
   }
 
   // footer_menu
@@ -303,6 +321,17 @@
   }
 
   // post
+  .sp-tab-open-form-area {
+    width: 55px;
+    height: 55px;
+    right: 15px;
+    bottom: 60px;
+  }
+
+  .sp-tab-open-icon {
+    font-size: 20px;
+  }
+
   .posted-user-icon {
     width: 50px !important;
     height: 50px !important;
@@ -326,12 +355,12 @@
   }
 
   .current-post-image {
-    height: 220px;
+    height: 180px;
     width: auto;
   }
 
   .not-have-post-image {
-    height: 220px;
+    height: 180px;
     width: auto;
   }
 
@@ -381,12 +410,22 @@
   }
 
   // user
+  .user-image {
+    width:  120px !important;
+    height: 120px !important;
+  }
+
   .follow-count {
     font-size: 15px !important;
   }
 
-  .my-follow-count {
-    font-size: 17px !important;
+  .action-count-zero {
+    font-size: 15px !important;
+  }
+
+  .my-posts {
+    font-size: 20px !important;
+    padding-top: 10px !important;
   }
 
   // result

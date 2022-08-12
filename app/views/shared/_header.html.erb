@@ -46,6 +46,7 @@
               <%= link_to "お問合せ", new_contact_path(user_id: current_user.id), class: "navbar-item nav-element" %>
               <%= link_to "ホーム", home_path, class: "navbar-item nav-element", data: {"turbolinks" => false} %>
               <%= link_to "Foody!とは", about_path, class: "navbar-item nav-element" %>
+              <%= link_to "利用規約", terms_path, class: "navbar-item nav-element" %>
               <hr class="navbar-divider">
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "navbar-item nav-element" %>
             </div>
@@ -54,9 +55,9 @@
         <% else %>
           <div class="navbar-item attend">
             <div class="buttons">
-              <%= link_to "ログイン", new_user_session_path, class: "button is-primary" %>
-              <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "button is-danger" %>
-              <%= link_to "登録する", new_user_registration_path, class: "button is-white" %>
+              <%= link_to "登録する", new_user_registration_path, class: "button is-primary" %>
+              <%= link_to "ログイン", new_user_session_path, class: "button is-info" %>
+              <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "button is-light" %>
             </div>
           </div>
         <% end %>
