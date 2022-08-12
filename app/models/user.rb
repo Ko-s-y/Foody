@@ -32,7 +32,7 @@ class User < ApplicationRecord
   end
 
   validates :introduction, presence: true, length: { maximum: 10 }
-  validates :agreement_terms, allow_nil: false, acceptance: true, on: :create
+  # validates :agreement_terms, allow_nil: false, acceptance: true, on: :create
 
   def already_commented?(post)
     comments.exists?(post_id: post.id)
