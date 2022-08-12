@@ -1,5 +1,5 @@
 <% provide(:title, "アカウント作成") %>
-<section class="hero is-dark is-fullheight">
+<section class="registration-form hero is-dark is-fullheight">
   <div class="hero-body">
     <div class="container">
       <div class="columns is-centered">
@@ -67,7 +67,7 @@
                 <div class="field">
                   <%= f.label :パスワード, class: "label" %>
                   <div class="control has-icons-left has-icons-right">
-                    <%= f.password_field :password, autocomplete: "new-password", class: "input is-info", placeholder: "(必須)" %>
+                  <%= f.password_field :password, autocomplete: "new-password", class: "input is-info", placeholder: "(必須)" %>
                     <span class="icon is-small is-left">
                       <i class="fas fa-lock"></i>
                     </span>
@@ -92,15 +92,14 @@
                   </div>
                 </div>
                 <div class="field">
-                  <div class="control">
-                    <label class="checkbox">
-                      <input type="checkbox">
-                      <a href="#">利用規約</a>に同意します
-                    </label>
-                  </div>
+                  <%= f.label :利用規約, class: "label" %>
+                  <%= render "shared/terms" %>
+                  <%= f.check_box :agreement_terms, as: :boolean %>
+                  <span>利用規約に同意する</span>
+                  <p class="help is-danger">*同意いただけない場合、当サイトはご利用いただけません</p>
                 </div>
                 <div class="field">
-                  <%= f.submit "登録する", class: "button is-link is-fullwidth m-t-10 m-b-10" %>
+                  <%= f.submit "登録する", class: "button is-info is-fullwidth" %>
                 </div>
               <% end %>
               <%= render "devise/shared/links" %>

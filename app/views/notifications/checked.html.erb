@@ -13,10 +13,10 @@
                 <span>さんが</span>
                 <% if notification.action == "like" %>
                   <strong class="info-element"><%= link_to 'あなたの投稿', notification.post %></strong>
-                  <span>にlikeしました</span>
+                  <span>にいいねしました</span>
                 <% elsif notification.action == "remember" %>
                   <strong class="info-element"><%= link_to 'あなたの投稿', notification.post %></strong>
-                  <span>にrememberしました</span>
+                  <span>をブックマークしました</span>
                 <% elsif notification.action == "follow" %>
                   <span>あなたをフォローしました</span>
                 <% elsif notification.action == "comment" %>

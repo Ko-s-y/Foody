@@ -4,9 +4,21 @@ class AdminUsers::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
-  # def new
-  #   super
-  # end
+  def new
+    if current_user == nil
+      redirect_to home_path
+      flash[:alert] = "権限がありません"
+    elsif current_user.email == ENV["FOODY_ADMIN_ADDRESS"]
+      flash[:alert] = "管理人としてこちらよりログインしてください"
+      super
+    elsif current_user.email != ENV["FOODY_ADMIN_ADDRESS"]
+      redirect_to posts_path
+      flash[:alert] = "権限がありません"
+    else
+      redirect_to home_path
+      flash[:alert] = "権限がありません"
+    end
+  end
 
   # POST /resource/sign_in
   # def create

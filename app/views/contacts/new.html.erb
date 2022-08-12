@@ -42,10 +42,10 @@
                 </div>
                 <%= f.hidden_field :user_id, value: current_user.id %>
                 <div class="field">
-                  <%= f.submit "入力内容を確認", class: "button is-link is-fullwidth m-t-10 m-b-10" %>
+                  <%= f.submit "入力内容を確認", class: "button is-info is-fullwidth" %>
                 </div>
                 <div class="field">
-                  <%= link_to "タイムラインへ", posts_path, class: "button is-danger ope-btn" %>
+                  <%= link_to "戻る", "javascript:history.back()", class: "button is-light ope-btn" %>
                 </div>
                 <div class="field">
                   <%= link_to "お問合せ履歴", contacts_path(current_user.name), class: "button" %>

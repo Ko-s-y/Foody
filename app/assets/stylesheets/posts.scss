@@ -443,3 +443,26 @@
   display: block;
   padding: 5px 0;
 }
+
+.sp-tab-open-form-area {
+  display: none;
+  cursor: pointer;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 80px;
+  right: 50px;
+  background-color:rgb(60, 60, 60);
+  text-align: center;
+}
+
+.sp-tab-open-icon {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 25px;
+  color: white;
+}

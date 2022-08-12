@@ -5,10 +5,6 @@
       <div class="columns is-centered">
         <div class="column is-12-mobile is-10-tablet is-11-desktop is-10-widescreen is-10-fullhd">
           <div class="box">
-            <div class="field has-text-centered">
-              <strong>アカウント情報</strong>
-            </div>
-            <div class="box">
               <div class="field">
                 <div class="user-icon-field">
                   <% if current_user.image? %>
@@ -43,19 +39,20 @@
               <div class="field">
                 <span class="user-element appear-user-data">アクティビティの確認</span>
                 <div class="user-data">
+                  <span class="user-element"><%= current_user.created_at.strftime('%Y年%m月%d日') %>から利用中</span>
                   <span class="user-element">投稿件数：<%= @posts.count %>件</span>
                   <span class="user-element">コメントした回数：<%= current_user.comments.count %>回</span>
-                  <span class="user-element"><i class="fa fa-star" style="color: #209cee;"></i>を押した投稿件数：<%= current_user.liked_posts.count %>件</span>
-                  <span class="user-element"><i class="fa fa-book" style="color: green;"></i>を押した投稿件数：<%= current_user.checked_remember_posts.count %>件</span>
-                  <span class="user-element"><i class="fa fa-star" style="color: #209cee;"></i>をもらった回数：<%= @received_like %>回</span>
-                  <span class="user-element"><i class="fa fa-book" style="color: green;"></i>をもらった回数：<%= @received_remember %>回</span>
+                  <span class="user-element">いいねした投稿：<%= current_user.liked_posts.count %>件</span>
+                  <span class="user-element">いいねされた回数：<%= @received_like %>回</span>
+                  <span class="user-element">ブックマークした投稿：<%= current_user.checked_remember_posts.count %>件</span>
+                  <span class="user-element">ブックマークされた回数：<%= @received_remember %>回</span>
                 </div>
               </div>
               <% if current_user.email != "guest@sample.com" %>
                 <div class="field">
                   <%= link_to edit_user_registration_path do %>
                     <i class="far fa-sun"></i>
-                    <span class="link-btn">setting</span>
+                    <span class="link-btn">設定</span>
                   <% end %>
                 </div>
               <% end %>
@@ -67,8 +64,8 @@
   </div>
 </section>
 <section class="appear-section-links">
-  <span class="appear-remember-section appear-link" style="background-color: whitesmoke;"><i class="fa fa-book" style="color: green;"></i></span>
-  <span class="appear-posted-section appear-link">投稿一覧</span>
+  <span class="appear-remember-section appear-link my-posts" style="background-color: whitesmoke;">ブックマーク一覧</span>
+  <span class="appear-posted-section appear-link my-posts">投稿一覧</span>
 </section>
 <section class="remember-posts-section">
   <div class="posts-container">

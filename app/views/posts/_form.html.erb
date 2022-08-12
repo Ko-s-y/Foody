@@ -32,16 +32,16 @@
                     <% else %>
                       <img class="not-have-post-image">
                     <% end %>
-                    <%= f.label :avatar ,"画像ファイルを選択", class: "image-input-btn" %>
+                    <%= f.label :avatar ,"画像ファイルを選択", class: "image-input-btn button is-primary" %>
                     <div class="control">
                       <%= f.file_field :avatar, class: "image-form", accept: 'image/jpeg,image/gif,image/png' %>
                     </div>
                     <p class="help is-info state">*画像ファイルの選択は任意です</p>
                   </div>
                   <div class="field">
-                    <%= f.submit "投稿する", class: "button is-link is-fullwidth m-b-10" %>
+                    <%= f.submit "投稿する", class: "button is-info is-fullwidth" %>
                   </div>
-                  <a class="post-form-disappear button is-danger is-fullwidth">投稿をやめる</a>
+                  <a class="post-form-disappear button is-light ope-btn">投稿をやめる</a>
                 <% end %>
               </div>
             </div>
