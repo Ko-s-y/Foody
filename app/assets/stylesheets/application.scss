@@ -360,6 +360,11 @@ footer {
   width: 95%;
 }
 
+#user_current_password {
+  display: inline-block !important;
+  width: 95%;
+}
+
 #pass-display {
   float: right;
   padding-top: 5px;
@@ -368,6 +373,13 @@ footer {
 }
 
 #confirm-display {
+  float: right;
+  padding-top: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+#current-display {
   float: right;
   padding-top: 5px;
   padding-right: 5px;

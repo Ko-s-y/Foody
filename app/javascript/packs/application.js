@@ -157,3 +157,18 @@ window.addEventListener('DOMContentLoaded', function(){
     }
   });
 });
+
+// current_passwordの表示/非表示関数
+window.addEventListener('DOMContentLoaded', function(){
+  let current_display = document.getElementById("current-display");
+  let current_pass = document.getElementById("user_current_password");
+  current_display.addEventListener("click", function() {
+    if( current_pass.type === 'password' ) {
+      current_pass.type = 'text';
+      current_display.innerHTML = '<i class="far fa-eye-slash"></i>';
+    } else {
+      current_pass.type = 'password';
+      current_display.innerHTML = '<i class="far fa-eye"></i>';
+    }
+  });
+});

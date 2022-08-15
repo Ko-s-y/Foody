@@ -71,11 +71,9 @@
                   <%= f.label :新しいパスワード, class: "label" %>
                   <div class="control has-icons-left has-icons-right">
                     <%= f.password_field :password, autocomplete: "new-password", class: "input is-info", placeholder: "(#{@minimum_password_length}文字以上)" %>
+                    <span id="pass-display"><i class="far fa-eye"></i></span>
                     <span class="icon is-small is-left">
                       <i class="fas fa-lock"></i>
-                    </span>
-                    <span class="icon is-small is-right">
-                      <i class="far fa-eye"></i>
                     </span>
                   </div>
                   <p class="help is-danger">*変更しない場合は空白のままにして下さい</p>
@@ -84,11 +82,9 @@
                   <%= f.label :現在のパスワード, class: "label" %>
                   <div class="control has-icons-left has-icons-right">
                     <%= f.password_field :current_password, autocomplete: "current-password", class: "input is-info", placeholder: "(必須)" %>
+                    <span id="current-display"><i class="far fa-eye"></i></span>
                     <span class="icon is-small is-left">
                       <i class="fas fa-lock"></i>
-                    </span>
-                    <span class="icon is-small is-right">
-                      <i class="far fa-eye"></i>
                     </span>
                     <p class="help is-danger">*変更には現在のパスワードが必要です</p>
                   </div>
