@@ -127,3 +127,19 @@ $(function() {
     }
   });
 });
+
+// password表示/非表示関数
+window.addEventListener('DOMContentLoaded', function(){
+  let pass_display = document.getElementById("pass-display");
+  let user_pass = document.getElementById("user_password");
+
+  pass_display.addEventListener("click", function() {
+    if( user_pass.type === 'password' ) {
+      user_pass.type = 'text';
+      pass_display.textContent = '非表示';
+    } else {
+      user_pass.type = 'password';
+      pass_display.textContent = '表示';
+    }
+  });
+});
