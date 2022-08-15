@@ -24,11 +24,9 @@
                   <%= f.label :パスワード, class: "label" %>
                   <div class="control has-icons-left has-icons-right">
                     <%= f.password_field :password, autocomplete: "current-password", class: "input is-info", placeholder: "(必須)" %>
+                    <span id="pass-display"><i class="far fa-eye"></i></span>
                     <span class="icon is-small is-left">
                       <i class="fas fa-lock"></i>
-                    </span>
-                    <span class="icon is-small is-right">
-                      <i class="far fa-eye"></i>
                     </span>
                   </div>
                   <% if @minimum_password_length %>
