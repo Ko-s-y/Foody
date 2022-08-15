@@ -132,14 +132,28 @@ $(function() {
 window.addEventListener('DOMContentLoaded', function(){
   let pass_display = document.getElementById("pass-display");
   let user_pass = document.getElementById("user_password");
-
   pass_display.addEventListener("click", function() {
     if( user_pass.type === 'password' ) {
       user_pass.type = 'text';
-      pass_display.textContent = '非表示';
+      pass_display.innerHTML = '<i class="far fa-eye-slash"></i>';
     } else {
       user_pass.type = 'password';
-      pass_display.textContent = '表示';
+      pass_display.innerHTML = '<i class="far fa-eye"></i>';
+    }
+  });
+});
+
+// password_confirmの表示/非表示関数
+window.addEventListener('DOMContentLoaded', function(){
+  let confirm_display = document.getElementById("confirm-display");
+  let pass_confirm = document.getElementById("user_password_confirmation");
+  confirm_display.addEventListener("click", function() {
+    if( pass_confirm.type === 'password' ) {
+      pass_confirm.type = 'text';
+      confirm_display.innerHTML = '<i class="far fa-eye-slash"></i>';
+    } else {
+      pass_confirm.type = 'password';
+      confirm_display.innerHTML = '<i class="far fa-eye"></i>';
     }
   });
 });

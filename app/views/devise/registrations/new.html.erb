@@ -67,15 +67,10 @@
                 <div class="field">
                   <%= f.label :パスワード, class: "label" %>
                   <div class="control has-icons-left has-icons-right">
-
-                  <%= f.password_field :password, autocomplete: "new-password", class: "input is-info", placeholder: "(必須)" %>
-                  <span id="pass-display">表示</span>
-
+                    <%= f.password_field :password, autocomplete: "new-password", class: "input is-info", placeholder: "(必須)" %>
+                    <span id="pass-display"><i class="far fa-eye"></i></span>
                     <span class="icon is-small is-left">
                       <i class="fas fa-lock"></i>
-                    </span>
-                    <span class="icon is-small is-right">
-                      <i class="far fa-eye"></i>
                     </span>
                   </div>
                   <% if @minimum_password_length %>
@@ -86,11 +81,9 @@
                   <%= f.label :パスワードの確認, class: "label" %>
                   <div class="control has-icons-left has-icons-right">
                     <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input is-info", placeholder: "(必須)" %>
+                    <span id="confirm-display"><i class="far fa-eye"></i></span>
                     <span class="icon is-small is-left">
                       <i class="fas fa-lock"></i>
-                    </span>
-                    <span class="icon is-small is-right">
-                      <i class="far fa-eye pass-display"></i>
                     </span>
                   </div>
                 </div>
