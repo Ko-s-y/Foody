@@ -129,7 +129,7 @@ $(function() {
 });
 
 // password表示/非表示関数
-window.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('turbolinks:load', () => {
   let pass_display = document.getElementById("pass-display");
   let user_pass = document.getElementById("user_password");
   $(pass_display).on("click", function() {
@@ -144,7 +144,7 @@ window.addEventListener('DOMContentLoaded', function(){
 });
 
 // password_confirmの表示/非表示関数
-window.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('turbolinks:load', () => {
   let confirm_display = document.getElementById("confirm-display");
   let pass_confirm = document.getElementById("user_password_confirmation");
   $(confirm_display).on("click", function() {
@@ -159,7 +159,7 @@ window.addEventListener('DOMContentLoaded', function(){
 });
 
 // current_passwordの表示/非表示関数
-window.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('turbolinks:load', () => {
   let current_display = document.getElementById("current-display");
   let current_pass = document.getElementById("user_current_password");
   $(current_display).on("click", function() {
