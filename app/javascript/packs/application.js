@@ -132,7 +132,7 @@ $(function() {
 window.addEventListener('DOMContentLoaded', function(){
   let pass_display = document.getElementById("pass-display");
   let user_pass = document.getElementById("user_password");
-  pass_display.addEventListener("click", function() {
+  $(pass_display).on("click", function() {
     if( user_pass.type === 'password' ) {
       user_pass.type = 'text';
       pass_display.innerHTML = '<i class="far fa-eye-slash"></i>';
@@ -147,7 +147,7 @@ window.addEventListener('DOMContentLoaded', function(){
 window.addEventListener('DOMContentLoaded', function(){
   let confirm_display = document.getElementById("confirm-display");
   let pass_confirm = document.getElementById("user_password_confirmation");
-  confirm_display.addEventListener("click", function() {
+  $(confirm_display).on("click", function() {
     if( pass_confirm.type === 'password' ) {
       pass_confirm.type = 'text';
       confirm_display.innerHTML = '<i class="far fa-eye-slash"></i>';
@@ -162,7 +162,7 @@ window.addEventListener('DOMContentLoaded', function(){
 window.addEventListener('DOMContentLoaded', function(){
   let current_display = document.getElementById("current-display");
   let current_pass = document.getElementById("user_current_password");
-  current_display.addEventListener("click", function() {
+  $(current_display).on("click", function() {
     if( current_pass.type === 'password' ) {
       current_pass.type = 'text';
       current_display.innerHTML = '<i class="far fa-eye-slash"></i>';
