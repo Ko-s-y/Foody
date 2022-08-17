@@ -163,25 +163,27 @@ document.addEventListener('turbolinks:load', () => {
   let current_display = document.getElementById("current-display");
   let current_pass = document.getElementById("user_current_password");
   $(current_display).on("click", function() {
-    if( current_pass.type === 'password' ) {
-      current_pass.type = 'text';
-      current_display.innerHTML = '<i class="far fa-eye-slash"></i>';
+    if( current_pass.type === "password" ) {
+      current_pass.type = "text";
+      current_display.innerHTML = "<i class='far fa-eye-slash'></i>";
     } else {
-      current_pass.type = 'password';
-      current_display.innerHTML = '<i class="far fa-eye"></i>';
+      current_pass.type = "password";
+      current_display.innerHTML = "<i class='far fa-eye'></i>";
     }
   });
 });
 
 // password状態表示関数
-$(function() {
-  let user_pass = document.getElementById("user_password");
-  let pass_confirm = document.getElementById("user_password_confirmation");
-  let pass_status = document.getElementById("pass-status");
+$(function () {
+  $("#user_password_confirmation").on("keyup", function() {
+    let user_pass = document.getElementById("user_password");
+    let pass_confirm = document.getElementById("user_password_confirmation");
+    let pass_status = document.getElementById("pass-status");
 
-  if (user_pass.innerHTML == pass_confirm.innerHTML) {
-    pass_status.textContent = "○"
-  } else {
-    pass_status.textContent = "パスワードが一致していません"
-  }
+    if (user_pass.value == pass_confirm.value) {
+      pass_status.textContent = "○";
+    } else {
+      pass_status.textContent = "パスワードが一致していません";
+    }
+  });
 });
