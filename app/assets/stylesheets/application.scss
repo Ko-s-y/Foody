@@ -69,9 +69,8 @@ textarea {
 
 .shared-link-btn {
   font-size: 15px;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  display: inline-block;
+  margin-top: 12px;
+  display: block;
 }
 
 .forget-pass-btn {
@@ -349,4 +348,40 @@ footer {
   position: relative;
   top: -8px;
   left: -10px;
+}
+
+#user_password {
+  display: inline-block !important;
+  width: 95%;
+}
+
+#user_password_confirmation {
+  display: inline-block !important;
+  width: 95%;
+}
+
+#user_current_password {
+  display: inline-block !important;
+  width: 95%;
+}
+
+#pass-display {
+  float: right;
+  padding-top: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+#confirm-display {
+  float: right;
+  padding-top: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+#current-display {
+  float: right;
+  padding-top: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
 }
