@@ -182,8 +182,10 @@ $(function () {
 
     if (user_pass.value == pass_confirm.value) {
       pass_status.textContent = "○";
+      pass_status.style.color = "#209cee"
     } else {
       pass_status.textContent = "パスワードが一致していません";
+      pass_status.style.color = "#ff3860"
     }
   });
 });
