@@ -73,9 +73,7 @@
                       <i class="fas fa-lock"></i>
                     </span>
                   </div>
-                  <% if @minimum_password_length %>
-                    <p class="help is-danger">*<%= @minimum_password_length %>文字以上</p>
-                  <% end %>
+                  <p class="help is-danger">*<%= @minimum_password_length %>文字以上</p>
                 </div>
                 <div class="field">
                   <%= f.label :パスワードの確認, class: "label" %>
@@ -86,6 +84,9 @@
                       <i class="fas fa-lock"></i>
                     </span>
                   </div>
+
+                  <p class="help is-danger" id="pass-status"></p>
+
                 </div>
                 <div class="field">
                   <%= f.label :利用規約, class: "label" %>

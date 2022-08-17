@@ -172,3 +172,16 @@ document.addEventListener('turbolinks:load', () => {
     }
   });
 });
+
+// password状態表示関数
+$(function() {
+  let user_pass = document.getElementById("user_password");
+  let pass_confirm = document.getElementById("user_password_confirmation");
+  let pass_status = document.getElementById("pass-status");
+
+  if (user_pass.innerHTML == pass_confirm.innerHTML) {
+    pass_status.textContent = "○"
+  } else {
+    pass_status.textContent = "パスワードが一致していません"
+  }
+});
