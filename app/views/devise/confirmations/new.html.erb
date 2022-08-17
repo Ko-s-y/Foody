@@ -1,16 +1,35 @@
-<h2>Resend confirmation instructions</h2>
-
-<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+<% provide(:title, "本人確認") %>
+<section class="registration-form hero is-dark is-fullheight">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-12-mobile is-10-tablet is-10-desktop is-9-widescreen is-8-fullhd">
+          <div class="box">
+            <div class="field has-text-centered">
+              <strong>本人確認のメールが届いていませんか？</strong>
+            </div>
+            <div class="box">
+              <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+                <%= render "devise/shared/error_messages", resource: resource %>
+                <div class="field">
+                  <%= f.label :メールアドレス, class: "label" %>
+                  <div class="control has-icons-left">
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: "input is-info", placeholder: "(必須)", required: true %>
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-envelope"></i>
+                    </span>
+                  </div>
+                  <p class="help is-danger">*ご登録中のメールアドレスをご入力下さい</p>
+                </div>
+                <div class="field">
+                  <%= f.submit "本人確認メールを再送信", class: "button is-info is-fullwidth" %>
+                </div>
+              <% end %>
+              <%= render "devise/shared/links" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Resend confirmation instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</section>

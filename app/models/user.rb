@@ -21,7 +21,7 @@ class User < ApplicationRecord
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :confirmable
   devise :validatable, password_length: 8..128
 
   with_options presence: true,
@@ -58,7 +58,7 @@ class User < ApplicationRecord
       user.introduction = "イタリア料理"
       user.password = SecureRandom.urlsafe_base64
       user.password_confirmation = user.password
-      # user.confirmed_at = Time.now
+      user.confirmed_at = Time.now
     end
   end
 

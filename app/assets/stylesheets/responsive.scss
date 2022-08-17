@@ -29,6 +29,18 @@
 }
 
 @media (max-width: 1023px) {
+  #user_password {
+    width: 92% !important;
+  }
+
+  #user_password_confirmation {
+    width: 92% !important;
+  }
+
+  #user_current_password {
+    width: 92% !important;
+  }
+
   // header
   .site-title {
     width: 125px !important;
@@ -205,6 +217,18 @@
 }
 
 @media (max-width: 768px) {
+  #user_password {
+    width: 85% !important;
+  }
+
+  #user_password_confirmation {
+    width: 85% !important;
+  }
+
+  #user_current_password {
+    width: 85% !important;
+  }
+
   // header
   .info-notice {
     margin-right: 30px !important;

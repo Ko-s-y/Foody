@@ -127,3 +127,64 @@ $(function() {
     }
   });
 });
+
+// password表示/非表示関数
+document.addEventListener('turbolinks:load', () => {
+  let pass_display = document.getElementById("pass-display");
+  let user_pass = document.getElementById("user_password");
+  $(pass_display).on("click", function() {
+    if( user_pass.type === 'password' ) {
+      user_pass.type = 'text';
+      pass_display.innerHTML = '<i class="far fa-eye-slash"></i>';
+    } else {
+      user_pass.type = 'password';
+      pass_display.innerHTML = '<i class="far fa-eye"></i>';
+    }
+  });
+});
+
+// password_confirmの表示/非表示関数
+document.addEventListener('turbolinks:load', () => {
+  let confirm_display = document.getElementById("confirm-display");
+  let pass_confirm = document.getElementById("user_password_confirmation");
+  $(confirm_display).on("click", function() {
+    if( pass_confirm.type === 'password' ) {
+      pass_confirm.type = 'text';
+      confirm_display.innerHTML = '<i class="far fa-eye-slash"></i>';
+    } else {
+      pass_confirm.type = 'password';
+      confirm_display.innerHTML = '<i class="far fa-eye"></i>';
+    }
+  });
+});
+
+// current_passwordの表示/非表示関数
+document.addEventListener('turbolinks:load', () => {
+  let current_display = document.getElementById("current-display");
+  let current_pass = document.getElementById("user_current_password");
+  $(current_display).on("click", function() {
+    if( current_pass.type === "password" ) {
+      current_pass.type = "text";
+      current_display.innerHTML = "<i class='far fa-eye-slash'></i>";
+    } else {
+      current_pass.type = "password";
+      current_display.innerHTML = "<i class='far fa-eye'></i>";
+    }
+  });
+});
+
+// password状態表示関数
+document.addEventListener('turbolinks:load', () => {
+  $("#user_password_confirmation").on("keyup", function() {
+    let user_pass = document.getElementById("user_password");
+    let pass_confirm = document.getElementById("user_password_confirmation");
+    let pass_status = document.getElementById("pass-status");
+    if (user_pass.value == pass_confirm.value) {
+      pass_status.textContent = "○";
+      pass_status.style.color = "#209cee"
+    } else {
+      pass_status.textContent = "パスワードが一致していません";
+      pass_status.style.color = "#ff3860"
+    }
+  });
+});
