@@ -5,7 +5,7 @@ class AdminUsers::SessionsController < Devise::SessionsController
 
   # GET /resource/sign_in
   def new
-    if current_user == nil
+    if current_user.nil?
       # render file: Rails.root.join('public', '404.html'), layout: false, status: 404
       redirect_to home_path
       flash[:alert] = "権限がありません"
