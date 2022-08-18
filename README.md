@@ -19,6 +19,7 @@ https://vast-brushlands-89395.herokuapp.com/
 ### 実装予定の機能
 * JQuery => Reactへの変更
 * paginationを無限スクロールに
+* デプロイをAWSに
 
 ---
 
@@ -27,13 +28,14 @@ https://vast-brushlands-89395.herokuapp.com/
 ---
 
 ### ER図
-![9250CFF6-FFCD-46FB-B323-460C774832A4](https://user-images.githubusercontent.com/100200496/185197611-d67229ce-422a-4cfe-8d71-f3231f7e3a59.jpeg)
+![783EB435-EBC6-4A6D-8538-581253928DE1](https://user-images.githubusercontent.com/100200496/185433655-21e8bd51-8752-4de8-82ec-f443214aadd7.png)
 
 ---
 
 ### スケジュール
 * クラス図作成 6/15
 * 機能実装 6/16~8/18
+* README 8/19
 
 ---
 
