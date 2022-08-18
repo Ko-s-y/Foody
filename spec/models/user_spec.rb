@@ -6,7 +6,7 @@ RSpec.describe User, type: :model do
   end
 
   describe 'user validation test' do
-    it 'name,email,introduction,passwordが設定されていたらOK' do
+    it 'name,email,introduction,password,agreement_termsが設定されていたらOK' do
       expect(@user.valid?).to eq(true)
     end
 
@@ -27,6 +27,11 @@ RSpec.describe User, type: :model do
 
     it 'passwordが空だとNG' do
       @user.password = ''
+      expect(@user.valid?).to eq(false)
+    end
+
+    it 'agreement_termsがfalseだとNG' do
+      @user.agreement_terms = false
       expect(@user.valid?).to eq(false)
     end
   end

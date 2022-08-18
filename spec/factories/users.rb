@@ -4,5 +4,6 @@ FactoryBot.define do
     sequence(:email) { |n| "test#{n}@example.com" }
     sequence(:password) { |n| "test#{n}pass" }
     sequence(:introduction) { |n| "test#{n}" }
+    agreement_terms { true }
   end
 end
