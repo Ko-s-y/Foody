@@ -35,6 +35,10 @@ Foody!ユーザーは肩書きなどを撤廃したフラットな環境を目�
 ##### - 私自身の思い
 https://vast-brushlands-89395.herokuapp.com/about
 
+##### - こだわったポイント
+実際料理人の方達は使うデバイスはおそらくスマートフォンだと思われます。
+PCとタブレット、スマートフォンでの各デバイスでの操作性を意識しレスポンシブデザインなどを対応しました。
+
 ---
 
 ### レスポンシブ対応済み
@@ -85,6 +89,7 @@ https://vast-brushlands-89395.herokuapp.com/about
 * クラス図作成 6/15
 * 機能実装 6/16~8/18
 * README 8/19
+* テスト追加 8/20~
 
 ---
 
@@ -96,6 +101,7 @@ https://vast-brushlands-89395.herokuapp.com/about
 ##### フロントエンド
 * Bulma
 * JQuery
+* Canva(favicon)
 
 ##### 主要Gem
 * rubocop-airbnb
