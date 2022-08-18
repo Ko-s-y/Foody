@@ -37,6 +37,13 @@ https://vast-brushlands-89395.herokuapp.com/about
 
 ---
 
+### レスポンシブ対応済み
+* MacOS 1024px~2000px
+* Android, FireOS  769px~1023px
+* iOS  380px~768px
+
+---
+
 ### 実装予定の機能
 * JQuery => Reactへの変更
 * 投稿は増えて来たらpaginationを無限スクロールに変更
@@ -61,6 +68,7 @@ https://vast-brushlands-89395.herokuapp.com/about
 * ユーザーに対するフォロー機能(Ajax)
 * ユーザーに対するお知らせ機能
 * 投稿,コメント,ユーザー検索機能
+* エラーページの作成(404,422,500)
 
 ##### 機能補足
 * お知らせ機能は一度コメントをした投稿に対しては以後全てのユーザーのコメントを通知します。
