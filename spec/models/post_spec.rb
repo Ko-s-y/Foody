@@ -8,13 +8,18 @@ RSpec.describe Post, type: :model do
   end
 
   describe 'post validation test' do
-    it 'title,post_content,introduction,password,confirmed_at,agreement_termsが設定されていたら有効' do
+    it 'title,post_content,userが設定されていれば登録出来ること' do
       expect(@post).to be_valid
     end
 
     it 'titleが空の場合は無効な状態であること' do
       @post.title = ''
       expect(@post.valid?).to eq(false)
+    end
+
+    it '20文字以内であれば登録出来ること' do
+      @post = FactoryBot.build(:post, title: 'a' * 20)
+      expect(@post.valid?).to eq(true)
     end
 
     it 'titleが20文字以上の場合は無効な状態であること' do
@@ -26,6 +31,11 @@ RSpec.describe Post, type: :model do
     it 'post_contentが空の場合は無効な状態であること' do
       @post.title = ''
       expect(@post.valid?).to eq(false)
+    end
+
+    it 'post_contentが200以内であれば登録出来ること' do
+      @post = FactoryBot.build(:post, post_content: 'a' * 200)
+      expect(@post.valid?).to eq(true)
     end
 
     it 'post_contentが200文字以上の場合は無効な状態であること' do

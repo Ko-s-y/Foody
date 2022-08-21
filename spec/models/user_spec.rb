@@ -6,7 +6,7 @@ RSpec.describe User, type: :model do
   end
 
   describe 'user validation test' do
-    it 'name,email,introduction,password,confirmed_at,agreement_termsが設定されていたら有効' do
+    it 'name,email,introduction,password,confirmed_at,agreement_termsが設定されていたら登録出来る事' do
       expect(@user.valid?).to eq(true)
     end
 
