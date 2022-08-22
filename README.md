@@ -1,6 +1,8 @@
 # Foody!
 
-![3BEE406B-9EB5-4D01-B6D7-39B714A128AB](https://user-images.githubusercontent.com/100200496/185188262-914d6ddc-172d-4e99-8cf8-a9f06f089069.png)
+<p align="center">
+<img src="https://user-images.githubusercontent.com/100200496/185188262-914d6ddc-172d-4e99-8cf8-a9f06f089069.png">
+</p>
 
 ---
 
