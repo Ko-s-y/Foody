@@ -9,7 +9,7 @@ RSpec.describe Post, type: :model do
 
   describe '投稿機能 Post の登録について' do
     context '登録出来る場合' do
-      it 'title,post_content,userが設定されていれば登録出来る事' do
+      it 'title,post_content,user_idが設定されていれば登録出来る事' do
         expect(@post).to be_valid
       end
 
@@ -18,7 +18,7 @@ RSpec.describe Post, type: :model do
         expect(@post.valid?).to eq(true)
       end
 
-      it 'post_contentが200以内であれば登録出来る事' do
+      it 'post_contentが200文字以内であれば登録出来る事' do
         @post = FactoryBot.build(:post, post_content: 'a' * 200)
         expect(@post.valid?).to eq(true)
       end
