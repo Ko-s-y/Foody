@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Follow, type: :model do
   let(:follow) { FactoryBot.create(:follow) }
 
-  describe 'likeの生成' do
+  describe 'likeの生成について' do
     context '生成できる場合' do
       it '値が揃っていれば保存できる事' do
         expect(follow).to be_valid
@@ -44,6 +44,28 @@ RSpec.describe Follow, type: :model do
       it "follower_idが違うならfollowed_idが同じでも保存できる" do
         follow2 = FactoryBot.build(:follow, follower_id: @user1.follower_id, followed_id: @follow.followed_id)
         expect(follow2).to be_valid
+      end
+    end
+  end
+
+  describe "userモデルとのアソシエーションについて" do
+    let(:association) do
+      described_class.reflect_on_association(user)
+    end
+
+    context "仮想モデルfollowerとのアソシエーション" do
+      let(:user) { :follower }
+
+      it "Followerとの関連付けはbelongs_toであること" do
+        expect(association.macro).to  eq :belongs_to
+      end
+    end
+
+    context "仮想モデルfollowedとのアソシエーション" do
+      let(:user) { :followed }
+
+      it "Followedとの関連付けはbelongs_toであること" do
+        expect(association.macro).to  eq :belongs_to
       end
     end
   end
