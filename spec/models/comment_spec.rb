@@ -22,7 +22,7 @@ RSpec.describe Comment, type: :model do
         expect(@comment.errors.full_messages).to include "Userを入力してください"
       end
 
-      it "post_idが空ではコメント出来ない事" do
+      it 'post_idが空ではコメント出来ない事' do
         @comment.post_id = nil
         @comment.valid?
         expect(@comment.errors.full_messages).to include "Postを入力してください"

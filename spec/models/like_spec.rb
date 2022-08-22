@@ -14,28 +14,28 @@ RSpec.describe Like, type: :model do
         expect(@like).to be_valid
       end
 
-      it "user_idが同じでもpost_idが違えばlike出来る事" do
+      it 'user_idが同じでもpost_idが違えばlike出来る事' do
         another_like = FactoryBot.create(:like)
         expect(FactoryBot.create(:like, post_id: another_like.post_id)).to be_valid
       end
 
-      it "post_idが同じでもuser_idが違えばlike出来る事" do
+      it 'post_idが同じでもuser_idが違えばlike出来る事' do
         another_like = FactoryBot.create(:like)
         expect(FactoryBot.create(:like, user_id: another_like.user_id)).to be_valid
       end
     end
 
     context '登録できない場合' do
-      it "user_idが空ではlikeできない" do
+      it 'user_idが空ではlikeできない' do
         @like.user_id = nil
         @like.valid?
-        expect(@like.errors.full_messages).to include "Userを入力してください"
+        expect(@like.errors.full_messages).to include 'Userを入力してください'
       end
 
-      it "post_idが空ではlikeできない" do
+      it 'post_idが空ではlikeできない' do
         @like.post_id = nil
         @like.valid?
-        expect(@like.errors.full_messages).to include "Postを入力してください"
+        expect(@like.errors.full_messages).to include 'Postを入力してください'
       end
     end
   end

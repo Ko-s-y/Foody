@@ -25,10 +25,10 @@ RSpec.describe Post, type: :model do
     end
 
     context '登録できない場合' do
-      it "user_idが空ではコメント出来ない事" do
+      it 'user_idが空ではコメント出来ない事' do
         @post.user_id = nil
         @post.valid?
-        expect(@post.errors.full_messages).to include "Userを入力してください"
+        expect(@post.errors.full_messages).to include 'Userを入力してください'
       end
 
       it 'titleが空の場合は無効な状態である事' do
