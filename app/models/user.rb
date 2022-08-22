@@ -59,6 +59,7 @@ class User < ApplicationRecord
       user.password = SecureRandom.urlsafe_base64
       user.password_confirmation = user.password
       user.confirmed_at = Time.now
+      user.agreement_terms = true
     end
   end
 

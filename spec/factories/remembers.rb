@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :remember do
-    user { nil }
-    post { nil }
+    association :user
+    association :post
   end
 end

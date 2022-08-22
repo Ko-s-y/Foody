@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :follow do
-    following_id { 1 }
-    follower_id { 1 }
+    followed_id { FactoryBot.create(:user).id }
+    follower_id { FactoryBot.create(:user).id }
   end
 end
