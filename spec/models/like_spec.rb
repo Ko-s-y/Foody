@@ -41,11 +41,11 @@ RSpec.describe Like, type: :model do
   end
 
   describe 'Likeモデルのアソシエーションについて' do
-    it 'Userモデルと1対多となっている事' do
+    it 'Userモデルとの関連付けはbelongs_toである事' do
       expect(Like.reflect_on_association(:user).macro).to eq :belongs_to
     end
 
-    it 'Postモデルと1対多となっている事' do
+    it 'Postモデルとの関連付けはbelongs_toである事' do
       expect(Like.reflect_on_association(:post).macro).to eq :belongs_to
     end
   end

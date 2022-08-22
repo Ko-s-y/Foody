@@ -55,8 +55,8 @@ RSpec.describe Post, type: :model do
     end
   end
 
-  describe 'Postモデルのリレーションについて' do
-    it 'Userモデルと1対多となっている事' do
+  describe 'Postモデルのアソシエーションについて' do
+    it 'Userモデルとの関連付けはbelongs_toである事' do
       expect(Post.reflect_on_association(:user).macro).to eq :belongs_to
     end
   end

@@ -53,19 +53,19 @@ RSpec.describe Follow, type: :model do
       described_class.reflect_on_association(user)
     end
 
-    context "仮想モデルfollowerとのアソシエーション" do
+    context "仮想モデルFollowerとのアソシエーション" do
       let(:user) { :follower }
 
-      it "Followerとの関連付けはbelongs_toであること" do
-        expect(association.macro).to  eq :belongs_to
+      it "Followerモデルとの関連付けはbelongs_toである事" do
+        expect(association.macro).to eq :belongs_to
       end
     end
 
     context "仮想モデルfollowedとのアソシエーション" do
       let(:user) { :followed }
 
-      it "Followedとの関連付けはbelongs_toであること" do
-        expect(association.macro).to  eq :belongs_to
+      it "Followedモデルとの関連付けはbelongs_toである事" do
+        expect(association.macro).to eq :belongs_to
       end
     end
   end
