@@ -5,6 +5,14 @@ RSpec.describe "Users", type: :request do
   let(:user_params) { attributes_for(:user) }
   let(:invalid_user_params) { attributes_for(:user, name: "") }
 
+  describe "#show" do
+    it "リクエストが成功する事" do
+      sign_in(user)
+      get users_show_path(user)
+      expect(response.status).to eq 200
+    end
+  end
+
   describe '#new' do
     it 'リクエストが成功する事' do
       get new_user_registration_path

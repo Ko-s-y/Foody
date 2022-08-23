@@ -50,11 +50,6 @@ RSpec.describe "Contacts", type: :request do
     end
   end
 
-
-
-
-
-
   describe '#create' do
     context '認証済みユーザーの場合' do
       let(:contact_params) { attributes_for(:contact) }

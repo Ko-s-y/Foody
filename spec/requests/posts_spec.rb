@@ -72,10 +72,11 @@ RSpec.describe "Posts", type: :request do
 
     context 'ゲストの場合' do
       let(:post_params) { attributes_for(:post) }
+
       it '投稿できない事' do
         expect do
           post posts_path, params: { post: post_params }
-        end.to_not change(Post, :count)
+        end.not_to change(Post, :count)
       end
 
       it 'リクエストが失敗する事' do
@@ -167,7 +168,7 @@ RSpec.describe "Posts", type: :request do
 
     context 'ゲストの場合' do
       it '投稿を削除できない事' do
-        expect { delete post_path(@post.id) }.to_not change(Post, :count)
+        expect { delete post_path(@post.id) }.not_to change(Post, :count)
       end
 
       it 'リクエストが失敗する事' do
