@@ -114,6 +114,7 @@ UI/UXに関しては実際料理人の方達は使うデバイスはおそらく
 
 ##### フロントエンド
 * Bulma
+* JavaScript
 * JQuery
 * Canva(favicon作成)
 
@@ -128,5 +129,5 @@ UI/UXに関しては実際料理人の方達は使うデバイスはおそらく
 * rspec
 
 ##### インフラ
-* heroku
+* Heroku
 * AWS S3
