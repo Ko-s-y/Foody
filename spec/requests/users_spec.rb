@@ -21,7 +21,7 @@ RSpec.describe "Users", type: :request do
     end
 
     context 'パラメータが不正な場合' do
-      it 'リクエストが成功する事' do
+      it 'リクエスト自体は成功する事' do
         post user_registration_path, params: { user: invalid_user_params }
         expect(response.status).to eq 200
       end
@@ -40,26 +40,31 @@ RSpec.describe "Users", type: :request do
   end
 
   describe '#edit' do
-    subject { get edit_user_registration_path }
-
     context 'ログインしている場合' do
       before do
         sign_in user
       end
 
       it 'リクエストが成功すること' do
-        is_expected.to eq 200
-      end
-
-      it 'responds successfully' do
         get edit_user_registration_path(user.id)
-        expect(response).to be_successful
+        expect(response.status).to eq 200
       end
     end
 
     context 'ゲストの場合' do
-      it 'リダイレクトされること' do
-        is_expected.to redirect_to new_user_session_path
+      it 'リクエストが失敗すること' do
+        get edit_user_registration_path
+        expect(response.status).to eq 302
+      end
+
+      it 'エラーが表示される事' do
+        get edit_user_registration_path(user.id)
+        expect(response.body).to include 'アカウント登録もしくはログインしてください。'
+      end
+
+      it 'ログインページにリダイレクトする事' do
+        get edit_user_registration_path
+        expect(response).to redirect_to user_session_path
       end
     end
   end
