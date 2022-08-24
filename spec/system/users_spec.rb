@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Users::Registrations', type: :system do
+RSpec.describe 'Users', type: :system do
   before do
     @user = FactoryBot.create(:user)
   end
@@ -29,12 +29,14 @@ RSpec.describe 'Users::Registrations', type: :system do
     login_as(@user)
     visit root_path
     click_link "ログアウト"
+
     expect(page).to have_content "ログアウトしました。"
   end
 
   scenario "ゲストログイン機能が正常に動作する事" do
     visit root_path
     click_link "ゲストログイン"
+
     expect(page).to have_content "ゲストユーザーとしてログインしました。"
   end
 
