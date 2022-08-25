@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Users', type: :system do
   before do
     @user = FactoryBot.create(:user)
+    @post = FactoryBot.create(:post, user_id: @user.id)
   end
 
   scenario 'user登録時正常に確認用メールが送信される事' do
@@ -52,11 +53,12 @@ RSpec.describe 'Users', type: :system do
     expect(page).to have_content 'アカウント情報を変更しました。'
   end
 
-  scenario 'ログインしたuserはマイページで投稿を確認できる事' do
+  scenario 'ログインしたuserはマイページで自分が投稿したものを確認できる事' do
     login_as(@user)
     visit users_show_path
+    find('#my-post-list').click
 
-    expect(page).to have_content "投稿一覧"
-    expect(page).to have_content "ブックマーク一覧"
+    expect(page).to have_content @post.title
+    expect(page).to have_content @post.post_content
   end
 end
