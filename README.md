@@ -7,7 +7,7 @@
 ---
 
 ### アプリURL
-https://vast-brushlands-89395.herokuapp.com/
+https://foody-life.herokuapp.com/
 
 ---
 
