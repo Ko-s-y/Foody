@@ -6,14 +6,6 @@ RSpec.describe "Searches", type: :request do
   end
 
   describe '#result' do
-    context '認証済みユーザーの場合' do
-      it '投稿一覧にリダイレクトする事' do
-        sign_in @user
-        get searches_result_path
-        expect(response).to redirect_to posts_path
-      end
-    end
-
     context 'ゲストの場合' do
       it 'リクエストが失敗する事' do
         get searches_result_path
