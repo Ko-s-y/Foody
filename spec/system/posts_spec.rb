@@ -13,7 +13,7 @@ RSpec.describe "Posts", type: :system do
         fill_in 'post[title]', with: '投稿テストのタイトル'
         fill_in 'post[post_content]', with: '結合テスト中です'
 
-        expect{ click_button "投稿する" }.to change { Post.count }.by(1)
+        expect { click_button "投稿する" }.to change { Post.count }.by(1)
         expect(current_path).to eq(posts_path)
         expect(page).to have_content('投稿テストのタイトル')
         expect(page).to have_content('結合テスト中です')
@@ -89,7 +89,7 @@ RSpec.describe "Posts", type: :system do
         visit post_path(@post)
 
         expect(page).to have_content('投稿の削除')
-        expect{ click_link '投稿の削除' }.to change { Post.count }.by(-1)
+        expect { click_link '投稿の削除' }.to change { Post.count }.by(-1)
       end
     end
 
