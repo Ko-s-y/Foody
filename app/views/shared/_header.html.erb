@@ -55,8 +55,8 @@
         <% else %>
           <div class="navbar-item attend">
             <div class="buttons">
-              <%= link_to "登録する", new_user_registration_path, class: "button is-primary" %>
-              <%= link_to "ログイン", new_user_session_path, class: "button is-info" %>
+              <%= link_to "登録する", new_user_registration_path, class: "button is-primary", id: "to-registration-path" %>
+              <%= link_to "ログイン", new_user_session_path, class: "button is-info", id: "to-login-path" %>
               <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "button is-light" %>
             </div>
           </div>

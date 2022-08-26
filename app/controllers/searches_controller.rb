@@ -3,7 +3,7 @@ class SearchesController < ApplicationController
 
   def result
     if params[:word].blank?
-      flash[:alert] = "不正な値です。キーワードを正確に入力してください。"
+      flash[:alert] = "キーワードを正確に入力してください。"
       redirect_to posts_path
     end
     @range = params[:range]
