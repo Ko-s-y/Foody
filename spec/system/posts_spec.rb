@@ -12,8 +12,8 @@ RSpec.describe "Posts", type: :system do
         visit posts_path
         fill_in 'post[title]', with: '投稿テストのタイトル'
         fill_in 'post[post_content]', with: '結合テスト中です'
-        click_button "投稿する"
 
+        expect{ click_button "投稿する" }.to change { Post.count }.by(1)
         expect(current_path).to eq(posts_path)
         expect(page).to have_content('投稿テストのタイトル')
         expect(page).to have_content('結合テスト中です')
@@ -74,6 +74,35 @@ RSpec.describe "Posts", type: :system do
         visit edit_post_path(@post)
 
         expect(current_path).to eq user_session_path
+      end
+    end
+  end
+
+  describe '投稿の削除について' do
+    before do
+      @post = FactoryBot.create(:post)
+    end
+
+    context '投稿の作成者がログインしているとき' do
+      scenario '投稿の削除がページに表示されていてかつ削除機能が作動する事' do
+        login_as(@post.user)
+        visit post_path(@post)
+
+        expect(page).to have_content('投稿の削除')
+        expect{ click_link '投稿の削除' }.to change { Post.count }.by(-1)
+      end
+    end
+
+    context '投稿者以外がログインしている場合' do
+      before do
+        @other_user = FactoryBot.create(:user, email: 'inspect@com')
+      end
+
+      scenario '投稿の削除がページに表示されていない事' do
+        login_as(@other_user)
+        visit post_path(@post)
+
+        expect(page).not_to have_content('投稿の削除')
       end
     end
   end
