@@ -55,6 +55,20 @@ RSpec.describe "Posts", type: :system do
       end
     end
 
+    context '投稿者以外がログインしている場合' do
+      before do
+        @other_user = FactoryBot.create(:user, email: 'inspect@com')
+      end
+
+      scenario '投稿編集ページに遷移出来ず投稿一覧ページにリダイレクトされる事' do
+        login_as(@other_user)
+        visit edit_post_path(@post)
+
+        expect(current_path).to eq posts_path
+        expect(page).to have_content("権限がありません")
+      end
+    end
+
     context 'ログインしていない場合' do
       scenario '投稿編集ページに遷移出来ずログインページにリダイレクトされる事' do
         visit edit_post_path(@post)
