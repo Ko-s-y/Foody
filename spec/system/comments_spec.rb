@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Comments", type: :system do
+RSpec.describe "Comments", type: :system, js: true do
   describe 'コメント投稿について' do
     before do
       @user = FactoryBot.create(:user)
@@ -11,6 +11,7 @@ RSpec.describe "Comments", type: :system do
       scenario '投稿にコメント出来て、投稿詳細ページに表示されている事' do
         login_as(@user)
         visit post_path(@post)
+        find('.form-appear').click
         fill_in 'comment[comment_content]', with: 'コメント機能結合テスト中です'
 
         expect { click_button "コメントする" }.to change { @post.comments.count }.by(1)
@@ -37,21 +38,27 @@ RSpec.describe "Comments", type: :system do
       @other_comment = FactoryBot.create(:comment, user_id: @other_user.id, post_id: @post.id)
     end
 
-    context 'ログインしていてuserがコメント投稿主である場合' do
-      scenario 'コメントツリーの右側に削除機能のゴミ箱マークが表示されている事' do
+    context 'ログインしていてuserがPost投稿主である場合' do
+      scenario 'コメントツリーの右側に削除機能のゴミ箱マークが表示されていて削除機能が動作している事' do
         login_as(@user)
         visit post_path(@post)
+        find('.right-trash').click
+        sleep 1
 
-        expect(page).to have_selector '.right-trash'
+        expect(page.driver.browser.switch_to.alert.accept)
+        expect(page).to have_content('コメントを削除しました')
       end
     end
 
-    context 'ログインしていてuserがコメント投稿主では無い場合' do
-      scenario 'コメントツリーの左側に削除機能のゴミ箱マークが表示されている事' do
+    context 'ログインしていてuserがPost投稿主では無い場合' do
+      scenario 'コメントツリーの左側に削除機能のゴミ箱マークが表示されていて削除機能が動作している事' do
         login_as(@other_user)
         visit post_path(@post)
+        find('.left-trash').click
+        sleep 1
 
-        expect(page).to have_selector '.left-trash'
+        expect(page.driver.browser.switch_to.alert.accept)
+        expect(page).to have_content('コメントを削除しました')
       end
     end
   end
