@@ -31,16 +31,27 @@ RSpec.describe "Comments", type: :system do
   describe 'コメント削除について' do
     before do
       @user = FactoryBot.create(:user)
+      @other_user = FactoryBot.create(:user)
       @post = FactoryBot.create(:post, user_id: @user.id)
       @comment = FactoryBot.create(:comment, user_id: @user.id, post_id: @post.id)
+      @other_comment = FactoryBot.create(:comment, user_id: @other_user.id, post_id: @post.id)
     end
 
     context 'ログインしていてuserがコメント投稿主である場合' do
-      scenario 'コメントツリーの右側に削除機能のゴミ箱マークが表示されていて、削除機能が動作する事' do
+      scenario 'コメントツリーの右側に削除機能のゴミ箱マークが表示されている事' do
         login_as(@user)
         visit post_path(@post)
 
         expect(page).to have_selector '.right-trash'
+      end
+    end
+
+    context 'ログインしていてuserがコメント投稿主では無い場合' do
+      scenario 'コメントツリーの左側に削除機能のゴミ箱マークが表示されている事' do
+        login_as(@other_user)
+        visit post_path(@post)
+
+        expect(page).to have_selector '.left-trash'
       end
     end
   end
