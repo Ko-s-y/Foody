@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Posts", type: :system do
+RSpec.describe "Posts", type: :system, js: true do
   describe '新規投稿について' do
     before do
       @user = FactoryBot.create(:user)
@@ -10,10 +10,11 @@ RSpec.describe "Posts", type: :system do
       scenario '新規投稿出来て、投稿一覧に表示されている事' do
         login_as(@user)
         visit posts_path
+        find('.post-form-appear').click
         fill_in 'post[title]', with: '投稿テストのタイトル'
         fill_in 'post[post_content]', with: '結合テスト中です'
 
-        expect{ click_button "投稿する" }.to change { Post.count }.by(1)
+        expect { click_button "投稿する" }.to change { Post.count }.by(1)
         expect(current_path).to eq(posts_path)
         expect(page).to have_content('投稿テストのタイトル')
         expect(page).to have_content('結合テスト中です')
@@ -87,9 +88,11 @@ RSpec.describe "Posts", type: :system do
       scenario '投稿の削除がページに表示されていてかつ削除機能が作動する事' do
         login_as(@post.user)
         visit post_path(@post)
+        find('.post-delete-link').click
+        sleep 1
 
-        expect(page).to have_content('投稿の削除')
-        expect{ click_link '投稿の削除' }.to change { Post.count }.by(-1)
+        expect(page.driver.browser.switch_to.alert.accept)
+        expect(page).to have_content('投稿を削除しました')
       end
     end
 
