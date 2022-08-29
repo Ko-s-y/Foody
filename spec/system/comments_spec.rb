@@ -33,12 +33,13 @@ RSpec.describe "Comments", type: :system, js: true do
     before do
       @user = FactoryBot.create(:user)
       @other_user = FactoryBot.create(:user)
+      @not_comment_user = FactoryBot.create(:user)
       @post = FactoryBot.create(:post, user_id: @user.id)
       @comment = FactoryBot.create(:comment, user_id: @user.id, post_id: @post.id)
       @other_comment = FactoryBot.create(:comment, user_id: @other_user.id, post_id: @post.id)
     end
 
-    context 'ログインしていてuserがPost投稿主である場合' do
+    context 'ログインしているuserがPost投稿主である場合' do
       scenario 'コメントツリーの右側に削除機能のゴミ箱マークが表示されていて削除機能が動作している事' do
         login_as(@user)
         visit post_path(@post)
@@ -50,7 +51,7 @@ RSpec.describe "Comments", type: :system, js: true do
       end
     end
 
-    context 'ログインしていてuserがPost投稿主では無い場合' do
+    context 'ログインしているuserがPost投稿主では無い場合' do
       scenario 'コメントツリーの左側に削除機能のゴミ箱マークが表示されていて削除機能が動作している事' do
         login_as(@other_user)
         visit post_path(@post)
@@ -59,6 +60,16 @@ RSpec.describe "Comments", type: :system, js: true do
 
         expect(page.driver.browser.switch_to.alert.accept)
         expect(page).to have_content('コメントを削除しました')
+      end
+    end
+
+    context 'ログインしているuserがPost投稿主では無くかつComment投稿主でもない場合' do
+      scenario 'コメントツリーに削除機能のゴミ箱マークが表示されていない事' do
+        login_as(@not_comment_user)
+        visit post_path(@post)
+
+        expect(page).to have_no_selector('.left-trash')
+        expect(page).to have_no_selector('.right-trash')
       end
     end
   end
