@@ -119,11 +119,13 @@ UI/UXに関しては実際料理人の方達は使うデバイスはおそらく
 * Canva(favicon作成)
 
 ##### 主要Gem
-* rubocop-airbnb
 * devise
 * aws-sdk
 * kaminari
 * rails_admin
+* rubocop-airbnb
+![094C5F06-7ECE-4107-84FD-7B455F7A8521_4_5005_c](https://user-images.githubusercontent.com/100200496/187426034-e5752aac-a027-49d0-94b0-a5720a8a1834.jpeg)
+
 
 ##### テスト
 * rspec
