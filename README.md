@@ -20,31 +20,9 @@ AIの技術の発展により様々なものがAIに代替される中、今後�
 
 ### 主な機能とページ紹介
 
-<table>
-  <tr>
-    <th>トップページ</th>
-    <th>新規登録画面,ログイン画面,アカウント編集画面</th>
-    <th>本人確認,パスワードリセットメール送信画面</th>
-  </tr>
-  <tr>
-    <td style="width: 600px;"><img src="https://user-images.githubusercontent.com/100200496/187718202-e36e69b1-087d-4045-9e34-b57aa6f6f0c1.gif"></td>
-    <td style="width: 600px;"><img src="https://gyazo.com/587d7e250a75604626ecdd8be7622da0.gif"></td>
-    <td style="width: 100px;"><img src="https://user-images.githubusercontent.com/100200496/187486248-a7b7620b-2872-4e2e-bf29-c6f2a77b10ba.jpeg"></td>
-  </tr>
-  <tr>
-    <td>過去に携わった料理のスライド</td>
-    <td>パスワード一致/不一致、パスワード表示/非表示機能</td>
-    <td>deviseによるconfirmable,recoverable機能</td>
-  </tr>
-</table>
-
-[](https://gyazo.com/e9a70cc04be08cbee2de700b88f16e53)
-
-
-
 |  トップページ  |  新規登録画面,ログイン画面,アカウント編集画面  |  本人確認,パスワードリセットメール送信画面  |
 | ---- | ---- | ---- |
-|  ![5C85C4EF-834A-4B40-BB53-FEEED5929531_AdobeExpress](https://user-images.githubusercontent.com/100200496/187718202-e36e69b1-087d-4045-9e34-b57aa6f6f0c1.gif)  |  ![Image from Gyazo](https://gyazo.com/587d7e250a75604626ecdd8be7622da0.gif)  |  ![6774C748-EB6C-43C2-92A0-C07F096FC529](https://user-images.githubusercontent.com/100200496/187486248-a7b7620b-2872-4e2e-bf29-c6f2a77b10ba.jpeg)
+|  <img width=110/> ![5C85C4EF-834A-4B40-BB53-FEEED5929531_AdobeExpress](https://user-images.githubusercontent.com/100200496/187718202-e36e69b1-087d-4045-9e34-b57aa6f6f0c1.gif)  |  <img width=110/> ![Image from Gyazo](https://gyazo.com/587d7e250a75604626ecdd8be7622da0.gif)  |  ![6774C748-EB6C-43C2-92A0-C07F096FC529](https://user-images.githubusercontent.com/100200496/187486248-a7b7620b-2872-4e2e-bf29-c6f2a77b10ba.jpeg)
 |  過去に作った、食べた料理のスライド  |  パスワード一致/不一致、パスワード表示/非表示機能  |  deviseによるconfirmable,recoverable機能  |
 
 
@@ -62,7 +40,7 @@ AIの技術の発展により様々なものがAIに代替される中、今後�
 
 |  自分以外のユーザーページ  |  admin_user  |  メール画面  |
 | ---- | ---- | ---- |
-|  ![6B9C31C6-797F-41E4-B1DA-184960A8CEA5](https://user-images.githubusercontent.com/100200496/187494525-bfe954db-054d-460c-8ccf-9a897236cf4b.jpeg)  | ![AF616A27-5A19-4F62-961A-9597FDF118A5](https://user-images.githubusercontent.com/100200496/187500296-110ed7b0-bf5a-4ca8-b6bd-b5d91a5daf57.jpeg)  |  ![D4A2FBF9-8A97-4225-93AB-C7C7DF123EAF](https://user-images.githubusercontent.com/100200496/187593912-69ca411a-4820-4487-b6d2-04a99f32aba4.jpeg)![06351BFA-E0F5-48B7-BBD9-87526F345460_4_5005_c](https://user-images.githubusercontent.com/100200496/187594084-39e26db9-93fc-4220-98cb-5fd01d1b696a.jpeg)
+|  <img width=100/>![6B9C31C6-797F-41E4-B1DA-184960A8CEA5](https://user-images.githubusercontent.com/100200496/187494525-bfe954db-054d-460c-8ccf-9a897236cf4b.jpeg)  | ![AF616A27-5A19-4F62-961A-9597FDF118A5](https://user-images.githubusercontent.com/100200496/187500296-110ed7b0-bf5a-4ca8-b6bd-b5d91a5daf57.jpeg)  |  ![D4A2FBF9-8A97-4225-93AB-C7C7DF123EAF](https://user-images.githubusercontent.com/100200496/187593912-69ca411a-4820-4487-b6d2-04a99f32aba4.jpeg)![06351BFA-E0F5-48B7-BBD9-87526F345460_4_5005_c](https://user-images.githubusercontent.com/100200496/187594084-39e26db9-93fc-4220-98cb-5fd01d1b696a.jpeg)
 |  PATHはユーザーIDではなくユーザー名,フォローする,アクティビティを確認する,投稿一覧を確認することが可能  |  rails_adminにより作成,admin_userのログイン画面は管理人以外のアクセスはリダイレクトされます  |  お問合せフォーム,deviseのメール内容  |
 
 
