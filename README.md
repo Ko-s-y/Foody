@@ -22,7 +22,7 @@ AIの技術の発展により様々なものがAIに代替される中、今後�
 
 |  トップページ  |  新規登録画面,ログイン画面,アカウント編集画面  |  本人確認,パスワードリセットメール送信画面  |
 | ---- | ---- | ---- |
-|  <img width=110/> ![5C85C4EF-834A-4B40-BB53-FEEED5929531_AdobeExpress](https://user-images.githubusercontent.com/100200496/187718202-e36e69b1-087d-4045-9e34-b57aa6f6f0c1.gif)  |  <img width=110/> ![Image from Gyazo](https://gyazo.com/587d7e250a75604626ecdd8be7622da0.gif)  |  ![6774C748-EB6C-43C2-92A0-C07F096FC529](https://user-images.githubusercontent.com/100200496/187486248-a7b7620b-2872-4e2e-bf29-c6f2a77b10ba.jpeg)
+|  <img width=150/> ![5C85C4EF-834A-4B40-BB53-FEEED5929531_AdobeExpress](https://user-images.githubusercontent.com/100200496/187718202-e36e69b1-087d-4045-9e34-b57aa6f6f0c1.gif)  |  <img width=100/> ![Image from Gyazo](https://gyazo.com/587d7e250a75604626ecdd8be7622da0.gif)  |  ![6774C748-EB6C-43C2-92A0-C07F096FC529](https://user-images.githubusercontent.com/100200496/187486248-a7b7620b-2872-4e2e-bf29-c6f2a77b10ba.jpeg)
 |  過去に作った、食べた料理のスライド  |  パスワード一致/不一致、パスワード表示/非表示機能  |  deviseによるconfirmable,recoverable機能  |
 
 
