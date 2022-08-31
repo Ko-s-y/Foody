@@ -29,8 +29,7 @@ AIの技術の発展により様々なものがAIに代替される中、今後�
 |  タイムライン(新規投稿ページ)  |  投稿詳細(コメント投稿ページ)  |  投稿編集ページ  |
 | ---- | ---- | ---- |
 |  ![Image from Gyazo](https://gyazo.com/e130e98e071704ed042256e676c3060f.gif)  |  ![Image from Gyazo](https://gyazo.com/4e678c3a4d3c6ca0a560aaf49fd7d1d0.gif)   |  ![85C01D04-B578-42EA-917A-1C9CA6ED5952](https://user-images.githubusercontent.com/100200496/187483175-0867c891-cab7-4ac9-b764-529d68ba88d1.jpeg)  |
-|  画像プレビューと文字数カウント  |  投稿詳細、削除とコメント投稿機能  |  投稿の編集が可能  |
-
+|  画像プレビューと文字数カウント(改行は2文字扱い)  |  投稿詳細、削除とコメント投稿機能  |  投稿の編集が可能  |
 
 
 |  マイページ  |  ユーザー編集ページ  |  新規通知一覧ページ  |
@@ -39,13 +38,10 @@ AIの技術の発展により様々なものがAIに代替される中、今後�
 |  自分が投稿した一覧、ブックマーク一覧、アクティビティの確認  |  ユーザー情報の編集が可能  |  全てのパッシブ情報を閲覧可能(1度閲覧すると以降通知一覧ページにて閲覧可能)  |
 
 
-
-|  自分以外のユーザーページ  |
-| ---- |
-|  ![6B9C31C6-797F-41E4-B1DA-184960A8CEA5](https://user-images.githubusercontent.com/100200496/187494525-bfe954db-054d-460c-8ccf-9a897236cf4b.jpeg)  |
-|  PATHはユーザーIDではなくユーザー名,フォローする,アクティビティを確認する,投稿一覧を確認することが可能  |
-
-
+|  自分以外のユーザーページ  |  admin_user  |  メール画面  |
+| ---- | ---- | ---- |
+|  ![6B9C31C6-797F-41E4-B1DA-184960A8CEA5](https://user-images.githubusercontent.com/100200496/187494525-bfe954db-054d-460c-8ccf-9a897236cf4b.jpeg)  | ![AF616A27-5A19-4F62-961A-9597FDF118A5](https://user-images.githubusercontent.com/100200496/187500296-110ed7b0-bf5a-4ca8-b6bd-b5d91a5daf57.jpeg)  |  ![D4A2FBF9-8A97-4225-93AB-C7C7DF123EAF](https://user-images.githubusercontent.com/100200496/187593912-69ca411a-4820-4487-b6d2-04a99f32aba4.jpeg)![06351BFA-E0F5-48B7-BBD9-87526F345460_4_5005_c](https://user-images.githubusercontent.com/100200496/187594084-39e26db9-93fc-4220-98cb-5fd01d1b696a.jpeg)
+|  PATHはユーザーIDではなくユーザー名,フォローする,アクティビティを確認する,投稿一覧を確認することが可能  |  rails_adminにより作成,admin_userのログイン画面は管理人以外のアクセスはリダイレクトされます  |  お問合せフォーム,deviseのメール内容  |
 
 
 |  いいね機能,ブックマーク機能  |  アクションユーザーリスト  |  フォロー機能  |
@@ -57,7 +53,7 @@ AIの技術の発展により様々なものがAIに代替される中、今後�
 |  検索機能  |  検索結果ページ  |  フォロー,フォロワーページ  |
 | ---- | ---- |  ----  |
 |  ![Image from Gyazo](https://gyazo.com/8d3d81375322bfae684cb5cbd7da6d6a.gif)  |  ![02C4F9CF-9854-4F2E-B951-DBFF2CCD224D](https://user-images.githubusercontent.com/100200496/187496183-1f4ae922-c443-4e35-8d4f-e89fa2441341.jpeg)  |  ![Image from Gyazo](https://gyazo.com/76ed1a0ec5b8e778e107d632848dddb2.gif)  |
-|  投稿,コメント,ユーザーを検索可能,PCとタブレット,スマホでの検索フォームを別に設置  |  2ワード検索が可能(AND検索),50字でtrancate(切り捨て)  |  それぞれ閲覧可能,数を表示  |
+|  ransack未使用,[投稿,コメント,ユーザー]を検索可能,PCとタブレット,スマホでの検索フォームを別に設置  |  2ワード検索が可能(AND検索),50字でtrancate(切り捨て)  |  それぞれ閲覧可能,数を表示  |
 
 
 |  新規お問合せページ  |  お問合せ内容確認ページ  |  お問合せ一覧ページ  |
