@@ -20,6 +20,57 @@ AIの技術の発展により様々なものがAIに代替される中、今後�
 
 ### 主な機能とページ紹介
 
+
+Name | Value
+-------|-------
+`Value-One` | Long explanation
+`Value-Two` | Long explanation
+`etc` | Long explanation
+
+
+<table>
+  <tr>
+    <th>トップページ</th>
+    <th>新規登録画面,ログイン画面,アカウント編集画面</th>
+    <th>本人確認,パスワードリセットメール送信画面</th>
+  </tr>
+  <tr>
+    <td>A-1</td>
+    <td>B-1</td>
+    <td>C-1</td>
+  </tr>
+  <tr>
+    <td colspan="3">q</td>
+
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>トップページ</th>
+    <th>新規登録画面,ログイン画面,アカウント編集画面</th>
+    <th>本人確認,パスワードリセットメール送信画面</th>
+  </tr>
+  <tr>
+    <td><img src="https://gyazo.com/9bfdfb302c327d16e3e4f47c29647dbd.gif"></td>
+    <td><img src="https://gyazo.com/587d7e250a75604626ecdd8be7622da0.gif"></td>
+    <td><img src="https://user-images.githubusercontent.com/100200496/187486248-a7b7620b-2872-4e2e-bf29-c6f2a77b10ba.jpeg"></td>
+  </tr>
+  <tr>
+    <td>過去に携わった料理のスライド</td>
+    <td>パスワード一致/不一致、パスワード表示/非表示機能</td>
+    <td>deviseによるconfirmable,recoverable機能</td>
+  </tr>
+</table>
+
+
+<style>
+  th, td {
+    width: 30%;
+  }
+</style>
+
+
 |  トップページ  |  新規登録画面,ログイン画面,アカウント編集画面  |  本人確認,パスワードリセットメール送信画面  |
 | ---- | ---- | ---- |
 |  ![Image from Gyazo](https://gyazo.com/9bfdfb302c327d16e3e4f47c29647dbd.gif)  |  ![Image from Gyazo](https://gyazo.com/587d7e250a75604626ecdd8be7622da0.gif)  |  ![6774C748-EB6C-43C2-92A0-C07F096FC529](https://user-images.githubusercontent.com/100200496/187486248-a7b7620b-2872-4e2e-bf29-c6f2a77b10ba.jpeg)
@@ -67,7 +118,7 @@ AIの技術の発展により様々なものがAIに代替される中、今後�
 |  ![BBDB27A6-5943-4A7D-BE54-E2028D6F39B9](https://user-images.githubusercontent.com/100200496/187595506-5eebc3c4-587a-4b34-8e4d-0f9a322b50ed.jpeg)  |  ![8B71734B-EF46-4D37-989F-354AB13FC7FD](https://user-images.githubusercontent.com/100200496/187595547-5ec51fe1-1583-4f95-afff-f34aae170508.jpeg) | ![F88E500E-DC56-4153-9500-A746EEB4508A](https://user-images.githubusercontent.com/100200496/187595583-23719e04-3663-4f4c-8c9d-a1da6a9ab67a.jpeg)
 |  もしユーザーが操作ミスでこれらのページに行っても  |  焦らないように,自分がイタリアで撮った  |  気持ちが落ち着きそうな画像を選びました(文字化け対策済み)  |
 
-
+![]
 ---
 
 ### Foody!開発に至った経緯
