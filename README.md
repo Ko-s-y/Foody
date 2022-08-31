@@ -20,10 +20,10 @@ AIの技術の発展により様々なものがAIに代替される中、今後�
 
 ### 主な機能とページ紹介
 
-|  トップページ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |  新規登録画面,ログイン画面,アカウント編集画面 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |  本人確認,パスワードリセットメール送信画面  |
+|  トップページ   |  新規登録画面,ログイン画面,アカウント編集画面  |  本人確認,パスワードリセットメール送信画面  |
 | ---- | ---- | ---- |
 |  ![5C85C4EF-834A-4B40-BB53-FEEED5929531_AdobeExpress](https://user-images.githubusercontent.com/100200496/187718202-e36e69b1-087d-4045-9e34-b57aa6f6f0c1.gif)  |  ![Image from Gyazo](https://gyazo.com/587d7e250a75604626ecdd8be7622da0.gif)  |  ![6774C748-EB6C-43C2-92A0-C07F096FC529](https://user-images.githubusercontent.com/100200496/187486248-a7b7620b-2872-4e2e-bf29-c6f2a77b10ba.jpeg)
-|  過去に作った、食べた料理のスライド  |  パスワード一致/不一致、パスワード表示/非表示機能,ゲストログイン機能  |  deviseによるconfirmable,recoverable機能  |
+|  過去に作った、食べた料理のスライド　&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |  新規登録画面,ログイン画面,アカウント編集画面  |  パスワード一致/不一致、パスワード表示/非表示機能,ゲストログイン機能  |  deviseによるconfirmable,recoverable機能  |
 
 
 |  タイムライン(新規投稿ページ)  |  投稿詳細(コメント投稿ページ)  |  投稿編集ページ  |
@@ -35,7 +35,8 @@ AIの技術の発展により様々なものがAIに代替される中、今後�
 |  マイページ  |  ユーザー編集ページ  |  新規通知一覧ページ  |
 | ---- | ---- | ---- |
 |  ![Image from Gyazo](https://gyazo.com/f54a6f40bbdaed4bf9ca7995b6ecdadf.gif)  |  ![4FA096F9-E8B7-4BA9-AD91-BCA3B25A419E](https://user-images.githubusercontent.com/100200496/187489593-7bce2c69-4ada-4fee-89a2-dcbcd9360a22.jpeg)  |  ![505A91C7-C778-4BE1-8B96-54C0D13EEED8](https://user-images.githubusercontent.com/100200496/187489806-b7687aca-8158-4bcd-b66d-79baa1fc775a.jpeg)  |
-|  自分が投稿した一覧、ブックマーク一覧、アクティビティの確認  |  ユーザー情報の編集が可能  |  全てのパッシブ情報を閲覧可能(1度閲覧すると以降通知一覧ページにて閲覧可能,一度コメントをした投稿に対しては以後全てのユーザーのコメントを通知します。)  |
+|  自分が投稿した一覧、ブックマーク一覧、アクティビティの確認  |  ユーザー情報の編集が可能  |  全てのパッシブ情報を閲覧可能　 |
+* 新規通知一覧ページより新規通知を1度閲覧すると以降通知一覧ページにて閲覧可能,一度コメントをした投稿に対しては以後全てのユーザーのコメントを通知します。
 
 
 |  自分以外のユーザーページ  |  admin_user  |  メール画面  |
