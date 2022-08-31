@@ -20,14 +20,6 @@ AIの技術の発展により様々なものがAIに代替される中、今後�
 
 ### 主な機能とページ紹介
 
-
-Name | Value
--------|-------
-`Value-One` | Long explanation
-`Value-Two` | Long explanation
-`etc` | Long explanation
-
-
 <table>
   <tr>
     <th>トップページ</th>
@@ -35,26 +27,9 @@ Name | Value
     <th>本人確認,パスワードリセットメール送信画面</th>
   </tr>
   <tr>
-    <td>A-1</td>
-    <td>B-1</td>
-    <td>C-1</td>
-  </tr>
-  <tr>
-    <td colspan="3">q</td>
-
-  </tr>
-</table>
-
-<table>
-  <tr>
-    <th>トップページ</th>
-    <th>新規登録画面,ログイン画面,アカウント編集画面</th>
-    <th>本人確認,パスワードリセットメール送信画面</th>
-  </tr>
-  <tr>
-    <td><img src="https://gyazo.com/9bfdfb302c327d16e3e4f47c29647dbd.gif"></td>
-    <td><img src="https://gyazo.com/587d7e250a75604626ecdd8be7622da0.gif"></td>
-    <td><img src="https://user-images.githubusercontent.com/100200496/187486248-a7b7620b-2872-4e2e-bf29-c6f2a77b10ba.jpeg"></td>
+    <td style="width: 600px;"><img src="https://gyazo.com/9bfdfb302c327d16e3e4f47c29647dbd.gif"></td>
+    <td style="width: 500px;"><img src="https://gyazo.com/587d7e250a75604626ecdd8be7622da0.gif"></td>
+    <td style="width: 100px;"><img src="https://user-images.githubusercontent.com/100200496/187486248-a7b7620b-2872-4e2e-bf29-c6f2a77b10ba.jpeg"></td>
   </tr>
   <tr>
     <td>過去に携わった料理のスライド</td>
@@ -64,11 +39,9 @@ Name | Value
 </table>
 
 
-<style>
-  th, td {
-    width: 30%;
-  }
-</style>
+
+![5C85C4EF-834A-4B40-BB53-FEEED5929531_AdobeExpress](https://user-images.githubusercontent.com/100200496/187718202-e36e69b1-087d-4045-9e34-b57aa6f6f0c1.gif)
+
 
 
 |  トップページ  |  新規登録画面,ログイン画面,アカウント編集画面  |  本人確認,パスワードリセットメール送信画面  |
