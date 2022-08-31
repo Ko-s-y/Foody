@@ -27,8 +27,8 @@ AIの技術の発展により様々なものがAIに代替される中、今後�
     <th>本人確認,パスワードリセットメール送信画面</th>
   </tr>
   <tr>
-    <td style="width: 600px;"><img src="https://gyazo.com/9bfdfb302c327d16e3e4f47c29647dbd.gif"></td>
-    <td style="width: 500px;"><img src="https://gyazo.com/587d7e250a75604626ecdd8be7622da0.gif"></td>
+    <td style="width: 600px;"><img src="https://user-images.githubusercontent.com/100200496/187718202-e36e69b1-087d-4045-9e34-b57aa6f6f0c1.gif"></td>
+    <td style="width: 600px;"><img src="https://gyazo.com/587d7e250a75604626ecdd8be7622da0.gif"></td>
     <td style="width: 100px;"><img src="https://user-images.githubusercontent.com/100200496/187486248-a7b7620b-2872-4e2e-bf29-c6f2a77b10ba.jpeg"></td>
   </tr>
   <tr>
@@ -38,21 +38,19 @@ AIの技術の発展により様々なものがAIに代替される中、今後�
   </tr>
 </table>
 
-
-
-![5C85C4EF-834A-4B40-BB53-FEEED5929531_AdobeExpress](https://user-images.githubusercontent.com/100200496/187718202-e36e69b1-087d-4045-9e34-b57aa6f6f0c1.gif)
+[](https://gyazo.com/e9a70cc04be08cbee2de700b88f16e53)
 
 
 
 |  トップページ  |  新規登録画面,ログイン画面,アカウント編集画面  |  本人確認,パスワードリセットメール送信画面  |
 | ---- | ---- | ---- |
-|  ![Image from Gyazo](https://gyazo.com/9bfdfb302c327d16e3e4f47c29647dbd.gif)  |  ![Image from Gyazo](https://gyazo.com/587d7e250a75604626ecdd8be7622da0.gif)  |  ![6774C748-EB6C-43C2-92A0-C07F096FC529](https://user-images.githubusercontent.com/100200496/187486248-a7b7620b-2872-4e2e-bf29-c6f2a77b10ba.jpeg)
+|  ![5C85C4EF-834A-4B40-BB53-FEEED5929531_AdobeExpress](https://user-images.githubusercontent.com/100200496/187718202-e36e69b1-087d-4045-9e34-b57aa6f6f0c1.gif)  |  ![Image from Gyazo](https://gyazo.com/587d7e250a75604626ecdd8be7622da0.gif)  |  ![6774C748-EB6C-43C2-92A0-C07F096FC529](https://user-images.githubusercontent.com/100200496/187486248-a7b7620b-2872-4e2e-bf29-c6f2a77b10ba.jpeg)
 |  過去に作った、食べた料理のスライド  |  パスワード一致/不一致、パスワード表示/非表示機能  |  deviseによるconfirmable,recoverable機能  |
 
 
 |  タイムライン(新規投稿ページ)  |  投稿詳細(コメント投稿ページ)  |  投稿編集ページ  |
 | ---- | ---- | ---- |
-|  ![Image from Gyazo](https://gyazo.com/e130e98e071704ed042256e676c3060f.gif)  |  ![Image from Gyazo](https://gyazo.com/4e678c3a4d3c6ca0a560aaf49fd7d1d0.gif)   |  ![85C01D04-B578-42EA-917A-1C9CA6ED5952](https://user-images.githubusercontent.com/100200496/187483175-0867c891-cab7-4ac9-b764-529d68ba88d1.jpeg)  |
+|  ![Image from Gyazo](https://gyazo.com/e130e98e071704ed042256e676c3060f.gif)  |  ![Image from Gyazo](https://gyazo.com/e9a70cc04be08cbee2de700b88f16e53.gif)   |  ![85C01D04-B578-42EA-917A-1C9CA6ED5952](https://user-images.githubusercontent.com/100200496/187483175-0867c891-cab7-4ac9-b764-529d68ba88d1.jpeg)  |
 |  画像プレビューと文字数カウント(改行は2文字扱い)  |  投稿詳細、削除とコメント投稿機能  |  投稿の編集が可能  |
 
 
