@@ -4,7 +4,7 @@ RSpec.describe "Comments", type: :request do
   before do
     @user = FactoryBot.create(:user)
     @post = FactoryBot.create(:post, user_id: @user.id)
-    @comment = FactoryBot.build(:comment, post_id: @post.id)
+    @comment = FactoryBot.create(:comment, post_id: @post.id)
   end
 
   describe '#create' do

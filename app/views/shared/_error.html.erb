@@ -1,7 +1,13 @@
 <% if object.errors.any? %>
-  <% object.errors.full_messages.each do |message| %>
-    <ul>
-      <li><%= message %></li>
-    </ul>
-  <% end %>
+  <script>
+    <% resource.errors.full_messages.each do |message| %>
+      new Noty ({
+        type: 'error',
+        layout: 'topRight',
+        timeout: '3000',
+        theme: 'sunset',
+        text: '<%= message %>'
+      }).show();
+    <% end %>
+  </script>
 <% end %>
