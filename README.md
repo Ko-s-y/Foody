@@ -22,7 +22,7 @@ AIの技術の発展により様々なものがAIに代替される中、今後�
 
 |  トップページ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     |  新規登録画面,ログイン画面,アカウント編集画面  | 　本人確認,パスワードリセットメール送信画面  |
 | ---- | ---- | ---- |
-|  <div style="width: 160px;">　![5C85C4EF-834A-4B40-BB53-FEEED5929531_AdobeExpress](https://user-images.githubusercontent.com/100200496/187718202-e36e69b1-087d-4045-9e34-b57aa6f6f0c1.gif) </div>  | ![Image from Gyazo](https://gyazo.com/587d7e250a75604626ecdd8be7622da0.gif)  |  ![6774C748-EB6C-43C2-92A0-C07F096FC529](https://user-images.githubusercontent.com/100200496/187486248-a7b7620b-2872-4e2e-bf29-c6f2a77b10ba.jpeg)
+|  ![5C85C4EF-834A-4B40-BB53-FEEED5929531_AdobeExpress](https://user-images.githubusercontent.com/100200496/187718202-e36e69b1-087d-4045-9e34-b57aa6f6f0c1.gif)  | ![Image from Gyazo](https://gyazo.com/587d7e250a75604626ecdd8be7622da0.gif)  |  ![6774C748-EB6C-43C2-92A0-C07F096FC529](https://user-images.githubusercontent.com/100200496/187486248-a7b7620b-2872-4e2e-bf29-c6f2a77b10ba.jpeg)
 |  自分が撮った料理のスライド　 |  新規登録画面,ログイン画面,アカウント編集画面  |  パスワード一致/不一致、パスワード表示/非表示機能,ゲストログイン機能  |  deviseによるconfirmable,recoverable機能  |
 
 
@@ -93,11 +93,11 @@ AIの技術の発展により様々なものがAIに代替される中、今後�
 ようやく仕事が終わって、家に帰ってわずかな睡眠時間を勉強に費やし、睡眠不足で仕事中にミスをしてしまっては元も子もありません。
 
 プロのコック達にとって知識のインプットは必須だと思うのですがそこで考えたのがFoody!です。
-Foody!は自分が新米コックの時にこんなのあったら良いのになと実際に思ったWebアプリです。
+`Foody!は自分が新米コックの時にこんなのあったら良いのになと実際に思ったWebアプリです。`
 
 「料理は先輩からみて盗め」の考えを持ったレストランが今でもあるのが現状です。
-聞きたくても職場の人に聞けない、そんな状況で働き、飲食業界を去ってしまった同期の仲間等が何人もいました。
-そのような人たちの挫折を少しでも減らせたらと思っております。
+`聞きたくても職場の人に聞けない、そんな状況で働き、飲食業界を去ってしまった同期の仲間達が何人もいました。
+そのような人たちの挫折を少しでも減らせたらと思っております。`
 
 またコロナ禍で減ってしまった様々な調理ジャンルの方達との意見交流の場としても一役買ってくれると信じています。
 
