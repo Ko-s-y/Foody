@@ -12,18 +12,18 @@ https://foody-life.herokuapp.com/
 ---
 
 ### レストランの存在価値
-レストランとは「ただ食事をする場所」では無く、味とサービス、そして空間を五感全てで感じられる場所です。
+レストランとは「ただ食事をする場所」では無く、味とサービス、そして空間を五感全てで感じられる素敵な場所です。
 
-AIの技術の発展により様々なものがAIに代替される中、今後もレストランは「人」と感動を共有できる場所として残して行きたいと心より願ってます。
+AIの技術の発展により様々なものがAIに代替される中、今後もレストランは「人」と感動を共有できる場所として今後も賑わって欲しいと心より願ってます。
 
 ---
 
 ### 主な機能とページ紹介
 
-|  トップページ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     |  新規登録画面,ログイン画面,アカウント編集画面  | 　本人確認,パスワードリセットメール送信画面  |
+|  トップページ  |  新規登録画面,ログイン画面,アカウント編集画面  | 　本人確認,パスワードリセットメール送信画面  |
 | ---- | ---- | ---- |
-|  ![5C85C4EF-834A-4B40-BB53-FEEED5929531_AdobeExpress](https://user-images.githubusercontent.com/100200496/187718202-e36e69b1-087d-4045-9e34-b57aa6f6f0c1.gif)  | ![Image from Gyazo](https://gyazo.com/587d7e250a75604626ecdd8be7622da0.gif)  |  ![6774C748-EB6C-43C2-92A0-C07F096FC529](https://user-images.githubusercontent.com/100200496/187486248-a7b7620b-2872-4e2e-bf29-c6f2a77b10ba.jpeg)
-|  自分が撮った料理のスライド　 |  新規登録画面,ログイン画面,アカウント編集画面  |  パスワード一致/不一致、パスワード表示/非表示機能,ゲストログイン機能  |  deviseによるconfirmable,recoverable機能  |
+| <img src="https://user-images.githubusercontent.com/100200496/187955587-cbcd717d-6b1e-408a-86f0-4b3e22408c51.gif" width="250px">  | ![Image from Gyazo](https://gyazo.com/29a4ef056a23ea3142ccba5223d9dd3c.gif)  |  ![2AD344FD-4162-485A-B87F-E7B198D5007F](https://user-images.githubusercontent.com/100200496/187942292-cdf48482-86e0-44e8-89b7-e800d000a1c7.jpeg)
+|  自分が携わった料理達のスライド  |  パスワード一致/不一致、パスワード表示/非表示機能,ゲストログイン機能  |  deviseによるconfirmable,recoverable機能  |
 
 
 |  タイムライン(新規投稿ページ)  |  投稿詳細(コメント投稿ページ)  |  投稿編集ページ  |
@@ -36,11 +36,14 @@ AIの技術の発展により様々なものがAIに代替される中、今後�
 |  マイページ  |  ユーザー編集ページ  |  新規通知一覧ページ  |
 | ---- | ---- | ---- |
 |  ![Image from Gyazo](https://gyazo.com/f54a6f40bbdaed4bf9ca7995b6ecdadf.gif)  |  ![4FA096F9-E8B7-4BA9-AD91-BCA3B25A419E](https://user-images.githubusercontent.com/100200496/187489593-7bce2c69-4ada-4fee-89a2-dcbcd9360a22.jpeg)  |  ![505A91C7-C778-4BE1-8B96-54C0D13EEED8](https://user-images.githubusercontent.com/100200496/187489806-b7687aca-8158-4bcd-b66d-79baa1fc775a.jpeg)  |
-|  自分が投稿した一覧、ブックマーク一覧、アクティビティの確認  |  ユーザー情報の編集が可能  |  全てのパッシブ情報を閲覧可能　 |
-* 新規通知一覧ページより新規通知を1度閲覧すると以降通知一覧ページにて閲覧可能,一度コメントをした投稿に対しては以後全てのユーザーのコメントを通知します。
+|  自分が投稿した一覧、ブックマーク一覧、アクティビティの確認  |  ユーザー情報の編集が可能  |  全てのパッシブ情報を閲覧可能  |
+* 新規通知一覧ページより新規通知を1度閲覧すると以降通知一覧ページにて閲覧可能,一度コメントをした投稿に対しては以降全てのユーザーのコメントを通知します。
+* 新規通知が1件以上有れば表示が切り替わります。
+![249A7635-48BC-4DC4-889F-C4690CE939D0_4_5005_c](https://user-images.githubusercontent.com/100200496/187975871-49a0fd65-c5bf-4818-bbe2-33ec571f84f2.jpeg)
+![169EEEEC-55AF-4716-990A-30F78176F77B_4_5005_c](https://user-images.githubusercontent.com/100200496/187977119-f069bdca-9605-49dc-bae1-10a96cdea846.jpeg)
 
 
-|  自分以外のユーザーページ  |  admin_user  |  メール画面  |
+|  自分以外のユーザーページ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |  admin_user  |  メール画面  |
 | ---- | ---- | ---- |
 |  <img width="100/">![6B9C31C6-797F-41E4-B1DA-184960A8CEA5](https://user-images.githubusercontent.com/100200496/187494525-bfe954db-054d-460c-8ccf-9a897236cf4b.jpeg)  | ![AF616A27-5A19-4F62-961A-9597FDF118A5](https://user-images.githubusercontent.com/100200496/187500296-110ed7b0-bf5a-4ca8-b6bd-b5d91a5daf57.jpeg)  |  ![D4A2FBF9-8A97-4225-93AB-C7C7DF123EAF](https://user-images.githubusercontent.com/100200496/187593912-69ca411a-4820-4487-b6d2-04a99f32aba4.jpeg)![06351BFA-E0F5-48B7-BBD9-87526F345460_4_5005_c](https://user-images.githubusercontent.com/100200496/187594084-39e26db9-93fc-4220-98cb-5fd01d1b696a.jpeg)
 |  PATHはユーザーIDではなくユーザー名,フォローする,アクティビティを確認する,投稿一覧を確認することが可能  |  rails_adminにより作成,admin_userのログイン画面は管理人以外のアクセスはリダイレクトされます  |  お問合せフォーム,deviseのメール内容  |
@@ -52,9 +55,9 @@ AIの技術の発展により様々なものがAIに代替される中、今後�
 |  それぞれAjax,ブックマークした投稿はマイページにて閲覧可能  |  いいね,ブックマークしたユーザーを確認可能  |  Ajax,既にフォローされているとフォローバックに変化  |
 
 
-|  検索機能  |  検索結果ページ  |  フォロー,フォロワーページ  |
+|  検索機能  |  検索結果ページ  |  フォロー,フォロワーページ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |
 | ---- | ---- |  ----  |
-|  ![Image from Gyazo](https://gyazo.com/8d3d81375322bfae684cb5cbd7da6d6a.gif)  |  ![02C4F9CF-9854-4F2E-B951-DBFF2CCD224D](https://user-images.githubusercontent.com/100200496/187496183-1f4ae922-c443-4e35-8d4f-e89fa2441341.jpeg)  |  ![Image from Gyazo](https://gyazo.com/76ed1a0ec5b8e778e107d632848dddb2.gif)  |
+|  ![Image from Gyazo](https://gyazo.com/2859fa22cfe2d897b227b20e51a122fd.gif)  |  ![02C4F9CF-9854-4F2E-B951-DBFF2CCD224D](https://user-images.githubusercontent.com/100200496/187496183-1f4ae922-c443-4e35-8d4f-e89fa2441341.jpeg)  |  ![Image from Gyazo](https://gyazo.com/76ed1a0ec5b8e778e107d632848dddb2.gif)  |
 |  ransack未使用,[投稿,コメント,ユーザー]を検索可能,PCとタブレット,スマホでの検索フォームを別に設置  |  2ワード検索が可能(AND検索),50字でtrancate(切り捨て)  |  それぞれ閲覧可能,数を表示  |
 
 
@@ -76,7 +79,7 @@ AIの技術の発展により様々なものがAIに代替される中、今後�
     <td><img src="https://user-images.githubusercontent.com/100200496/187595583-23719e04-3663-4f4c-8c9d-a1da6a9ab67a.jpeg"></td>
   </tr>
   <tr>
-    <td colspan="3">もしユーザーが操作ミスでこれらのページに行っても焦らないように,自分がイタリアで撮った気持ちが落ち着きそうな画像を選びました(文字化け対策済み)</td>
+    <td colspan="3">もしユーザーが操作ミスでこれらのエラーページに行っても焦らないように,自分がイタリアで撮った気持ちが落ち着きそうな画像を選びました(文字化け対策済み)</td>
   </tr>
 </table>
 
