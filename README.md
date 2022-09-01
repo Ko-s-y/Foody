@@ -12,18 +12,18 @@ https://foody-life.herokuapp.com/
 ---
 
 ### レストランの存在価値
-レストランとは「ただ食事をする場所」では無く、味とサービス、そして空間を五感全てで感じられる場所です。
+レストランとは「ただ食事をする場所」では無く、味とサービス、そして空間を五感全てで感じられる素敵な場所です。
 
-AIの技術の発展により様々なものがAIに代替される中、今後もレストランは「人」と感動を共有できる場所として残して行きたいと心より願ってます。
+AIの技術の発展により様々なものがAIに代替される中、今後もレストランは「人」と感動を共有できる場所として今後も賑わって欲しいと心より願ってます。
 
 ---
 
 ### 主な機能とページ紹介
 
-|   トップページ  |  新規登録画面,ログイン画面,アカウント編集画面  | 　本人確認,パスワードリセットメール送信画面  |
+|  トップページ  |  新規登録画面,ログイン画面,アカウント編集画面  | 　本人確認,パスワードリセットメール送信画面  |
 | ---- | ---- | ---- |
 | <img src="https://user-images.githubusercontent.com/100200496/187955587-cbcd717d-6b1e-408a-86f0-4b3e22408c51.gif" width="250px">  | ![Image from Gyazo](https://gyazo.com/29a4ef056a23ea3142ccba5223d9dd3c.gif)  |  ![2AD344FD-4162-485A-B87F-E7B198D5007F](https://user-images.githubusercontent.com/100200496/187942292-cdf48482-86e0-44e8-89b7-e800d000a1c7.jpeg)
-|  自分が撮った料理のスライド  |  パスワード一致/不一致、パスワード表示/非表示機能,ゲストログイン機能  |  deviseによるconfirmable,recoverable機能  |
+|  自分が携わった料理達のスライド  |  パスワード一致/不一致、パスワード表示/非表示機能,ゲストログイン機能  |  deviseによるconfirmable,recoverable機能  |
 
 
 |  タイムライン(新規投稿ページ)  |  投稿詳細(コメント投稿ページ)  |  投稿編集ページ  |
@@ -36,8 +36,11 @@ AIの技術の発展により様々なものがAIに代替される中、今後�
 |  マイページ  |  ユーザー編集ページ  |  新規通知一覧ページ  |
 | ---- | ---- | ---- |
 |  ![Image from Gyazo](https://gyazo.com/f54a6f40bbdaed4bf9ca7995b6ecdadf.gif)  |  ![4FA096F9-E8B7-4BA9-AD91-BCA3B25A419E](https://user-images.githubusercontent.com/100200496/187489593-7bce2c69-4ada-4fee-89a2-dcbcd9360a22.jpeg)  |  ![505A91C7-C778-4BE1-8B96-54C0D13EEED8](https://user-images.githubusercontent.com/100200496/187489806-b7687aca-8158-4bcd-b66d-79baa1fc775a.jpeg)  |
-|  自分が投稿した一覧、ブックマーク一覧、アクティビティの確認  |  ユーザー情報の編集が可能  |  全てのパッシブ情報を閲覧可能　 |
-* 新規通知一覧ページより新規通知を1度閲覧すると以降通知一覧ページにて閲覧可能,一度コメントをした投稿に対しては以後全てのユーザーのコメントを通知します。
+|  自分が投稿した一覧、ブックマーク一覧、アクティビティの確認  |  ユーザー情報の編集が可能  |  全てのパッシブ情報を閲覧可能  |
+* 新規通知一覧ページより新規通知を1度閲覧すると以降通知一覧ページにて閲覧可能,一度コメントをした投稿に対しては以降全てのユーザーのコメントを通知します。
+* 新規通知が1件以上有れば表示が切り替わります。
+![249A7635-48BC-4DC4-889F-C4690CE939D0_4_5005_c](https://user-images.githubusercontent.com/100200496/187975871-49a0fd65-c5bf-4818-bbe2-33ec571f84f2.jpeg)
+![169EEEEC-55AF-4716-990A-30F78176F77B_4_5005_c](https://user-images.githubusercontent.com/100200496/187977119-f069bdca-9605-49dc-bae1-10a96cdea846.jpeg)
 
 
 |  自分以外のユーザーページ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |  admin_user  |  メール画面  |
@@ -76,7 +79,7 @@ AIの技術の発展により様々なものがAIに代替される中、今後�
     <td><img src="https://user-images.githubusercontent.com/100200496/187595583-23719e04-3663-4f4c-8c9d-a1da6a9ab67a.jpeg"></td>
   </tr>
   <tr>
-    <td colspan="3">もしユーザーが操作ミスでこれらのページに行っても焦らないように,自分がイタリアで撮った気持ちが落ち着きそうな画像を選びました(文字化け対策済み)</td>
+    <td colspan="3">もしユーザーが操作ミスでこれらのエラーページに行っても焦らないように,自分がイタリアで撮った気持ちが落ち着きそうな画像を選びました(文字化け対策済み)</td>
   </tr>
 </table>
 
