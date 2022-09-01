@@ -22,7 +22,7 @@ AIの技術の発展により様々なものがAIに代替される中、今後�
 
 |   トップページ  |  新規登録画面,ログイン画面,アカウント編集画面  | 　本人確認,パスワードリセットメール送信画面  |
 | ---- | ---- | ---- |
-| <img src="https://user-images.githubusercontent.com/100200496/187949186-ed68723b-e209-43d7-905a-578426a7878b.gif" width="600px">  | ![Image from Gyazo](https://gyazo.com/29a4ef056a23ea3142ccba5223d9dd3c.gif)  |  ![2AD344FD-4162-485A-B87F-E7B198D5007F](https://user-images.githubusercontent.com/100200496/187942292-cdf48482-86e0-44e8-89b7-e800d000a1c7.jpeg)
+| <img src="https://user-images.githubusercontent.com/100200496/187949186-ed68723b-e209-43d7-905a-578426a7878b.gif" width="250px">  | ![Image from Gyazo](https://gyazo.com/29a4ef056a23ea3142ccba5223d9dd3c.gif)  |  ![2AD344FD-4162-485A-B87F-E7B198D5007F](https://user-images.githubusercontent.com/100200496/187942292-cdf48482-86e0-44e8-89b7-e800d000a1c7.jpeg)
 |  自分が撮った料理のスライド  |  パスワード一致/不一致、パスワード表示/非表示機能,ゲストログイン機能  |  deviseによるconfirmable,recoverable機能  |
 
 
