@@ -20,10 +20,10 @@ AIの技術の発展により様々なものがAIに代替される中、今後�
 
 ### 主な機能とページ紹介
 
-|  トップページ   |  新規登録画面,ログイン画面,アカウント編集画面  |  本人確認,パスワードリセットメール送信画面  |
+|  トップページ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   |  新規登録画面,ログイン画面,アカウント編集画面  |  本人確認,パスワードリセットメール送信画面  |
 | ---- | ---- | ---- |
 |  ![5C85C4EF-834A-4B40-BB53-FEEED5929531_AdobeExpress](https://user-images.githubusercontent.com/100200496/187718202-e36e69b1-087d-4045-9e34-b57aa6f6f0c1.gif)  |  ![Image from Gyazo](https://gyazo.com/587d7e250a75604626ecdd8be7622da0.gif)  |  ![6774C748-EB6C-43C2-92A0-C07F096FC529](https://user-images.githubusercontent.com/100200496/187486248-a7b7620b-2872-4e2e-bf29-c6f2a77b10ba.jpeg)
-|  過去に作った、食べた料理のスライド　&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |  新規登録画面,ログイン画面,アカウント編集画面  |  パスワード一致/不一致、パスワード表示/非表示機能,ゲストログイン機能  |  deviseによるconfirmable,recoverable機能  |
+|  過去に作った、料理のスライド　 |  新規登録画面,ログイン画面,アカウント編集画面  |  パスワード一致/不一致、パスワード表示/非表示機能,ゲストログイン機能  |  deviseによるconfirmable,recoverable機能  |
 
 
 |  タイムライン(新規投稿ページ)  |  投稿詳細(コメント投稿ページ)  |  投稿編集ページ  |
@@ -47,7 +47,7 @@ AIの技術の発展により様々なものがAIに代替される中、今後�
 
 |  いいね機能,ブックマーク機能  |  アクションユーザーリスト  |  フォロー機能  |
 | ---- | ---- | ---- |
-|  ![Image from Gyazo](https://gyazo.com/4d4035025f09e1f7be733267323be4a6.gif)  |  ![Image from Gyazo](https://gyazo.com/ef7b2305dc9d328e9d9c710b1f1f3714.gif)  |  ![Image from Gyazo](https://gyazo.com/8a59856b3d6e8242bad02d02de5b8fad.gif)  |
+|  ![Image from Gyazo](https://gyazo.com/db814f5e9077555b8e11ba4515b65d55.gif)  |  ![Image from Gyazo](https://gyazo.com/ef7b2305dc9d328e9d9c710b1f1f3714.gif)  |  ![Image from Gyazo](https://gyazo.com/8a59856b3d6e8242bad02d02de5b8fad.gif)  |
 |  それぞれAjax,ブックマークした投稿はマイページにて閲覧可能  |  いいね,ブックマークしたユーザーを確認可能  |  Ajax,既にフォローされているとフォローバックに変化  |
 
 
