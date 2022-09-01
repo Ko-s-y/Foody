@@ -53,7 +53,7 @@ AIの技術の発展により様々なものがAIに代替される中、今後�
 
 |  検索機能  |  検索結果ページ  |  フォロー,フォロワーページ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |
 | ---- | ---- |  ----  |
-|  ![Image from Gyazo](https://gyazo.com/8d3d81375322bfae684cb5cbd7da6d6a.gif)  |  ![02C4F9CF-9854-4F2E-B951-DBFF2CCD224D](https://user-images.githubusercontent.com/100200496/187496183-1f4ae922-c443-4e35-8d4f-e89fa2441341.jpeg)  |  ![Image from Gyazo](https://gyazo.com/76ed1a0ec5b8e778e107d632848dddb2.gif)  |
+|  ![Image from Gyazo](https://gyazo.com/2859fa22cfe2d897b227b20e51a122fd.gif)  |  ![02C4F9CF-9854-4F2E-B951-DBFF2CCD224D](https://user-images.githubusercontent.com/100200496/187496183-1f4ae922-c443-4e35-8d4f-e89fa2441341.jpeg)  |  ![Image from Gyazo](https://gyazo.com/76ed1a0ec5b8e778e107d632848dddb2.gif)  |
 |  ransack未使用,[投稿,コメント,ユーザー]を検索可能,PCとタブレット,スマホでの検索フォームを別に設置  |  2ワード検索が可能(AND検索),50字でtrancate(切り捨て)  |  それぞれ閲覧可能,数を表示  |
 
 
