@@ -20,9 +20,9 @@ AIの技術の発展により様々なものがAIに代替される中、今後�
 
 ### 主な機能とページ紹介
 
-|  トップページ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;    |  新規登録画面,ログイン画面,アカウント編集画面  | 　本人確認,パスワードリセットメール送信画面  |
+|  トップページ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     |  新規登録画面,ログイン画面,アカウント編集画面  | 　本人確認,パスワードリセットメール送信画面  |
 | ---- | ---- | ---- |
-|  ![5C85C4EF-834A-4B40-BB53-FEEED5929531_AdobeExpress](https://user-images.githubusercontent.com/100200496/187718202-e36e69b1-087d-4045-9e34-b57aa6f6f0c1.gif)  | ![Image from Gyazo](https://gyazo.com/587d7e250a75604626ecdd8be7622da0.gif)  |  ![6774C748-EB6C-43C2-92A0-C07F096FC529](https://user-images.githubusercontent.com/100200496/187486248-a7b7620b-2872-4e2e-bf29-c6f2a77b10ba.jpeg)
+|  <div style="width: 160px;">　![5C85C4EF-834A-4B40-BB53-FEEED5929531_AdobeExpress](https://user-images.githubusercontent.com/100200496/187718202-e36e69b1-087d-4045-9e34-b57aa6f6f0c1.gif) </div>  | ![Image from Gyazo](https://gyazo.com/587d7e250a75604626ecdd8be7622da0.gif)  |  ![6774C748-EB6C-43C2-92A0-C07F096FC529](https://user-images.githubusercontent.com/100200496/187486248-a7b7620b-2872-4e2e-bf29-c6f2a77b10ba.jpeg)
 |  自分が撮った料理のスライド　 |  新規登録画面,ログイン画面,アカウント編集画面  |  パスワード一致/不一致、パスワード表示/非表示機能,ゲストログイン機能  |  deviseによるconfirmable,recoverable機能  |
 
 
@@ -61,8 +61,8 @@ AIの技術の発展により様々なものがAIに代替される中、今後�
 |  新規お問合せページ  |  お問合せ内容確認ページ  |  お問合せ一覧ページ  |
 | ---- | ---- | ---- |
 |  ![52B3A5CF-1C5C-45AF-90E6-6D0FCF68E356](https://user-images.githubusercontent.com/100200496/187497705-ad4473e4-e2dc-4271-bb20-1adc80f79cbd.jpeg)  |  ![A12F6591-E1BF-4E07-A1B9-103DAD853E32](https://user-images.githubusercontent.com/100200496/187497797-ac10b0eb-f3f4-4b78-a6b2-54a59d07b84d.jpeg) | ![5645D975-9D18-4E1D-8EDD-7E01C355D69D](https://user-images.githubusercontent.com/100200496/187497916-26f9ad94-a347-4ea2-bbe9-22d5288e2eab.jpeg)
-|  お問合せの作成が可能,titleはデータリストを活用  |  お問合せの入力内容が確認可能, 送信を押すと送ったユーザーにお問合せ受付メールが送信,Bccで管理人に内容が送信  |  過去のお問合せを閲覧可能  |
-
+|  お問合せの作成が可能,titleはデータリストを活用  |  お問合せの入力内容が確認と送信が可能  |  自分が過去に送ったお問合せを閲覧可能  |
+* お問合せは送ったユーザーにお問合せ受付メールが送信,Bccで管理人に同じ内容が自動送信
 
 <table>
   <tr>
