@@ -344,10 +344,15 @@ footer {
 
 .new-notice-sign {
   color: orange;
-  font-size: 12px;
+  font-size: 10px;
   position: relative;
   top: -8px;
-  left: -10px;
+  left: -5px;
+}
+
+.bell-icon {
+  position: relative;
+  left: 5px;
 }
 
 #user_password {
