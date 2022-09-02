@@ -374,22 +374,19 @@ footer {
 }
 
 #pass-display {
-  float: right;
-  padding-top: 5px;
-  padding-right: 5px;
-  padding-left: 5px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
 }
 
 #confirm-display {
-  float: right;
-  padding-top: 5px;
-  padding-right: 5px;
-  padding-left: 5px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
 }
 
 #current-display {
-  float: right;
-  padding-top: 5px;
-  padding-right: 5px;
-  padding-left: 5px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
 }
