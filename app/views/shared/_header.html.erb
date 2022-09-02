@@ -55,19 +55,19 @@
         <% else %>
           <div class="navbar-item attend">
             <div class="buttons">
-              <%= link_to new_user_registration_path, class: "button is-primary" do %>
+              <%= link_to new_user_registration_path, class: "button is-primary this-block" do %>
                 <span class="icon is-small">
                   <i class="far fa-user"></i>
                 </span>
                 <span>新規登録</span>
               <% end %>
-              <%= link_to new_user_session_path, class: "button is-info" do %>
+              <%= link_to new_user_session_path, class: "button is-info this-block btn-m-t" do %>
                 <span class="icon is-small">
                   <i class="fas fa-sign-in-alt"></i>
                 </span>
                 <span>ログイン</span>
               <% end %>
-              <%= link_to users_guest_sign_in_path, class: "button is-dark", method: :post do %>
+              <%= link_to users_guest_sign_in_path, class: "button is-dark this-block btn-m-t", method: :post do %>
                 <span class="icon is-small">
                   <i class="fas fa-sign-in-alt"></i>
                 </span>
