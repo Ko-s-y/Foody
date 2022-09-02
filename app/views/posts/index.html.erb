@@ -3,8 +3,7 @@
   <div class="post-form-appear">タイムラインに投稿する</div>
 </div>
 <%= render "posts/form", post: @post %>
-<section class="time-line">
-  <%= paginate @posts %>
+<section class="time-line post-list jscroll">
   <div class="posts-container">
     <div class="posts-contents">
       <% @posts.each do |post| %>
@@ -52,3 +51,17 @@
   <div class="sp-tab-open-icon"><i class="fas fa-pen"></i></div>
 </div>
 <%= javascript_pack_tag 'post/common' %>
+
+<script>
+  $(window).on('scroll', function() {
+    scrollHeight = $(document).height();
+    scrollPosition = $(window).height() + $(window).scrollTop();
+    if ( (scrollHeight - scrollPosition) / scrollHeight <= 0.05) {
+      $('.jscroll').jscroll({
+        contentSelector: '.post-list',
+        nextSelector: '.next a',
+        loadingHtml: '投稿を読み込み中・・・・・'
+      });
+    }
+  });
+</script>
