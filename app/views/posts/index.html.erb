@@ -53,6 +53,7 @@
 <%= javascript_pack_tag 'post/common' %>
 
 <script>
+  // jscrollによる無限スクロール
   $(window).on('scroll', function() {
     scrollHeight = $(document).height();
     scrollPosition = $(window).height() + $(window).scrollTop();
