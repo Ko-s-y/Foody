@@ -48,7 +48,7 @@
             <%= render "remembers/remember_function", post: @post %>
           </div>
           <% if current_user.already_commented?(@post) %>
-            <span class="comment-count" style="color: coral;"><i class="fa fa-comments"></i>&nbsp;<%= @post.comments.count %></span>
+            <span class="comment-count" style="color: #4a4a4a;"><i class="fa fa-comments"></i>&nbsp;<%= @post.comments.count %></span>
           <% else %>
             <span class="comment-count" style="color: silver;"><i class="fa fa-comments"></i>&nbsp;<%= @post.comments.count %></span>
           <% end %>
