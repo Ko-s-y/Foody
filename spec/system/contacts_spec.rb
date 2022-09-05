@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Contacts', type: :system do
+RSpec.describe 'Contacts', type: :system, js: true do
   describe 'お問合せ作成機能について' do
     before do
       @user = FactoryBot.create(:user)
