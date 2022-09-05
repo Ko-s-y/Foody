@@ -7,4 +7,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
       redirect_to posts_path
     end
   end
+
+  protected
+
+  def after_update_path_for(resource)
+    posts_path
+  end
 end
