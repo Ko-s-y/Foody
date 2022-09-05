@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Users', type: :system do
+RSpec.describe 'Users', type: :system, js: true do
   before do
     @user = FactoryBot.create(:user)
     @post = FactoryBot.create(:post, user_id: @user.id)
@@ -28,7 +28,7 @@ RSpec.describe 'Users', type: :system do
 
   scenario "ログインしたuserはログアウトできる事" do
     login_as(@user)
-    visit root_path
+    find('.nav-name').hover
     click_link "ログアウト"
 
     expect(page).to have_content "ログアウトしました。"
