@@ -61,7 +61,7 @@
       $('.jscroll').jscroll({
         contentSelector: '.post-list',
         nextSelector: '.next a',
-        loadingHtml: '<div class="loading-text">投稿を読み込み中・・・・・</div>'
+        loadingHtml: '<div id="loading-wrapper"><div id="loading-text">Loading.....</div><div id="loading-content"></div></div>'
       });
     }
   });
