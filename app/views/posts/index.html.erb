@@ -36,7 +36,7 @@
               <%= render "remembers/remember_function", post: post %>
             </div>
             <% if current_user.already_commented?(post) %>
-              <span class="comment-count" style="color: coral;"><i class="fa fa-comments"></i>&nbsp;<%= post.comments.count %></span>
+              <span class="comment-count" style="color: #4a4a4a"><i class="fa fa-comments"></i>&nbsp;<%= post.comments.count %></span>
             <% else %>
               <span class="comment-count" style="color: silver;"><i class="fa fa-comments"></i>&nbsp;<%= post.comments.count %></span>
             <% end %>
@@ -61,7 +61,7 @@
       $('.jscroll').jscroll({
         contentSelector: '.post-list',
         nextSelector: '.next a',
-        loadingHtml: '<div class="loading-text">投稿を読み込み中・・・・・</div>'
+        loadingHtml: '<div id="loading-wrapper"><div id="loading-text">Loading.....</div><div id="loading-content"></div></div>'
       });
     }
   });
