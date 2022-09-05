@@ -30,6 +30,7 @@ AIの技術の発展により様々なものがAIに代替される中、今後�
 | ---- | ---- | ---- |
 |  ![Image from Gyazo](https://gyazo.com/e130e98e071704ed042256e676c3060f.gif)  |  ![Image from Gyazo](https://gyazo.com/e9a70cc04be08cbee2de700b88f16e53.gif)   |  ![85C01D04-B578-42EA-917A-1C9CA6ED5952](https://user-images.githubusercontent.com/100200496/187483175-0867c891-cab7-4ac9-b764-529d68ba88d1.jpeg)  |
 |  画像プレビューと文字数カウント(改行は2文字扱い)  |  投稿詳細、削除とコメント投稿機能,文字数カウント(改行は2文字扱い)  |  投稿の編集が可能  |
+* kaminari + jscrollによる無限スクロール
 * コメントのアイコンはその投稿に一度コメントをしたら、いいねとブックマークのアイコンはそれぞれアクションを行うと色が変わります。
 
 
@@ -130,7 +131,6 @@ Foody!は肩書き、経験年数を撤廃したフラットな環境を目指�
 * AWSにデプロイ
 * Dockerの導入
 * Reactの導入
-* 投稿は増えて来たらpaginationを無限スクロールに変更する可能性があります
 
 ---
 
@@ -155,7 +155,7 @@ Foody!は肩書き、経験年数を撤廃したフラットな環境を目指�
 ##### フロントエンド
 * Bulma
 * JavaScript
-* JQuery
+* JQuery ( + jscroll )
 * Canva(favicon作成)
 
 ##### 主要Gem
