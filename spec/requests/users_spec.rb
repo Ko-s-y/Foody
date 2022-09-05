@@ -45,7 +45,7 @@ RSpec.describe "Users", type: :request do
 
       it 'エラーが表示される事' do
         post user_registration_path, params: { user: invalid_user_params }
-        expect(response.body).to include 'エラーにより、このアカウント情報を登録できません'
+        expect(response.body).to include 'アカウント名が入力されていません。'
       end
     end
   end
