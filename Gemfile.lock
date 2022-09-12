@@ -1552,6 +1552,13 @@ GEM
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
     semantic_range (3.0.0)
+    slim (4.1.0)
+      temple (>= 0.7.6, < 0.9)
+      tilt (>= 2.0.6, < 2.1)
+    slim-rails (3.5.1)
+      actionpack (>= 3.1)
+      railties (>= 3.1)
+      slim (>= 3.0, < 5.0)
     spring (4.0.0)
     sprockets (4.0.3)
       concurrent-ruby (~> 1.0)
@@ -1622,6 +1629,7 @@ DEPENDENCIES
   rubocop-airbnb
   sass-rails (>= 6)
   selenium-webdriver
+  slim-rails
   spring
   turbolinks (~> 5)
   tzinfo-data
