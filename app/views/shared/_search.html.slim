@@ -1,0 +1,32 @@
+section.search-section
+  - if user_signed_in?
+    .search-form-disappear
+      i.fas.fa-angle-right.dis-search-icon
+    .search-form-appear
+      i.fas.fa-search.search-icon
+    .search-form
+      = form_with url: searches_result_path, local: true, method: :get do |f|
+        = f.text_field :word, placeholder: "ハーブ 保管方法", required: true, class: "search-word-area"
+        = f.select :range, options_for_select([["投稿を", "Post"], ["コメントを", "Comment"], ["ユーザーを", "User"]])
+        = f.submit "検索", class: "button is-info search-submit-btn"
+section.tab-sp-search-section
+  - if user_signed_in? && action_name != "about" && action_name != "edit" && action_name != "new"
+    .tab-sp-search-form-appear
+      i.fas.fa-search.tab-sp-search-icon
+.tab-sp-search
+  section.tab-sp-search-form-section.hero
+    .hero-body
+      .container
+        .columns.is-centered
+          .column.is-12-mobile.is-10-tablet
+            .box
+              .tab-sp-search-area
+                = form_with url: searches_result_path, local: true, method: :get do |f|
+                  .field
+                    = f.text_field :word, placeholder: "ハーブ 保管方法", required: true, autofocus: true, class: "tab-sp-search-word-area"
+                  .field
+                    = f.select :range, options_for_select([["投稿を", "Post"], ["コメントを", "Comment"], ["ユーザーを", "User"]])
+                  .field
+                    = f.submit "検索", class: "button is-info tab-sp-search-submit-btn ope-btn"
+                  .field
+                    i.fas.fa-times.fa-lg.close-tab-sp-search-btn

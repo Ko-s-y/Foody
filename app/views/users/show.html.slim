@@ -1,0 +1,98 @@
+- provide(:title, "マイページ")
+section.hero.is-dark.is-halfheight
+  .hero-body
+    .container
+      .columns.is-centered
+        .column.is-12-mobile.is-10-tablet.is-11-desktop.is-10-widescreen.is-10-fullhd
+          .box
+            .field
+              .user-icon-field
+                - if current_user.image?
+                  = image_tag current_user.image.url, class: "user-image", alt: "ユーザーアイコン"
+                - else
+                  = image_tag avatar_url(current_user), class: "user-image", alt: "ユーザーアイコン"
+              = form_with scope: :user, url: users_show_url(current_user), action: :update, method: :post do |f|
+                .file
+                  label.button.is-primary.is-outlined.is-fullwidth
+                    = f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png', class: "file-input", onchange: "this.form.submit();"
+                    i.fas.fa-upload
+                    |   アイコン画像の変更 
+            .field
+              span.user-element
+                | アカウント名: 
+                = current_user.name
+            .field
+              span.user-element
+                | 調理ジャンル: 
+                = current_user.introduction
+            .field.user-element
+              = link_to users_followings_path(name: current_user.name) do
+                span.my-follow-count
+                  | フォロー中：
+                  = current_user.following_user.count
+              |    
+              = link_to users_followers_path(name: current_user.name) do
+                span.my-follow-count
+                  | フォロワー：
+                  = current_user.follower_user.count
+            .field
+              span.user-element.appear-user-data
+                | アクティビティの確認
+              .user-data
+                span.user-element
+                  = current_user.created_at.strftime('%Y年%m月%d日')
+                  | から利用中
+                span.user-element
+                  | 投稿件数：
+                  = @posts.count
+                  | 件
+                span.user-element
+                  | コメントした回数：
+                  = current_user.comments.count
+                  | 回
+                span.user-element
+                  | いいねした投稿：
+                  = current_user.liked_posts.count
+                  | 件
+                span.user-element
+                  | いいねされた回数：
+                  = @received_like
+                  | 回
+                span.user-element
+                  | ブックマークした投稿：
+                  = current_user.checked_remember_posts.count
+                  | 件
+                span.user-element
+                  | ブックマークされた回数：
+                  = @received_remember
+                  | 回
+            - if current_user.email != "guest@sample.com"
+              .field
+                = link_to edit_user_registration_path do
+                  i.far.fa-sun
+                  span.link-btn
+                    | 設定
+section.appear-section-links
+  span#remember-post-list.appear-remember-section.appear-link.my-posts[style="background-color: whitesmoke;"]
+    | ブックマーク一覧
+  span#my-post-list.appear-posted-section.appear-link.my-posts
+    | 投稿一覧
+section.remember-posts-section
+  .posts-container
+    .posts-contents
+      - if @remember_posts.count.zero?
+        .zero-info.posts-zero
+          | まだ 
+          i.fa.fa-book[style="color: green; font-size: 15px;"]
+          |  を押した投稿はありません
+      - else
+        = render "posts", posts: @remember_posts
+section.user-posted-section
+  .posts-container
+    .posts-contents
+      - if @posts.count.zero?
+        .zero-info.posts-zero
+          | まだあなたの投稿はありません
+      - else
+        = render "posts", posts: @posts
+= javascript_pack_tag 'user/show'

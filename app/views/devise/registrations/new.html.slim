@@ -1,0 +1,113 @@
+- provide(:title, "アカウント作成")
+section.registration-form.hero.is-dark.is-fullheight
+  .hero-body
+    .container
+      .columns.is-centered
+        .column.is-12-mobile.is-10-tablet.is-10-desktop.is-9-widescreen.is-8-fullhd
+          .box
+            .field.has-text-centered
+              strong
+                | 新規アカウント登録
+            .box
+              = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
+                = render "devise/shared/error_messages", resource: resource
+                .field
+                  = f.label :アカウント名, class: "label"
+                  .control.has-icons-left
+                    = f.text_field :name, autofocus: true, autocomplete: "name", class: "input is-info", placeholder: "(必須)", required: true, maxlength: 12
+                    span.icon.is-small.is-left
+                      i.fas.fa-user
+                  p.help.is-danger
+                    | *半角英数字6〜12字以内 例)SampleName23
+                .field
+                  = f.label :調理ジャンル, class: "label"
+                  .control.has-icons-left
+                    = f.text_field :introduction, autocomplete: "introduction", class: "input is-info", placeholder: "(必須)", required: true, maxlength: 10, list: "job-name"
+                    datalist#job-name
+                      option[value="うどん"]
+
+                      option[value="郷土料理"]
+
+                      option[value="スイーツ"]
+
+                      option[value="寿司"]
+
+                      option[value="蕎麦"]
+
+                      option[value="中華"]
+
+                      option[value="鉄板焼き"]
+
+                      option[value="天ぷら"]
+
+                      option[value="パン"]
+
+                      option[value="ピッツァ"]
+
+                      option[value="焼肉"]
+
+                      option[value="ラーメン"]
+
+                      option[value="イタリア料理"]
+
+                      option[value="韓国料理"]
+
+                      option[value="スペイン料理"]
+
+                      option[value="タイ料理"]
+
+                      option[value="フランス料理"]
+
+                      option[value="メキシコ料理"]
+
+                      option[value="洋食"]
+
+                      option[value="ロシア料理"]
+
+                      option[value="和食"]
+
+                    span.icon.is-small.is-left
+                      i.fas.fa-utensils
+                  p.help.is-danger
+                    | *10字以内 該当する物がなければ入力をお願い致します
+                .field
+                  = f.label :メールアドレス, class: "label"
+                  .control.has-icons-left
+                    = f.email_field :email, autofocus: true, autocomplete: "email", class: "input is-info", placeholder: "(必須)"
+                    span.icon.is-small.is-left
+                      i.fas.fa-envelope
+                  p.help.is-danger
+                    | *@を含めて下さい
+                .field
+                  = f.label :パスワード, class: "label"
+                  .control.has-icons-left.has-icons-right
+                    = f.password_field :password, autocomplete: "new-password", class: "input is-info", placeholder: "(必須)"
+                    span#pass-display
+                      i.far.fa-eye
+                    span.icon.is-small.is-left
+                      i.fas.fa-lock
+                  p.help.is-danger
+                    | *
+                    = @minimum_password_length
+                    | 文字以上
+                .field
+                  = f.label :パスワードの確認, class: "label"
+                  .control.has-icons-left.has-icons-right
+                    = f.password_field :password_confirmation, autocomplete: "new-password", class: "input is-info", placeholder: "(必須)"
+                    span#confirm-display
+                      i.far.fa-eye
+                    span.icon.is-small.is-left
+                      i.fas.fa-lock
+                  p#pass-status.help.is-danger
+                    |  
+                .field
+                  = f.label :利用規約, class: "label"
+                  = render "shared/terms"
+                  = f.check_box :agreement_terms, as: :boolean, class: "spec-policy"
+                  span
+                    | 利用規約に同意する
+                  p.help.is-danger
+                    | *同意いただけない場合、当サイトはご利用いただけません
+                .field
+                  = f.submit "登録する", class: "button is-info is-fullwidth"
+              = render "devise/shared/links"

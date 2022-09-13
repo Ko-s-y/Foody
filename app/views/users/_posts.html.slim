@@ -1,0 +1,51 @@
+- posts.each do |post|
+  .post-area
+    = link_to post_path(post.id) do
+      figure
+        = image_tag(avatar_url(post.user), class: "posted-user-icon", alt: "ユーザーアイコン")
+      .post-area-text
+        .posted-user-name
+          = post.user.name
+          | (
+          = post.user.introduction
+          | )
+        .posted-date
+          = elapsed_time_counter(post.created_at)
+        .post-text
+          .post-title
+            = post.title
+          .post-content
+            = simple_format(post.post_content)
+          - unless post.avatar.blank?
+            .post-pict
+              = image_tag(post_image_url(post), class: "post-image", alt: "投稿画像")
+          - if current_user.already_commented?(post)
+            span.comment-count[style="color: #4a4a4a;"]
+              i.fa.fa-comments
+              |  
+              = post.comments.count
+          - else
+            span.comment-count[style="color: silver;"]
+              i.fa.fa-comments
+              |  
+              = post.comments.count
+          - if current_user.already_liked?(post)
+            span.like-count[style="color: #209cee;"]
+              i.fa.fa-star
+              |  
+              = post.likes.count
+          - else
+            span.like-count[style="color: silver;"]
+              i.fa.fa-star
+              |  
+              = post.likes.count
+          - if current_user.checked_remember?(post)
+            span.remember-count[style="color: green;"]
+              i.fa.fa-book
+              |  
+              = post.remembers.count
+          - else
+            span.remember-count[style="color: silver;"]
+              i.fa.fa-book
+              |  
+              = post.remembers.count
