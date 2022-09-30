@@ -2,11 +2,11 @@
   = link_to post_remembers_path(post.id), method: :delete, data: { confirm: "ブックマーク一覧から外しますか？" }, remote: true do
     span#unremember-btn.remember-count[style="color: green;"]
       i.fa.fa-book
-      |  
+      | &nbsp;
       = post.remembers.count
 - else
   = link_to post_remembers_path(post.id), method: :post, remote: true do
     span#remember-btn.remember-count[style="color: silver;"]
       i.fa.fa-book
-      |  
+      | &nbsp;
       = post.remembers.count

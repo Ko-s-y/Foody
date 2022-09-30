@@ -16,21 +16,21 @@ section.hero.is-dark.is-halfheight
                   label.button.is-primary.is-outlined.is-fullwidth
                     = f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png', class: "file-input", onchange: "this.form.submit();"
                     i.fas.fa-upload
-                    |   アイコン画像の変更 
+                    | &nbsp;アイコン画像の変更
             .field
               span.user-element
-                | アカウント名: 
+                | アカウント名:
                 = current_user.name
             .field
               span.user-element
-                | 調理ジャンル: 
+                | 調理ジャンル:
                 = current_user.introduction
             .field.user-element
               = link_to users_followings_path(name: current_user.name) do
                 span.my-follow-count
                   | フォロー中：
                   = current_user.following_user.count
-              |    
+              | &nbsp;
               = link_to users_followers_path(name: current_user.name) do
                 span.my-follow-count
                   | フォロワー：
@@ -82,7 +82,7 @@ section.remember-posts-section
     .posts-contents
       - if @remember_posts.count.zero?
         .zero-info.posts-zero
-          | まだ 
+          | まだ
           i.fa.fa-book[style="color: green; font-size: 15px;"]
           |  を押した投稿はありません
       - else
