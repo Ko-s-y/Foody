@@ -1,3 +1,16 @@
+// 無限スクロール
+$(window).on('scroll', function() {
+  scrollHeight = $(document).height();
+  scrollPosition = $(window).height() + $(window).scrollTop();
+  if ( (scrollHeight - scrollPosition) / scrollHeight <= 0.05) {
+    $('.jscroll').jscroll({
+      contentSelector: '.post-list',
+      nextSelector: '.next a',
+      loadingHtml: '<div id="loading-wrapper"><div id="loading-text">Loading.....</div><div id="loading-content"></div></div>'
+    });
+  }
+});
+
 // 選択した画像ファイル名表示とプレビュー機能の関数
 $(function() {
   $(document).on('change', '.image-form', function() {

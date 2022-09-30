@@ -1,9 +1,0 @@
-<% if current_user.checked_remember?(post) %>
-  <%= link_to post_remembers_path(post.id), method: :delete, data: { confirm: "ブックマーク一覧から外しますか？" }, remote: true do %>
-    <span id="unremember-btn" class="remember-count" style="color: green;"><i class="fa fa-book"></i></i>&nbsp;<%= post.remembers.count %></span>
-  <% end %>
-<% else %>
-  <%= link_to post_remembers_path(post.id), method: :post, remote: true do %>
-    <span id="remember-btn" class="remember-count" style="color: silver;"><i class="fa fa-book"></i></i>&nbsp;<%= post.remembers.count %></span>
-  <% end %>
-<% end %>

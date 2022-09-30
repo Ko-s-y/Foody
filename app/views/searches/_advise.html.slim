@@ -1,0 +1,52 @@
+.search-advise
+  section.hero.is-dark.is-fullheight
+    .hero-body
+      .container
+        .columns.is-centered
+          .column.is-12-mobile.is-11-tablet.is-11-desktop.is-9-widescreen.is-8-fullhd
+            .box
+              .field.has-text-centered
+                strong
+                  | 検索のヒント
+              .box
+                .advise-area
+                  .advise-text
+                    .field
+                      p
+                        | - 
+                        span.highlight
+                          | ユーザーは調理ジャンルまたは国名
+                        | で検索して下さい
+                      p
+                        | 例: 和食, 蕎麦, 鉄板焼き, イタリア, フランス等
+                    .field
+                      p
+                        | - 
+                        span.highlight
+                          | 検索範囲を切り替え
+                        | て試して見てください。
+                      p
+                        | 例：投稿を => コメントを
+                    .field
+                      p
+                        | - 二つの検索ワードでヒットしなかった場合は一つの検索ワードで試して見てください。
+                      p
+                        |    二つの検索ワードで検索した場合、
+                        span.highlight
+                          | ワードが2つとも入っていなければヒットしない
+                        | 為です。
+                      p
+                        | 例：野菜 保管 => 野菜
+                    .field
+                      p
+                        | - 漢字をひらがな、もしくはひらがなを漢字に
+                        span.highlight
+                          | 変換して
+                        | 試して見てください。
+                      p
+                        | 例：桃 => もも, やさい => 野菜
+                    .field
+                      button.button.is-danger.dis-advise-btn.ope-btn
+                        | 閉じる
+                    .field
+                      = link_to "問い合わせる", new_contact_path(user_id: current_user.id), class: "button is-info ope-btn"

@@ -1,0 +1,43 @@
+- provide(:title, "フォロワーリスト")
+.ope-btn-area
+  = link_to "フォロー中", users_followings_path(name: @user.name), class: "appear-link"
+  h2.appear-link.current_page
+    | フォロワー
+section.follow-user-list.hero.is-light.is-halfheight
+  .columns.is-centered
+    .column.is-10-desktop.is-9-widescreen
+      .box
+        .action-user-info
+          - if @follower_users.present?
+            .follow-count-area
+              - if @user.id == current_user.id
+                h1.follow-count
+                  | あなたのフォロワー：
+                  span
+                    = @user.follower_user.count
+                    | 人
+              - else
+                h1.follow-count
+                  = @user.name
+                  | さんのフォロワー：
+                  span
+                    = @user.follower_user.count
+                    | 人
+            - @follower_users.each do |user|
+              .info-area
+                - if user.id == current_user.id
+                  = link_to image_tag(avatar_url(user), class: "action-user-icon", alt: "ユーザーアイコン"), users_show_path
+                  strong.info-element
+                    = link_to "あなた(#{user.introduction})", users_show_path, class: "action-user-name"
+                - else
+                  = link_to image_tag(avatar_url(user), class: "action-user-icon", alt: "ユーザーアイコン"), users_profile_path(name: user.name)
+                  strong.info-element
+                    = link_to "#{user.name}(#{user.introduction})", users_profile_path(name: user.name), class: "action-user-name"
+          - else
+            - if @user.id == current_user.id
+              h2.action-count-zero
+                | あなたのフォロワーはまだいません。
+            - else
+              h2.action-count-zero
+                = @user.name
+                | さんのフォロワーはまだいません。

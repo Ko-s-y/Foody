@@ -1,0 +1,24 @@
+- provide(:title, "本人確認")
+section.registration-form.hero.is-dark.is-fullheight
+  .hero-body
+    .container
+      .columns.is-centered
+        .column.is-12-mobile.is-10-tablet.is-10-desktop.is-9-widescreen.is-8-fullhd
+          .box
+            .field.has-text-centered
+              strong
+                | 本人確認のメールが届いていませんか？
+            .box
+              = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
+                = render "devise/shared/error_messages", resource: resource
+                .field
+                  = f.label :メールアドレス, class: "label"
+                  .control.has-icons-left
+                    = f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: "input is-info", placeholder: "(必須)", required: true
+                    span.icon.is-small.is-left
+                      i.fas.fa-envelope
+                  p.help.is-danger
+                    | *ご登録中のメールアドレスをご入力下さい
+                .field
+                  = f.submit "本人確認メールを再送信", class: "button is-info is-fullwidth"
+              = render "devise/shared/links"

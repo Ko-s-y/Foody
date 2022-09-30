@@ -1,0 +1,38 @@
+.post-form
+  .post-form-section
+    section.hero
+      .hero-body
+        .container
+          .columns.is-centered
+            .column.is-12-mobile.is-10-tablet.is-11-desktop.is-10-widescreen.is-10-fullhd
+              .box
+                = form_with model: post do |f|
+                  .field
+                    .control.has-icons-left
+                      = f.text_field :title, placeholder: "○○について", class: "input is-info", required: true, maxlength: 20
+                      span.icon.is-small.is-left
+                        i.fas.fa-pen
+                    p.help.is-danger
+                      | *必須,20字以内
+                  .field
+                    .control.has-icons-left
+                      = f.text_area :post_content, class: "input is-info form-text", placeholder: "投稿内容", required: true, maxlength: 200
+                      p.form-str-counter
+                      span.icon.is-small.is-left
+                        i.far.fa-sticky-note
+                    p.help.is-danger
+                      | *必須,200字以内
+                  .field
+                    - unless post.avatar.blank?
+                      = image_tag(post_image_url(post), class: "current-post-image", alt: "投稿画像")
+                    - else
+                      img.not-have-post-image
+                    = f.label :avatar ,"画像ファイルを選択", class: "image-input-btn button is-primary"
+                    .control
+                      = f.file_field :avatar, class: "image-form", accept: 'image/jpeg,image/gif,image/png'
+                    p.help.is-info.state
+                      | *画像ファイルの選択は任意です
+                  .field
+                    = f.submit "投稿する", class: "button is-info is-fullwidth"
+                  a.post-form-disappear.button.is-light.ope-btn
+                    | 投稿をやめる

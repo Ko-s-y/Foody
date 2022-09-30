@@ -1,0 +1,47 @@
+section.comment-tree
+  .comment_container
+    .comment_contents
+      - if comments.count.zero?
+        .zero-info
+          | まだコメントはありません
+      - else
+        - comments.each do |comment|
+          - if post.user_id == comment.user_id
+            .post-owner-comment
+              .owner-text
+                = simple_format(comment.comment_content)
+              .comment-image
+                - unless comment.avatar.blank?
+                  .comment-pict
+                    = image_tag(post_image_url(comment), alt: "コメント画像", class: "owner-pic")
+              - if current_user.id == comment.user.id
+                = link_to post_comment_path(post, comment), method: :delete, data: { confirm: "本当にコメントを削除しますか？" } do
+                  i.fas.fa-trash-alt.right-trash
+              span.comment-date
+                = comment.created_at.strftime('%m/%d %H:%M')
+          - else
+            .other-user-comment
+              figure
+                - if current_user.id == comment.user_id
+                  = link_to image_tag(avatar_url(comment.user), class: "other-user-icon", alt: "ユーザーアイコン"), users_show_path
+                - else
+                  = link_to image_tag(avatar_url(comment.user), class: "other-user-icon", alt: "ユーザーアイコン"), users_profile_path(name: comment.user.name)
+              .other-user-text
+                .other-name
+                  = comment.user.name
+                  | (
+                  = comment.user.introduction
+                  | )
+                .comment-area
+                  |   
+                  .other-text
+                    = simple_format(comment.comment_content)
+                .comment-image
+                  - unless comment.avatar.blank?
+                    .comment-pict
+                      = image_tag(post_image_url(comment), alt: "コメント画像", class: "other-user-pic")
+                - if current_user.id == comment.user.id
+                  = link_to post_comment_path(post, comment), method: :delete, data: { confirm: "本当にコメントを削除しますか？" } do
+                    i.fas.fa-trash-alt.left-trash
+                span.comment-date
+                  = comment.created_at.strftime('%m/%d %H:%M')

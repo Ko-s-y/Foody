@@ -1,0 +1,52 @@
+- provide(:title, "タイムライン")
+.appear-btn-area
+  .post-form-appear
+    | タイムラインに投稿する
+= render "posts/form", post: @post
+section.time-line.post-list.jscroll
+  .posts-container
+    .posts-contents
+      - @posts.each do |post|
+        .post-area
+          figure
+            - if current_user.id == post.user_id
+              = link_to image_tag(avatar_url(post.user), class: "posted-user-icon", alt: "ユーザーアイコン"), users_show_path
+            - else
+              = link_to image_tag(avatar_url(post.user), class: "posted-user-icon", alt: "ユーザーアイコン"), users_profile_path(name: post.user.name)
+          .post-area-text
+            = link_to post_path(post.id) do
+              .posted-user-name
+                = post.user.name
+                | (
+                = post.user.introduction
+                | )
+              .posted-date
+                = elapsed_time_counter(post.created_at)
+              .post-text
+                .post-title
+                  = post.title
+                .post-content
+                  = simple_format(post.post_content)
+                - unless post.avatar.blank?
+                  .post-pict
+                    = image_tag(post_image_url(post), class: "post-image", alt: "投稿画像")
+            div id="like-buttons-#{post.id}"
+              = render "likes/like_function", post: post
+            div id="remember-buttons-#{post.id}"
+              = render "remembers/remember_function", post: post
+
+            - if current_user.already_commented?(post)
+              span.comment-count[style="color: #4a4a4a"]
+                i.fa.fa-comments
+                |
+                = post.comments.count
+            - else
+              span.comment-count[style="color: silver;"]
+                i.fa.fa-comments
+                |
+                = post.comments.count
+  = paginate @posts
+.sp-tab-open-form-area
+  .sp-tab-open-icon
+    i.fas.fa-pen
+= javascript_pack_tag 'post/common'

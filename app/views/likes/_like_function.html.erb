@@ -1,9 +1,0 @@
-<% if current_user.already_liked?(post) %>
-  <%= link_to post_likes_path(post.id), method: :delete, remote: true do %>
-    <span class="like-count" style="color: #209cee;" id="unlike-btn"><i class="fa fa-star"></i></i>&nbsp;<%= post.likes.count %></span>
-  <% end %>
-<% else %>
-  <%= link_to post_likes_path(post.id), method: :post, remote: true do %>
-    <span class="like-count" style="color: silver;" id="like-btn"><i class="fa fa-star"></i></i>&nbsp;<%= post.likes.count %></span>
-  <% end %>
-<% end %>
