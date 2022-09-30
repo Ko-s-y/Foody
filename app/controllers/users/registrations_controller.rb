@@ -4,13 +4,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def ensure_normal_user
     if resource.email == "guest@sample.com"
       flash[:alert] = "ゲストユーザーの更新と削除はできません。"
-      redirect_to posts_path
+      redirect_to posts_url
     end
   end
 
   protected
 
   def after_update_path_for(resource)
-    posts_path
+    posts_url
   end
 end

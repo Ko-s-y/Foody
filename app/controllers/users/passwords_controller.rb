@@ -4,7 +4,7 @@ class Users::PasswordsController < Devise::PasswordsController
   def ensure_normal_user
     if params[:user][:email].downcase == "guest@sample.com"
       flash[:alert] = "ゲストユーザーのパスワード再設定はできません。"
-      redirect_to posts_path
+      redirect_to posts_url
     end
   end
 end

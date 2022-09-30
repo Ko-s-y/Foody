@@ -7,18 +7,18 @@ class AdminUsers::SessionsController < Devise::SessionsController
   def new
     if current_user.nil?
       # render file: Rails.root.join('public', '404.html'), layout: false, status: 404
-      redirect_to home_path
+      redirect_to root_url
       flash[:alert] = "権限がありません"
     elsif current_user.email == ENV["FOODY_ADMIN_ADDRESS"]
       flash[:alert] = "管理人としてこちらよりログインしてください"
       super
     elsif current_user.email != ENV["FOODY_ADMIN_ADDRESS"]
       # render file: Rails.root.join('public', '404.html'), layout: false, status: 404
-      redirect_to posts_path
+      redirect_to posts_url
       flash[:alert] = "権限がありません"
     else
       # render file: Rails.root.join('public', '404.html'), layout: false, status: 404
-      redirect_to home_path
+      redirect_to root_url
       flash[:alert] = "権限がありません"
     end
   end

@@ -33,6 +33,6 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
   def after_confirmation_path_for(resource_name, resource)
     sign_in(resource)
     flash[:notice] = "Foody!へようこそ！"
-    posts_path
+    posts_url
   end
 end

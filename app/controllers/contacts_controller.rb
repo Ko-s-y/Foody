@@ -22,7 +22,7 @@ class ContactsController < ApplicationController
     if @contact.save
       ContactMailer.contact_mail(@contact, current_user).deliver
       flash[:notice] = "お問い合わせ内容を送信しました。"
-      redirect_to contacts_path
+      redirect_to contacts_url
     else
       flash.now[:alert] = "内容の送信に失敗しました。"
       render :new

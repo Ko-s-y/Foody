@@ -27,7 +27,7 @@ class UsersController < ApplicationController
     else
       flash[:alert] = "アイコン画像の更新に失敗しました。"
     end
-    redirect_to users_show_path
+    redirect_to users_show_url
   end
 
   private

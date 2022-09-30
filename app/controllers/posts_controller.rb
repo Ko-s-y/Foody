@@ -25,7 +25,7 @@ class PostsController < ApplicationController
     else
       flash[:alert] = @post.errors.full_messages[0]
     end
-    redirect_to posts_path
+    redirect_to posts_url
   end
 
   def edit
@@ -34,7 +34,7 @@ class PostsController < ApplicationController
       render "edit"
     else
       flash[:alert] = "権限がありません"
-      redirect_to posts_path
+      redirect_to posts_url
     end
   end
 
@@ -42,7 +42,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if @post.update(post_params)
       flash[:notice] = "投稿の情報を更新しました。"
-      redirect_to posts_path
+      redirect_to posts_url
     else
       flash.now[:alert] = "更新に失敗しました。"
       render "edit"
@@ -57,7 +57,7 @@ class PostsController < ApplicationController
     else
       flash[:alert] = "不正な処理の為エラーが発生しました。"
     end
-    redirect_to posts_path
+    redirect_to posts_url
   end
 
   private

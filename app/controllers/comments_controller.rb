@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
     else
       flash[:alert] = @comment.errors.full_messages[0]
     end
-    redirect_to post_path(@comment.post_id)
+    redirect_to post_url(@comment.post_id)
   end
 
   def destroy
@@ -22,7 +22,7 @@ class CommentsController < ApplicationController
     else
       flash[:alert] = "不正な処理の為エラーが発生しました。"
     end
-    redirect_to post_path(post.id)
+    redirect_to post_url(post.id)
   end
 
   private

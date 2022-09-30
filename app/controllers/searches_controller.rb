@@ -4,7 +4,7 @@ class SearchesController < ApplicationController
   def result
     if params[:word].blank?
       flash[:alert] = "キーワードを正確に入力してください。"
-      redirect_to posts_path
+      redirect_to posts_url
     else
       @range = params[:range]
       if @range == "Post"
@@ -15,7 +15,7 @@ class SearchesController < ApplicationController
         @users = User.where.not(id: current_user.id).looks(params[:search], params[:word]).page(params[:page])
       else
         flash[:alert] = "不正な値です。キーワードを正確に入力してください。"
-        redirect_to posts_path
+        redirect_to posts_url
       end
     end
   end
