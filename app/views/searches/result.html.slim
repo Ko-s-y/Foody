@@ -1,0 +1,129 @@
+- provide(:title, "検索結果")
+section.search-result.hero.is-light.is-halfheight
+  .columns.is-centered
+    .column.is-10-desktop.is-10-widescreen
+      .box
+        .result-contents
+          - if @range == "Post"
+            .post-result
+              - if @posts.present?
+                .result-count-area
+                  h1.result-count
+                    | 「 
+                    = params[:word]
+                    |  」を含む投稿のヒット件数:
+                    span
+                      = @posts.total_count
+                      | 件
+                - @posts.each do |post|
+                  .hit-content
+                    = link_to post_path(post.id) do
+                      p.hit-post-title
+                        = post.title
+                      p.hit-post-content
+                        = pick_trancate_sentence(post.post_content, params[:word])
+                      - if current_user.already_commented?(post)
+                        span.hit-comment-count[style="color: #4a4a4a;"]
+                          i.fa.fa-comments
+                          |  
+                          = post.comments.count
+                      - else
+                        span.hit-comment-count[style="color: silver;"]
+                          i.fa.fa-comments
+                          |  
+                          = post.comments.count
+                      - if current_user.already_liked?(post)
+                        span.hit-like-count[style="color: #209cee;"]
+                          i.fa.fa-star
+                          |  
+                          = post.likes.count
+                      - else
+                        span.hit-like-count[style="color: silver;"]
+                          i.fa.fa-star
+                          |  
+                          = post.likes.count
+                      - if current_user.checked_remember?(post)
+                        span.hit-remember-count[style="color: green;"]
+                          i.fa.fa-book
+                          |  
+                          = post.remembers.count
+                      - else
+                        span.hit-remember-count[style="color: silver;"]
+                          i.fa.fa-book
+                          |  
+                          = post.remembers.count
+                      p.hit-post-date
+                        = post.created_at.strftime('%Y/%m/%d %H:%M')
+                = paginate @posts
+              - else
+                .not-found
+                  p
+                    | 「 
+                    = params[:word]
+                    |  」を含む投稿はありませんでした。
+                  p
+                    | キーワードを変更して試して下さい。
+                  button.button.is-info.search-advise-btn.ope-btn
+                    | 検索のヒント
+          - elsif @range == 'Comment'
+            .comment-result
+              - if @comments.present?
+                .result-count-area
+                  h1.result-count
+                    | 「 
+                    = params[:word]
+                    |  」を含むコメントのヒット件数:
+                    span
+                      = @comments.total_count
+                      | 件
+                = paginate @comments
+                .hit-content
+                  - @comments.each do |comment|
+                    = link_to post_path(comment.post.id) do
+                      p.hit-comment-content
+                        = pick_trancate_sentence(comment.comment_content, params[:word])
+                      p.hit-comment-date
+                        = comment.created_at.strftime('%Y/%m/%d %H:%M')
+                = paginate @comments
+              - else
+                .not-found
+                  p
+                    | 「 
+                    = params[:word]
+                    |  」を含むコメントはありませんでした。
+                  p
+                    | キーワードを変更して試して下さい。
+                  button.button.is-info.search-advise-btn.ope-btn
+                    | 検索のヒント
+          - elsif @range == "User"
+            .user-result
+              - if @users.present?
+                .result-count-area
+                  h1.result-count
+                    | 「 
+                    = params[:word]
+                    |  」を調理ジャンルに含むユーザーのヒット件数:
+                    span
+                      = @users.total_count
+                      | 件
+                = paginate @users
+                .hit-user-content
+                  - @users.each do |user|
+                    .hit-user-area
+                      figure.hit-icon
+                        = link_to image_tag(avatar_url(user), class: "hit-user-icon", alt: "ユーザーアイコン"), users_profile_path(name: user.name)
+                      p.hit-user-intro
+                        = link_to "#{user.name}(#{user.introduction})", users_profile_path(name: user.name)
+                = paginate @users
+              - else
+                .not-found
+                  p
+                    | 「 
+                    = params[:word]
+                    |  」を含むユーザーはいませんでした。
+                  p
+                    | キーワードを変更して試して下さい。
+                  button.button.is-info.search-advise-btn.ope-btn
+                    | 検索のヒント
+= render "advise"
+= javascript_pack_tag 'search/result'

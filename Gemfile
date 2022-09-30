@@ -80,3 +80,6 @@ gem 'dotenv-rails'
 # admin機能
 gem 'rails_admin', '~> 2.0'
 gem 'rails_admin-i18n'
+
+gem 'slim-rails'
+gem 'html2slim'

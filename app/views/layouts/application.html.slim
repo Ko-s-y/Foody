@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title
+      = full_title(yield(:title))
+    meta[name="viewport" content="width=device-width,initial-scale=1"]
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = favicon_link_tag
+  body
+    = render "shared/header"
+    = render "shared/search"
+    = render 'shared/flash'
+    main
+      = yield
+    = render  "shared/footer_menu"
+    = render  "shared/footer"
+    script[defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"]
+    script[src="https://cdnjs.cloudflare.com/ajax/libs/jscroll/2.4.1/jquery.jscroll.min.js"]

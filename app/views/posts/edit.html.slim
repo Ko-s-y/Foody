@@ -1,0 +1,44 @@
+- provide(:title, "Edit Post")
+section.hero.is-dark.is-fullheight
+  .hero-body
+    .container
+      .columns.is-centered
+        .column.is-12-mobile.is-10-tablet.is-11-desktop.is-10-widescreen.is-10-fullhd
+          .box
+            .field.has-text-centered
+              strong
+                | 投稿情報編集
+            .box
+              = form_with model: @post do |f|
+                = render "shared/error", object: @post
+                .field
+                  = f.label :title ,"タイトル", class: "label"
+                  .control.has-icons-left
+                    = f.text_field :title, autofocus: true, autocomplete: "title", class: "input is-info", required: true, maxlength: 20
+                    span.icon.is-small.is-left
+                      i.fas.fa-pen
+                  p.help.is-danger
+                    | *必須,20字以内
+                .field
+                  = f.label :post_content, "内容", class: "label"
+                  .control.has-icons-left
+                    = f.text_area :post_content, autocomplete: "post_content", class: "input is-info form-text", required: true, maxlength: 200
+                    p.form-str-counter
+                    span.icon.is-small.is-left
+                      i.far.fa-sticky-note
+                    p.help.is-danger
+                      | *必須,200字以内
+                .field
+                  - unless @post.avatar.blank?
+                    = image_tag(post_image_url(@post), class: "current-post-image", alt: "投稿画像")
+                  - else
+                    img.not-have-post-image
+                  = f.label :avatar ,"画像ファイルの変更", class: "image-input-btn"
+                  .control
+                    = f.file_field :avatar, class: "image-form", accept: 'image/jpeg,image/gif,image/png'
+                  p.help.is-danger.state
+                    | *変更しない場合は選択しないでください
+                .field
+                  = f.submit "投稿を更新する", class: "button is-info is-fullwidth m-t-10 m-b-10"
+                = link_to "戻る", :back, class: "button is-light ope-btn"
+= javascript_pack_tag 'post/common'

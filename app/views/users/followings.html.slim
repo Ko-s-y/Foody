@@ -1,0 +1,43 @@
+- provide(:title, "フォロー中リスト")
+.ope-btn-area
+  h2.appear-link.current_page
+    | フォロー中
+  = link_to "フォロワー", users_followers_path(name: @user.name), class: "appear-link"
+section.follow-user-list.hero.is-light.is-halfheight
+  .columns.is-centered
+    .column.is-10-desktop.is-9-widescreen
+      .box
+        .action-user-info
+          - if @following_users.present?
+            .follow-count-area
+              - if @user.id == current_user.id
+                h1.follow-count
+                  | あなたがフォロー中ユーザー：
+                  span
+                    = @user.following_user.count
+                    | 人
+              - else
+                h1.follow-count
+                  = @user.name
+                  | さんがフォロー中ユーザー：
+                  span
+                    = @user.following_user.count
+                    | 人
+            - @following_users.each do |user|
+              .info-area
+                - if user.id == current_user.id
+                  = link_to image_tag(avatar_url(user), class: "action-user-icon", alt: "ユーザーアイコン"), users_show_path
+                  strong.info-element
+                    = link_to "あなた(#{user.introduction})", users_show_path, class: "action-user-name"
+                - else
+                  = link_to image_tag(avatar_url(user), class: "action-user-icon", alt: "ユーザーアイコン"), users_profile_path(name: user.name)
+                  strong.info-element
+                    = link_to "#{user.name}(#{user.introduction})", users_profile_path(name: user.name), class: "action-user-name"
+          - else
+            - if @user.id == current_user.id
+              h2.action-count-zero
+                | あなたがフォローしたユーザーはまだいません。
+            - else
+              h2.action-count-zero
+                = @user.name
+                | さんがフォローしたユーザーはまだいません。

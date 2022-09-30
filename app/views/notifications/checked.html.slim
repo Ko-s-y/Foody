@@ -1,0 +1,56 @@
+- provide(:title, "通知一覧")
+section.user-notification.hero.is-light.is-halfheight
+  .columns.is-centered
+    .column.is-12-mobile.is-10-tablet.is-9-desktop.is-8-widescreen.is-6-fullhd
+      .box
+        - if @checked_notifications.exists?
+          .info-contents
+            - @checked_notifications.each do |notification|
+              - visitor = notification.visitor
+              - visited = notification.visited
+              .info-area
+                strong.info-element
+                  = link_to visitor.name, users_profile_path(visitor.name)
+                span
+                  | さんが
+                - if notification.action == "like"
+                  strong.info-element
+                    = link_to 'あなたの投稿', notification.post
+                  span
+                    | にいいねしました
+                - elsif notification.action == "remember"
+                  strong.info-element
+                    = link_to 'あなたの投稿', notification.post
+                  span
+                    | をブックマークしました
+                - elsif notification.action == "follow"
+                  span
+                    | あなたをフォローしました
+                - elsif notification.action == "comment"
+                  - if notification.post.user_id == visited.id
+                    strong.info-element
+                      = link_to "あなたの投稿", notification.post
+                    span
+                      | にコメントしました
+                    .comment-content
+                      = simple_format(notification.comment.comment_content)
+                  - else
+                    = link_to post_path(notification.post) do
+                      - if visitor.name == notification.post.user.name
+                        strong.info-element
+                          | 自身の投稿
+                      - else
+                        strong.info-element
+                          = notification.post.user.name
+                          | さんの投稿
+                    span
+                      | にコメントしました
+                    .comment-content
+                      = simple_format(notification.comment.comment_content)
+                span.info-date
+                  = notification.created_at.strftime('%m/%d %H:%M')
+        - else
+          p.none-exists-info
+            | 通知はまだありません
+          = link_to "timelineへ", posts_path, class: "posts-link-to"
+      = paginate @checked_notifications
