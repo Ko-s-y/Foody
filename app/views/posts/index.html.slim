@@ -30,21 +30,24 @@ section.time-line.post-list.jscroll
                 - unless post.avatar.blank?
                   .post-pict
                     = image_tag(post_image_url(post), class: "post-image", alt: "投稿画像")
-            div id="like-buttons-#{post.id}"
-              = render "likes/like_function", post: post
-            div id="remember-buttons-#{post.id}"
-              = render "remembers/remember_function", post: post
-
-            - if current_user.already_commented?(post)
-              span.comment-count[style="color: #4a4a4a"]
-                i.fa.fa-comments
-                |
-                = post.comments.count
-            - else
-              span.comment-count[style="color: silver;"]
-                i.fa.fa-comments
-                |
-                = post.comments.count
+            |  <div id="like-buttons-
+            = post.id
+            | "> 
+            = render "likes/like_function", post: post
+          |  <div id="remember-buttons-
+          = post.id
+          | "> 
+          = render "remembers/remember_function", post: post
+        - if current_user.already_commented?(post)
+          span.comment-count[style="color: #4a4a4a"]
+            i.fa.fa-comments
+            |  
+            = post.comments.count
+        - else
+          span.comment-count[style="color: silver;"]
+            i.fa.fa-comments
+            |  
+            = post.comments.count
   = paginate @posts
 .sp-tab-open-form-area
   .sp-tab-open-icon

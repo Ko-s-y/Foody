@@ -1,0 +1,46 @@
+<div class="search-advise">
+  <section class="hero is-dark is-fullheight">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-12-mobile is-11-tablet is-11-desktop is-9-widescreen is-8-fullhd">
+            <div class="box">
+              <div class="field has-text-centered">
+                <strong>検索のヒント</strong>
+              </div>
+              <div class="box">
+                <div class="advise-area">
+                  <div class="advise-text">
+                    <div class="field">
+                      <p>- <span class="highlight">ユーザーは調理ジャンルまたは国名</span>で検索して下さい</p>
+                      <p>例: 和食, 蕎麦, 鉄板焼き, イタリア, フランス等</p>
+                    </div>
+                    <div class="field">
+                      <p>- <span class="highlight">検索範囲を切り替え</span>て試して見てください。</p>
+                      <p>例：投稿を => コメントを</p>
+                    </div>
+                    <div class="field">
+                      <p>- 二つの検索ワードでヒットしなかった場合は一つの検索ワードで試して見てください。</p>
+                      <p>&nbsp; &nbsp;二つの検索ワードで検索した場合、<span class="highlight">ワードが2つとも入っていなければヒットしない</span>為です。</p>
+                      <p>例：野菜 保管 => 野菜</p>
+                    </div>
+                    <div class="field">
+                      <p>- 漢字をひらがな、もしくはひらがなを漢字に<span class="highlight">変換して</span>試して見てください。</p>
+                      <p>例：桃 => もも, やさい => 野菜</p>
+                    </div>
+                    <div class="field">
+                      <button class="button is-danger dis-advise-btn ope-btn">閉じる</button>
+                    </div>
+                    <div class="field">
+                      <%= link_to "問い合わせる", new_contact_path(user_id: current_user.id), class: "button is-info ope-btn" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

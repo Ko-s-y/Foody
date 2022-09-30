@@ -1,0 +1,24 @@
+<% provide(:title, "お問わせ履歴") %>
+<section class="contacts-section hero is-light is-halfheight">
+  <div class="columns is-centered">
+    <div class="column is-12-mobile is-10-tablet is-9-desktop is-8-widescreen is-6-fullhd">
+      <div class="box">
+        <div class="info-contents">
+          <% if @contacts.exists? %>
+            <% @contacts.each do |contact| %>
+              <div class="info-area">
+                <p class="contact-content"><%= contact.name %></p>
+                <p class="contact-content"><%= simple_format(contact.content) %></p>
+                <p class="contact-date"><%= contact.created_at.strftime('%Y/%m/%d %H:%M') %></p>
+              </div>
+            <% end %>
+            <%= paginate @contacts %>
+          <% else %>
+            <p class="none-info">お問合せ履歴がありません</p>
+            <%= link_to "タイムラインへ", posts_path, class: "posts-link" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

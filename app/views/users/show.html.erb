@@ -1,0 +1,92 @@
+<% provide(:title, "マイページ") %>
+<section class="hero is-dark is-halfheight">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-12-mobile is-10-tablet is-11-desktop is-10-widescreen is-10-fullhd">
+          <div class="box">
+              <div class="field">
+                <div class="user-icon-field">
+                  <% if current_user.image? %>
+                    <%= image_tag current_user.image.url, class: "user-image", alt: "ユーザーアイコン" %>
+                  <% else %>
+                    <%= image_tag avatar_url(current_user), class: "user-image", alt: "ユーザーアイコン" %>
+                  <% end %>
+                </div>
+                <%= form_with scope: :user, url: users_show_url(current_user), action: :update, method: :post do |f| %>
+                  <div class="file">
+                    <label class="button is-primary is-outlined is-fullwidth">
+                      <%= f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png', class: "file-input", onchange: "this.form.submit();" %>
+                      <i class="fas fa-upload"></i>&nbsp;&nbsp;アイコン画像の変更
+                    </label>
+                  </div>
+                <% end %>
+              </div>
+              <div class="field">
+                <span class="user-element">アカウント名: <%= current_user.name %></span>
+              </div>
+              <div class="field">
+                <span class="user-element">調理ジャンル: <%= current_user.introduction %></span>
+              </div>
+              <div class="field user-element">
+                <%= link_to users_followings_path(name: current_user.name) do %>
+                  <span class="my-follow-count">フォロー中：<%= current_user.following_user.count %></span>
+                <% end %>&nbsp;&nbsp;
+                <%= link_to users_followers_path(name: current_user.name) do %>
+                  <span class="my-follow-count">フォロワー：<%= current_user.follower_user.count %></span>
+                <% end %>
+              </div>
+              <div class="field">
+                <span class="user-element appear-user-data">アクティビティの確認</span>
+                <div class="user-data">
+                  <span class="user-element"><%= current_user.created_at.strftime('%Y年%m月%d日') %>から利用中</span>
+                  <span class="user-element">投稿件数：<%= @posts.count %>件</span>
+                  <span class="user-element">コメントした回数：<%= current_user.comments.count %>回</span>
+                  <span class="user-element">いいねした投稿：<%= current_user.liked_posts.count %>件</span>
+                  <span class="user-element">いいねされた回数：<%= @received_like %>回</span>
+                  <span class="user-element">ブックマークした投稿：<%= current_user.checked_remember_posts.count %>件</span>
+                  <span class="user-element">ブックマークされた回数：<%= @received_remember %>回</span>
+                </div>
+              </div>
+              <% if current_user.email != "guest@sample.com" %>
+                <div class="field">
+                  <%= link_to edit_user_registration_path do %>
+                    <i class="far fa-sun"></i>
+                    <span class="link-btn">設定</span>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="appear-section-links">
+  <span id="remember-post-list" class="appear-remember-section appear-link my-posts" style="background-color: whitesmoke;">ブックマーク一覧</span>
+  <span id="my-post-list" class="appear-posted-section appear-link my-posts">投稿一覧</span>
+</section>
+<section class="remember-posts-section">
+  <div class="posts-container">
+    <div class="posts-contents">
+      <% if @remember_posts.count.zero? %>
+        <div class="zero-info posts-zero">まだ <i class="fa fa-book" style="color: green; font-size: 15px;"></i> を押した投稿はありません</div>
+      <% else %>
+        <%= render "posts", posts: @remember_posts %>
+      <% end %>
+    </div>
+  </div>
+</section>
+<section class="user-posted-section">
+  <div class="posts-container">
+    <div class="posts-contents">
+      <% if @posts.count.zero? %>
+        <div class="zero-info posts-zero">まだあなたの投稿はありません</div>
+      <% else %>
+        <%= render "posts", posts: @posts %>
+      <% end %>
+    </div>
+  </div>
+</section>
+<%= javascript_pack_tag 'user/show' %>
