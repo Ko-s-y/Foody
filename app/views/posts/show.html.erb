@@ -1,0 +1,70 @@
+<% provide(:title, "投稿詳細") %>
+<section class="show-post">
+  <div class="posts-container">
+    <div class="posts-contents">
+      <div class="post-area">
+        <figure>
+          <% if current_user.id == @post.user_id %>
+            <%= link_to image_tag(avatar_url(@post.user), class: "posted-user-icon", alt: "ユーザーアイコン"), users_show_path %>
+          <% else %>
+            <%= link_to image_tag(avatar_url(@post.user), class: "posted-user-icon", alt: "ユーザーアイコン"), users_profile_path(name: @post.user.name) %>
+          <% end %>
+        </figure>
+        <div class="post-area-text">
+          <div class="posted-user-name"><%= @post.user.name %>(<%= @post.user.introduction %>)</div>
+          <% if @post.user_id == current_user.id %>
+            <div class="appear-menu-btn">•••</div>
+            <div class="post-menu">
+              <div class="sp-edit-delete-area">
+                <p><%= link_to "投稿の編集", edit_post_path, class: "sp-post-edit-btn" %></p>
+                <p><%= link_to "投稿の削除", @post, method: :delete, data: {confirm: "この投稿を削除しますか？"} %></p>
+              </div>
+            </div>
+          <% end %>
+          <div class="posted-date-show"><%= @post.created_at.strftime('%Y/%m/%d %H:%M') %></div>
+          <% if @post.user_id == current_user.id %>
+            <div class="edit-delete-area">
+              <%= link_to edit_post_path do %>
+                <span class="post-edit-link"><i class="fa fa-edit"></i></span>
+              <% end %>
+              <%= link_to @post, method: :delete, data: {confirm: "本当に投稿を削除しますか？"} do %>
+                <span class="post-delete-link"><i class="fas fa-trash-alt left-trash"></i></span>
+              <% end %>
+            </div>
+          <% end %>
+          <div class="post-text">
+            <span class="post-title"><%= @post.title %></span>
+            <span class="post-content"><%= simple_format(@post.post_content) %></span>
+            <% unless @post.avatar.blank? %>
+              <div class="post-pict">
+                <%= image_tag(post_image_url(@post), class: "post-image", alt: "投稿画像") %>
+              </div>
+            <% end %>
+          </div>
+          <div id="like-buttons-<%= @post.id %>">
+            <%= render "likes/like_function", post: @post %>
+          </div>
+          <div id="remember-buttons-<%= @post.id %>">
+            <%= render "remembers/remember_function", post: @post %>
+          </div>
+          <% if current_user.already_commented?(@post) %>
+            <span class="comment-count" style="color: #4a4a4a;"><i class="fa fa-comments"></i>&nbsp;<%= @post.comments.count %></span>
+          <% else %>
+            <span class="comment-count" style="color: silver;"><i class="fa fa-comments"></i>&nbsp;<%= @post.comments.count %></span>
+          <% end %>
+          <%= link_to "アクションしたユーザー一覧", action_user_post_path(@post.id), class: "action-user-link-btn" %>
+          <div class="smart-phone-post-date"><%= @post.created_at.strftime('%Y/%m/%d %H:%M') %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="appear-btn-area">
+  <div class="form-appear">この投稿にコメントする</div>
+</div>
+<%= render "comments/form", { post: @post, comment: @comment } %>
+<%= render "comments/tree", { post: @post, comments: @comments } %>
+<div class="sp-tab-open-form-area">
+  <div class="sp-tab-open-icon"><i class="fa fa-comments"></i></div>
+</div>
+<%= javascript_pack_tag 'post/common' %>

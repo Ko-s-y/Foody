@@ -1,0 +1,110 @@
+<% provide(:title, "アカウント編集") %>
+<section class="hero is-dark is-fullheight">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-12-mobile is-10-tablet is-10-desktop is-9-widescreen is-8-fullhd">
+          <div class="box">
+            <div class="field has-text-centered">
+              <strong>アカウント情報編集</strong>
+            </div>
+            <div class="box">
+              <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+                <%= render "devise/shared/error_messages", resource: resource %>
+                <div class="field">
+                  <%= f.label :アカウント名, class: "label" %>
+                  <div class="control has-icons-left">
+                    <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "input is-info", placeholder: "(必須)", maxlength: 12 %>
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-user"></i>
+                    </span>
+                  </div>
+                  <p class="help is-danger">*半角英数字6〜12字以内 例)SampleName23</p>
+                </div>
+                <div class="field">
+                  <%= f.label :調理ジャンル, class: "label" %>
+                  <div class="control has-icons-left">
+                    <%= f.text_field :introduction, autocomplete: "introduction", class: "input is-info", placeholder: "(必須)", maxlength: 10, list: "job-name" %>
+                    <datalist id="job-name">
+                      <option value="うどん">
+                      <option value="郷土料理">
+                      <option value="スイーツ">
+                      <option value="寿司">
+                      <option value="蕎麦">
+                      <option value="中華">
+                      <option value="鉄板焼き">
+                      <option value="天ぷら">
+                      <option value="パン">
+                      <option value="ピッツァ">
+                      <option value="焼肉">
+                      <option value="ラーメン">
+                      <option value="イタリア料理">
+                      <option value="韓国料理">
+                      <option value="スペイン料理">
+                      <option value="タイ料理">
+                      <option value="フランス料理">
+                      <option value="メキシコ料理">
+                      <option value="洋食">
+                      <option value="ロシア料理">
+                      <option value="和食">
+                    </datalist>
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-utensils"></i>
+                    </span>
+                  </div>
+                  <p class="help is-danger">*10字以内 該当する物がなければ入力をお願い致します</p>
+                </div>
+                <div class="field">
+                  <%= f.label :メールアドレス, class: "label" %>
+                  <div class="control has-icons-left">
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input is-info", placeholder: "(必須)" %>
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-envelope"></i>
+                    </span>
+                    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                      <div>確認しています: <%= resource.unconfirmed_email %></div>
+                    <% end %>
+                    <p class="help is-danger">*@を含めて下さい</p>
+                  </div>
+                </div>
+                <div class="field">
+                  <%= f.label :新しいパスワード, class: "label" %>
+                  <div class="control has-icons-left has-icons-right">
+                    <%= f.password_field :password, autocomplete: "new-password", class: "input is-info", placeholder: "(#{@minimum_password_length}文字以上)" %>
+                    <span id="pass-display"><i class="far fa-eye"></i></span>
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-lock"></i>
+                    </span>
+                  </div>
+                  <p class="help is-danger">*変更しない場合は空白のままにして下さい</p>
+                </div>
+                <div class="field">
+                  <%= f.label :現在のパスワード, class: "label" %>
+                  <div class="control has-icons-left has-icons-right">
+                    <%= f.password_field :current_password, autocomplete: "current-password", class: "input is-info", placeholder: "(必須)" %>
+                    <span id="current-display"><i class="far fa-eye"></i></span>
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-lock"></i>
+                    </span>
+                    <p class="help is-danger">*変更には現在のパスワードが必要です</p>
+                  </div>
+                </div>
+                <div class="field">
+                  <%= f.submit "更新する", method: :post, class: "button is-info is-fullwidth m-t-10 m-b-10" %>
+                </div>
+                <div class="field">
+                  <%= link_to "戻る", :back, class: "button is-light ope-btn" %>
+                </div>
+              <% end %>
+              <div class="field">
+                <p class="help is-danger">*削除すると全てのデータが失われます。</p>
+                <p class="help is-danger">&nbsp;この操作は取り消せません。ご注意ください。</p>
+                <%= button_to "アカウントの削除", registration_path(resource_name), data: { confirm: "本当にこのアカウントを削除しますか？" }, method: :delete, class: "button is-danger is-fullwidth m-t-10 m-b-10" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

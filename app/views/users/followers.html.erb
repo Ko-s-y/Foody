@@ -1,0 +1,41 @@
+<% provide(:title, "フォロワーリスト") %>
+<div class="ope-btn-area">
+  <%= link_to "フォロー中", users_followings_path(name: @user.name), class: "appear-link" %>
+  <h2 class="appear-link current_page">フォロワー</h2>
+</div>
+<section class="follow-user-list hero is-light is-halfheight">
+  <div class="columns is-centered">
+    <div class="column is-10-desktop is-9-widescreen">
+      <div class="box">
+        <div class="action-user-info">
+          <% if @follower_users.present? %>
+            <div class="follow-count-area">
+              <% if @user.id == current_user.id %>
+                <h1 class="follow-count">あなたのフォロワー：<span><%= @user.follower_user.count %>人</span></h1>
+              <% else %>
+                <h1 class="follow-count"><%= @user.name %>さんのフォロワー：<span><%= @user.follower_user.count %>人</span></h1>
+              <% end %>
+            </div>
+            <% @follower_users.each do |user| %>
+              <div class="info-area">
+                <% if user.id == current_user.id %>
+                  <%= link_to image_tag(avatar_url(user), class: "action-user-icon", alt: "ユーザーアイコン"), users_show_path %>
+                  <strong class="info-element"><%= link_to "あなた(#{user.introduction})", users_show_path, class: "action-user-name" %></strong>
+                <% else %>
+                  <%= link_to image_tag(avatar_url(user), class: "action-user-icon", alt: "ユーザーアイコン"), users_profile_path(name: user.name) %>
+                  <strong class="info-element"><%= link_to "#{user.name}(#{user.introduction})", users_profile_path(name: user.name), class: "action-user-name" %></strong>
+                <% end %>
+              </div>
+            <% end %>
+          <% else %>
+            <% if @user.id == current_user.id %>
+              <h2 class="action-count-zero">あなたのフォロワーはまだいません。</h2>
+            <% else %>
+              <h2 class="action-count-zero"><%= @user.name %>さんのフォロワーはまだいません。</h2>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

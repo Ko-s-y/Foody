@@ -1,0 +1,45 @@
+<div class="comment-form">
+  <div class="comment-form-section">
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column is-12-mobile is-10-tablet is-11-desktop is-10-widescreen is-10-fullhd">
+              <div class="box">
+                <%= form_with(model:[post, comment], method: :post) do |f| %>
+                  <div class="field">
+                    <div class="control has-icons-left">
+                      <%= f.text_area :comment_content, placeholder: "コメント内容", class: "input is-info form-text", required: true, maxlength: 200 %>
+                      <p class="form-str-counter"></p>
+                      <span class="icon is-small is-left">
+                        <i class="fa fa-comments"></i>
+                      </span>
+                    </div>
+                    <p class="help is-danger">*必須,200字以内</p>
+                  </div>
+                  <div class="field">
+                    <% unless comment.avatar.blank? %>
+                      <%= image_tag(post_image_url(comment), class: "current-post-image", alt: "投稿画像") %>
+                    <% else %>
+                      <img class="not-have-post-image">
+                    <% end %>
+                    <%= f.label :avatar ,"画像ファイルを選択", class: "image-input-btn button is-primary" %>
+                    <div class="control">
+                      <%= f.file_field :avatar, class: "image-form", accept: 'image/jpeg,image/gif,image/png' %>
+                    </div>
+                    <p class="help is-info state">*画像ファイルの選択は任意です</p>
+                  </div>
+                  <div class="field">
+                    <%= f.hidden_field :post_id, value: post.id %>
+                    <%= f.submit "コメントする", class: "button is-info is-fullwidth" %>
+                  </div>
+                  <a class="form-disappear button is-light ope-btn">コメントをやめる</a>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
