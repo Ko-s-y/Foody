@@ -5,10 +5,11 @@
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
-    "@rails/webpacker": "5.4.3",
+    "@rails/webpacker": "^5.4.4",
     "jquery": "3.6.0",
     "noty": "^3.2.0-beta-deprecated",
     "turbolinks": "^5.2.0",
+    "typescript": "^5.3.2",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12"
   },
